@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paintings of Vincent Van Gogh</title>
+
+  <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png" />
+
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="./javascript/apiController.js"></script>
+
+  <style>
+    .outer-div {
+      width: 700px;
+      height: 540px;
+      background-color: rgb(228, 153, 153);
+      position: relative;
+      overflow: hidden;
+      margin-left: 50px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .potato-eaters-div {
+      position: absolute;
+      right: 0px;
+      bottom: 100px;
+      transition: 0.2s;
+    }
+
+    .self-portrait-div {
+      position: absolute;
+      right: 270px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .shoes-div {
+      position: absolute;
+      bottom: -20px;
+      right: 10px;
+      transition: 0.2s;
+    }
+
+    .background-div {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      transition: 0.2s;
+    }
+
+    .cafe-terrance-div {
+      position: absolute;
+      bottom: 150px;
+      right: 90px;
+      transition: 0.2s;
+    }
+
+    .starry-night-div {
+      height: 200px;
+      position: absolute;
+      top: 0px;
+      right: -100px;
+      transition: 0.2s;
+    }
+
+    .wheatfield-div {
+      position: absolute;
+      top: 0px;
+      left: -180px;
+      transition: 0.2s;
+    }
+
+    .sunflowers-div {
+      position: absolute;
+      bottom: -20px;
+      right: -40px;
+      transition: 0.2s;
+    }
+
+    .irises-div {
+      position: absolute;
+      left: -100px;
+      bottom: -10px;
+      transition: 0.2s;
+    }
+
+    .skeleton-div {
+      position: absolute;
+      left: 130px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .lariesienne-div {
+      position: absolute;
+      bottom: -10px;
+      right: 150px;
+      transition: 0.2s;
+    }
+
+    .buttons-div {
+      /* background-color: red; */
+      height: 540px;
+      width: 400px;
+      margin: 0px 10px 0px 10px;
+    }
+
+    .button-div-top {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 0px 7px 7px 7px;
+      padding: 5px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+    }
+
+    .paintings-button {
+      background-color: rgb(179, 122, 233);
+      display: inline-block;
+      padding: 1px 5px 1px 5px;
+      font-size: 13px;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      margin: 3px 0px 3px 0px;
+    }
+
+    .paintings-button:hover {
+      background-color: rgb(166, 106, 223);
+    }
+
+    .paintings-button:active {
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+      border: rgb(233, 233, 233) solid 1px;
+      padding: 0px 4px 0px 4px;
+    }
+
+    .button-div-bot {
+      display: flex;
+      flex-wrap: wrap;
+      height: 439px;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 7px;
+      padding: 5px 5px 5px 10px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+      overflow-y: scroll;
+    }
+    </style>
+</head>
+
+<body style="margin: 0px; margin-top: 20px">
+  <div style="display: flex">
+    <div class="outer-div">
+      <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div>
+      <div id="cafeTerranceNight" class="cafe-terrance-div">
+        <img style="width: 420px" src="./Assets/images/vincent-van-gogh-paintings/cafe-terrance-at-night.jpg"
+          alt="cafe terrance at night" />
+      </div>
+
+      <div id="starryNight" class="starry-night-div">
+        <img style="width: 430px"
+          src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/starrynights-transparent.png"
+          alt="starry Night" />
+      </div>
+
+      <div id="wheatfieldCypre" class="wheatfield-div">
+        <img style="width: 520px"
+          src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/wheatfield-with-cypresses-transparent.png"
+          alt="wheatfield With Cypresses" />
+      </div>
+
+      <div id="potatoEaters" class="potato-eaters-div">
+          <img
+            style="width: 350px"
+            src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/the-potato-eaters-transparent.png"
+            alt="the potato Eaters"
+          />
+        </div>
+      <div id="lAriesienne" class="lariesienne-div">
+        <img style="width: 200px"
+          src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/l-ariesienne-transparent.png"
+          alt="l'Ariesienne" />
+      </div>
+      <div id="selfPortrait" class="self-portrait-div">
+        <img style="width: 210px"
+          src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/self_portrait-transparent.png"
+          alt="self portrait" />
+      </div>
+      <div id="irises" class="irises-div">
+        <img
+        style="width: 400px"
+        src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/irises-transparent.png"
+        alt="irises"
+        />
+      </div>
+      <div id="skeleton" class="skeleton-div">
+        <img style="width: 170px"
+        src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/skeleton-transparent.png"
+          alt="skeleton" />
+      </div>
+      <div id="sunflowers" class="sunflowers-div">
+        <img style="width: 200px"
+          src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/sunflowers-transparent.png"
+          alt="sunflowers" />
+        </div>
+        <div id="shoes" class="shoes-div">
+              <img
+              style="width: 250px"
+              src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/shoes-transparent.png"
+              alt="shoes"
+              />
+            </div>
+      </div>
+    <div class="buttons-div">
+      <div class="button-div-top">
+        <button class="paintings-button" onclick="getArtistDetails(4, 7); thePotatoEaters()">The Potato Eaters</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 3); selfPortrait()">Self Portrait</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 9); shoes()">Shoes</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 2); cafeTerranceAtNight()">Cafe Terrance At Night</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 4); starryNight()">Starry Night</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 1); wheatfieldWithCypresses()">Wheatfield With Cypresses</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 8); sunflowers()">Sunflowers</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 0); irises()">Irises</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 5); skeleton()">Skeleton</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 6); lAriesienne()">L'Ariesienne</button>
+      </div>
+      <!-- <button class="btn btn-success" onclick="saveArtistDetails()">insert</button> -->
+
+      <div id="paintingDetails" class="button-div-bot">
+        Click the buttons above to get to know more about the paintings.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var thePotatoEatersArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/the-potato-eaters.jpg" style="height: 160px; display: inline-block;" alt="The Potato Eaters">
+        <div style="display: inline-block;"><h4>The Potato Eaters 1885</h4> During March and the beginning of April 1885, Van Gogh sketched studies for the painting and corresponded with his brother Theo, who was not impressed with his current work nor the sketches Van Gogh sent him in Paris. He began working on The Potato Eaters while living with his parents in Nuenen, a rural town which was home to many farmers, labourers and weavers. He worked on the painting from 13 April until the beginning of May, when it was mostly done except for minor changes that he made with a small brush later the same year. Van Gogh said he wanted to depict peasants as they really were. He deliberately chose coarse and ugly models, thinking that they would be natural and unspoiled in his finished work.
+        </div>`;
+
+    var selfPortraitArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/self_portrait.jpg" style="height: 160px; display: inline-block;" alt="Self Portrait">
+        <div style="display: inline-block;"><h4>Self Portrait 1889</h4> This self-portrait was one of about 32 produced over a 10-year period, and these were an important part of his work as a painter; he painted himself because he often lacked the money to pay for models. He took the painting with him to Auvers-sur-Oise, near Paris, where he showed it to Dr. Paul Gachet, who thought it was "absolutely fanatical". Art historians are divided as to whether this painting or Self-portrait without beard is Van Gogh's final self-portrait. Art historians Ingo F. Walther and Jan Hulsker consider this to be the last, with Hulsker considering that it was painted in Arles following Van Gogh's admission to hospital after mutilating his ear, while Ronald Pickvance thinks Self-portrait without beard was the later painting.
+        </div>`;
+
+    var shoesArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/shoes.jpg" style="height: 160px; display: inline-block;" alt="Shoes">
+        <div style="display: inline-block;">
+          <h4>Shoes 1888</h4> Van Gogh painted several still lifes of shoes or boots during his Paris period. This picture, painted later, in Arles, evinces a unique return to the earlier motif. However, here Van Gogh has placed the shoes within a specific spatial context: namely, the red-tile floor of the Yellow House. Not only may we identify the setting, but perhaps the owner of the shoes as well. It has been suggested that this "still life of old peasants' shoes" may have been those of Patience Escalier, whose portrait Van Gogh executed around the same time, late summer 1888.
+        </div>`;
+
+    var cafeTeranceAtNightArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/cafe-terrance-at-night.jpg" style="height: 160px; display: inline-block;" alt="Cafe Terrance At Night">
+        <div style="display: inline-block;">
+          <h4>Cafe Terrance At Night 1888</h4> Café Terrace at Night is an oil painting by Vincent van Gogh that depicts a cafe in Arles, France in 1888. The painting is part of a series that uses starry backgrounds, and the starry sky is said to have been inspired by Avenue de Clichy: Five O'clock in the Evening by Louis Anquetin. The painting is 81 cm by 65 cm, and is also known as The Cafe Terrace on the Place du Forum. The painting is Post-Impressionist, and showcases Van Gogh's use of color gradation and his selection of blues, violets, and greens for the night. The painting is currently located at the Rijksmuseum Kröller-Müller, which is named after Van Gogh. 
+        </div>`;
+
+    var starryNightArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/starrynights.jpg" style="height: 160px; display: inline-block;" alt="Starry Night">
+        <div style="display: inline-block;">
+          <h4>Starry Night 1889</h4> The Starry Night (Dutch: De sterrennacht) is an oil-on-canvas painting by the Dutch Post-Impressionist painter Vincent van Gogh. Painted in June 1889, it depicts the view from the east-facing window of his asylum room at Saint-Rémy-de-Provence, just before sunrise, with the addition of an imaginary village. It has been in the permanent collection of the Museum of Modern Art in New York City since 1941, acquired through the Lillie P. Bliss Bequest. Widely regarded as Van Gogh's magnum opus, The Starry Night is one of the most recognizable paintings in Western art. The Starry Night is the only nocturne in the series of views from his bedroom window. In early June, Vincent wrote to Theo, "This morning I saw the countryside from my window a long time before sunrise with nothing but the morning star, which looked very big".
+        </div>`;
+
+    var wheatfieldWithCypressesArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/wheatfield-with-cypresses.jpg" style="height: 160px; display: inline-block;" alt="wheatfield With Cypresses">
+        <div style="display: inline-block;">
+          <h4>Wheatfield With Cypresses 1889</h4> Cypresses gained ground in Van Gogh's work by late June 1889 when he resolved to devote one of his first series in Saint-Rémy to the towering trees. Distinctive for their rich impasto, his exuberant on-the-spot studies include the Met's close-up vertical view of cypresses (49.30) and this majestic horizontal composition, which he illustrated in reed-pen drawings sent to his brother on July 2. Van Gogh regarded the present work as one of his “best” summer landscapes and was prompted that September to make two studio renditions: one on the same scale (National Gallery, London) and the other a smaller replica, intended as a gift for his mother and sister (private collection).
+          </div>`;
+
+    var sunflowersArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/sunflowers.jpg" style="height: 160px; display: inline-block;" alt="Sunflowers">
+        <div style="display: inline-block;">
+          <h4>Sunflowers 1889</h4> Van Gogh's paintings of Sunflowers are among his most famous. He did them in Arles, in the south of France, in 1888 and 1889. Vincent painted a total of five large canvases with sunflowers in a vase, with three shades of yellow ‘and nothing else'. In this way, he demonstrated that it was possible to create an image with numerous variations of a single colour, without any loss of eloquence. The sunflower paintings had a special significance for Van Gogh: they communicated ‘gratitude', he wrote. He hung the first two in the room of his friend, the painter Paul Gauguin, who came to live with him for a while in the Yellow House. Gauguin was impressed by the sunflowers, which he thought were ‘completely Vincent'. Van Gogh had already painted a new version during his friend's stay and Gauguin later asked for one as a gift, which Vincent was reluctant to give him. He later produced two loose copies, however, one of which is now in the Van Gogh Museum.
+        </div>`;
+
+    var irisesArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/irises.jpg" style="height: 160px; display: inline-block;" alt="Irises">
+        <div style="display: inline-block;">
+          <h4>irises 1889</h4> Irises is one of several paintings of irises by the Dutch artist Vincent van Gogh, and one of a series of paintings he made at the Saint Paul-de-Mausole asylum in Saint-Rémy-de-Provence, France, in the last year before his death in 1890. Van Gogh started painting Irises within a month of entering the asylum, in May 1889, working from nature in the hospital garden.[1] There is a lack of the high tension which is seen in his later works. He called painting "the lightning conductor for my illness" because he felt that he could keep himself from going insane by continuing to paint.
+        </div>`;
+
+    var skeletonArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/skeleton.png" style="height: 160px; display: inline-block;" alt="Skeleton">
+        <div style="display: inline-block;">
+          <h4>Sketeton 1886</h4> This skeleton with a lit cigarette in its mouth is a juvenile joke. Van Gogh painted it in early 1886, while studying at the art academy in Antwerp. The painting shows that he had a good command of anatomy. Drawing skeletons was a standard exercise at the academy, but painting them was not part of the curriculum. He must have made this painting at some other time, between or after his lessons.
+          </div>`;
+
+    var lAriesienneArtDetails = `
+      <img src="./Assets/images/vincent-van-gogh-paintings/l-ariesienne.jpg" style="height: 160px; display: inline-block;" alt="L'Ariesienne">
+          <div style="display: inline-block;">
+            <h4>L'Ariesienne 1848-1911</h4> While in Arles, Van Gogh painted two very similar portraits of Marie Ginoux, the proprietress of the Café de la Gare, wearing the regional costume of the legendary dark-haired beauties of Arles. The first version, which he described in a letter of November 1888 as "an Arlésienne . . . knocked off in one hour," must be the more thinly and summarily executed portrait in the Musée d'Orsay, Paris. In it a parasol and gloves lie on the table instead of books. This portrait belonged to the sitter until she sold it in 1895.
+            </div>`;
+
+    var paintings = [
+      thePotatoEatersArtDetails,
+      selfPortraitArtDetails,
+      shoesArtDetails,
+      cafeTeranceAtNightArtDetails,
+      starryNightArtDetails,
+      wheatfieldWithCypressesArtDetails,
+      sunflowersArtDetails,
+      irisesArtDetails,
+      skeletonArtDetails,
+      lAriesienneArtDetails,
+    ];
+
+    function thePotatoEatersStyle(scale, shadow) {
+      imageThePotatoEaters.style.transform = scale;
+      imageThePotatoEaters.style.filter = shadow;
+    }
+
+    function selfPortraitStyle(scale, shadow) {
+      imageSelfPortrait.style.transform = scale;
+      imageSelfPortrait.style.filter = shadow;
+    }
+
+    function shoesStyle(scale, shadow) {
+      imageShoes.style.transform = scale;
+      imageShoes.style.filter = shadow;
+    }
+
+    function cafeTerranceAtNightStyle(scale, shadow) {
+      imageCafeTerranceAtNight.style.transform = scale;
+      imageCafeTerranceAtNight.style.filter = shadow;
+    }
+
+    function starryNightStyle(scale, shadow) {
+      imageStarryNight.style.transform = scale;
+      imageStarryNight.style.filter = shadow;
+    }
+
+    function wheatfieldWithCypressesStyle(scale, shadow) {
+      imageWheatfieldWithCypresses.style.transform = scale;
+      imageWheatfieldWithCypresses.style.filter = shadow;
+    }
+
+    function sunflowersStyle(scale, shadow) {
+      imageSunflower.style.transform = scale;
+      imageSunflower.style.filter = shadow;
+    }
+
+    function irisesStyle(scale, shadow) {
+      imageIrises.style.filter = shadow;
+      imageIrises.style.transform = scale;
+    }
+
+    function skeletonStyle(scale, shadow) {
+      imageSkeleton.style.transform = scale;
+      imageSkeleton.style.filter = shadow;
+    }
+
+    function lAriesienneStyle(scale, shadow) {
+      imageLAriesienne.style.transform = scale;
+      imageLAriesienne.style.filter = shadow;
+    }
+
+    var imageThePotatoEaters = document.getElementById("potatoEaters");
+    function thePotatoEaters() {
+      thePotatoEatersStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        thePotatoEatersArtDetails;
+    }
+
+    var imageSelfPortrait = document.getElementById("selfPortrait");
+    function selfPortrait() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        selfPortraitArtDetails;
+    }
+
+    var imageShoes = document.getElementById("shoes");
+    function shoes() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = shoesArtDetails;
+    }
+
+    var imageCafeTerranceAtNight =
+      document.getElementById("cafeTerranceNight");
+    function cafeTerranceAtNight() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle(
+        "scale(1.2)",
+        "drop-shadow(0px 0px 8px yellow)"
+      );
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        cafeTeranceAtNightArtDetails;
+    }
+
+    var imageStarryNight = document.getElementById("starryNight");
+    function starryNight() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        starryNightArtDetails;
+    }
+
+    var imageWheatfieldWithCypresses =
+      document.getElementById("wheatfieldCypre");
+    function wheatfieldWithCypresses() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle(
+        "scale(1.2)",
+        "drop-shadow(0px 0px 8px yellow)"
+      );
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        wheatfieldWithCypressesArtDetails;
+    }
+
+    var imageSunflower = document.getElementById("sunflowers");
+    function sunflowers() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        sunflowersArtDetails;
+    }
+
+    var imageIrises = document.getElementById("irises");
+    function irises() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = irisesArtDetails;
+    }
+
+    var imageSkeleton = document.getElementById("skeleton");
+    function skeleton() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        skeletonArtDetails;
+    }
+
+    var imageLAriesienne = document.getElementById("lAriesienne");
+    function lAriesienne() {
+      thePotatoEatersStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      document.getElementById("paintingDetails").innerHTML =
+        lAriesienneArtDetails;
+    }
+  </script>
+</body>
+
+</html>

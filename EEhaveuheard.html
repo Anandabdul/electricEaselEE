@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Easel | Have U Heard?</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
+
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+    <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+
+    <style>
+        .letsplay-div {
+            background-color: white;
+            color: rgb(179, 122, 233);
+            text-align: center;
+            display: inline-block;
+            padding-left: 40px;
+            padding-right: 40px;
+            box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.2);            
+        }
+
+        .page-style {
+            background-image: url(./Assets/images/idi\ pattern.jpg);
+            background-size: 90px;
+            margin: 0px;
+        }
+        
+        .dice-button {
+            background-color: rgb(179, 122, 233);
+            color: white;
+            font-weight: bolder;
+            padding-right: 40px;
+            padding-left: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.2);
+            border-color: white;
+        }
+
+        .dice-button-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body class="page-style">
+
+    <div class="header">
+        <div class="header-left">
+            <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+            <!--<p class="home-text">electric easel</p>-->
+            <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+        </div>
+        <div class="header-center">
+            <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
+                        class="navBarButton">V-Exhibit</button></a></div>
+            <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
+                    href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
+            <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+                        class="navBarButton">Shop</button></a></div>
+            <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+                        class="navBarButton">Play</button></a></div>
+            <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+                        class="navBarButton">Have U Heard?</button></a></div>
+            <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+                        class="navBarButton">About Us</button></a></div>
+
+        </div>
+        <div class="header-right">
+            <img class="hamburger" src="./Assets/images/search.svg">
+            <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+        </div>
+    </div>
+
+    <!-- <div style="display: flex; justify-content: center;  margin-top: 10px;">
+        <div class="letsplay-div my-2 card">
+            <h3>LET&apos;S LEARN</h3>
+        </div>
+    </div> -->
+
+    <div class="container" style="display: flex; align-items: center; justify-content: center; padding-top: 100px;">
+
+        <div class="card w-75 mh-100% mt-3  mb-3"
+            style="height: 300px; box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.3); min-width: 400px; display: flex; justify-content: center; flex-direction: row; align-items: center;">
+            <div id="img-div" class="card-body">
+                <img src="./Assets/images/shock-monkey.png" style="height: 300px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="shock-monkeys">
+            </div>
+            <div class="card-body"
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <h5 class="card-title fs-4 mb-4">Have U Heard?</h5>
+                <p class="card-text text-center fs-5" id="js-headline"> Gag worthy art facts for you. Hit that DICE down there!
+                <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseWidthExample" aria-expanded="false"
+                        aria-controls="collapseWidthExample"
+                        style="border-color: white; padding-left: 40px; padding-right: 40px; box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.2); background-color: rgb(179, 122, 233); color: white;">Read More
+                    </button>
+                </p>
+            </div>
+        </div>
+
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style=" box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.3); width: 300px;" id="js-brief">
+                    UNDER MAINTAINANCE!
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="dice-button-div">
+        <button class="btn dice-button" onclick="RandomGenerator()">Dice Me</button>
+    </div>
+
+    <!-- <img src="./Assets/images/mona-lisa.jpg" style="height: auto; max-height: 370px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="monalisa-eye"> -->
+
+    <script>
+
+        function RandomGenerator() {
+
+            let randomPick = Math.random();
+
+            if (randomPick >= 0 && randomPick < 0.09) {
+                monalisaInfo();
+            } else if (randomPick >= 0.09 && randomPick < 0.19) {
+                olympicEventInfo();
+            } else if (randomPick >= 0.19 && randomPick < 0.29) {
+                colorWheelInfo();
+            } else if (randomPick >= 0.29 && randomPick < 0.39) {
+                artistinhaleInfo();
+            } else if (randomPick >= 0.39 && randomPick < 0.49) {
+                tateMuseumInfo();
+            } else if (randomPick >= 0.49 && randomPick < 0.59) {
+                romanStatueInfo();
+            } else if (randomPick >= 0.59 && randomPick < 0.69) {
+                upsidDownInfo();
+            } else if (randomPick >= 0.69 && randomPick < 0.79) {
+                emptyWallInfo();
+            } else if (randomPick >= 0.79 && randomPick < 0.89) {
+                artXMathInfo();
+            } else if (randomPick >= 0.89 && randomPick < 0.99) {
+                picassoWalkInfo();
+            } else if (randomPick >= 0.99 && randomPick < 1) {
+                expensivePaintingInfo();
+            }
+        }
+
+        function monalisaInfo() {
+            let headlines = "The Mona Lisa has her own mailbox in the Louvre because of all the love letters she receives.";
+            let briefInfo = "Over the years many have fallen prey to the portraits 'limpid and burning eyes', leaving her offerings of flowers, poems and, yes, love notes. Artist Luc Maspero allegedly took this fervour to a new high - and then low - in 1852, diving off a hotel balcony because “For years I have grappled desperately with her smile. I prefer to die.” Who knew art appreciation could be so dark?";
+            let imageInfo = `<img src="./Assets/images/mona-lisa.jpg" style="height: 370px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="monalisa">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function olympicEventInfo() {
+            let headlines = 'Art used to be an Olympic event.';
+            let briefInfo = "The Olympics wasn't always about abs and doping scandals. The founder of the modern Games, the Baron Pierre de Coubertin, was enamoured with the idea of the true Olympian being a talented artist and sportsperson. Thanks to him, between 1912 and 1948 medals were given out for sporting-inspired masterpieces of architecture, music, painting, sculpture and literature.";
+            let imageInfo = `<img src="./Assets/images/Olympics-Art-Study-of-sport-520.webp" style=" height: 270px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="olympic-event">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function colorWheelInfo() {
+            let headlines = "The colour wheel predates the United States.";
+            let briefInfo = "Considering the US is one of the oldest modern democracies, this is pretty amazing. Sir Isaac Newton invented the colour wheel in 1706 by refracting white sunlight into its six colours. The realisation that light alone was responsible for colour was radical, and the wheel proved especially useful for artists, who could now easily observe the most effective colour complementation."; 
+            let imageInfo = `<img src="./Assets/images/Newtons_colour_circle.webp" style="height: 280px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="color-wheel">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function artistinhaleInfo() {
+            let headlines = "Artist Willard Wigan once inhaled his own work.";
+            let briefInfo = "What's that, you say? He inhaled a painting?? The man must be enormous! Not quite. Wigan's works are 'micro-sculptures', so tiny they must be viewed through a microscope. In creating his art, Wigan has to slow his heartbeat and work between pulses. The work he inhaled was Alice, from Alice in Wonderland, but apparently she was even better when remade.";
+            let imageInfo = `<img src="./Assets/images/NineCamels.webp" style="height: 300px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="needle">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function tateMuseumInfo() {
+            let headlines = "In 2003 street artist Banksy stuck his own work to the wall in the Tate Modern Museum.";
+            let briefInfo = "The prank was soon undone by its inadequate glue, but for a few hours Crimewatch UK Has Ruined the Countryside For All of Us was hung in one of the world's most famous museums. It also inspired Andrzej Sobiepan, a Polish art student, to a similar feat in 2005, where for three days he successfully passed off his work as part of the National Museum's collection.";
+            let imageInfo = `<img src="./Assets/images/4535279420_51681d359a_b.jpg" style="height: 390px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="artwork">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function romanStatueInfo() {
+            let headlines = "Roman statues were made with detachable heads.";
+            let briefInfo = "This comes not only in the line of amazing art facts but also amazing historical facts. Roman statues were made with detachable heads so that one could be removed and replaced by another. It seemed to be quite practical for the ancient sculptors to not make separate busts but to wait for different emperors to be killed and create only a head. Pretty handy, right?";
+            let imageInfo = `<img src="./Assets/images/1709444880504.jpg" style="height: 280px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="roman-statue-head">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function expensivePaintingInfo() {
+            let headlines = "In the top 25 of the most expensive paintings, 5 of them are by Picasso.";
+            let briefInfo = "Do you ever wonder who is the best painter? Or do you ever think if money really talks in the case of art? Well, in most cases, it doesn't but it's for sure that painters like Picasso, Pallock and Van Gogh dominate the top 25 most expensive paintings in the world.";
+            let imageInfo = `<img src="./Assets/images/pablo-picasso.jpg" style="height: 310px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="picasso">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function upsidDownInfo() {
+            let headlines = "Henri Matisse's painting hung upside down.";
+            let briefInfo = "Yes, you read that right. Back in 1961, Henri Matisse's painting Le Bateau was hung upside down at New York's Museum of Modern Art. It took about 46 days before someone noticed it.";
+            let imageInfo = `<img src="./Assets/images/bateau.jpg" style="height: 280px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="artwork">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function emptyWallInfo() {
+            let headlines = "When the Mona Lisa was stolen, the empty wall attracted more visitors.";
+            let briefInfo = "The Mona Lisa has been in the Louvre since 1797 but went missing for a while in 1911. The masterpiece was stolen by an Italian employee of the Louvre. But the empty space it left on the wall surprisingly attracted more visitors than the painting had.";
+            let imageInfo = `<img src="./Assets/images/mona-lisa.jpg" style="height: 300px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="monalisa">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function artXMathInfo() {
+            let headlines = "Learning art correlates strongly with your achievements in math and reading.";
+            let briefInfo = "Have you ever thought to yourself whether you are a math person or humanitarian? Well, studies have shown that if you are good at art then there is a high possibility of you being good at math or any other technical sciences. Researchers find that art correlates strongly with high achievements in reading and math. How cool is that!";
+            let imageInfo = `<img src="./Assets/images/math-cover.jpg" style="height: 370px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="shell">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+        function picassoWalkInfo() {
+            let headlines = "Picasso could draw before he could walk.";
+            let briefInfo = "Now this is certainly a cool fact about Picasso! Picasso could draw before he could walk, and his first word was the Spanish word for pencil. Which was Lápiz and then the rest is history.";
+            let imageInfo = `<img src="./Assets/images/pablo-picasso.jpg" style="height: 280px; object-fit: contain; display: inline-block;" class="card-img-top mt-2 ml-2 mb-2" alt="picasso-pic">`;
+
+            document.getElementById('js-headline').innerHTML = headlines;
+            document.getElementById('js-brief').innerHTML = briefInfo;
+            document.getElementById('img-div').innerHTML = imageInfo;
+        };
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Paint Hand Brush</title>
+    <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Rubik+Marker+Hatch&family=Silkscreen&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/navbar.css">
+
+    <style>
+        .very-outer-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .outer-div {
+            background-color: rgb(230, 230, 230);
+            border: rgb(187, 186, 186) solid 1px;
+            /* box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.5); */
+            border-radius: 20px;
+            height: 500px;
+            width: 400px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            /* margin-top: 30px; */
+        }
+
+        .paint-button {
+            padding-top: 38px;
+            padding-bottom: 38px;
+            text-align: center;
+            width: 105px;
+            border-radius: 60px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-style: solid;
+            border-color: rgb(179, 122, 233);
+            border-width: 4px;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(179, 122, 233);
+        }
+
+        .hand-button {
+            padding-top: 38px;
+            padding-bottom: 38px;
+            text-align: center;
+            width: 105px;
+            border-radius: 60px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-style: solid;
+            border-color: rgb(179, 122, 233);
+            border-width: 4px;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(179, 122, 233);
+        }
+
+        .brush-button {
+            padding-top: 38px;
+            padding-bottom: 38px;
+            text-align: center;
+            width: 105px;
+            border-radius: 60px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-style: solid;
+            border-color: rgb(179, 122, 233);
+            border-width: 4px;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(179, 122, 233);
+        }
+
+        .heading-style {
+            color: white;
+            font-family: silkscreen, antonio;
+            font-size: 23px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header-left">
+            <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+            <!--<p class="home-text">electric easel</p>-->
+            <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+        </div>
+        <div class="header-center">
+            <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
+                        class="navBarButton">V-Exhibit</button></a></div>
+            <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
+                    href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
+            <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+                        class="navBarButton">Shop</button></a></div>
+            <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+                        class="navBarButton">Play</button></a></div>
+            <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+                        class="navBarButton">Have U Heard?</button></a></div>
+            <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+                        class="navBarButton">About Us</button></a></div>
+
+        </div>
+        <div class="header-right">
+            <img class="hamburger" src="./Assets/images/search.svg">
+            <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+        </div>
+    </div>
+
+    <div class="very-outer-div">
+        <div class="outer-div" style="margin-right: 50px;">
+
+            <h1 style="text-align: center;" class="heading-style">PAINT HAND BRUSH</h1>
+
+            <button class="paint-button" onclick="playgame('paint')">Paint</button>
+
+            <button class="hand-button" onclick="playgame('hand')">Hand</button>
+
+            <button class="brush-button" onclick="playgame('brush')">Brush</button>
+            <button onclick="resetScore()">Reset Score</button>
+        </div>
+
+        <div class="outer-div">
+            <div style="display: flex; height: 60%; color:black; font-family: silkscreen; margin-top: 5px;">Rules:</div>
+            <div style="color: black; height: 40%; font-family: silkscreen; text-align: center; font-weight: bold; font-size: 20px;">Score
+
+                <p class="js-result"></p>
+            
+                <p class="js-moves"></p>
+            
+                <p class="js-score"></p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+
+        let score = JSON.parse(localStorage.getItem('score'));
+
+        if (score === null) {
+            score = {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };
+        }
+
+        updateScoreElement();
+
+        function playgame(playermove) {
+            const computerMove = pickComputerMove();
+
+            let result = '';
+            if (playermove === 'paint') {
+
+                if (computerMove === 'brush') {
+                    result = 'You Lose.';
+                }
+                else if (computerMove === 'hand') {
+                    result = 'You Won.';
+                }
+                else if (computerMove === 'paint') {
+                    result = 'Tie.';
+                }
+
+            } else if (playermove === 'hand') {
+
+                if (computerMove === 'brush') {
+                    result = 'You Won.';
+                }
+                else if (computerMove === 'hand') {
+                    result = 'Tie.';
+                }
+                else if (computerMove === 'paint') {
+                    result = 'You Lose.';
+                }
+            } else if (playermove === 'brush') {
+
+                if (computerMove === 'brush') {
+                    result = 'Tie.';
+                }
+                else if (computerMove === 'hand') {
+                    result = 'You Lose.';
+                }
+                else if (computerMove === 'paint') {
+                    result = 'You Won.';
+                }
+
+            }
+
+            if (result === 'You Won.') {
+                score.wins += 1;
+            } else if (result === 'You Lose.') {
+                score.losses += 1;
+            } else if (result === 'Tie.') {
+                score.Ties += 1;
+            };
+
+            localStorage.setItem('score', JSON.stringify(score));
+
+            updateScoreElement();
+
+            document.querySelector('.js-result').innerHTML = result;
+
+            document.querySelector('.js-moves').innerHTML = `You (${playermove} - ${computerMove}) Computer`;
+
+        }
+
+        function updateScoreElement() {
+            document.querySelector('.js-score')
+                .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.Ties}`;
+        }
+
+        function pickComputerMove() {
+
+            const randomNumber = Math.random();
+
+            let computerMove = '';
+
+            if (randomNumber >= 0 && randomNumber < 1 / 3) {
+                computerMove = ('paint');
+            } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+                computerMove = ('hand');
+            } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+                computerMove = ('brush');
+            }
+
+            return computerMove;
+        }
+
+        function resetScore() {
+            score.wins = 0;
+            score.losses = 0;
+            score.Ties = 0;
+            localStorage.removeItem('score');
+
+            updateScoreElement();
+
+        }
+    </script>
+</body>
+
+</html>

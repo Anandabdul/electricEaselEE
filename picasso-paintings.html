@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintings of Pablo Picasso</title>
+
+  <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
+
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="./javascript/apiController.js"></script>
+
+  <style>
+    .outer-div {
+      width: 700px;
+      height: 540px;
+      background-color: rgb(228, 153, 153);
+      position: relative;
+      overflow: hidden;
+      margin-left: 50px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .ma-jolie-div {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .guernica-div {
+      position: absolute;
+      right: -100px;
+      transition: 0.2s;
+    }
+
+    .les-demo-div {
+      position: absolute;
+      bottom: 20px;
+      left: -10px;
+      transition: 0.2s;
+    }
+
+    .la-soupe-small-div {
+      position: absolute;
+      bottom: 210px;
+      left: -90px;
+      transition: 0.2s;
+    }
+
+    .la-soupe-big-div {
+      position: absolute;
+      bottom: 210px;
+      right: 160px;
+      transition: 0.2s;
+    }
+
+    .old-guitarist-div {
+      height: 200px;
+      position: absolute;
+      bottom: 90px;
+      right: 0px;
+      transition: 0.2s;
+    }
+
+    .weeping-woman-div {
+      position: absolute;
+      top: 20px;
+      right: 0px;
+      transition: 0.2s;
+    }
+
+    .por-dora-maar-div {
+      position: absolute;
+      bottom: 0px;
+      left: -30px;
+      transition: 0.2s;
+    }
+
+    .dora-maar-chat-div {
+      position: absolute;
+      left: 15px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .girl-mirror-div {
+      position: absolute;
+      right: 100px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .boy-pipe-div {
+      position: absolute;
+      bottom: 60px;
+      left: -100px;
+      transition: 0.2s;
+    }
+
+    .buttons-div {
+      /* background-color: red; */
+      height: 540px;
+      width: 400px;
+      margin: 0px 10px 0px 10px;
+    }
+
+    .button-div-top {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 7px;
+      padding: 5px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+    }
+
+    .paintings-button {
+      background-color: rgb(179, 122, 233);
+      display: inline-block;
+      padding: 1px 5px 1px 5px;
+      font-size: 13px;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      margin: 3px 0px 3px 0px;
+    }
+
+    .paintings-button:hover {
+      background-color: rgb(166, 106, 223);
+    }
+
+    .paintings-button:active {
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+      border: rgb(233, 233, 233) solid 1px;
+      padding: 0px 4px 0px 4px;
+    }
+
+    .button-div-bot {
+      display: flex;
+      flex-wrap: wrap;
+      height: 430px;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 7px;
+      padding: 5px 5px 5px 10px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+      overflow-y: scroll;
+    }
+
+  </style>
+</head>
+
+<body style="margin: 0px; margin-top: 20px;">
+  <div style="display: flex;">
+    <div class="outer-div">
+      <div id="guernica" class="guernica-div"><img style="width: 1000px;" src="./Assets/images/pablo-picasso-paintings/guernica.jpg" alt="Guernica"></div>
+      <div id="lesDemoisellas" class="les-demo-div"><img style="width: 350px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Les_Demoiselles_d'Avignon-transparent.png" alt="Les Demoiselles d Avignon"></div>
+      <div id="laSoupeBig" class="la-soupe-big-div"><img style="width: 345px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/La_soupe-big-transparent.png" alt="la soupe"></div>
+      <div id="laSoupeSmall" class="la-soupe-small-div"><img style="width: 345px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/La_soupe-small-transparent.png" alt="la soupe"></div>
+      <div id="girlMirror" class="girl-mirror-div"><img style="width: 400px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Girl-Before-A-Mirror-transparent.png" alt="girl before a mirror"></div>
+      <div id="maJolie" class="ma-jolie-div"><img style="width: 208px;" src="./Assets/images/pablo-picasso-paintings/ma-jolie.jpg" alt="ma jolie"></div>
+      <div id="boyPipe" class="boy-pipe-div"><img style="width: 430px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Boy-with-a-Pipe-transparent.png" alt="boy with a pipe"></div>
+      <div id="doraMaarChat" class="dora-maar-chat-div"><img style="width: 400px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Dora-Maar-au-Chat-transparent.png" alt="dora maar au chat"></div>
+      <div id="oldGuitarist" class="old-guitarist-div"><img style="width: 200px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Old_guitarist_chicago-transparent.png" alt="old guitarist"></div>
+      <div id="porDoraMaar" class="por-dora-maar-div"><img style="width: 185px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Portrait_of_Dora_Maar-transparent.png" alt="Portrait of Dora Maar"></div>
+      <div id="weepingWoman" class="weeping-woman-div"><img style="width: 190px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/The_Weeping_Woman_transparent.png" alt="The Weeping Woman">
+      </div>
+    </div>
+    <div class="buttons-div">
+      <div class="button-div-top">
+        <button class="paintings-button" onclick="getArtistDetails(3, 7); theOldGuitarist()">The Old Guitarist</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 3); maJolie()">Ma Jolie</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 9); theWeepingWoman()">The Weeping Woman</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 2); girlBeforeAMirror()">Girl Before A Mirror</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 4); guernica()">Guernica</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 1); doraMaarAuChat()">Dora Maar Au Chat</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 8); theSoup()">The Soup</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 0); boyWithAPipe()">Boy with a pipe</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 5); lesDemoisellasDAvignon()">Les Demoisellas D' Avignon</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 6); portraitOfDoraMaar()">Portrait of Dora Maar</button>
+      </div>
+      <button class="btn btn-success" onclick="saveArtistDetails()">insert</button>
+
+      <div id="paintingDetails" class="button-div-bot">
+        Click the buttons above to get to know more about the paintings.
+      </div>
+    </div>
+  </div>
+  
+  <script>
+
+    var theOldGuitaristArtDetais = `
+    <img src="./Assets/images/pablo-picasso-paintings/Old_guitarist_chicago.jpg" style="height: 160px; display: inline-block;" alt="The Old Guitarist">
+        <div style="display: inline-block;"><h4>The Old Guitarist 1903-1904</h4>Pablo Picasso made The Old Guitarist while working in Barcelona. In the paintings of his Blue Period (1901-04), the artist restricted himself to a cold, monochromatic blue palette, flattened forms, and emotional, psychological themes of human misery and alienation related to the work of such artists as Edvard Munch and Paul Gauguin. The elongated, angular figure of the blind musician also relates to Picasso's interest in Spanish art and, in particular, the great 16th-century artist El Greco. The image reﬂects the twenty-two-year-old Picasso's personal struggle and sympathy for the plight of the downtrodden; he knew what it was like to be poor, having been nearly penniless during all of 1902.
+        </div>`;
+
+    var maJolieArtDetails = `
+    <img src="./Assets/images/pablo-picasso-paintings/ma-jolie.jpg" style="height: 160px; display: inline-block;" alt="Ma Jolie">
+        <div style="display: inline-block;"><h4>Ma Jolie 1911-1912</h4>Ma Jolie (My pretty girl) was the refrain of a popular song performed at a Parisian music hall Picasso frequented. The artist suggests this musical association by situating a treble clef and music staff near the bold, stenciled letters. Ma Jolie was also Picasso's nickname for his lover Marcelle Humbert, whose figure he loosely built using the signature shifting planes of Analytic Cubism.
+        </div>`;
+
+    var lesDemoisellasDAvignonArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/1043px-Les_Demoiselles_d'Avignon.jpg" style="height: 160px; display: inline-block;" alt="les demoisellas d' avignon">
+        <div style="display: inline-block;">
+          <h4>Les Demoisellas D' Avignon 1907</h4>Les Demoiselles d'Avignon (The Young Ladies of Avignon, originally titled The Brothel of Avignon) is a large oil painting created in 1907 by the Spanish artist Pablo Picasso. Part of the permanent collection of the Museum of Modern Art in New York, it portrays five nude female prostitutes in a brothel on Carrer d'Avinyó, a street in Barcelona, Spain. The figures are confrontational and not conventionally feminine, being rendered with angular and disjointed body shapes, some to a menacing degree. The far left figure exhibits facial features and dress of Egyptian or southern Asian style. The two adjacent figures are in an Iberian style of Picasso's Spain, while the two on the right have African mask-like features. Picasso said the ethnic primitivism evoked in these masks moved him to "liberate an utterly original artistic style of compelling, even savage force” leading him to add a shamanistic aspect to his project.
+        </div>`;
+
+    var guernicaArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/guernica.jpg" style="height: 160px; display: inline-block;" alt="guernica">
+        <div style="display: inline-block;">
+          <h4>Guernica 1937</h4>
+          Guernica is a large 1937 oil painting by Spanish artist Pablo Picasso. It is one of his best-known works, regarded by many art critics as the most moving and powerful anti-war painting in history. It is exhibited in the Museo Reina Sofía in Madrid. The grey, black, and white painting, on a canvas 3.49 meters (11 ft 5 in) tall and 7.76 meters (25 ft 6 in) across, portrays the suffering wrought by violence and chaos. Prominently featured in the composition are a gored horse, a bull, screaming women, a dead baby, a dismembered soldier, and flames.
+        </div>`;
+
+    var portraitOfDoraMaarArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/Portrait_of_Dora_Maar.jpg" style="height: 160px; display: inline-block;" alt="Portrait of dora maar">
+        <div style="display: inline-block;">
+          <h4>Portrait of Dora Maar 1937</h4>
+          The portrait of Dora Maar was painted by Pablo Picasso in 1937, one year after they first met in Paris and started a relationship that would last for almost nine years. The couple had briefly met on the set of the French movie The Crime of Monsieur Lange at the end of 1935. Later, in 1936, in the brasserie Les Deux Magots in the Saint-Germain-des-Prés neighbourhood of Paris, Dora Maar and Picasso, who were both artists and engaged in left-wing activities, were introduced by a mutual friend, Paul Eluard. Picasso, who was then 55 years old, fell in love with the 29-year-old Maar and the couple soon began living together. Their relationship was tempestuous and although it lasted for almost nine years, Picasso did not end his relationship with Marie-Thérèse Walter, who was the mother of his daughter Maya. The tension caused by this situation only worsened and their relationship ended in 1943.
+        </div>`;
+
+    var theSoupArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/La_soupe.jpg" style="height: 160px; display: inline-block;" alt="la soupe">
+        <div style="display: inline-block;">
+          <h4>The Soup 1902</h4>
+          Despite his initial success at the Vollard exhibition in 1901, Picasso's funds soon dried up. It was not unusual for the artist to go hungry during this period in Paris, but his own circumstances only heightened his awareness of their desperate poverty that frequently surrounded him. Back in Barcelona in 1902 Picasso produced the painting entitled The Soup. Once again he drew upon his experiences in visiting the women's prison of Saint-lazare However, he also harked back to a visit he had made to the Pantheon to see the murals, completed five years earlier by the French. Symbolist painter Pierre Puvis de Chavannes (1824-98).
+          </div>`;
+
+    var theWeepingWomanArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/Picasso_The_Weeping_Woman_Tate_identifier_T05010_10.jpg" style="height: 160px; display: inline-block;" alt="The weeping woman">
+        <div style="display: inline-block;">
+          <h4>The Weeping woman 1937</h4>
+          The Weeping Woman (French: La Femme qui pleure) is a series of oil on canvas paintings by Pablo Picasso, the last of which was created in late 1937. The paintings depict Dora Maar, Picasso's mistress and muse. The Weeping Woman paintings were produced by Picasso in response to the bombing of Guernica in the Spanish Civil War and are closely associated with the iconography in his painting Guernica. Picasso was intrigued with the subject of the weeping woman, and revisited the theme numerous times that year. The last version, created on 26 October 1937, was the most elaborate of the series, and has been housed in the collection of the Tate Modern in London since 1987. Another Weeping Woman painting created on 18 October 1937 is housed at the National Gallery of Victoria and was involved in a high-profile political art theft.
+        </div>`;
+
+    var girlBeforeAMirrorArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/Girl-Before-A-Mirror.jpg" style="height: 160px; display: inline-block;" alt="girl Before A Mirror">
+        <div style="display: inline-block;">
+          <h4>Girl Before a Mirror 1932</h4>
+          Girl Before Mirror was painted in March 1932. It was produced in the style Picasso was using at the time and evoked an image of Vanity such as had been utilized in art in earlier eras, though Picasso shifts the emphasis and creates a very different view of the image. The work is considered in terms of the erotic in Picasso's art, and critics in different periods have offered their assessments of the work to show a wide range of reactions. The young girl was named Marie Therese Walter and was painted multiple times during the 1930's by Picasso.
+        </div>`;
+
+    var doraMaarAuChatArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/Dora-Maar-au-Chat.jpg" style="height: 160px; display: inline-block;" alt="Dora maar au chat">
+        <div style="display: inline-block;">
+          <h4>Dora Maar Au Chat 1941</h4>
+          Dora Maar au Chat presents the artist's most mysterious and challenging mistress regally posed three-quarter length in a large wooden chair with a small black cat perched behind her in both an amusing and menacing attitude. The faceted planes of her body and the richly layered surface of brushstrokes impart a monumental and sculptural quality to this portrait. The painting is also remarkable for its brilliance of color and the complex and dense patterning of the model's dress. The powerful figure is set in a dramatic, yet simple setting composed of a vertiginously inclined plane of wooden floorboards and shallow interior space that is arranged in a manner reminiscent of Picasso's earliest manipulations of space in a cubist manner.
+          </div>`;
+          
+          var boyWithApipeArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/Boy-with-a-Pipe-1905-Image-via-wikimediaorg.jpg" style="height: 160px; display: inline-block;" alt="boy with a pipe">
+          <div style="display: inline-block;">
+            <h4>Boy with a Pipe 1905</h4>
+            Garçon à la pipe was painted in 1905 when Picasso was 24 years old, during his Rose Period, soon after he settled in the Montmartre section of Paris, France. The oil on canvas painting depicts a Parisian boy holding a pipe in his left hand and wearing a garland or wreath of flowers. Early preparations of this work involved positioning the boy in all types of poses that involved standing, sitting or leaning against the wall. After much repositioning of the model, Picasso decided to go with the boy sitting down. Next was how to position the arm, where much time was also spent on the height and angle.
+            </div>`;
+            
+            var picassoPaintings = [
+              boyWithApipeArtDetails, doraMaarAuChatArtDetails, girlBeforeAMirrorArtDetails, maJolieArtDetails,
+              guernicaArtDetails, lesDemoisellasDAvignonArtDetails, portraitOfDoraMaarArtDetails, theOldGuitaristArtDetais,
+              theSoupArtDetails, theWeepingWomanArtDetails
+            ]
+          
+          function theOldGuitaristStyle(scale, shadow) {
+            imageTheOldGuitarist.style.transform = scale;
+            imageTheOldGuitarist.style.filter = shadow;
+          }
+          
+    function maJolieStyle(scale, shadow) {
+      imageMaJolie.style.transform = scale;
+      imageMaJolie.style.filter = shadow;
+    }
+
+    function theWeepingWomanStyle(scale, shadow) {
+      imageTheWeepingWoman.style.transform = scale;
+      imageTheWeepingWoman.style.filter = shadow;
+    }
+
+    function girlBeforeAMirrorStyle(scale, shadow) {
+      imageGirlBeforeAMirror.style.transform = scale;
+      imageGirlBeforeAMirror.style.filter = shadow;
+    }
+
+    function guernicaStyle(scale, shadow) {
+      imageGuernica.style.transform = scale;
+      imageGuernica.style.filter = shadow;
+    }
+
+    function doraMaarAuChatStyle(scale, shadow) {
+      imageDoraMaarAuChat.style.transform = scale;
+      imageDoraMaarAuChat.style.filter = shadow;
+    }
+
+    function theSoupStyle(scale, shadow) {
+      imageTheSoup.style.transform = scale;
+      imageTheSoup.style.filter = shadow;
+    }
+
+    function boyWithAPipeStyle(scale, shadow) {
+      imageBoyWithAPipe.style.filter = shadow;
+      imageBoyWithAPipe.style.transform = scale;
+    }
+
+    function lesDemoisellasDAvignonStyle(scale, shadow) {
+      imageLesDemoisellasDAvignon.style.transform = scale;
+      imageLesDemoisellasDAvignon.style.filter = shadow;
+    }
+
+    function portraitOfDoraMaarStyle(scale, shadow) {
+      imagePortraitOfDoraMaar.style.transform = scale;
+      imagePortraitOfDoraMaar.style.filter = shadow;
+    }
+
+    var imageTheOldGuitarist = document.getElementById('oldGuitarist');
+    function theOldGuitarist() {
+      theOldGuitaristStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = salvatorMundiArtDetails;
+    }
+
+    var imageMaJolie = document.getElementById('maJolie');
+    function maJolie() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = headOfAWomanArtDetails;
+    }
+
+    var imageTheWeepingWoman = document.getElementById('weepingWoman');
+    function theWeepingWoman() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = monalisaArtDetails;
+    }
+
+    var imageGirlBeforeAMirror = document.getElementById('girlMirror');
+    function girlBeforeAMirror() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = lastSupperArtDetails;
+    }
+
+    var imageGuernica = document.getElementById('guernica');
+    function guernica() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = ladyErmineArtDetails;
+    }
+
+    var imageDoraMaarAuChat = document.getElementById('doraMaarChat');
+    function doraMaarAuChat() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = virginRocksArtDetails;
+    }
+
+    var imageTheSoup = document.getElementById('laSoupeBig');
+    function theSoup() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = saintAnneArtDetails;
+    }
+
+    var imageBoyWithAPipe = document.getElementById('boyPipe');
+    function boyWithAPipe() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = selfPortraitArtDetails;
+    }
+
+    var imageLesDemoisellasDAvignon= document.getElementById('lesDemoisellas');
+    function lesDemoisellasDAvignon() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      portraitOfDoraMaarStyle("scale(1)", "none");
+      document.getElementById('paintingDetails').innerHTML = vitruveViatourArtDetails;
+    }
+
+    var imagePortraitOfDoraMaar = document.getElementById('porDoraMaar');
+    function portraitOfDoraMaar() {
+
+      theOldGuitaristStyle("scale(1)", "none");
+      maJolieStyle("scale(1)", "none");
+      theWeepingWomanStyle("scale(1)", "none");
+      girlBeforeAMirrorStyle("scale(1)", "none");
+      guernicaStyle("scale(1)", "none");
+      doraMaarAuChatStyle("scale(1)", "none");
+      theSoupStyle("scale(1)", "none");
+      boyWithAPipeStyle("scale(1)", "none");
+      lesDemoisellasDAvignonStyle("scale(1)", "none");
+      portraitOfDoraMaarStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      document.getElementById('paintingDetails').innerHTML = ginevraBenciArtDetails;
+    }
+  </script>
+</body>
+
+</html>

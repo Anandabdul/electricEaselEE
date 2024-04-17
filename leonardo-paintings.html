@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintings of leonardo-da-vinci</title>
+
+  <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
+
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./javascript/apiController.js"></script>
+
+
+  <style>
+    .outer-div {
+      width: 700px;
+      height: 540px;
+      background-color: black;
+      position: relative;
+      overflow: hidden;
+      margin-left: 50px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .last-supper-div {
+      position: absolute;
+      bottom: -59px;
+      transition: 0.2s;
+    }
+
+    .virgin-rocks-div {
+      position: absolute;
+      bottom: 68px;
+      left: 225px;
+      transition: 0.2s;
+    }
+
+    .lady-ermine-div {
+      position: absolute;
+      bottom: 120px;
+      left: 85px;
+      transition: 0.2s;
+    }
+
+    .mona-lisa-div {
+      position: absolute;
+      bottom: 83px;
+      right: 110px;
+      transition: 0.2s;
+    }
+
+    .salvator-mundi-div {
+      height: 200px;
+      position: absolute;
+      top: -17px;
+      left: 276px;
+      transition: 0.2s;
+    }
+
+    /* .salvator-mundi-div:hover {
+      transform: scale(1.1);
+    } */
+
+    .saint-anne-div {
+      position: absolute;
+      top: 80px;
+      right: -35px;
+      transition: 0.2s;
+    }
+
+    .self-portrait-div {
+      position: absolute;
+      bottom: 114px;
+      left: -50px;
+      transition: 0.2s;
+    }
+
+    .ginevra-benci-div {
+      position: absolute;
+      right: -40px;
+      top: 24px;
+      transition: 0.2s;
+    }
+
+    .lady-head-div {
+      position: absolute;
+      left: 70px;
+      transition: 0.2s;
+    }
+
+    .vitruve-viatour-div {
+      position: absolute;
+      top: -122px;
+      right: -40px;
+      transition: 0.2s;
+    }
+
+    .lettering-div {
+      position: absolute;
+      top: 0px;
+    }
+
+    .circle-ermine-div {
+      position: absolute;
+      left: -180px;
+      top: 35px;
+    }
+
+    .filling-div {
+      position: absolute;
+      right: -25px;
+
+    }
+
+    .leonardo-ring-div {
+      position: absolute;
+      right: 10px;
+      top: 120px;
+    }
+
+    .buttons-div {
+      /* background-color: red; */
+      height: 540px;
+      width: 400px;
+      margin: 0px 10px 0px 10px;
+    }
+
+    .button-div-top {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 7px;
+      padding: 5px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+    }
+
+    .paintings-button {
+      background-color: rgb(179, 122, 233);
+      display: inline-block;
+      padding: 1px 5px 1px 5px;
+      font-size: 13px;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      margin: 3px 0px 3px 0px;
+    }
+
+    .paintings-button:hover {
+      background-color: rgb(166, 106, 223);
+    }
+
+    .paintings-button:active {
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+      border: rgb(233, 233, 233) solid 1px;
+      padding: 0px 4px 0px 4px;
+    }
+
+    .button-div-bot {
+      display: flex;
+      flex-wrap: wrap;
+      height: 430px;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 7px;
+      padding: 5px 5px 5px 10px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<!-- https://retoolapi.dev/Ox7S97/artistDetails -->
+
+<body>
+  <div style="display: flex;">
+    <div class="outer-div">
+      <div class="filling-div"><img style="width: 100px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/mull-box.png" alt="mull-box"></div>
+      <div class="lettering-div"><img style="width: 365px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/Da_Vinci_Vitruve_Luc_Viatour-letterings.png"
+          alt="lettering"></div>
+      <div id="vitruveViatour" class="vitruve-viatour-div"><img style="width: 480px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/Da_Vinci_Vitruve_Luc_Viatour.png"
+          alt="vitruve luc viatour"></div>
+      <div class="leonardo-ring-div"><img style="width: 300px;"
+          src="./Assets/images/leonardo paintings/leonardo-ring.png" alt="leonardo-ring"></div>
+      <div id="ginevraBenci" class="ginevra-benci-div"><img style="width: 200px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/Ginevra_de'_Benci_transparent.png"
+          alt="ginevra de benci"></div>
+      <div id="ladyHead" class="lady-head-div"><img style="width: 210px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/head-of-the-woman-transparent.png"
+          alt="head of the woman"></div>
+      <div id="salvatorMundi" class="salvator-mundi-div"><img style="width: 125px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/salvator-mundi-transparent.png"
+          alt="salvator mundi"></div>
+      <div id="selfPortrait" class="self-portrait-div"><img style="width: 195px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/self-portrait-transparent.png"
+          alt="self portrait"></div>
+      <div id="saintAnne" class="saint-anne-div"><img style="width: 255px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/sainte_Anne-transparent.png" alt="saint-anne">
+      </div>
+      <div id="monaLisa" class="mona-lisa-div"><img style="width: 175px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/mona-lisa.png" alt="mona lisa"></div>
+      <div class="circle-ermine-div"><img style="width: 575px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/circle-mountain.png" alt="circle-ermine"></div>
+      <div id="ladyErmine" class="lady-ermine-div"><img style="width: 175px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/Lady_with_an_Ermine_transparent.png"
+          alt="lady with an ermine"></div>
+      <div id="virginRocks" class="virgin-rocks-div"><img style="width: 225px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/Leonardo_da_Vinci_Virgin_of_the_Rocks_transparent.png"
+          alt="virgin of the rocks"></div>
+      <div id="lastSupper" class="last-supper-div"><img style="width: 700px;"
+          src="./Assets/images/leonardo paintings/leonardo-transparent/Last_Supper-transparent.png" alt="last supper">
+      </div>
+    </div>
+    <div class="buttons-div">
+      <div class="button-div-top">
+        <button class="paintings-button" onclick="getArtistDetails(2, 1); salvatorMundi()">Salvator Mundi</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 3); lastSupper()">Last Supper</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 0); monaLisa()">Mona Lisa</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 4); LadyWithAnErmine()">Lady with an Ermine</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 9); VirginOfTheRocks()">Virgin of the Rocks</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 6); SainteAnne()">Sainte Anne</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 8); SelfPortrait()">Self Portrait</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 7); VitruveLucViatour()">Vitruve Luc Viatour</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 5); GinevreDeBenci()">Ginevra de' Benci</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 2); HeadOfAWoman()">Head of a Woman</button>
+      </div>
+      <!-- <button class="btn btn-success" onclick="saveArtistDetails()">insert</button> -->
+
+      <div id="paintingDetails" class="button-div-bot">
+        Click the buttons above to get to know more about the paintings.
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    var monalisaArtDetails = `
+        <img src="./Assets/images/mona-lisa.jpg" style="height: 160px; display: inline-block;" alt="mona lisa">
+        <div style="display: inline-block;"><h4>Mona Lisa 1503-1519</h4>The world's most famous artwork, the Mona Lisa draws thousands of visitors to the Louvre Museum each day, many
+          of whom are compelled by the sitter's mysterious gaze and enigmatic smile. The seemingly ordinary portrait of a
+          young woman dressed modestly in a thin veil, somber colors, and no jewelry might also confound its viewers, who
+          may wonder what all the fuss is about. The painting's simplicity belies Leonardo's talent for realism. The
+          subject's softly modeled face shows his skillful handling of sfumato, an artistic technique that uses subtle
+          gradations of light and shadow, rather than line, to model form. The delicately painted veil, the finely wrought
+          tresses, and the careful rendering of folded fabric reveal Leonardo's tireless patience in recreating his
+          studied observations. Moreover, the sitter's perplexing expression only adds to her realism. Her smile might be
+          engaging or it might be mocking—viewers can't quite figure it out because, like a human, she is a complex
+          figure, embodying contrary characteristics simultaneously.`;
+
+    var salvatorMundiArtDetails = `
+        <img src="./Assets/images/leonardo paintings/Salvator_Mundi-s.jpg" style="height: 160px; display: inline-block;" alt="Salvator mundi">
+        <div style="display: inline-block;"><h4>Salvator Mundi 1500</h4> The head-on portrait of Salvator Mundi (c. 1500; “Savior of the World”) made headlines in 2017 when it sold for a record-breaking $450.3 million at auction. The high price was all the more surprising when considering that Salvator Mundi was in poor condition, it had a questionable history, and its attribution was a subject of debate among scholars and critics. Many pundits remarked on the poor skill used to represent Jesus' face; the stiff posture, which was so unlike the Renaissance master's characteristic twisting poses; and the unconvincing representation of the glass globe, which, if solid, would have reflected a distorted view of its holder, an optical trick that Leonardo would have known about. Christie's, the auction house that managed the sale, dismissed the criticisms, noting that any lack of craft was the result of heavy restoration in previous centuries and pointed to the soft modeling of Jesus' right hand and the finesse of his tight curls, both characteristics that resembled Leonardo's technique. The auction house also asserted that conservators had confirmed that the painting was made of the same materials that Leonardo would have used, notably ultramarine, an expensive high-quality blue pigment often reserved exclusively for virtuosos. The attribution debate continued well after the sale, but the interest in the work and the large sum paid at auction attested to Leonardo's enduring celebrity and to his powerful position in the art history canon five centuries after his death.
+        </div>`;
+
+    var headOfAWomanArtDetails = `<img src="./Assets/images/leonardo paintings/head-of-the-woman-s.jpg"
+          style="height: 160px; display: inline-block;" alt="Head of a Woman">
+        <div style="display: inline-block;">
+          <h4>Head of the Woman 1500- 1510</h4>Head of a Woman, a small brush drawing with pigment, depicts a young
+          woman with her head tilted and her eyes downcast. Her posture recalls the Virgin Mary in Leonardo's The Virgin
+          of the Rocks, suggesting that the drawing may have served as a model. The drawing's nickname, La scapigliata,
+          translates to “disheveled” and refers to the young woman's wayward strands of hair. The loosely sketched
+          tendrils and shoulders contrast with the highly finished face, where Leonardo gently modeled the woman's
+          delicate features, from her heavy eyelids to her tender lips. It reveals Leonardo's fluid means of working,
+          utilizing both expressive drawing to create form and controlled layering to provide detail.
+        </div>`;
+
+    var lastSupperArtDetails = `<img src="./Assets/images/leonardo paintings/Last_Supper.jpg" style="height: 160px; display: inline-block;"
+          alt="The Last Supper">
+        <div style="display: inline-block;">
+          <h4>The Last Supper 1495-1498</h4>
+          One of the most famous paintings in the world, the Last Supper was commissioned by Ludovico Sforza, duke of
+          Milan and Leonardo's patron during his first stay in that city, for the Dominican monastery of Santa Maria
+          delle Grazie. Depicting a sequential narrative, Leonardo illustrates several closely connected moments in the
+          Gospels, including Matthew 26:21-28, in which Jesus declares that one of the Apostles will betray him and then
+          institutes the Eucharist. Leonardo, who was intrigued by the manner in which a man's character can reveal
+          itself in posture, expression, and gesture, depicted each disciple's unique reaction to the declaration. The
+          Apostles' postures rise, fall, extend, and intertwine as they appear to whisper, yell, grieve, and debate
+          around Jesus, who sits serenely in the center. Because of Leonardo's experimental painting technique, in which
+          he used tempera or oil paint on two layers of preparatory ground, the work began to disintegrate soon after he
+          finished it. Viewers, however, can still recognize it as a complex study of varied human emotion, revealed in
+          a deceptively simple composition.
+        </div>`;
+
+    var ladyErmineArtDetails = `<img src="./Assets/images/leonardo paintings/Lady_with_an_Ermine-s.jpg"
+          style="height: 160px; display: inline-block;" alt="Lady with an Ermine">
+        <div style="display: inline-block;">
+          <h4>Lady with an Ermine 1489-1491</h4>
+
+          Many art historians identify the youthful woman in Lady with an Ermine as Cecilia Gallerani, the mistress of
+          Leonardo's patron, Ludovico Sforza, duke of Milan. The ermine was often used as an emblem for the duke. The
+          woman turns her head to the right, her bright eyes seemingly directed toward something outside the frame.
+          Although the painting has been heavily overpainted, notably the dark background, it nonetheless reveals
+          Leonardo's knowledge of anatomy and his ability to represent character in posture and expression. He captures
+          the girl's youth and genial nature in her guileless features, attentive gaze, and tender embrace of the
+          ermine, which sits with its head cocked regally and alert. Her slender hand reveals the complicated bone
+          structure beneath the skin, just as the head of the ermine suggests the skull underneath the finely rendered
+          fur.
+        </div>`;
+
+    var ginevraBenciArtDetails = `<img src="./Assets/images/leonardo paintings/Ginevra_de'_Benci-s.jpg"
+          style="height: 160px; display: inline-block;" alt="Ginevra de Benci">
+        <div style="display: inline-block;">
+          <h4>Ginevra De Benci 1474-1478</h4>
+          Housed in the National Gallery of Art in Washington, D.C., the portrait of Ginevra de' Benci is the only
+          painting by Leonardo publicly displayed in the Western Hemisphere. It is one of Leonardo's earliest works,
+          finished when he was in his early 20s, and shows some of the unconventional methods he would use throughout
+          his career. Inspired by his Northern contemporaries, Leonardo broke with tradition by depicting the solemn
+          young woman in a three-quarter pose rather than the customary profile, and thus he may have been the first
+          Italian artist to paint such a composition. He continued to use the three-quarter view in all of his
+          portraits, including the Mona Lisa, and it quickly became the standard for portraiture, so ubiquitous that
+          viewers take it for granted today. Leonardo may also have used his fingers when the paint was still tacky to
+          model Ginevra's face, as suggested by the fingerprints found in the paint surface.`;
+
+    var saintAnneArtDetails = `<img src="./Assets/images/leonardo paintings/sainte_Anne-s.jpg" style="height: 160px; display: inline-block;"
+          alt="Sainte Anne">
+        <div style="display: inline-block;">
+          <h4>The Virgin and Child with Saint Anne 1503-1519</h4>
+          Some scholars believe that The Virgin and Child with Saint Anne was Leonardo's last painting, and in this work
+          he used many of the conventions that he had established throughout his career to depict three generations of
+          the Holy Family—Saint Anne, her daughter, the Virgin Mary, and the Christ Child. Anne, at the apex of the
+          pyramidal composition, watches Mary, who sits on her lap, as the Virgin tenderly restrains the Christ Child
+          from mounting a lamb. Contrasting with the knowing infant Leonardo depicted in The Virgin of the Rocks, the
+          Christ figure in the The Virgin and Child with Saint Anne appears innocent, demonstrating playful juvenile
+          behavior and showing a trusting expression as he returns his mother's gaze. The interactions between the
+          figures feels intimate and reveals Leonardo's ability to represent convincing human relationships.
+        </div>`;
+
+    var vitruveViatourArtDetails = `<img src="./Assets/images/leonardo paintings/Da_Vinci_Vitruve_Luc_Viatour-s.jpg"
+          style="height: 160px; display: inline-block;" alt="Da Vinci Vitruve Luc Viatour">
+        <div style="display: inline-block;">
+          <h4>Da Vinci Vitruve Luc Viatour 1490</h4>
+          Leonardo's pen-and-ink drawing Vitruvian Man comes from one of the many notebooks that he kept on hand during
+          his mature years. It is accompanied by notes, written in mirror script, on the ideal human proportions that
+          the Roman architect Vitruvius laid out in a book on architecture from the 1st century BCE. The drawing
+          illustrates Vitruvius's theory that the ideal human could fit within a circle and a square, two irreconcilable
+          shapes. Leonardo resolved the concept by drawing a male figure in two superimposed positions—one with his arms
+          outstretched to fit in a square and another with his legs and arms spread in a circle. The work shows not only
+          Leonardo's effort to understand significant texts but also his desire to expand on them. He was not the first
+          to illustrate Vitruvius's concepts, but his drawing later became the most iconic, partly because its
+          combination of mathematics, philosophy, and art seemed a fitting symbol of the Renaissance. The drawing is now
+          housed in the Gallerie dell'Accademia, Venice, where it is not typically on display but kept in a
+          climate-controlled archive.`;
+
+    var selfPortraitArtDetails = `<img src="./Assets/images/leonardo paintings/self-portrait-s.jpg" style="height: 160px; display: inline-block;"
+          alt="Self Portrait">
+        <div style="display: inline-block;">
+          <h4>self portrait 1490/1515-1516</h4>
+
+          Long regarded as a self-portrait, the red chalk drawing of an old man with long wavy hair and a beard has been
+          reproduced to such an extent that it defines how most people think of Leonardo's appearance. Yet some scholars
+          argue that the figure, with its craggy features, furrowed brow, and downcast eyes, appears much older than the
+          age Leonardo ever reached; Leonardo died at age 67. They propose that the drawing may be one of his grotesque
+          drawings, sketches he habitually made in his notebooks of people with eccentric features. Whomever the
+          portrait represents, it is a departure from Leonardo's often captivating subjects, yet he managed to imbue the
+          figure with the nobility and wisdom of a mature age.
+        </div>`;
+
+    var virginRocksArtDetails = `<img src="./Assets/images/leonardo paintings/Virgin_of_the_Rocks-s.jpg" style="height: 160px; display: inline-block;"
+          alt="The Virgin Of The Rocks">
+        <div style="display: inline-block;">
+          <h4>The Virgin of the Rocks 1483-1486</h4>
+
+          Based on stylistic evidence, many scholars consider the painting The Virgin of the Rocks in the Louvre the
+          first of two paintings that Leonardo made of an apocryphal legend in which the Holy Family meets Saint John
+          the Baptist as they flee to Egypt from Herod's Massacre of the Innocents. Leonardo was involved in years of
+          litigation with the Confraternity of the Immaculate Conception, which commissioned the work, and the dispute
+          eventually led Leonardo to paint another version of the subject about 1508, which is now housed in the
+          National Gallery of London.
+        </div>`;
+
+    var leonardoPaintings = [monalisaArtDetails,
+      salvatorMundiArtDetails, headOfAWomanArtDetails,
+      lastSupperArtDetails, ladyErmineArtDetails, ginevraBenciArtDetails,
+      saintAnneArtDetails, vitruveViatourArtDetails, selfPortraitArtDetails,
+      virginRocksArtDetails];
+
+    function salvatorMundiStyle(scale, shadow) {
+      imageSalvatorMundi.style.transform = scale;
+      imageSalvatorMundi.style.filter = shadow;
+    }
+
+    function headOfAWomanStyle(scale, shadow) {
+      imageHeadOfAWoman.style.transform = scale;
+      imageHeadOfAWoman.style.filter = shadow;
+    }
+
+    function monaLisaStyle(scale, shadow) {
+      imageMonaLisa.style.transform = scale;
+      imageMonaLisa.style.filter = shadow;
+    }
+
+    function lastSupperStyle(scale, shadow) {
+      imageLastSupper.style.transform = scale;
+      imageLastSupper.style.filter = shadow;
+    }
+
+    function ladyErmineStyle(scale, shadow) {
+      imageLadyErmine.style.transform = scale;
+      imageLadyErmine.style.filter = shadow;
+    }
+
+    function virginRocksStyle(scale, shadow) {
+      imageVirginRocks.style.transform = scale;
+      imageVirginRocks.style.filter = shadow;
+    }
+
+    function saintAnneStyle(scale, shadow) {
+      imageSaintAnne.style.transform = scale;
+      imageSaintAnne.style.filter = shadow;
+    }
+
+    function selfPortraitStyle(scale, shadow) {
+      imageSelfPortrait.style.filter = shadow;
+      imageSelfPortrait.style.transform = scale;
+    }
+
+    function vitruveViatourStyle(scale, shadow) {
+      imageVitruveViatour.style.transform = scale;
+      imageVitruveViatour.style.filter = shadow;
+    }
+
+    function ginevraBenciStyle(scale, shadow) {
+      imageGinevraBenci.style.transform = scale;
+      imageGinevraBenci.style.filter = shadow;
+    }
+
+
+    var imageSalvatorMundi = document.getElementById('salvatorMundi');
+    function salvatorMundi() {
+      salvatorMundiStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = salvatorMundiArtDetails;
+    }
+
+    var imageHeadOfAWoman = document.getElementById('ladyHead');
+    function HeadOfAWoman() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = headOfAWomanArtDetails;
+    }
+
+    var imageMonaLisa = document.getElementById('monaLisa');
+    function monaLisa() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = monalisaArtDetails;
+    }
+
+    var imageLastSupper = document.getElementById('lastSupper');
+    function lastSupper() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = lastSupperArtDetails;
+    }
+
+    var imageLadyErmine = document.getElementById('ladyErmine');
+    function LadyWithAnErmine() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = ladyErmineArtDetails;
+    }
+
+    var imageVirginRocks = document.getElementById('virginRocks');
+    function VirginOfTheRocks() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      // document.getElementById('paintingDetails').innerHTML = virginRocksArtDetails;
+    }
+
+    var imageSaintAnne = document.getElementById('saintAnne');
+    function SainteAnne() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = saintAnneArtDetails;
+    }
+
+    var imageSelfPortrait = document.getElementById('selfPortrait');
+    function SelfPortrait() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = selfPortraitArtDetails;
+    }
+
+    var imageVitruveViatour = document.getElementById('vitruveViatour');
+    function VitruveLucViatour() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1)", "none");
+      vitruveViatourStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = vitruveViatourArtDetails;
+    }
+
+    var imageGinevraBenci = document.getElementById('ginevraBenci');
+    function GinevreDeBenci() {
+
+      salvatorMundiStyle("scale(1)", "none");
+      ginevraBenciStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      vitruveViatourStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      saintAnneStyle("scale(1)", "none");
+      monaLisaStyle("scale(1)", "none");
+      ladyErmineStyle("scale(1)", "none");
+      lastSupperStyle("scale(1)", "none");
+      headOfAWomanStyle("scale(1)", "none");
+      virginRocksStyle("scale(1)", "none");
+      // document.getElementById('paintingDetails').innerHTML = ginevraBenciArtDetails;
+    }
+
+  </script>
+</body>
+
+</html>

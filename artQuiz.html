@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Quiz</title>
+  <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
+
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <style>
+    .scoreboard-div {
+      background-color: white;
+      width: 250px;
+      height: 115px;
+      position: fixed;
+      right: 10px;
+      border-style: solid;
+      border-width: 3px;
+      border-radius: 10px;
+      border-color: rgb(179, 122, 233);
+    }
+
+    .scoreValue-div {
+      background-color: rgb(179, 122, 233);
+      height: 70px;
+      width: 70px;
+      position: absolute;
+      bottom: -35px;
+      left: 85px;
+      text-align: center;
+      color: white;
+      font-size: 45px;
+      border-radius: 33px;
+    }
+
+    .result-div {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(179, 122, 233);
+    }
+
+    .button-div {
+      background-color: rgb(179, 122, 233);
+      border: none;
+      color: white;
+    }
+
+    .button-div:hover {
+      background-color: rgb(154, 102, 202);
+      color: white;
+    }
+    
+  </style>
+
+</head>
+<body>
+  <h2 class="mt-2 text-center">Art Quiz</h2>
+
+  <div class="scoreboard-div">
+    <!-- <div id="coundown">hi</div> -->
+    <div class="result-div" id="isCrtAns"></div>
+    <div class="scoreValue-div" id="scoreValue"></div>
+  </div>
+
+  <div class="container d-flex flex-column align-items-center">
+    <div class="card p-2 text-left m-2 w-50">
+      1. The degree of lightness or darkness in a work of art is ______.
+      <div class="d-flex">
+        <button id="degOfLightA" class="btn m-1 d-block button-div" onclick="degreeOfLight(false)">A. Color</button>
+        <button id="degOfLightB" class="btn m-1 d-block button-div" onclick="degreeOfLight(false)">B. Shape</button>
+        <button id="degOfLightC" class="btn m-1 d-block button-div" onclick="degreeOfLight(true)">C. Value</button>
+        <button id="degOfLightD" class="btn m-1 d-block button-div" onclick="degreeOfLight(false)">D. form</button>
+      </div>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50">
+      2. What are the principles of design?
+      <button id="priOfArtA" class="btn d-block m-1 button-div" onclick="princiOfArt(false)">A. Several colors together to create a pattern.</button>
+      <button id="priOfArtB" class="btn d-block m-1 button-div" onclick="princiOfArt(false)">B. Repeating Lines, Shapes, or other elements that creates a pattern.</button>
+      <button id="priOfArtC" class="btn d-block m-1 button-div" onclick="princiOfArt(false)">C. Similar elements of art. To create an uncomplicated look.</button>
+      <button id="priOfArtD" class="btn d-block m-1 button-div" onclick="princiOfArt(true)">D. The rules; help arrange the ingredients or elements.</button>
+      <button id="priOfArtE" class="btn d-block m-1 button-div" onclick="princiOfArt(false)">E. None of the above.</button>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50 d-flex flex-row">
+      <div class="me-4">
+          <div>
+            3. This painting Titled "portrait of pope innocent X" was printed by...
+          </div>
+          <button id="porOfPopeA" class="btn m-1 d-block button-div" onclick="portraitOfPope(false)">A. Pablo Picasso.</button>
+          <button id="porOfPopeB" class="btn m-1 d-block button-div" onclick="portraitOfPope(true)">B. Diego Velazuez.</button>
+          <button id="porOfPopeC" class="btn m-1 d-block button-div" onclick="portraitOfPope(false)">C. Rembrandt.</button>
+          <button id="porOfPopeD" class="btn m-1 d-block button-div" onclick="portraitOfPope(false)">D. El Greco.</button>
+      </div>
+      <div class="d-inline-block"><img style="width: 200px;" src="./Assets/images/Velazquez Portrait of Pope Innocent X 1650(1).jpg" alt="popeInnocentX"></div>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50 d-flex flex-row">
+      <div class="me-4">
+        <div>
+          4. True or False: This fresco is painted by Michelangelo.
+        </div>
+        <button id="fresMichA" class="btn m-1 d-block button-div" onclick="frescoMichel(true)">A. True.</button>
+        <button id="fresMichB" class="btn m-1 d-block button-div" onclick="frescoMichel(false)">B. False.</button>
+      </div>
+      <div class="d-inline-block"><img style="width: 200px;" src="./Assets/images/prophet Isaiah(1).jpg" alt="prophetIsaiah"></div>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50 d-flex flex-row">
+      <div class="me-4">
+        <div>
+          5. What is the title of the sculpture and who did it?
+        </div>
+        <button id="titOfSculpA" class="btn m-1 d-block button-div" onclick="titleOfSculpture(false)">A. The Cry by Isamu Noguchi.</button>
+        <button id="titOfSculpB" class="btn m-1 d-block button-div" onclick="titleOfSculpture(false)">B. Stealth by Mark Toby.</button>
+        <button id="titOfSculpC" class="btn m-1 d-block button-div" onclick="titleOfSculpture(false)">C. Goddess Trapped in Nature by Alberto Giacometti.</button>
+        <button id="titOfSculpD" class="btn m-1 d-block button-div" onclick="titleOfSculpture(true)">D. Bird in Space by Constantin Brancusi.</button>
+      </div>
+      <div class="d-inline-block"><img style="width: 200px;" src="./Assets/images/Constantin Brancusi 1912.jpg" alt="prophetIsaiah"></div>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50 d-flex flex-row">
+      <div class="me-4">
+        <div>
+          6. Name the term to describe a figure that stands with one leg holding its full weight and the other leg relaxed.
+        </div>
+        <button id="oneLegA" class="btn m-1 d-block button-div" onclick="oneLegHolding(false)">A. Model.</button>
+        <button id="oneLegB" class="btn m-1 d-block button-div" onclick="oneLegHolding(false)">B. Muse.</button>
+        <button id="oneLegC" class="btn m-1 d-block button-div" onclick="oneLegHolding(true)">C. Contrapposto.</button>
+        <button id="oneLegD" class="btn m-1 d-block button-div" onclick="oneLegHolding(false)">D. Obelisk.</button>
+      </div>
+      <div class="d-inline-block"><img style="width: 170px;" src="./Assets/images/constrapposto.jpeg" alt="prophetIsaiah"></div>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50 d-flex flex-row">
+      <div class="me-4">
+        <div>
+          7. what does the venus of brassempowy represent?
+        </div>
+        <button id="venusOfBrassA" class="btn m-1 d-block button-div" onclick="venusOfBrassempowy(false)">A. a human figure</button>
+        <button id="venusOfBrassB" class="btn m-1 d-block button-div" onclick="venusOfBrassempowy(true)">B. a woman's head</button>
+        <button id="venusOfBrassC" class="btn m-1 d-block button-div" onclick="venusOfBrassempowy(false)">C. an angel</button>
+        <button id="venusOfBrassD" class="btn m-1 d-block button-div" onclick="venusOfBrassempowy(false)">D. an old man</button>
+      </div>
+      <div class="d-inline-block"><img style="width: 170px;" src="./Assets/images/797px-Venus_de_Brassempouy.jpg" alt="prophetIsaiah"></div>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50 d-flex flex-row">
+      <div class="me-4">
+        <div>
+          8. What are the japanese hanging scroll paintings called?
+        </div>
+        <button id="japHangA" class="btn m-1 d-block button-div" onclick="japaneseHanging(true)">A. Kakemono</button>
+        <button id="japHangB" class="btn m-1 d-block button-div" onclick="japaneseHanging(false)">B. Shigajiku</button>
+        <button id="japHangC" class="btn m-1 d-block button-div" onclick="japaneseHanging(false)">C. Yamato-e</button>
+        <button id="japHangD" class="btn m-1 d-block button-div" onclick="japaneseHanging(false)">D. Emakimono</button>
+      </div>
+      <div class="d-inline-block"><img style="width: 170px;" src="./Assets/images/810px-Hanging_scroll_and_Ikebana_1.jpg" alt="prophetIsaiah"></div>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50 d-flex flex-row">
+      <div class="me-4">
+        <div>
+          9. In which countryare the gongbi and baimiao techniques of painting found?
+        </div>
+        <button id="gongBaiA" class="btn m-1 d-block button-div" onclick="gongbiBaimiao(false)">A. Japan</button>
+        <button id="gongBaiB" class="btn m-1 d-block button-div" onclick="gongbiBaimiao(true)">B. China</button>
+        <button id="gongBaiC" class="btn m-1 d-block button-div" onclick="gongbiBaimiao(false)">C. Russia</button>
+        <button id="gongBaiD" class="btn m-1 d-block button-div" onclick="gongbiBaimiao(false)">D. France</button>
+      </div>
+      <div class="d-inline-block"><img style="width: 170px;" src="./Assets/images/red-cottonrose-gongbi.jpg" alt="prophetIsaiah"></div>
+    </div>
+
+    <div class="card p-2 text-left m-2 w-50 d-flex flex-row">
+      <div class="me-4">
+        <div>
+          10. During which dynasty was the mosul school of painting developed?
+        </div>
+        <button id="mosulSchoolA" class="btn m-1 d-block button-div" onclick="mosulSchoolOfPainting(false)">A. Bahri Dynasty</button>
+        <button id="mosulSchoolB" class="btn m-1 d-block button-div" onclick="mosulSchoolOfPainting(false)">B. Hamdanid Dynasty</button>
+        <button id="mosulSchoolC" class="btn m-1 d-block button-div" onclick="mosulSchoolOfPainting(false)">C. Saffarid Dynasty</button>
+        <button id="mosulSchoolD" class="btn m-1 d-block button-div" onclick="mosulSchoolOfPainting(true)">D. Zangid Dynasty</button>
+      </div>
+      <div class="d-inline-block"><img style="width: 170px;" src="./Assets/images/Mosul_2.jpg" alt="prophetIsaiah"></div>
+    </div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function degreeOfLightValues() {
+        document.getElementById('degOfLightA').style.pointerEvents = "none";
+        document.getElementById('degOfLightB').style.pointerEvents = "none";
+        document.getElementById('degOfLightC').style.pointerEvents = "none";
+        document.getElementById('degOfLightD').style.pointerEvents = "none";
+        document.getElementById('degOfLightC').style.backgroundColor = "green";
+        document.getElementById('degOfLightA').style.backgroundColor = "red";
+        document.getElementById('degOfLightB').style.backgroundColor = "red";
+        document.getElementById('degOfLightD').style.backgroundColor = "red";
+    }
+
+    function princiOfArtValues() {
+      document.getElementById('priOfArtA').style.pointerEvents = "none";
+        document.getElementById('priOfArtB').style.pointerEvents = "none";
+        document.getElementById('priOfArtC').style.pointerEvents = "none";
+        document.getElementById('priOfArtD').style.pointerEvents = "none";
+        document.getElementById('priOfArtE').style.pointerEvents = "none";
+        document.getElementById('priOfArtA').style.backgroundColor = "red";
+        document.getElementById('priOfArtB').style.backgroundColor = "red";
+        document.getElementById('priOfArtC').style.backgroundColor = "red";
+        document.getElementById('priOfArtD').style.backgroundColor = "green";
+        document.getElementById('priOfArtE').style.backgroundColor = "red";
+    }
+
+    function portraitOfPopeValues() {      
+      document.getElementById('porOfPopeA').style.pointerEvents = "none";
+        document.getElementById('porOfPopeB').style.pointerEvents = "none";
+        document.getElementById('porOfPopeC').style.pointerEvents = "none";
+        document.getElementById('porOfPopeD').style.pointerEvents = "none";
+        document.getElementById('porOfPopeA').style.backgroundColor = "red";
+        document.getElementById('porOfPopeB').style.backgroundColor = "green";
+        document.getElementById('porOfPopeC').style.backgroundColor = "red";
+        document.getElementById('porOfPopeD').style.backgroundColor = "red";
+    }
+
+    function frescoMichelValues() {
+        document.getElementById('fresMichA').style.pointerEvents = "none";
+        document.getElementById('fresMichB').style.pointerEvents = "none";
+        document.getElementById('fresMichA').style.backgroundColor = "green";
+        document.getElementById('fresMichB').style.backgroundColor = "red";
+    }
+
+    function titleOfSculptureValues() {
+        document.getElementById('titOfSculpA').style.pointerEvents = "none";
+        document.getElementById('titOfSculpB').style.pointerEvents = "none";
+        document.getElementById('titOfSculpC').style.pointerEvents = "none";
+        document.getElementById('titOfSculpD').style.pointerEvents = "none";
+        document.getElementById('titOfSculpA').style.backgroundColor = "red";
+        document.getElementById('titOfSculpB').style.backgroundColor = "red";
+        document.getElementById('titOfSculpC').style.backgroundColor = "red";
+        document.getElementById('titOfSculpD').style.backgroundColor = "green";
+    }
+
+    function oneLegHoldingValues() {
+        document.getElementById('oneLegA').style.pointerEvents = "none";
+        document.getElementById('oneLegB').style.pointerEvents = "none";
+        document.getElementById('oneLegC').style.pointerEvents = "none";
+        document.getElementById('oneLegD').style.pointerEvents = "none";
+        document.getElementById('oneLegA').style.backgroundColor = "red";
+        document.getElementById('oneLegB').style.backgroundColor = "red";
+        document.getElementById('oneLegC').style.backgroundColor = "green";
+        document.getElementById('oneLegD').style.backgroundColor = "red";
+    }
+
+    function venusOfBrassempowyValues() {
+        document.getElementById('venusOfBrassA').style.backgroundColor = "red";
+        document.getElementById('venusOfBrassB').style.backgroundColor = "green";
+        document.getElementById('venusOfBrassC').style.backgroundColor = "red";
+        document.getElementById('venusOfBrassD').style.backgroundColor = "red";
+        document.getElementById('venusOfBrassA').style.pointerEvents = "none";
+        document.getElementById('venusOfBrassB').style.pointerEvents = "none";
+        document.getElementById('venusOfBrassC').style.pointerEvents = "none";
+        document.getElementById('venusOfBrassD').style.pointerEvents = "none";
+    }
+    function japaneseHangingValues() {
+        document.getElementById('japHangA').style.backgroundColor = "green";
+        document.getElementById('japHangB').style.backgroundColor = "red";
+        document.getElementById('japHangC').style.backgroundColor = "red";
+        document.getElementById('japHangD').style.backgroundColor = "red";
+        document.getElementById('japHangA').style.pointerEvents = "none";
+        document.getElementById('japHangB').style.pointerEvents = "none";
+        document.getElementById('japHangC').style.pointerEvents = "none";
+        document.getElementById('japHangD').style.pointerEvents = "none";
+    }
+
+    function gongbiBaimiaoValues() {
+        document.getElementById('gongBaiA').style.backgroundColor = "red";
+        document.getElementById('gongBaiB').style.backgroundColor = "green";
+        document.getElementById('gongBaiC').style.backgroundColor = "red";
+        document.getElementById('gongBaiD').style.backgroundColor = "red";
+        document.getElementById('gongBaiA').style.pointerEvents = "none";
+        document.getElementById('gongBaiB').style.pointerEvents = "none";
+        document.getElementById('gongBaiC').style.pointerEvents = "none";
+        document.getElementById('gongBaiD').style.pointerEvents = "none";
+    }
+
+    function mosulSchoolOfPaintingValues() {
+        document.getElementById('mosulSchoolA').style.backgroundColor = "red";
+        document.getElementById('mosulSchoolB').style.backgroundColor = "red";
+        document.getElementById('mosulSchoolC').style.backgroundColor = "red";
+        document.getElementById('mosulSchoolD').style.backgroundColor = "green";
+        document.getElementById('mosulSchoolA').style.pointerEvents = "none";
+        document.getElementById('mosulSchoolB').style.pointerEvents = "none";
+        document.getElementById('mosulSchoolC').style.pointerEvents = "none";
+        document.getElementById('mosulSchoolD').style.pointerEvents = "none";
+    }
+
+    function degreeOfLight(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        degreeOfLightValues();
+        score += 1;
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        degreeOfLightValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+    function princiOfArt(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        princiOfArtValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        princiOfArtValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+    function portraitOfPope(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        portraitOfPopeValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        portraitOfPopeValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+    function frescoMichel(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        frescoMichelValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        frescoMichelValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+    function titleOfSculpture(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        titleOfSculptureValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        titleOfSculptureValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+    function oneLegHolding(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        oneLegHoldingValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        oneLegHoldingValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+      
+    }
+
+    function venusOfBrassempowy(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        venusOfBrassempowyValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        venusOfBrassempowyValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+    function japaneseHanging(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        japaneseHangingValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        japaneseHangingValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+    function gongbiBaimiao(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        gongbiBaimiaoValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        gongbiBaimiaoValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+    function mosulSchoolOfPainting(ans) {
+      if (ans === true) {
+        document.getElementById('isCrtAns').innerHTML = "Correct answer";
+        score += 1;
+        mosulSchoolOfPaintingValues();
+      } else if (ans === false) {
+        document.getElementById('isCrtAns').innerHTML = "Wrong Answer";
+        mosulSchoolOfPaintingValues();
+      }
+      document.getElementById('scoreValue').innerHTML = score;
+    }
+
+  //   const countdownTime = 20;
+
+  //   function startCountdown() {
+  //     let timeleft = countdownTime;
+  //     const countdownInterval = setInterval(function() {
+  //       if (timeleft <= 0) {
+  //         clearInterval(countdownInterval);
+  //         alert('countdown finished');
+  //       } else {
+  //         countdownElement.innerHTML = 'time left: ' + timeleft + "seconds";
+  //         timeleft--;
+  //       }
+  //     }, 1000);
+  //   }
+  //  startCountdown();
+  </script>
+</body>
+</html>

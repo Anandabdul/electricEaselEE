@@ -1,0 +1,48 @@
+.drip1 {
+  width: 750px;
+  position: absolute;
+  width: 750px;
+  top: -390px;
+  left: -175px;
+  z-index: -1;
+  animation-name: dripOne-animation;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.drip2 {
+  position: absolute;
+  width: 750px;
+  bottom: -390px;
+  right: -175px;
+  z-index: -1;
+  animation-name: dripOne-animation;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.drip3 {
+  position: absolute;
+  width: 980px;
+  bottom: -520px;
+  right: -295px;
+  z-index: -1;
+  opacity: 0.6;
+  animation-name: dripOne-animation;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+@keyframes dripOne-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Example</title>
+</head>
+<body>
+    <div>
+        <h2>Date Example</h2>
+        <div id="liveClock"></div>
+        <p id="dateMsg"></p>
+        
+        <script>
+            liveClock();
+            function liveClock(){
+                let liveClock = document.getElementById('liveClock');
+
+                setInterval(()=>{
+                    liveClock.innerHTML = new Date();
+                },1000);
+
+            }
+            function dateEx(){
+                let dateMsg = document.getElementById('dateMsg');
+                let result = "";
+                let dt = new Date();
+                
+                result += "Date : " + dt + "<br>";
+                result += "Date.Now : " + Date.now() + "<br>";
+                result += "Year : " + dt.getFullYear() + "<br>";
+                result += "Month : " + dt.getMonth() + "<br>";
+                result += "Date : " + dt.getDate() + "<br>";
+                result += "Day : " + dt.getDay() + "<br>";
+                result += "Hours : " + dt.getHours() + "<br>";
+                result += "Mins : " + dt.getMinutes() + "<br>";
+                result += "Milli Sec : " + dt.getMilliseconds() + "<br>";
+                result += "Time : " + dt.getTime() + "<br>";
+                result += "Date : " + dt + "<br>";
+                dt.setFullYear(2025);
+                result += "Set Year : " + dt + "<br>";
+                dt.setMonth(11);
+                result += "Set Month : " + dt + "<br>";
+                dt.setDate(21);
+                result += "Set Date : " + dt + "<br>";
+                result += "Get Day : " + dt.getDay() + "<br>";
+                dt.setHours(8);
+                result += "Set Hours : " + dt + "<br>";
+                dt.setMinutes(45);
+                result += "Set Mins : " + dt + "<br>";
+
+                dt = new Date("Apr 10 2026");
+                result += "Apr 10 2026 : " + dt + "<br>";
+                dt = new Date("20 Nov 2027");
+                result += "20 Nov 2027 : " + dt + "<br>";
+
+                dt = new Date();
+                let milli = (1000 * 60 * 60 * 24) * 7;
+                let finalMilli = milli + dt.getTime();
+                dt.setTime(finalMilli);
+                result += "7 Days : " + dt + "<br>";
+                dateMsg.innerHTML = result;
+            }
+            dateEx();
+        </script>
+    </div>
+</body>
+</html>
