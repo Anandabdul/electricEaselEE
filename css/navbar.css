@@ -1,7 +1,7 @@
-body {
+/* body {
   margin: 0px;
   padding: 0px;
-}
+} */
 
 .profile-pic {
   height: 35px;
@@ -24,7 +24,8 @@ body {
   align-items: center;
   position: fixed;
   background-color: white;
-  z-index: 20px;
+  top: 0px;
+  z-index: 20;
 }
 
 .header-left {
