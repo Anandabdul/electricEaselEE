@@ -29,6 +29,7 @@ function signup() {
     localStorage.setItem("passwordDB", JSON.stringify(passwordDB));
 
     alert('You have Created a Account sucessfully');
+    window.location.href = "./login.html";
 
   } else {
     alert('Enter the Correct password');

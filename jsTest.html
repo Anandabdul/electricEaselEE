@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    function reverse() {
+      let str = "HELLO HOW IS YOUR DAY";
+      let strLen = str.length-1;
+      // console.log(strLen);
+      let newStr = " ";
+      let mtySpace = " ";
+      let result = '';
+
+      for (let index = 0; index <= strLen; index++) {
+        if (str[index] == " ") {
+          let arr = str.split(" ");
+          result = arr.join('');
+        }
+      }
+      
+      let resLen = result.length-1  //16
+      
+      for(let index = 0; index <= resLen; index++) {
+        newStr += result[resLen - index];
+      }
+
+      console.log(newStr);
+      let finalResult = '';
+      
+      for (let index = 0; index <= resLen; index++) {
+        if (str[index] != " ") {
+          finalResult += newStr[index+1];
+        } else if (str[index] == ' ') {
+          finalResult += ' ' + newStr[index+1];
+        }
+        // if (str[index] == )
+      }
+      // console.log(str[strLen-1]);
+      // console.log(str);
+      console.log(finalResult);
+      // console.log(mtySpace);
+
+
+
+
+    }
+
+    reverse();
+  </script>
+</body>
+</html>

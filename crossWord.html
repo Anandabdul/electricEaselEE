@@ -20,6 +20,8 @@
       height: 30px;
       padding: 0px;
       border: 1px solid;
+      text-transform: uppercase;
+      text-align: center;
     }
 
     .empty-style {
@@ -29,7 +31,7 @@
   </style>
 
 </head>
-<body style="margin-top: 45px;">
+<body style="margin-top: 65px;">
 
   <div class="header">
     <div class="header-left">
@@ -57,36 +59,37 @@
         <img class="profile-pic" src="./Assets/images/unnamed.jpg">
     </div>
 </div>
+
   <div class="container d-flex flex-row">
 
     <div class="card outer-div m-2 py-2 px-4 d-inline-block">
       <div id="col1" class="row">
-        <input value="A" id="1-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('1-1', '2-1')" value="" id="1-1">
         <input class="pe-none empty-style" value="" id="1-2">
         <input class="pe-none empty-style" value="" id="1-3">
         <input class="pe-none empty-style" value="" id="1-4">
         <input class="pe-none empty-style" value="" id="1-5">
         <input class="pe-none empty-style" value="" id="1-6">
         <input class="pe-none empty-style" value="" id="1-7">
-        <input value="E" id="1-8">
-        <input value="A" id="1-9">
-        <input value="S" id="1-10">
-        <input value="E" id="1-11">
-        <input value="L" id="1-12">
+        <input maxlength="1" onkeyup=" gameAction(); tab('1-8', '1-9')" value="" id="1-8">
+        <input maxlength="1" onkeyup=" gameAction(); tab('1-9', '1-10')" value="" id="1-9">
+        <input maxlength="1" onkeyup=" gameAction(); tab('1-10', '1-11')" value="" id="1-10">
+        <input maxlength="1" onkeyup=" gameAction(); tab('1-11', '1-12')" value="" id="1-11">
+        <input maxlength="1" onkeyup=" gameAction(); tab('1-12', '2-8')" value="" id="1-12">
         <input class="pe-none empty-style" value="" id="1-13">
         <input class="pe-none empty-style" value="" id="1-14">
         <input class="pe-none empty-style" value="" id="1-15">
       </div>
   
       <div id="col1" class="row">
-        <input value="B" id="2-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('2-1', '3-1')" value="" id="2-1">
         <input class="pe-none empty-style" value="" id="2-2">
         <input class="pe-none empty-style" value="" id="2-3">
         <input class="pe-none empty-style" value="" id="2-4">
-        <input value="P" id="2-5">
+        <input maxlength="1" onkeyup="gameAction(); tab('2-5', '3-5')" value="" id="2-5">
         <input class="pe-none empty-style" value="" id="2-6">
         <input class="pe-none empty-style" value="" id="2-7">
-        <input value="T" id="2-8">
+        <input maxlength="1" onkeyup="gameAction(); tab('2-8', '3-8')" value="" id="2-8">
         <input class="pe-none empty-style" value="" id="2-9">
         <input class="pe-none empty-style" value="" id="2-10">
         <input class="pe-none empty-style" value="" id="2-11">
@@ -97,14 +100,14 @@
       </div>
   
       <div id="col1" class="row">
-        <input value="S" id="3-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('3-1', '4-1')" value="" id="3-1">
         <input class="pe-none empty-style" value="" id="3-2">
         <input class="pe-none empty-style" value="" id="3-3">
         <input class="pe-none empty-style" value="" id="3-4">
-        <input value="O" id="3-5">
+        <input maxlength="1" onkeyup="gameAction(); tab('3-5', '4-5')" value="" id="3-5">
         <input class="pe-none empty-style" value="" id="3-6">
         <input class="pe-none empty-style" value="" id="3-7">
-        <input value="C" id="3-8">
+        <input maxlength="1" onkeyup="gameAction(); tab('3-8', '4-8')" value="" id="3-8">
         <input class="pe-none empty-style" value="" id="3-9">
         <input class="pe-none empty-style" value="" id="3-10">
         <input class="pe-none empty-style" value="" id="3-11">
@@ -115,128 +118,128 @@
       </div>
   
       <div id="col1" class="row">
-        <input value="T" id="4-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('4-1', '5-1')" value="" id="4-1">
         <input class="pe-none empty-style" value="" id="4-2">
         <input class="pe-none empty-style" value="" id="4-3">
-        <input value="B" id="4-4">
-        <input value="R" id="4-5">
-        <input value="U" id="4-6">
-        <input value="S" id="4-7">
-        <input value="H" id="4-8">
+        <input maxlength="1" onkeyup="gameAction(); tab('4-4', '4-5')" value="" id="4-4">
+        <input maxlength="1" onkeyup="gameAction(); tab('4-5', '4-6')" value="" id="4-5">
+        <input maxlength="1" onkeyup="gameAction(); tab('4-6', '4-7')" value="" id="4-6">
+        <input maxlength="1" onkeyup="gameAction(); tab('4-7', '4-8')" value="" id="4-7">
+        <input maxlength="1" onkeyup="gameAction(); tab('4-8', '5-8')" value="" id="4-8">
         <input class="pe-none empty-style" value="" id="4-9">
         <input class="pe-none empty-style" value="" id="4-10">
         <input class="pe-none empty-style" value="" id="4-11">
         <input class="pe-none empty-style" value="" id="4-12">
         <input class="pe-none empty-style" value="" id="4-13">
-        <input value="P" id="4-14">
+        <input maxlength="1" onkeyup="gameAction(); tab('4-14', '5-14')" value="" id="4-14">
         <input class="pe-none empty-style" value="" id="4-15">
       </div>
   
       <div id="col1" class="row">
-        <input value="R"id="5-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-1', '6-1')" value=""id="5-1">
         <input class="pe-none empty-style" value="" id="5-2">
         <input class="pe-none empty-style" value="" id="5-3">
         <input class="pe-none empty-style" value="" id="5-4">
-        <input value="T" id="5-5">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-5', '6-5')" value="" id="5-5">
         <input class="pe-none empty-style" value="" id="5-6">
         <input class="pe-none empty-style" value="" id="5-7">
-        <input value="I" id="5-8">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-8', '6-8')" value="" id="5-8">
         <input class="pe-none empty-style" value="" id="5-9">
-        <input value="C" id="5-10">
-        <input value="I" id="5-11">
-        <input value="A" id="5-12">
-        <input value="S" id="5-13">
-        <input value="O" id="5-14">
-        <input value="M" id="5-15">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-10', '6-10')" value="" id="5-10">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-11', '5-10')" value="" id="5-11">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-12', '5-11')" value="" id="5-12">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-13', '5-12')" value="" id="5-13">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-14', '6-14')" value="" id="5-14">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-15', '5-14')" value="" id="5-15">
       </div>
   
       <div id="col1" class="row">
-        <input value="A" id="6-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('6-1', '7-1')" value="" id="6-1">
         <input class="pe-none empty-style" value="" id="6-2">
         <input class="pe-none empty-style" value="" id="6-3">
         <input class="pe-none empty-style" value="" id="6-4">
-        <input value="R" id="6-5">
+        <input maxlength="1" onkeyup="gameAction(); tab('6-5', '7-5')" value="" id="6-5">
         <input class="pe-none empty-style" value="" id="6-6">
         <input class="pe-none empty-style" value="" id="6-7">
-        <input value="N" id="6-8">
+        <input maxlength="1" onkeyup="gameAction(); tab('6-8', '7-8')" value="" id="6-8">
         <input class="pe-none empty-style" value="" id="6-9">
-        <input value="L" id="6-10">
+        <input maxlength="1" onkeyup="gameAction(); tab('6-10', '7-10')" value="" id="6-10">
         <input class="pe-none empty-style" value="" id="6-11">
         <input class="pe-none empty-style" value="" id="6-12">
         <input class="pe-none empty-style" value="" id="6-13">
-        <input value="T" id="6-14">
+        <input maxlength="1" onkeyup="gameAction(); tab('6-14', '7-14')" value="" id="6-14">
         <input class="pe-none empty-style" value="" id="6-15">
       </div>
   
       <div id="col1" class="row">
-        <input value="C" id="7-1">
-        <input value="A" id="7-2">
-        <input value="N" id="7-3">
-        <input value="V" id="7-4">
-        <input value="A" id="7-5">
-        <input value="S" id="7-6">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-1', '8-1')" value="" id="7-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-2', '7-3')" value="" id="7-2">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-3', '7-4')" value="" id="7-3">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-4', '7-5')" value="" id="7-4">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-5', '7-6')" value="" id="7-5">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-6', '7-1')" value="" id="7-6">
         <input class="pe-none empty-style" value="" id="7-7">
-        <input value="G" id="7-8">
-        <input value="R" id="7-9">
-        <input value="A" id="7-10">
-        <input value="F" id="7-11">
-        <input value="F" id="7-12">
-        <input value="I" id="7-13">
-        <input value="T" id="7-14">
-        <input value="I" id="7-15">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-8', '7-9')" value="" id="7-8">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-9', '7-10')" value="" id="7-9">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-10', '7-11')" value="" id="7-10">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-11', '7-12')" value="" id="7-11">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-12', '7-13')" value="" id="7-12">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-13', '7-14')" value="" id="7-13">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-14', '7-15')" value="" id="7-14">
+        <input maxlength="1" onkeyup="gameAction(); tab('7-15', '5-10')" value="" id="7-15">
       </div>
   
       <div id="col1" class="row">
-        <input value="T" id="8-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('8-1', '1-1')" value="" id="8-1">
         <input class="pe-none empty-style" value="" id="8-2">
         <input class="pe-none empty-style" value="" id="8-3">
         <input class="pe-none empty-style" value="" id="8-4">
-        <input value="I" id="8-5">
+        <input maxlength="1" onkeyup="gameAction(); tab('8-5', '9-5')" value="" id="8-5">
         <input class="pe-none empty-style" value="" id="8-6">
         <input class="pe-none empty-style" value="" id="8-7">
         <input class="pe-none empty-style" value="" id="8-8">
         <input class="pe-none empty-style" value="" id="8-9">
-        <input value="Y" id="8-10">
+        <input maxlength="1" onkeyup="gameAction(); tab('8-10', '4-14')" value="" id="8-10">
         <input class="pe-none empty-style" value="" id="8-11">
         <input class="pe-none empty-style" value="" id="8-12">
         <input class="pe-none empty-style" value="" id="8-13">
-        <input value="E" id="8-14">
+        <input maxlength="1" onkeyup="gameAction(); tab('8-14', '9-14')" value="" id="8-14">
         <input class="pe-none empty-style" value="" id="8-15">
       </div>
   
       <div id="col1" class="row">
-        <input class="pe-none empty-style" value="" id="9-1">
-        <input value="P" id="9-2">
-        <input value="A" id="9-3">
-        <input value="S" id="9-4">
-        <input value="T" id="9-5">
-        <input value="E" id="9-6">
-        <input value="L" id="9-7">
+        <input maxlength="1" class="pe-none empty-style" value="" id="9-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-2', '9-3')" value="" id="9-2">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-3', '9-4')" value="" id="9-3">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-4', '9-5')" value="" id="9-4">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-5', '9-6')" value="" id="9-5">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-6', '9-7')" value="" id="9-6">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-7', '10-7')" value="" id="9-7">
         <input class="pe-none empty-style" value="" id="9-8">
         <input class="pe-none empty-style" value="" id="9-9">
         <input class="pe-none empty-style" value="" id="9-10">
         <input class="pe-none empty-style" value="" id="9-11">
         <input class="pe-none empty-style" value="" id="9-12">
-        <input value="A" id="9-13">
-        <input value="R" id="9-14">
-        <input value="T" id="9-15">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-13', '9-14')" value="" id="9-13">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-14', '9-15')" value="" id="9-14">
+        <input maxlength="1" onkeyup="gameAction(); tab('9-15', '9-13')" value="" id="9-15">
       </div>
   
       <div id="col1" class="row">
         <input class="pe-none empty-style" value="" id="10-1">
         <input class="pe-none empty-style" value="" id="10-2">
         <input class="pe-none empty-style" value="" id="10-3">
-        <input value="K" id="10-4">
+        <input maxlength="1" onkeyup="gameAction(); tab('10-4', '11-4')" value="" id="10-4">
         <input class="pe-none empty-style" value="" id="10-5">
         <input class="pe-none empty-style" value="" id="10-6">
-        <input value="I" id="10-7">
+        <input maxlength="1" onkeyup="gameAction(); tab('10-7', '11-7')" value="" id="10-7">
         <input class="pe-none empty-style" value="" id="10-8">
         <input class="pe-none empty-style" value="" id="10-9">
         <input class="pe-none empty-style" value="" id="10-10">
         <input class="pe-none empty-style" value="" id="10-11">
         <input class="pe-none empty-style" value="" id="10-12">
         <input class="pe-none empty-style" value="" id="10-13">
-        <input value="Y" id="10-14">
+        <input maxlength="1" onkeyup="gameAction(); tab('10-14', '5-15')" value="" id="10-14">
         <input class="pe-none empty-style" value="" id="10-15">
       </div>
   
@@ -244,10 +247,10 @@
         <input class="pe-none empty-style" value="" id="11-1">
         <input class="pe-none empty-style" value="" id="11-2">
         <input class="pe-none empty-style" value="" id="11-3">
-        <input value="E" id="11-4">
+        <input maxlength="1" onkeyup="gameAction(); tab('11-4', '12-4')" value="" id="11-4">
         <input class="pe-none empty-style" value="" id="11-5">
         <input class="pe-none empty-style" value="" id="11-6">
-        <input value="N" id="11-7">
+        <input maxlength="1" onkeyup="gameAction(); tab('11-7', '12-7')" value="" id="11-7">
         <input class="pe-none empty-style" value="" id="11-8">
         <input class="pe-none empty-style" value="" id="11-9">
         <input class="pe-none empty-style" value="" id="11-10">
@@ -262,10 +265,10 @@
         <input class="pe-none empty-style" value="" id="12-1">
         <input class="pe-none empty-style" value="" id="12-2">
         <input class="pe-none empty-style" value="" id="12-3">
-        <input value="T" id="12-4">
+        <input maxlength="1" onkeyup="gameAction(); tab('12-4', '13-4')" value="" id="12-4">
         <input class="pe-none empty-style" value="" id="12-5">
         <input class="pe-none empty-style" value="" id="12-6">
-        <input value="E" id="12-7">
+        <input maxlength="1" onkeyup="gameAction(); tab('12-7', '13-7')" value="" id="12-7">
         <input class="pe-none empty-style" value="" id="12-8">
         <input class="pe-none empty-style" value="" id="12-9">
         <input class="pe-none empty-style" value="" id="12-10">
@@ -280,25 +283,25 @@
         <input class="pe-none empty-style" value="" id="13-1">
         <input class="pe-none empty-style" value="" id="13-2">
         <input class="pe-none empty-style" value="" id="13-3">
-        <input value="C" id="13-4">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-4', '14-4')" value="" id="13-4">
         <input class="pe-none empty-style" value="" id="13-5">
         <input class="pe-none empty-style" value="" id="13-6">
-        <input value="S" id="13-7">
-        <input value="C" id="13-8">
-        <input value="U" id="13-9">
-        <input value="L" id="13-10">
-        <input value="P" id="13-11">
-        <input value="T" id="13-12">
-        <input value="U" id="13-13">
-        <input value="R" id="13-14">
-        <input value="E" id="13-15">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-7', '13-8')" value="" id="13-7">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-8', '13-9')" value="" id="13-8">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-9', '13-10')" value="" id="13-9">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-10', '13-11')" value="" id="13-10">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-11', '13-12')" value="" id="13-11">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-12', '13-13')" value="" id="13-12">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-13', '13-14')" value="" id="13-13">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-14', '13-15')" value="" id="13-14">
+        <input maxlength="1" onkeyup="gameAction(); tab('13-15', '13-7')" value="" id="13-15">
       </div>
   
       <div id="col1" class="row">
         <input class="pe-none empty-style" value="" id="14-1">
         <input class="pe-none empty-style" value="" id="14-2">
         <input class="pe-none empty-style" value="" id="14-3">
-        <input value="H" id="14-4">
+        <input maxlength="1" onkeyup="gameAction(); tab('14-4', '2-5')" value="" id="14-4">
         <input class="pe-none empty-style" value="" id="14-5">
         <input class="pe-none empty-style" value="" id="14-6">
         <input class="pe-none empty-style" value="" id="14-7">
@@ -314,7 +317,10 @@
     </div>
 
     <div style="background-color: rgb(209, 209, 209);" class="card m-2 d-flex flex-column align-items-center p-2 w-50">
-      <div style="background-color: rgb(86, 126, 70);" class="m-2 p-2 row-2 card w-75 h-50"></div>
+      <div style="background-color: rgb(86, 126, 70);" class="m-2 p-2 row-2 card w-75 h-50">
+        <div style="color: white; font-size: 50px;" id="liveClock"></div>
+      </div>
+      <button onclick="finishScoreAction()" class="btn btn-success">finish</button>
 
       <div style="background-color: rgb(124, 124, 124);" class="card m-2 p-2 h-50 d-flex flex-row align-items-center flex-wrap justify-content-around">
         <div id="easel" class="card w-25 text-center m-2">EASEL</div>
@@ -335,125 +341,473 @@
       </div>
     </div>    
   </div>
-  <button onclick="easelAction()">click</button>
-
+  
   <script>
-    function easelAction() {
-      let oneEight = document.getElementById('1-8').value;
-      let oneNine = document.getElementById('1-9').value;
-      let oneTen = document.getElementById('1-10').value;
-      let oneEleven = document.getElementById('1-11').value;
-      let oneTwelve = document.getElementById('1-12').value;
-      
-      let oneOne = document.getElementById('1-1').value;
-      let twoOne = document.getElementById('2-1').value;
-      let threeOne = document.getElementById('3-1').value;
-      let fourOne = document.getElementById('4-1').value;
-      let fiveOne = document.getElementById('5-1').value;
-      let sixOne = document.getElementById('6-1').value;
-      let sevenOne = document.getElementById('7-1').value;
-      let eightOne = document.getElementById('8-1').value;
+    let score = 0;
 
-      let sevenTwo = document.getElementById('7-2').value;
-      let sevenThree = document.getElementById('7-3').value;
-      let sevenFour = document.getElementById('7-4').value;
-      let sevenFive = document.getElementById('7-5').value;
-      let sevenSix= document.getElementById('7-6').value;
+    console
 
-      let eightFive = document.getElementById('8-5').value;      
-      let nineFive = document.getElementById('9-5').value;      
-      let sixFive = document.getElementById('6-5').value;      
-      let fiveFive = document.getElementById('5-5').value;      
-      let fourFive = document.getElementById('4-5').value;      
-      let threeFive = document.getElementById('3-5').value;      
-      let twoFive = document.getElementById('2-5').value;      
+    var oneEight = document.getElementById('1-8');
+    var oneNine = document.getElementById('1-9');
+    var oneTen = document.getElementById('1-10');
+    var oneEleven = document.getElementById('1-11');
+    var oneTwelve = document.getElementById('1-12');
+    
+    var oneOne = document.getElementById('1-1');
+    var twoOne = document.getElementById('2-1');
+    var threeOne = document.getElementById('3-1');
+    var fourOne = document.getElementById('4-1');
+    var fiveOne = document.getElementById('5-1');
+    var sixOne = document.getElementById('6-1');
+    var sevenOne = document.getElementById('7-1');
+    var eightOne = document.getElementById('8-1');
 
-      let nineTwo = document.getElementById('9-2').value;
-      let nineThree = document.getElementById('9-3').value;
-      let nineFour = document.getElementById('9-4').value;
-      let nineSix = document.getElementById('9-6').value;
-      let nineSeven = document.getElementById('9-7').value;
+    var sevenTwo = document.getElementById('7-2');
+    var sevenThree = document.getElementById('7-3');
+    var sevenFour = document.getElementById('7-4');
+    var sevenFive = document.getElementById('7-5');
+    var sevenSix= document.getElementById('7-6');
 
-      let tenFour = document.getElementById('10-4').value;
-      let elevenFour = document.getElementById('11-4').value;
-      let twelveFour = document.getElementById('12-4').value;
-      let thirteenFour = document.getElementById('13-4').value;
-      let fourteenFour = document.getElementById('14-4').value;
+    var eightFive = document.getElementById('8-5');      
+    var nineFive = document.getElementById('9-5');      
+    var sixFive = document.getElementById('6-5');      
+    var fiveFive = document.getElementById('5-5');      
+    var fourFive = document.getElementById('4-5');      
+    var threeFive = document.getElementById('3-5');      
+    var twoFive = document.getElementById('2-5');      
 
-      let tenSeven = document.getElementById('10-7').value;
-      let elevenSeven = document.getElementById('11-7').value;
-      let twelveSeven = document.getElementById('12-7').value;
-      let thirteenSeven = document.getElementById('13-7').value;
+    var nineTwo = document.getElementById('9-2');
+    var nineThree = document.getElementById('9-3');
+    var nineFour = document.getElementById('9-4');
+    var nineSix = document.getElementById('9-6');
+    var nineSeven = document.getElementById('9-7');
 
-      let thirteenEight = document.getElementById('13-8').value;
-      let thirteenNine = document.getElementById('13-9').value;
-      let thirteenTen = document.getElementById('13-10').value;
-      let thirteenEleven = document.getElementById('13-11').value;
-      let thirteenTwelve = document.getElementById('13-12').value;
-      let thirteenThirteen = document.getElementById('13-13').value;
-      let thirteenFourteen = document.getElementById('13-14').value;
-      let thirteenFifteen = document.getElementById('13-15').value;
+    var tenFour = document.getElementById('10-4');
+    var elevenFour = document.getElementById('11-4');
+    var twelveFour = document.getElementById('12-4');
+    var thirteenFour = document.getElementById('13-4');
+    var fourteenFour = document.getElementById('14-4');
 
-      let fourFour = document.getElementById('4-4').value;
-      let foursix = document.getElementById('4-6').value;
-      let fourseven = document.getElementById('4-7').value;
-      let fourEight = document.getElementById('4-8').value;
+    var tenSeven = document.getElementById('10-7');
+    var elevenSeven = document.getElementById('11-7');
+    var twelveSeven = document.getElementById('12-7');
+    var thirteenSeven = document.getElementById('13-7');
 
-      let twoEight = document.getElementById('2-8').value;
-      let threeEight = document.getElementById('3-8').value;
-      let fiveEight = document.getElementById('5-8').value;
-      let sixEight = document.getElementById('6-8').value;
-      let sevenEight = document.getElementById('7-8').value;
-      console.log(thirteenEight);
-      console.log(thirteenNine);
-      console.log(thirteenTen);
-      console.log(thirteenEleven);
-      console.log(thirteenTwelve);
-      console.log(thirteenThirteen);
-      console.log(thirteenFourteen);
-      console.log(thirteenFifteen);
+    var thirteenEight = document.getElementById('13-8');
+    var thirteenNine = document.getElementById('13-9');
+    var thirteenTen = document.getElementById('13-10');
+    var thirteenEleven = document.getElementById('13-11');
+    var thirteenTwelve = document.getElementById('13-12');
+    var thirteenThirteen = document.getElementById('13-13');
+    var thirteenFourteen = document.getElementById('13-14');
+    var thirteenFifteen = document.getElementById('13-15');
 
-      if (oneEight == "E" && oneNine == "A" && oneTen == "S" && oneEleven == "E" && oneTwelve == "L") {
+    var fourFour = document.getElementById('4-4');
+    var fourSix = document.getElementById('4-6');
+    var fourSeven = document.getElementById('4-7');
+    var fourEight = document.getElementById('4-8');
+
+    var twoEight = document.getElementById('2-8');
+    var threeEight = document.getElementById('3-8');
+    var fiveEight = document.getElementById('5-8');
+    var sixEight = document.getElementById('6-8');
+    var sevenEight = document.getElementById('7-8');
+
+    var sevenNine = document.getElementById('7-9');
+    var sevenTen = document.getElementById('7-10');
+    var sevenEleven = document.getElementById('7-11');
+    var sevenTwelve = document.getElementById('7-12');
+    var sevenThirteen = document.getElementById('7-13');
+    var sevenFourteen = document.getElementById('7-14');
+    var sevenFifteen = document.getElementById('7-15');
+
+    var fiveTen = document.getElementById('5-10');
+    var sixTen = document.getElementById('6-10');
+    var eightTen = document.getElementById('8-10');
+
+    var fourFourteen = document.getElementById('4-14');
+    var fiveFourteen = document.getElementById('5-14');
+    var sixFourteen = document.getElementById('6-14');
+    var eightFourteen = document.getElementById('8-14');
+    var nineFourteen = document.getElementById('9-14');
+    var tenFourteen = document.getElementById('10-14');
+    
+    var fiveEleven = document.getElementById('5-11');
+    var fiveTwelve = document.getElementById('5-12');
+    var fiveThirteen = document.getElementById('5-13');
+    var fiveFifteen = document.getElementById('5-15');
+
+    var nineThirteen = document.getElementById('9-13');
+    var nineFifteen = document.getElementById('9-15');
+
+    function gameAction() {
+
+      if (oneEight.value.toUpperCase() == "E" && oneNine.value.toUpperCase() == "A" && oneTen.value.toUpperCase() == "S" && oneEleven.value.toUpperCase() == "E" && oneTwelve.value.toUpperCase() == "L") {
         document.getElementById('easel').style.backgroundColor="green";
+        document.getElementById('easel').style.color="white";
+        oneEight.style.pointerEvents = "none";
+        oneNine.style.pointerEvents = "none";
+        oneTen.style.pointerEvents = "none";
+        oneEleven.style.pointerEvents = "none";
+        oneTwelve.style.pointerEvents = "none";
+        
+        oneEight.style.backgroundColor = "rgb(198, 230, 198)";
+        oneNine.style.backgroundColor = "rgb(198, 230, 198)";
+        oneTen.style.backgroundColor = "rgb(198, 230, 198)";
+        oneEleven.style.backgroundColor = "rgb(198, 230, 198)";
+        oneTwelve.style.backgroundColor = "rgb(198, 230, 198)";
+        
       };
       
-      if (oneOne == "A" && twoOne == "B" && threeOne == "S" && fourOne == "T" && fiveOne == "R" && sixOne == "A" && sevenOne == "C" && eightOne == "T") {
+      if (oneOne.value.toUpperCase() == "A" && twoOne.value.toUpperCase() == "B" && threeOne.value.toUpperCase() == "S" && fourOne.value.toUpperCase() == "T" && fiveOne.value.toUpperCase() == "R" && sixOne.value.toUpperCase() == "A" && sevenOne.value.toUpperCase() == "C" && eightOne.value.toUpperCase() == "T") {
         document.getElementById('abstract').style.backgroundColor = "green";
+        document.getElementById('abstract').style.color = "white";
+        oneOne.style.pointerEvents = "none";
+        twoOne.style.pointerEvents = "none";
+        threeOne.style.pointerEvents = "none";
+        fourOne.style.pointerEvents = "none";
+        fiveOne.style.pointerEvents = "none";
+        sixOne.style.pointerEvents = "none";
+        sevenOne.style.pointerEvents = "none";
+        eightOne.style.pointerEvents = "none";
+        
+        oneOne.style.backgroundColor = "rgb(198, 230, 198)";
+        twoOne.style.backgroundColor = "rgb(198, 230, 198)";
+        threeOne.style.backgroundColor = "rgb(198, 230, 198)";
+        fourOne.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveOne.style.backgroundColor = "rgb(198, 230, 198)";
+        sixOne.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenOne.style.backgroundColor = "rgb(198, 230, 198)";
+        eightOne.style.backgroundColor = "rgb(198, 230, 198)";
       };
-
-      if (sevenOne == "C" && sevenTwo == "A" && sevenThree == "N" && sevenFour == "V" && sevenFive == "A" && sevenSix == "S") {
+      
+      if (sevenOne.value.toUpperCase() == "C" && sevenTwo.value.toUpperCase() == "A" && sevenThree.value.toUpperCase() == "N" && sevenFour.value.toUpperCase() == "V" && sevenFive.value.toUpperCase() == "A" && sevenSix.value.toUpperCase() == "S") {
         document.getElementById('canvas').style.backgroundColor = "green";
+        document.getElementById('canvas').style.color = "white";
+        sevenOne.style.pointerEvents = "none";
+        sevenTwo.style.pointerEvents = "none";
+        sevenThree.style.pointerEvents = "none";
+        sevenFour.style.pointerEvents = "none";
+        sevenFive.style.pointerEvents = "none";
+        sevenSix.style.pointerEvents = "none";
+        
+        sevenOne.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenTwo.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenThree.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenFour.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenFive.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenSix.style.backgroundColor = "rgb(198, 230, 198)";
       };
-
-      if (twoFive == "P" && threeFive == "O" && fourFive == "R" && fiveFive == "T" && sixFive == "R" && sevenFive == "A" && eightFive == "I" && nineFive == "T") {
+      
+      if (twoFive.value.toUpperCase() == "P" && threeFive.value.toUpperCase() == "O" && fourFive.value.toUpperCase() == "R" && fiveFive.value.toUpperCase() == "T" && sixFive.value.toUpperCase() == "R" && sevenFive.value.toUpperCase() == "A" && eightFive.value.toUpperCase() == "I" && nineFive.value.toUpperCase() == "T") {
         document.getElementById('portrait').style.backgroundColor = "green";
+        document.getElementById('portrait').style.color = "white";
+        twoFive.style.pointerEvents = "none";
+        threeFive.style.pointerEvents = "none";
+        fourFive.style.pointerEvents = "none";
+        fiveFive.style.pointerEvents = "none";
+        sixFive.style.pointerEvents = "none";
+        sevenFive.style.pointerEvents = "none";
+        eightFive.style.pointerEvents = "none";
+        nineFive.style.pointerEvents = "none";
+        
+        twoFive.style.backgroundColor = "rgb(198, 230, 198)";
+        threeFive.style.backgroundColor = "rgb(198, 230, 198)";
+        fourFive.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveFive.style.backgroundColor = "rgb(198, 230, 198)";
+        sixFive.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenFive.style.backgroundColor = "rgb(198, 230, 198)";
+        eightFive.style.backgroundColor = "rgb(198, 230, 198)";
+        nineFive.style.backgroundColor = "rgb(198, 230, 198)";
       };
-
-      if (nineTwo == "P" && nineThree == "A" && nineFour == "S" && nineFive == "T" && nineSix == "E" && nineSeven == "L") {
+      
+      if (nineTwo.value.toUpperCase() == "P" && nineThree.value.toUpperCase() == "A" && nineFour.value.toUpperCase() == "S" && nineFive.value.toUpperCase() == "T" && nineSix.value.toUpperCase() == "E" && nineSeven.value.toUpperCase() == "L") {
         document.getElementById('pastel').style.backgroundColor = "green"
+        document.getElementById('pastel').style.color = "white";
+        nineTwo.style.pointerEvents = "none";
+        nineThree.style.pointerEvents = "none";
+        nineFour.style.pointerEvents = "none";
+        nineFive.style.pointerEvents = "none";
+        nineSix.style.pointerEvents = "none";
+        nineSeven.style.pointerEvents = "none";
+        
+        nineTwo.style.backgroundColor = "rgb(198, 230, 198)";
+        nineThree.style.backgroundColor = "rgb(198, 230, 198)";
+        nineFour.style.backgroundColor = "rgb(198, 230, 198)";
+        nineFive.style.backgroundColor = "rgb(198, 230, 198)";
+        nineSix.style.backgroundColor = "rgb(198, 230, 198)";
+        nineSeven.style.backgroundColor = "rgb(198, 230, 198)";
       };
-
-      if (nineFour == "S" && tenFour == "K" && elevenFour == "E" && twelveFour == "T" && thirteenFour == "C" && fourteenFour == "H") {
+      
+      if (nineFour.value.toUpperCase() == "S" && tenFour.value.toUpperCase() == "K" && elevenFour.value.toUpperCase() == "E" && twelveFour.value.toUpperCase() == "T" && thirteenFour.value.toUpperCase() == "C" && fourteenFour.value.toUpperCase() == "H") {
         document.getElementById('sketch').style.backgroundColor = "Green";
-      };
+        document.getElementById('sketch').style.color = "white";
+        nineFour.style.pointerEvents = "none";
+        tenFour.style.pointerEvents = "none";
+        elevenFour.style.pointerEvents = "none";
+        twelveFour.style.pointerEvents = "none";
+        thirteenFour.style.pointerEvents = "none";
+        fourteenFour.style.pointerEvents = "none";
 
-      if (nineSeven == "L" && tenSeven == "I" && elevenSeven == "N" && twelveSeven == "E" && thirteenSeven == "S") {
+        nineFour.style.backgroundColor = "rgb(198, 230, 198)";
+        tenFour.style.backgroundColor = "rgb(198, 230, 198)";
+        elevenFour.style.backgroundColor = "rgb(198, 230, 198)";
+        twelveFour.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenFour.style.backgroundColor = "rgb(198, 230, 198)";
+        fourteenFour.style.backgroundColor = "rgb(198, 230, 198)";
+      };
+      
+      if (nineSeven.value.toUpperCase() == "L" && tenSeven.value.toUpperCase() == "I" && elevenSeven.value.toUpperCase() == "N" && twelveSeven.value.toUpperCase() == "E" && thirteenSeven.value.toUpperCase() == "S") {
         document.getElementById('lines').style.backgroundColor = "green";
-      };
+        document.getElementById('lines').style.color = "white";
+        nineSeven.style.pointerEvents = "none";
+        tenSeven.style.pointerEvents = "none";
+        elevenSeven.style.pointerEvents = "none";
+        twelveSeven.style.pointerEvents = "none";
+        thirteenSeven.style.pointerEvents = "none";
 
-      if (thirteenSeven == "S" && thirteenEight == "C" && thirteenNine == "U" && thirteenTen == "L" && thirteenEleven == "P" && thirteenTwelve == "T" && thirteenThirteen == "U" && thirteenFourteen == "R" && thirteenFifteen == "E") {
+        nineSeven.style.backgroundColor = "rgb(198, 230, 198)";
+        tenSeven.style.backgroundColor = "rgb(198, 230, 198)";
+        elevenSeven.style.backgroundColor = "rgb(198, 230, 198)";
+        twelveSeven.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenSeven.style.backgroundColor = "rgb(198, 230, 198)";
+      };
+      
+      if (thirteenSeven.value.toUpperCase() == "S" && thirteenEight.value.toUpperCase() == "C" && thirteenNine.value.toUpperCase() == "U" && thirteenTen.value.toUpperCase() == "L" && thirteenEleven.value.toUpperCase() == "P" && thirteenTwelve.value.toUpperCase() == "T" && thirteenThirteen.value.toUpperCase() == "U" && thirteenFourteen.value.toUpperCase() == "R" && thirteenFifteen.value.toUpperCase() == "E") {
         document.getElementById('sculpture').style.backgroundColor = "green";
+        document.getElementById('sculpture').style.color = "white";
+        thirteenSeven.style.pointerEvents = "none";
+        thirteenEight.style.pointerEvents = "none";
+        thirteenNine.style.pointerEvents = "none";
+        thirteenTen.style.pointerEvents = "none";
+        thirteenEleven.style.pointerEvents = "none";
+        thirteenTwelve.style.pointerEvents = "none";
+        thirteenThirteen.style.pointerEvents = "none";
+        thirteenFourteen.style.pointerEvents = "none";
+        thirteenFifteen.style.pointerEvents = "none";
+        
+        thirteenSeven.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenEight.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenNine.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenTen.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenEleven.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenTwelve.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenThirteen.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        thirteenFifteen.style.backgroundColor = "rgb(198, 230, 198)";
       };
-
-      if (fourFour == "B" && fourFive == "R" && foursix == "U" && fourseven == "S" && fourEight == "H") {
+      
+      if (fourFour.value.toUpperCase() == "B" && fourFive.value.toUpperCase() == "R" && fourSix.value.toUpperCase() == "U" && fourSeven.value.toUpperCase() == "S" && fourEight.value.toUpperCase() == "H") {
         document.getElementById('brush').style.backgroundColor = "green";
+        document.getElementById('brush').style.color = "white";
+        fourFour.style.pointerEvents = "none";
+        fourFive.style.pointerEvents = "none";
+        fourSix.style.pointerEvents = "none";
+        fourSeven.style.pointerEvents = "none";
+        fourEight.style.pointerEvents = "none";
+        
+        fourFour.style.backgroundColor = "rgb(198, 230, 198)";
+        fourFive.style.backgroundColor = "rgb(198, 230, 198)";
+        fourSix.style.backgroundColor = "rgb(198, 230, 198)";
+        fourSeven.style.backgroundColor = "rgb(198, 230, 198)";
+        fourEight.style.backgroundColor = "rgb(198, 230, 198)";
       };
-
-      if (oneEight == "E" && twoEight == "T" && threeEight == "C" && fourEight == "H" && fiveEight == "I" && sixEight == "N" && sevenEight == "G") {
+      
+      if (oneEight.value.toUpperCase() == "E" && twoEight.value.toUpperCase() == "T" && threeEight.value.toUpperCase() == "C" && fourEight.value.toUpperCase() == "H" && fiveEight.value.toUpperCase() == "I" && sixEight.value.toUpperCase() == "N" && sevenEight.value.toUpperCase() == "G") {
         document.getElementById('etching').style.backgroundColor = "green";
+        document.getElementById('etching').style.color = "white";
+        oneEight.style.pointerEvents = "none";
+        twoEight.style.pointerEvents = "none";
+        threeEight.style.pointerEvents = "none";
+        fourEight.style.pointerEvents = "none";
+        fiveEight.style.pointerEvents = "none";
+        sixEight.style.pointerEvents = "none";
+        sevenEight.style.pointerEvents = "none";
+        
+        oneEight.style.backgroundColor = "rgb(198, 230, 198)";
+        twoEight.style.backgroundColor = "rgb(198, 230, 198)";
+        threeEight.style.backgroundColor = "rgb(198, 230, 198)";
+        fourEight.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveEight.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenEight.style.backgroundColor = "rgb(198, 230, 198)";
+        sixEight.style.backgroundColor = "rgb(198, 230, 198)";
+      };
+      
+      if (sevenEight.value.toUpperCase() == "G" && sevenNine.value.toUpperCase() == "R" && sevenTen.value.toUpperCase() == "A" && sevenEleven.value.toUpperCase() == "F" && sevenTwelve.value.toUpperCase() == "F" && sevenThirteen.value.toUpperCase() == "I" && sevenFourteen.value.toUpperCase() == "T" && sevenFifteen.value.toUpperCase() == "I") {
+        document.getElementById('graffiti').style.backgroundColor = "green";
+        document.getElementById('graffiti').style.color = "white";
+        sevenEight.style.pointerEvents = "none";
+        sevenNine.style.pointerEvents = "none";
+        sevenTen.style.pointerEvents = "none";
+        sevenEleven.style.pointerEvents = "none";
+        sevenTwelve.style.pointerEvents = "none";
+        sevenThirteen.style.pointerEvents = "none";
+        sevenFourteen.style.pointerEvents = "none";
+        sevenFifteen.style.pointerEvents = "none";
+        
+        sevenEight.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenNine.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenTen.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenEleven.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenTwelve.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenThirteen.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenFifteen.style.backgroundColor = "rgb(198, 230, 198)";
+      };
+      
+      if (fiveTen.value.toUpperCase() == "C" && sixTen.value.toUpperCase() == "L" && sevenTen.value.toUpperCase() == "A" && eightTen.value.toUpperCase() == "Y") {
+        document.getElementById('clay').style.backgroundColor = "green";
+        document.getElementById('clay').style.color = "white";
+        fiveTen.style.pointerEvents = "none";
+        sixTen.style.pointerEvents = "none";
+        sevenTen.style.pointerEvents = "none";
+        eightTen.style.pointerEvents = "none";
+        
+        fiveTen.style.backgroundColor = "rgb(198, 230, 198)";
+        sixTen.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenTen.style.backgroundColor = "rgb(198, 230, 198)";
+        eightTen.style.backgroundColor = "rgb(198, 230, 198)";
+      };
+      
+      if (fourFourteen.value.toUpperCase() == "P" && fiveFourteen.value.toUpperCase() == "O" && sixFourteen.value.toUpperCase() == "T" && sevenFourteen.value.toUpperCase() == "T" && eightFourteen.value.toUpperCase() == "E" && nineFourteen.value.toUpperCase() == "R" && tenFourteen.value.toUpperCase() == "Y") {
+        document.getElementById('pottery').style.backgroundColor = "green";
+        document.getElementById('pottery').style.color = "white";
+        fourFourteen.style.pointerEvents = "none";
+        fiveFourteen.style.pointerEvents = "none";
+        sixFourteen.style.pointerEvents = "none";
+        sevenFourteen.style.pointerEvents = "none";
+        eightFourteen.style.pointerEvents = "none";
+        nineFourteen.style.pointerEvents = "none";
+        tenFourteen.style.pointerEvents = "none";
+        
+        fourFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        sixFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        sevenFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        eightFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        nineFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        tenFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+      };
+      
+      if (fiveTen.value.toUpperCase() == "C" && fiveEleven.value.toUpperCase() == "I" && fiveTwelve.value.toUpperCase() == "A" && fiveThirteen.value.toUpperCase() == "S" && fiveFourteen.value.toUpperCase() == "O" && fiveFifteen.value.toUpperCase() == "M") {
+        document.getElementById('mosaic').style.backgroundColor = "green";
+        document.getElementById('mosaic').style.color = "white";
+        fiveTen.style.pointerEvents = "none";
+        fiveEleven.style.pointerEvents = "none";
+        fiveTwelve.style.pointerEvents = "none";
+        fiveThirteen.style.pointerEvents = "none";
+        fiveFourteen.style.pointerEvents = "none";
+        fiveFifteen.style.pointerEvents = "none";
+        
+        fiveTen.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveEleven.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveTwelve.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveThirteen.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        fiveFifteen.style.backgroundColor = "rgb(198, 230, 198)";
+      };
+      
+      if (nineThirteen.value.toUpperCase() == "A" && nineFourteen.value.toUpperCase() == "R" && nineFifteen.value.toUpperCase() == "T") {
+        document.getElementById('art').style.backgroundColor = "green";
+        document.getElementById('art').style.color = "white";
+        nineThirteen.style.pointerEvents = "none";
+        nineFourteen.style.pointerEvents = "none";
+        nineFifteen.style.pointerEvents = "none";
+        
+        nineThirteen.style.backgroundColor = "rgb(198, 230, 198)";
+        nineFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+        nineFifteen.style.backgroundColor = "rgb(198, 230, 198)";
       };
 
+      
     }
+
+    
+    function finishScoreAction() {
+      let easelColor = document.getElementById('easel').style.backgroundColor;
+      let abstractColor = document.getElementById('abstract').style.backgroundColor;
+      let portraitColor = document.getElementById('portrait').style.backgroundColor;
+      let canvasColor = document.getElementById('canvas').style.backgroundColor;
+      let brushColor = document.getElementById('brush').style.backgroundColor;
+      let graffitiColor = document.getElementById('graffiti').style.backgroundColor;
+      let potteryColor = document.getElementById('pottery').style.backgroundColor;
+      let artColor = document.getElementById('art').style.backgroundColor;
+      let sculptureColor = document.getElementById('sculpture').style.backgroundColor;
+      let mosaicColor = document.getElementById('mosaic').style.backgroundColor;
+      let clayColor = document.getElementById('clay').style.backgroundColor;
+      let pastelColor = document.getElementById('pastel').style.backgroundColor;
+      let etchingColor = document.getElementById('etching').style.backgroundColor;
+      let linesColor = document.getElementById('lines').style.backgroundColor;
+      let sketchColor = document.getElementById('sketch').style.backgroundColor;
+
+      if (easelColor == 'green') {
+        score += 1;
+      };
+
+      if (etchingColor == 'green') {
+        score += 1;
+      };
+
+      if (brushColor == 'green') {
+        score += 1;
+      };
+
+      if (abstractColor == 'green') {
+        score += 1;
+      };
+
+      if (portraitColor == 'green') {
+        score += 1;
+      };
+
+      if (sculptureColor == 'green') {
+        score += 1;
+      };
+
+      if (graffitiColor == 'green') {
+        score += 1;
+      };
+
+      if (pastelColor == 'green') {
+        score += 1;
+      };
+
+      if (artColor == 'green') {
+        score += 1;
+      };
+
+      if (clayColor == 'green') {
+        score += 1;
+      };
+
+      if (mosaicColor == 'green') {
+        score += 1;
+      };
+
+      if (sketchColor == 'green') {
+        score += 1;
+      };
+
+      if (linesColor == 'green') {
+        score += 1;
+      };
+
+      if (canvasColor == 'green') {
+        score += 1;
+      };
+      
+      if (potteryColor == 'green') {
+        score += 1;
+      };
+      document.getElementById('liveClock').innerHTML = score;
+    }
+
+    function tab(field1, field2) {
+      let f1 = document.getElementById(field1);
+      if (f1.value.length == 1){
+        document.getElementById(field2).focus();
+      }
+    } 
   </script>
 </body>
 </html>

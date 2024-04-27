@@ -11,6 +11,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Antonio&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Rubik+Marker+Hatch&family=Silkscreen&display=swap"
     rel="stylesheet">
@@ -21,7 +23,8 @@
   <link rel="stylesheet" href="./css/navbar.css">
 
   <script defer src="./bootstrap/js/bootstrap.min.js"></script>
-
+  
+  <script defer src="./javascript/shopCategory.js"></script>
   <style>
     body {
       margin-left: 0;
@@ -63,9 +66,9 @@
     }
 
     .product-category {
-      color: black;
+      color: gray;
       font-family: arial;
-      font-size: 17px;
+      font-size: 13px;
     }
 
     .product-price {
@@ -78,10 +81,7 @@
 
     .button-addtocart {
       width: 100px;
-      padding-left: 3px;
-      padding-right: 3px;
-      padding-top: 6px;
-      padding-bottom: 6px;
+      padding: 6px 3px 6px 3px;
       font-weight: 600;
       color: white;
       background-color: rgb(179, 122, 233);
@@ -97,10 +97,7 @@
 
     .button-buyNow {
       width: 100px;
-      padding-left: 3px;
-      padding-right: 3px;
-      padding-top: 6px;
-      padding-bottom: 6px;
+      padding: 6px 3px 6px 3px;
       font-weight: 600;
       color: white;
       background-color: rgb(179, 122, 233);
@@ -147,6 +144,7 @@
       padding-top: 4px;
       padding-left: 4px;
       padding-right: 4px;
+      z-index: 19;
     }
 
     .col-left div {
@@ -155,7 +153,6 @@
       align-items: center; 
       justify-content: center; 
       flex-direction: column;
-      /* background-color: red; */
       padding: 10px 0px 10px 0px;
       border-radius: 6px;
       transition: 0.25s;
@@ -166,10 +163,14 @@
       color: white;
     }
 
+    
     .col-left div:hover svg {
       fill: white;
     }
 
+    .col-left div:active {
+      background-color: rgb(154, 102, 202);
+    }
 
     .col-left p {
       padding: 2px 0px 0px 0px;
@@ -187,7 +188,7 @@
       margin-left: 80px;
       margin-right: 600px;
     }
-
+    
     .col-right {
       display: flex;
       min-width: 360px;
@@ -202,6 +203,58 @@
       right: 5px;
       top: 0px;
       bottom: 5px;
+    }
+
+    .category-bar {
+      background-color: rgb(242, 220, 245);
+      position: fixed;
+      top: 55px;
+      left: -160px;
+      z-index: 18;
+      width: 200px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 3px 5px 3px 5px;
+      border-radius: 4px;
+      /* transform: translateX(130px); */
+      /* opacity: 0; */
+    }
+
+    .category-bar button {
+      background-color: rgb(242, 220, 245);
+      display: flex;
+      flex-wrap: nowrap;
+      width: 184px;
+      align-items: center;
+      justify-content: center;
+      margin: 5px 3px 5px 3px;
+      border: 0px;
+      border-radius: 4px;
+      padding: 5px 0px 5px 0px;
+      transition: 0.25s;
+    }
+
+    .category-bar button:hover {
+      background-color: rgb(212, 190, 233);
+      color: white;
+    }
+    
+    .category-bar button:active {
+      background-color: rgb(153, 111, 192);
+      color: white;
+    }
+
+    .close-div {
+      background-color: rgb(242, 220, 245);
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0px;
+      text-align: center;
+      padding-top: 1px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
 
     
@@ -237,7 +290,7 @@
   </div>
 
     <div class="col-left">
-      <div>
+      <div onclick="showCategories()">
         <!-- <img src="./Assets/images/category.svg" alt="categories"> -->
         <svg class="category-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"/></svg>
         <p>categories</p>
@@ -254,20 +307,34 @@
       </div>
     </div>
 
+    
+    <div id="categoryBar" class="category-bar">
+      <div class="d-flex flex-column">
+        <button onclick="stationeryCateAction()">Stationery</button>
+        <button onclick="posterCateAction()">Posters</button>
+        <button onclick="stickerCateAction()">Stickers</button>
+        <button onclick="ceramicCateAction()">Ceramic</button>
+        <button>Fancy</button>
+        <button onclick="allCateAction()">All</button>
+      </div>
+
+      <div onclick="hideCategories()" class="d-flex flex-column">
+        <div class="close-div"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></div>
+      </div>
+    </div>
+
   <div style="display: flex; margin-right: 10px;">
-
-
     <div class="col-center">
-      <div class="product-slot-div">
+      <div id="leoPosterSlot" class="product-slot-div">
         <div class="proimage-div"><img src="./Assets/images/leoart poster one 4.jpg"
             style="height: 250px; width: 226px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
         </div>
         <div class="product-details">
           <div class="product-title">Leo Movie Poster</div>
-          <div class="product-category">#Posters</div>
+          <div id="leoPosterCategory" class="product-category">#posters</div>
           <div class="product-price">
             <div style="display: flex; flex: 1;">MRP: &#8377; 500.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite_FILL0_wght400_GRAD0_opsz24.png"
+            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
                 style="display: inline-block;"></div>
           </div>
           <div class="buttons-div">
@@ -281,17 +348,18 @@
         </div>
 
       </div>
-
-      <div class="product-slot-div">
+      <!-- <button onclick="showCategories()">hi</button> -->
+      
+      <div id="ceramicPlanterSlot" class="product-slot-div">
         <div class="proimage-div"><img src="./Assets/images/diy-ceramic-planter.jpg"
             style="height: 250px; width: 225px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
         </div>
         <div class="product-details">
           <div class="product-title">Ceramic Planters (4)</div>
-          <div class="product-category">#Ceramic</div>
+          <div id="ceramicPlanterCategory" class="product-category">#ceramic</div>
           <div class="product-price">
             <div style="display: flex; flex: 1;">MRP: &#8377; 1200.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite_FILL0_wght400_GRAD0_opsz24.png"
+            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
                 style="display: inline-block;"></div>
           </div>
           <div class="buttons-div">
@@ -305,16 +373,16 @@
         </div>
       </div>
 
-      <div class="product-slot-div">
+      <div id="christmasStickerSlot" class="product-slot-div">
         <div class="proimage-div"><img src="./Assets/images/christmas-stickerpack.webp"
             style="height: 250px; width: 225px; object-fit: contain; border-top-left-radius: 10px; border-top-right-radius: 10px;">
         </div>
         <div class="product-details">
           <div class="product-title">Christmas Stickers</div>
-          <div class="product-category">#Stickers</div>
+          <div id="christmasStickerCategory" class="product-category">#stickers</div>
           <div class="product-price">
             <div style="display: flex; flex: 1;">MRP: &#8377; 300.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite_FILL0_wght400_GRAD0_opsz24.png"
+            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
                 style="display: inline-block;"></div>
           </div>
           <div class="buttons-div">
@@ -328,16 +396,16 @@
         </div>
       </div>
 
-      <div class="product-slot-div">
+      <div id="colorPencilsOneSlot" class="product-slot-div">
         <div class="proimage-div"><img src="./Assets/images/image-content-detail-polychromos-120.webp"
             style="height: 250px; width: 226px; object-fit: contain; border-top-left-radius: 10px; border-top-right-radius: 10px;">
         </div>
         <div class="product-details">
           <div class="product-title">Polychromos 120</div>
-          <div class="product-category">#Colorpencils</div>
+          <div id="colorPencilsOneCategory" class="product-category">#stationery</div>
           <div class="product-price">
             <div style="display: flex; flex: 1;">MRP: &#8377; 25350.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite_FILL0_wght400_GRAD0_opsz24.png"
+            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
                 style="display: inline-block;"></div>
           </div>
           <div class="buttons-div">
@@ -352,16 +420,16 @@
 
       </div>
 
-      <div class="product-slot-div">
+      <div id="sketchBookSlot" class="product-slot-div">
         <div class="proimage-div"><img src="./Assets/images/Brustro-2.jpg"
             style="height: 250px; width: 226px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
         </div>
         <div class="product-details">
           <div class="product-title">Brustro A5 Note</div>
-          <div class="product-category">#Sketchbook</div>
+          <div id="sketchBookCategory" class="product-category">#stationery</div>
           <div class="product-price">
             <div style="display: flex; flex: 1;">MRP: &#8377; 534.95</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite_FILL0_wght400_GRAD0_opsz24.png"
+            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
                 style="display: inline-block;"></div>
           </div>
           <div class="buttons-div">
@@ -375,16 +443,16 @@
         </div>
       </div>
 
-      <div class="product-slot-div">
+      <div id="faberPencilSlot" class="product-slot-div">
         <div class="proimage-div"><img src="./Assets/images/image-content-detail-polychromos-120.webp"
             style="height: 250px; width: 226px; object-fit: contain; border-top-left-radius: 10px; border-top-right-radius: 10px;">
         </div>
         <div class="product-details">
           <div class="product-title">Polychromos 120</div>
-          <div class="product-category">#Colorpencils</div>
+          <div id="faberPencilCategory" class="product-category">#stationery</div>
           <div class="product-price">
             <div style="display: flex; flex: 1;">MRP: &#8377; 25350.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite_FILL0_wght400_GRAD0_opsz24.png"
+            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
                 style="display: inline-block;"></div>
           </div>
           <div class="buttons-div">

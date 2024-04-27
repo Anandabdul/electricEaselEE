@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paintings of Frida Kohla</title>
+
+  <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png" />
+
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="./javascript/apiController.js"></script>
+  
+  <style>
+    .outer-div {
+      width: 700px;
+      height: 540px;
+      background-color: rgb(228, 153, 153);
+      position: relative;
+      overflow: hidden;
+      margin-left: 50px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .thorn-necklace-div {
+      position: absolute;
+      right: 0px;
+      bottom: 100px;
+      transition: 0.2s;
+    }
+
+    .two-fridas-div {
+      position: absolute;
+      right: 270px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .cropped-hair-div {
+      position: absolute;
+      bottom: -20px;
+      right: 10px;
+      transition: 0.2s;
+    }
+
+    .background-div {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      transition: 0.2s;
+    }
+
+    .borderline-div {
+      position: absolute;
+      bottom: 150px;
+      right: 90px;
+      transition: 0.2s;
+    }
+
+    .henry-ford-div {
+      height: 200px;
+      position: absolute;
+      top: 0px;
+      right: -100px;
+      transition: 0.2s;
+    }
+
+    .family-tree-div {
+      position: absolute;
+      top: 0px;
+      left: -180px;
+      transition: 0.2s;
+    }
+
+    .broken-column-div {
+      position: absolute;
+      bottom: -20px;
+      right: -40px;
+      transition: 0.2s;
+    }
+
+    .bus-div {
+      position: absolute;
+      left: -100px;
+      bottom: -10px;
+      transition: 0.2s;
+    }
+
+    .tehuana-div {
+      position: absolute;
+      left: 130px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .wonded-deer-div {
+      position: absolute;
+      bottom: -10px;
+      right: 150px;
+      transition: 0.2s;
+    }
+
+    .buttons-div {
+      /* background-color: red; */
+      height: 540px;
+      width: 400px;
+      margin: 0px 10px 0px 10px;
+    }
+
+    .button-div-top {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 0px 7px 7px 7px;
+      padding: 5px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+    }
+
+    .paintings-button {
+      background-color: rgb(179, 122, 233);
+      display: inline-block;
+      padding: 1px 5px 1px 5px;
+      font-size: 13px;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      margin: 3px 0px 3px 0px;
+    }
+
+    .paintings-button:hover {
+      background-color: rgb(166, 106, 223);
+    }
+
+    .paintings-button:active {
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+      border: rgb(233, 233, 233) solid 1px;
+      padding: 0px 4px 0px 4px;
+    }
+
+    .button-div-bot {
+      display: flex;
+      flex-wrap: wrap;
+      height: 439px;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 7px;
+      padding: 5px 5px 5px 10px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+      overflow-y: scroll;
+    }
+    </style>
+</head>
+
+<body style="margin: 0px; margin-top: 20px">
+  <div style="display: flex">
+    <div class="outer-div">
+      <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div>
+      <div id="thornNeckace" class="thorn-necklace-div"><img style="width: 420px" src="./Assets/images/vincent-van-gogh-paintings/cafe-terrance-at-night.jpg" alt="cafe terrance at night" /></div>
+      <div id="twoFridas" class="two-fridas-div"><img style="width: 430px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/starrynights-transparent.png" alt="starry Night" /></div>
+      <div id="croppedHair" class="cropped-hair-div"><img style="width: 520px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/wheatfield-with-cypresses-transparent.png" alt="wheatfield With Cypresses" /></div>
+      <div id="borderline" class="borderline-div"> <img style="width: 350px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/the-potato-eaters-transparent.png" alt="the potato Eaters"/></div>
+      <div id="henryFord" class="henry-ford-div"><img style="width: 200px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/l-ariesienne-transparent.png" alt="l'Ariesienne" /></div>
+      <div id="familyTree" class="family-tree-div"><img style="width: 210px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/self_portrait-transparent.png" alt="self portait" /></div>
+      <div id="brokenColumn" class="broken-column-div"><img style="width: 400px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/irises-transparent.png" alt="irises" /></div>
+      <div id="bus" class="bus-div"><img style="width: 170px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/skeleton-transparent.png" alt="skeleton" /></div>
+      <div id="tehuana" class="tehuana-div"><img style="width: 200px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/sunflowers-transparent.png" alt="sunflowers" /></div>
+      <div id="woundedDeer" class="wonded-deer-div"><img style="width: 250px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/shoes-transparent.png" alt="shoes" /></div>
+    </div>
+
+    <div class="buttons-div">
+      <div class="button-div-top">
+        <button class="paintings-button" onclick="getArtistDetails(4, 7); selfPortraitWithThornNecklace()">Self Portrait with Thorn Necklace</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 3); theTwoFridas()">The Two Fridas</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 9); croppedHair()">Self Portrait with Cropped Hair</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 2); borderline()">Self Portrait on the borderline Between Mexico and The United States</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 4); henryFord()">Henry Ford Hospital</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 1); familyTree()">Family Tree</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 8); brokenColumn()">The Broken Column</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 0); bus()">The Bus</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 5); tehuana()">Self Portrait as a Tehuana</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 6); woundedDeer()">The Wounded Deer</button>
+      </div>
+      <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button>
+
+      <div id="paintingDetails" class="button-div-bot">
+        Click the buttons above to get to know more about the paintings.
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    var sanSpiritoCrucifixArtDetails = `
+    <img src="./Assets/images/michelangelo-paintings/San-Spirito-Crucifix.jpg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;"><h4> San Spirito Crucifix 1492 </h4> Michelangelo made this nude crucifix when he was just 18 years old. It was a thank you to the Augustine monks at San Spirito who let the teen couch surf after his patron, Lorenzo de Medici, died in 1492, leaving the artist homeless. By Giorgio Vasari's account of the artist's life in his famed tome, the Lives of the Artists, it was at San Spirito that Michelangelo began to dissect dead bodies “in order to study the details of anatomy, and began to perfect the great skill in design that he subsequently possessed.” Despite being so drawn from life (or death, as it were), the well-crafted crucifix didn't give Michelangelo's career much of a boost—in fact, most forgot that he even made it. After centuries of being assumed lost, in 1962 a media storm sprung up around it after the crucifix was rediscovered in a convent, covered over with hundreds of years of bad paint jobs. Earlier this year, it made headlines again when it was finally returned to its original home in Florence, which probably accounts for its notoriety with the public.
+        </div>`;
+
+    var madonnaOfBrugesArtDetails = `
+    <img src="./Assets/images/michelangelo-paintings/Madonna_michelangelo.jpeg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;"><h4> Madonna of Bruges 1504 </h4>Art historian Erwin Panofsky, when writing about Michelangelo's Madonna of Bruges, credited the artist with saying that a perfect sculpture is one that can be rolled downhill without suffering damage. By those standards, this sculpture would come close to perfect: The sturdy, seated composition of Mary and the Christ Child recalls the size and compact mass of the original stone block from which the figures were carved. This was the look Michelangelo was going for and, at the time, it was quite innovative. Few sculptors had attempted a project of such complexity at this scale, with the image hewn from a single slab of marble and standing at six-and-a-half feet tall.
+        </div>`;
+
+    var bacchusArtDetails= `
+    <img src="./Assets/images/michelangelo-paintings/bacchus.jpeg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;">
+          <h4>Bacchus 1497</h4> Bacchus was Michelangelo's first foray into large-scale sculpture and is one of the few works he would ever do that was not on a Christian theme. By tilting the figure ever so slightly off balance, subverting the inherent look of stability of the Classical contrapposto stance, the artist makes Bacchus—the Roman god of wine—appear appropriately tipsy. This level of realism was unprecedented in depictions of party-loving Bacchus up until this time, revealing Michelangelo as the virtuosic perfectionist he would become known as.
+        </div>`;
+
+    var dyingSlaveArtDetails = `
+    <img src="./Assets/images/michelangelo-paintings/Dying-Slave.jpg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;">
+          <h4>Dying Slave 1513-16</h4> Dying Slave was intended to accompany another work, Rebellious Slave, on either side of Moses, in Pope Julius II's tomb. In an effort to select the perfect marble for the pope's final resting place, Michelangelo went to the quarries of Carrara to hand-select the slabs of stone. When he returned, he set to work chiseling a perfect specimen of man in the languid throes of death. Then Julius changed his mind and cancelled the commission. Indeed, Dying Slave is one of six slave figures Michelangelo created over several years for the pope; Julius effectively drained the papal coffers dry in an attempt to create the perfect space for him to begin his afterlife. But the project was never fully realized, much to the artist's chagrin—especially after having wasted nearly a year hanging around a quarry for it.
+        </div>`;
+
+    var angelArtDetails = `
+    <img src="./Assets/images/michelangelo-paintings/Angel_by_Michelangelo.jpeg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;">
+          <h4>Angel 1495</h4> This kneeling angel holding a candlestick, measuring just about a foot and a half in height, is one of Michelangelo's earliest works. It was created for the Arca di San Domenico in Bologna as a companion piece to the artist Niccolo dell' Arca's preexisting angel, integrated within the building's design scheme. It's historically important since it was with this work that Michelangelo started to exhibit his signature style: while dell' Arca's angel is soft and effeminate, demure in its loving embrace of its candlestick, Michelangelo's depicts a strong youth with defined musculature and eagle-like wings.
+        </div>`;
+
+    var mosesArtDetails = `
+    <img src="./Assets/images/michelangelo-paintings/michelangelo-moses.jpg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;">
+          <h4>Moses 1513-15</h4> Michelangelo's Moses came on the heels of his David, the public success of which had put him on Pope Julius's radar. Commissioned in 1505 by the pope for his tomb, the work represents a specific moment from the biblical tale of Moses, when he sees his people have started worshiping a pagan icon—the Golden Calf—just after he had trekked all the way down Mount Sinai with heavy stone slabs bearing the Ten Commandments. Needless to say, Moses was pissed, and it's precisely this anger that Michelangelo skillfully embodies in his eight-foot seated sculpture. Moses isn't just sitting down, though. His left leg and hips shift left while his muscular torso faces the right, imbuing the figure with tension and power; although he looks left, his beard whips right, indicating swift movement.
+          </div>`;
+
+    var pietaArtDetails = `
+    <img src="./Assets/images/michelangelo-paintings/Michelangelos-Pieta.jpg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;">
+          <h4>Pieta 1498-99</h4> During the 15th century, the theme of Mary cradling Jesus once he was taken down from the cross—other wise known as a pietà—was commonly depicted in Northern European art but less so in Italy. So when a French cardinal approached 23-year-old Michelangelo to sculpt one for his funeral monument, the artist gladly accepted the challenge, knowing he could make his mark. It's the Pietà that made people make note of Michelangelo's name—quite literally, as Vasari.
+        </div>`;
+
+    var lastJudgementArtDetails= `
+    <img src="./Assets/images/michelangelo-paintings/last-judgement.jpg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;">
+          <h4>The Last Judgement 1536-41</h4> The Last Judgment, which arcs above the Sistine Chapel's altar, dramatically depicts the second coming of Christ and the final judgment of all humanity. Michelangelo squished 300 muscular figures into the sprawling scene, some representing prominent saints, others were mere mortals ascending to heaven or descending to hell. A scene of intense action, fear, awe, and copious nudity, the Last Judgment has been subject to much judgment itself, often criticized for its busyness and sometimes covered up by Papal censors.
+        </div>`;
+
+    var creationOfAdamArtDetails = `
+    <img src="./Assets/images/michelangelo-paintings/Creation_of_Adam.jpg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;">
+          <h4>The Creation of Adam 1508-12</h4> Pope Julius II paused Michelangelo's long labor on the papal tomb to paint the ceiling of the Sistine Chapel. The artist wasn't interested in accepting the commission—he was a sculptor, not a painter, after all—but he was pressured into it. So it was that Michelangelo, the supreme sculptor, created what is probably one of the most sacred images of Western art history. At the heart of the epic work is the Creation: God extends his finger toward the hand a newly minted man, Adam, about to imbue him with life (Eve watches from the crook of God's arm). Few artists had ever depicted the scene as dramatically as Michelangelo, and even in our secular age, it has made it virtually metonymic for the entire story of Genesis in contemporary culture. It is so often invoked, cited, or riffed on for its religious meaning that it may actually be possible to forget just what a terrific act of artistic theater it is.
+          </div>`;
+
+    var davidArtDetails= `
+    <img src="./Assets/images/michelangelo-paintings/michelangelo-david.jpg" style="height: 160px; display: inline-block;">
+          <div style="display: inline-block;">
+            <h4>David  1501-04</h4> The artist was just 26 when he sculpted David. Even at the time it brought him to the heights of artistic fame for its sheer bravura. Standing at more than 13 feet tall, the work was sculpted from a piece of marble that another artist had started carving into for another project but then abandoned because the stone was structurally compromised. This didn't deter Michelangelo, though, who knew he had the skills to make the marble work for him. The David is different than any sculpture that came before. It is drawn from the well-known Biblical story of a young boy fighting the giant Goliath. But while others chose to emphasize his smallness, Michelangelo's David is a giant himself: A muscular, confident man prepared for battle. The amazing thing, then and now, about Michelangelo's David is that the work is both literally a depiction of a larger-than-life hero, and the quintessential depiction of the plucky little guy.
+            </div>`;
+
+    var artistName = "Michelangelo";
+
+    var paintings = [
+      sanSpiritoCrucifixArtDetails,
+      madonnaOfBrugesArtDetails,
+      bacchusArtDetails,
+      dyingSlaveArtDetails,
+      angelArtDetails,
+      mosesArtDetails,
+      pietaArtDetails,
+      lastJudgementArtDetails,
+      creationOfAdamArtDetails,
+      davidArtDetails,
+    ];
+
+    console.log(paintings);
+
+    function selfPortraitWithThornNecklaceStyle(scale, shadow) {
+      imageSelfPortraitWithThornNecklace.style.transform = scale;
+      imageSelfPortraitWithThornNecklace.style.filter = shadow;
+    }
+
+    function selfPortraitStyle(scale, shadow) {
+      imageSelfPortrait.style.transform = scale;
+      imageSelfPortrait.style.filter = shadow;
+    }
+
+    function shoesStyle(scale, shadow) {
+      imageShoes.style.transform = scale;
+      imageShoes.style.filter = shadow;
+    }
+
+    function cafeTerranceAtNightStyle(scale, shadow) {
+      imageCafeTerranceAtNight.style.transform = scale;
+      imageCafeTerranceAtNight.style.filter = shadow;
+    }
+
+    function starryNightStyle(scale, shadow) {
+      imageStarryNight.style.transform = scale;
+      imageStarryNight.style.filter = shadow;
+    }
+
+    function wheatfieldWithCypressesStyle(scale, shadow) {
+      imageWheatfieldWithCypresses.style.transform = scale;
+      imageWheatfieldWithCypresses.style.filter = shadow;
+    }
+
+    function sunflowersStyle(scale, shadow) {
+      imageSunflower.style.transform = scale;
+      imageSunflower.style.filter = shadow;
+    }
+
+    function irisesStyle(scale, shadow) {
+      imageIrises.style.filter = shadow;
+      imageIrises.style.transform = scale;
+    }
+
+    function skeletonStyle(scale, shadow) {
+      imageSkeleton.style.transform = scale;
+      imageSkeleton.style.filter = shadow;
+    }
+
+    function lAriesienneStyle(scale, shadow) {
+      imageLAriesienne.style.transform = scale;
+      imageLAriesienne.style.filter = shadow;
+    }
+
+    var imageSelfPortraitWithThornNecklace = document.getElementById("potatoEaters");
+    function selfPortraitWithThornNecklace() {
+      selfPortraitWithThornNecklaceStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        selfPortraitWithThornNecklaceArtDetails;
+    }
+
+    var imageTheTwoFridas = document.getElementById("selfPortrait");
+    function theTwoFridas() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        theTwoFridasArtDetails;
+    }
+
+    var imageShoes = document.getElementById("shoes");
+    function shoes() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = shoesArtDetails;
+    }
+
+    var imageCafeTerranceAtNight =
+      document.getElementById("cafeTerranceNight");
+    function cafeTerranceAtNight() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle(
+        "scale(1.2)",
+        "drop-shadow(0px 0px 8px yellow)"
+      );
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        cafeTeranceAtNightArtDetails;
+    }
+
+    var imageStarryNight = document.getElementById("starryNight");
+    function starryNight() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        starryNightArtDetails;
+    }
+
+    var imageWheatfieldWithCypresses =
+      document.getElementById("wheatfieldCypre");
+    function wheatfieldWithCypresses() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle(
+        "scale(1.2)",
+        "drop-shadow(0px 0px 8px yellow)"
+      );
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        wheatfieldWithCypressesArtDetails;
+    }
+
+    var imageSunflower = document.getElementById("sunflowers");
+    function sunflowers() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        sunflowersArtDetails;
+    }
+
+    var imageIrises = document.getElementById("irises");
+    function irises() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = irisesArtDetails;
+    }
+
+    var imageSkeleton = document.getElementById("skeleton");
+    function skeleton() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        skeletonArtDetails;
+    }
+
+    var imageLAriesienne = document.getElementById("lAriesienne");
+    function lAriesienne() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      document.getElementById("paintingDetails").innerHTML =
+        lAriesienneArtDetails;
+    }
+
+  </script>
+</body>
+
+</html>

@@ -235,7 +235,7 @@
         <button class="paintings-button" onclick="getArtistDetails(2, 5); GinevreDeBenci()">Ginevra de' Benci</button>
         <button class="paintings-button" onclick="getArtistDetails(2, 2); HeadOfAWoman()">Head of a Woman</button>
       </div>
-      <!-- <button class="btn btn-success" onclick="saveArtistDetails()">insert</button> -->
+      <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button>
 
       <div id="paintingDetails" class="button-div-bot">
         Click the buttons above to get to know more about the paintings.
@@ -379,11 +379,13 @@
           National Gallery of London.
         </div>`;
 
-    var leonardoPaintings = [monalisaArtDetails,
+    var paintings = [monalisaArtDetails,
       salvatorMundiArtDetails, headOfAWomanArtDetails,
       lastSupperArtDetails, ladyErmineArtDetails, ginevraBenciArtDetails,
       saintAnneArtDetails, vitruveViatourArtDetails, selfPortraitArtDetails,
       virginRocksArtDetails];
+
+        var artistName = "Leonardo Da Vinci";
 
     function salvatorMundiStyle(scale, shadow) {
       imageSalvatorMundi.style.transform = scale;

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paintings of Frida Kohla</title>
+
+  <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png" />
+
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="./javascript/apiController.js"></script>
+  
+  <style>
+    .outer-div {
+      width: 700px;
+      height: 540px;
+      background-color: rgb(228, 153, 153);
+      position: relative;
+      overflow: hidden;
+      margin-left: 50px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .thorn-necklace-div {
+      position: absolute;
+      right: 0px;
+      bottom: 100px;
+      transition: 0.2s;
+    }
+
+    .two-fridas-div {
+      position: absolute;
+      right: 270px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .cropped-hair-div {
+      position: absolute;
+      bottom: -20px;
+      right: 10px;
+      transition: 0.2s;
+    }
+
+    .background-div {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      transition: 0.2s;
+    }
+
+    .borderline-div {
+      position: absolute;
+      bottom: 150px;
+      right: 90px;
+      transition: 0.2s;
+    }
+
+    .henry-ford-div {
+      height: 200px;
+      position: absolute;
+      top: 0px;
+      right: -100px;
+      transition: 0.2s;
+    }
+
+    .family-tree-div {
+      position: absolute;
+      top: 0px;
+      left: -180px;
+      transition: 0.2s;
+    }
+
+    .broken-column-div {
+      position: absolute;
+      bottom: -20px;
+      right: -40px;
+      transition: 0.2s;
+    }
+
+    .bus-div {
+      position: absolute;
+      left: -100px;
+      bottom: -10px;
+      transition: 0.2s;
+    }
+
+    .tehuana-div {
+      position: absolute;
+      left: 130px;
+      bottom: 0px;
+      transition: 0.2s;
+    }
+
+    .wonded-deer-div {
+      position: absolute;
+      bottom: -10px;
+      right: 150px;
+      transition: 0.2s;
+    }
+
+    .buttons-div {
+      /* background-color: red; */
+      height: 540px;
+      width: 400px;
+      margin: 0px 10px 0px 10px;
+    }
+
+    .button-div-top {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 0px 7px 7px 7px;
+      padding: 5px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+    }
+
+    .paintings-button {
+      background-color: rgb(179, 122, 233);
+      display: inline-block;
+      padding: 1px 5px 1px 5px;
+      font-size: 13px;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      margin: 3px 0px 3px 0px;
+    }
+
+    .paintings-button:hover {
+      background-color: rgb(166, 106, 223);
+    }
+
+    .paintings-button:active {
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+      border: rgb(233, 233, 233) solid 1px;
+      padding: 0px 4px 0px 4px;
+    }
+
+    .button-div-bot {
+      display: flex;
+      flex-wrap: wrap;
+      height: 439px;
+      justify-content: space-around;
+      align-items: start;
+      background-color: rgb(230, 230, 230);
+      margin: 7px;
+      padding: 5px 5px 5px 10px;
+      border: rgb(187, 186, 186) solid 1px;
+      border-radius: 6px;
+      overflow-y: scroll;
+    }
+    </style>
+</head>
+
+<body style="margin: 0px; margin-top: 20px">
+  <div style="display: flex">
+    <div class="outer-div">
+      <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div>
+      <div id="thornNeckace" class="thorn-necklace-div"><img style="width: 420px" src="./Assets/images/vincent-van-gogh-paintings/cafe-terrance-at-night.jpg" alt="cafe terrance at night" /></div>
+      <div id="twoFridas" class="two-fridas-div"><img style="width: 430px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/starrynights-transparent.png" alt="starry Night" /></div>
+      <div id="croppedHair" class="cropped-hair-div"><img style="width: 520px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/wheatfield-with-cypresses-transparent.png" alt="wheatfield With Cypresses" /></div>
+      <div id="borderline" class="borderline-div"> <img style="width: 350px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/the-potato-eaters-transparent.png" alt="the potato Eaters"/></div>
+      <div id="henryFord" class="henry-ford-div"><img style="width: 200px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/l-ariesienne-transparent.png" alt="l'Ariesienne" /></div>
+      <div id="familyTree" class="family-tree-div"><img style="width: 210px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/self_portrait-transparent.png" alt="self portait" /></div>
+      <div id="brokenColumn" class="broken-column-div"><img style="width: 400px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/irises-transparent.png" alt="irises" /></div>
+      <div id="bus" class="bus-div"><img style="width: 170px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/skeleton-transparent.png" alt="skeleton" /></div>
+      <div id="tehuana" class="tehuana-div"><img style="width: 200px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/sunflowers-transparent.png" alt="sunflowers" /></div>
+      <div id="woundedDeer" class="wonded-deer-div"><img style="width: 250px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/shoes-transparent.png" alt="shoes" /></div>
+    </div>
+
+    <div class="buttons-div">
+      <div class="button-div-top">
+        <button class="paintings-button" onclick="getArtistDetails(4, 7); selfPortraitWithThornNecklace()">Self Portrait with Thorn Necklace</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 3); theTwoFridas()">The Two Fridas</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 9); croppedHair()">Self Portrait with Cropped Hair</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 2); borderline()">Self Portrait on the borderline Between Mexico and The United States</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 4); henryFord()">Henry Ford Hospital</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 1); familyTree()">Family Tree</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 8); brokenColumn()">The Broken Column</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 0); bus()">The Bus</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 5); tehuana()">Self Portrait as a Tehuana</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 6); woundedDeer()">The Wounded Deer</button>
+      </div>
+      <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button>
+
+      <div id="paintingDetails" class="button-div-bot">
+        Click the buttons above to get to know more about the paintings.
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var selfPortraitWithThornNecklaceArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/self-portrait-with-necklace-of-thorns.jpg" style="height: 160px; display: inline-block;">
+        <div style="display: inline-block;"><h4> SELF PORTRAIT WITH THORN NECKLACE 1940</h4> Kahlo completed this piece in 1940, one year after her tumultuous divorce from Mexican muralist Diego Rivera. Given the timing of its creation, Self-Portrait with Thorn Necklace and Hummingbird is widely believed to be a reflection of her emotional state following the couple's split. In the painting, Kahlo is positioned in front of foliage and between a stalking panther and a monkey. (She and Rivera had kept many monkeys as pets, leading many to speculate that they served as surrogates for the children the couple was tragically unable to conceive.) Around her neck, she wears a necklace made out of thorns and adorned with a seemingly lifeless hummingbird. Though the peculiar accessory draws blood from her neck, her expression remains stoic. This calm approach to pain is typical of Kahlo, who—even when devastated over her divorce—poignantly stated that “at the end of the day, we can endure much more than we think we can.”
+        </div>`;
+
+    var theTwoFridasArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/the-two-fridas.jpg" style="height: 160px; display: inline-block;">  
+        <div style="display: inline-block;"><h4> THE TWO FRIDAS 1939</h4>Like Self-Portrait with Thorn Necklace and Hummingbird, The Two Fridas was painted in response to Kahlo's separation from Rivera. In this piece, Kahlo explores two sides of herself. On the left, she depicts herself as a broken-hearted woman clad in a traditionally European gown. On the right, her heart is whole, and she is wearing a modern Mexican dress—a style she adopted while married to Rivera. As they share a bench, the two Fridas hold hands. This embrace, however, is not all that connects them; from their hearts sprouts a single vein, which branches out and wraps around their arms. On the left, Frida cuts the vein with surgical scissors, causing it to bleed. On the right, the vein leads to a tiny portrait of Rivera, clutched by Frida and nearly invisible to the unobservant eye.
+        </div>`;
+
+    var sPortraitCroppedHairArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/self-portrait-with-cropped-hair.jpg" style="height: 160px; display: inline-block;">  
+        <div style="display: inline-block;">
+          <h4>SELF PORTRAIT WITH CROPPED HAIR 1932</h4> Following her divorce, Kahlo sought to reinvent herself. In an act of defiance against her ex-husband, she painted Self Portrait with Cropped Hair. Seated on a bright yellow chair with scissors in hand and locks of hair surrounding her, the artist is shown with a short haircut and clad in a man's suit. Above her floats a pertinent lyric from a Mexican folk song. When translated, it reads: “Look, if I loved you it was because of your hair. Now that you are without hair, I don't love you anymore.” Clearly, Kahlo's androgynous approach to her appearance in Self Portrait with Cropped Hair is a far cry from the long hair, flowing dresses, and feminine jewelry exhibited in most depictions of her. Fascinatingly, however, this is not the first time she has experimented with a masculine look. In photos of the artist as a child and teenager, it is apparent that she often wore suits—even when her female friends and family retained a more “feminine” appearance.
+        </div>`;
+
+    var borderlineMexicoUSArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/self-portrait-along-the-boarder-line-between-mexico-and-the-united-states.jpg" style="height: 160px; display: inline-block;">  
+        <div style="display: inline-block;">
+          <h4>SELF-PORTRAIT ON THE BORDERLINE BETWEEN MEXICO AND THE UNITED STATES 1932</h4> Kahlo and Rivera lived in America for a period of four years, between 1930–1934. While her husband thrived in the limelight and found great success among artistic circles—including an exhibition at the Museum of Modern Art in New York—, Kahlo experienced many hardships, including failed pregnancies. Self-Portrait on the Borderline Between Mexico and the United States depicts Kahlo's dislike for the industrial and capitalist culture of the U.S. as well as her longing for the agrarian lifestyle of Mexico. On the right is a simplified portrayal of Detroit—one of the cities in which she and River lived—which is made up of tall skyscrapers and a manufacturing plant producing plumes of smoke. On the left is an illustration of Mexico, featuring plants, vegetables, ancient statues, a skull, and temple ruins in the background. Although Kahlo was deeply unhappy during this period, she grew considerably as an artist and was able to experiment in different mediums.
+        </div>`;
+
+    var henryFordHospitalArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/henry-ford-hospital.jpg" style="height: 160px; display: inline-block;">  
+        <div style="display: inline-block;">
+          <h4>HENRY FORD HOSPITAL 1932</h4> One of Kahlo's most heartbreaking paintings, Henry Ford Hospital depicts her convalescence at the Henry Ford Hospital in Detroit after suffering a miscarriage. A series of red veins sprout from her belly and connect her to key elements of what she was going through—a fetus, referencing her unborn child; her pelvis, damaged from the streetcar accident; an orchid that Rivera gifted her during her stay at the hospital; a snail to represent how days went slowly for her; and a machine, tying her to the industrial spirit of the city where she was at the time. 
+        </div>`;
+
+    var familyTreeArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/my-grandparents-my-parents-and-me.jpg" style="height: 160px; display: inline-block;">  
+        <div style="display: inline-block;">
+          <h4>MY GRANDPARENTS, MY PARENTS, AND I (FAMILY TREE) 1936</h4> My Grandparents, My Parents, and I is one of two family tree paintings Kahlo ever created. It documents her mixed-race heritage, with her Mexican mother and Mexican maternal grandparents on the left, and her German father and German grandparents on the right. Kahlo includes a depiction of herself as a young child standing at the center and holding the ribbon that ties all of these figures together.
+          </div>`;
+
+    var theBrokenColumnArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/the-broken-column.jpg" style="height: 160px; display: inline-block;">  
+        <div style="display: inline-block;">
+          <h4>THE BROKEN COLUMN 1944</h4> “There have been two great accidents in my life. One was the train, the other was Diego. Diego was by far the worst.” In 1925, 18-year-old Kahlo was involved in a streetcar accident that left her with a broken spinal column, among many other major injuries. “A man saw me having a tremendous hemorrhage. He carried me and put me on a billiard table until the Red Cross [ambulance] came for me.” In Broken Column, Kahlo presents a tragic glimpse into the lifelong effects of the accident. The painting depicts Kahlo after spinal surgery. Nude except for a hospital sheet and a metal and plaster corset, her body is pierced with nails (perhaps as an allusion to Christian iconography of Christ on the cross)—and is shown split open. Visible in the crack that bisects her body is a crumbling Ionic column, which has replaced her spine and symbolizes her broken body. In the background, a barren landscape is similarly fissured, and a stormy sky looms overhead. 
+        </div>`;
+
+    var busArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/the-bus.jpg" style="height: 160px; display: inline-block;">  
+        <div style="display: inline-block;">
+          <h4>THE BUS 1929</h4> In 1929, Kahlo painted The Bus, a depiction that recalls what she had seen moments before the life-altering bus accident, which took place four years earlier. The piece is one of her closest encounters with realism, as opposed to the more surrealistic compositions of her most famous paintings. On September 17, 1925, Kahlo was returning home after a day at the National Preparatory School. “I was an intelligent young girl, but impractical, in spite of all the freedom I had won. Perhaps for this reason, I did not assess the situation nor did I guess the kind of wounds I had,” Kahlo recalled. She never depicted the actual accident in her work, but Kahlo's painting shows us how calm and common everything looked as this bus traversed the streets of Mexico City, and how transit brought together people from all walks of life—workers, an Indigenous woman with her child, and a middle class couple sitting across from Kahlo's point of view. 
+        </div>`;
+
+    var tehuanaArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/self-portrait-as-a-tehuana.jpg" style="height: 160px; display: inline-block;">  
+        <div style="display: inline-block;">
+          <h4>SELF-PORTRAIT AS A TEHUANA 1943</h4> One of her most famous artworks, Self-Portrait as a Tehuana—also known as Diego on My Mind—shows Kahlo's deep love for Mexican folklore. Here, she wears the headpiece of a traditional Tehuana dress, created and worn by the Zapotec from the Isthmus of Tehuantepec region, in the state of Oaxaca. She also gives a nod to surrealism to show how, despite going through a tumultuous divorce and facing Rivera's affairs, she can't stop thinking about him. There is no consensus about what the thread emanating from her head means. To some, it is a spiderweb to lure Rivera back and keep him by her side; to others, it's her thoughts sprouting from her mind as the delicate headpiece (which seems to represent Rivera's fellow obsession with Indigenous Mexican culture) slowly unravels.
+          </div>`;
+
+    var theWondedDeerArtDetails = `
+    <img src="./Assets/images/fridakahlo-paintings/the-wounded-deer.jpg" style="height: 160px; display: inline-block;">  
+          <div style="display: inline-block;">
+            <h4>THE WOUNDED DEER 1946</h4> The Wounded Deer is another self-portrait that symbolically addresses the physical and emotional pain associated with Kahlo's injuries. In the piece, Kahlo has depicted herself as a deer—a choice perhaps inspired by her beloved pet, Granizo. Struck by arrows and positioned behind a broken branch (an object used in traditional Mexican funeral rites), it is clear that the deer is likely going to die. At the time of the painting's creation, Kahlo's health was in decline. In addition to failed corrective surgeries from having polio at age 6 (which caused her right leg to appear much thinner than the other) and the ongoing physical pain associated with her accident, she also suffered from gangrene and other illnesses.
+            </div>`;
+
+    var artistName = "Frida Kahlo";
+
+    var paintings = [
+      selfPortraitWithThornNecklaceArtDetails,
+      theTwoFridasArtDetails,
+      sPortraitCroppedHairArtDetails,
+      borderlineMexicoUSArtDetails,
+      henryFordHospitalArtDetails,
+      familyTreeArtDetails,
+      theBrokenColumnArtDetails,
+      busArtDetails,
+      tehuanaArtDetails,
+      theWondedDeerArtDetails,
+    ];
+
+    console.log(paintings);
+
+    function selfPortraitWithThornNecklaceStyle(scale, shadow) {
+      imageSelfPortraitWithThornNecklace.style.transform = scale;
+      imageSelfPortraitWithThornNecklace.style.filter = shadow;
+    }
+
+    function selfPortraitStyle(scale, shadow) {
+      imageSelfPortrait.style.transform = scale;
+      imageSelfPortrait.style.filter = shadow;
+    }
+
+    function shoesStyle(scale, shadow) {
+      imageShoes.style.transform = scale;
+      imageShoes.style.filter = shadow;
+    }
+
+    function cafeTerranceAtNightStyle(scale, shadow) {
+      imageCafeTerranceAtNight.style.transform = scale;
+      imageCafeTerranceAtNight.style.filter = shadow;
+    }
+
+    function starryNightStyle(scale, shadow) {
+      imageStarryNight.style.transform = scale;
+      imageStarryNight.style.filter = shadow;
+    }
+
+    function wheatfieldWithCypressesStyle(scale, shadow) {
+      imageWheatfieldWithCypresses.style.transform = scale;
+      imageWheatfieldWithCypresses.style.filter = shadow;
+    }
+
+    function sunflowersStyle(scale, shadow) {
+      imageSunflower.style.transform = scale;
+      imageSunflower.style.filter = shadow;
+    }
+
+    function irisesStyle(scale, shadow) {
+      imageIrises.style.filter = shadow;
+      imageIrises.style.transform = scale;
+    }
+
+    function skeletonStyle(scale, shadow) {
+      imageSkeleton.style.transform = scale;
+      imageSkeleton.style.filter = shadow;
+    }
+
+    function lAriesienneStyle(scale, shadow) {
+      imageLAriesienne.style.transform = scale;
+      imageLAriesienne.style.filter = shadow;
+    }
+
+    var imageSelfPortraitWithThornNecklace = document.getElementById("potatoEaters");
+    function selfPortraitWithThornNecklace() {
+      selfPortraitWithThornNecklaceStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        selfPortraitWithThornNecklaceArtDetails;
+    }
+
+    var imageTheTwoFridas = document.getElementById("selfPortrait");
+    function theTwoFridas() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        theTwoFridasArtDetails;
+    }
+
+    var imageShoes = document.getElementById("shoes");
+    function shoes() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = shoesArtDetails;
+    }
+
+    var imageCafeTerranceAtNight =
+      document.getElementById("cafeTerranceNight");
+    function cafeTerranceAtNight() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle(
+        "scale(1.2)",
+        "drop-shadow(0px 0px 8px yellow)"
+      );
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        cafeTeranceAtNightArtDetails;
+    }
+
+    var imageStarryNight = document.getElementById("starryNight");
+    function starryNight() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        starryNightArtDetails;
+    }
+
+    var imageWheatfieldWithCypresses =
+      document.getElementById("wheatfieldCypre");
+    function wheatfieldWithCypresses() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle(
+        "scale(1.2)",
+        "drop-shadow(0px 0px 8px yellow)"
+      );
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        wheatfieldWithCypressesArtDetails;
+    }
+
+    var imageSunflower = document.getElementById("sunflowers");
+    function sunflowers() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        sunflowersArtDetails;
+    }
+
+    var imageIrises = document.getElementById("irises");
+    function irises() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = irisesArtDetails;
+    }
+
+    var imageSkeleton = document.getElementById("skeleton");
+    function skeleton() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      lAriesienneStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML =
+        skeletonArtDetails;
+    }
+
+    var imageLAriesienne = document.getElementById("lAriesienne");
+    function lAriesienne() {
+      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
+      selfPortraitStyle("scale(1)", "none");
+      shoesStyle("scale(1)", "none");
+      cafeTerranceAtNightStyle("scale(1)", "none");
+      starryNightStyle("scale(1)", "none");
+      wheatfieldWithCypressesStyle("scale(1)", "none");
+      sunflowersStyle("scale(1)", "none");
+      irisesStyle("scale(1)", "none");
+      skeletonStyle("scale(1)", "none");
+      lAriesienneStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      document.getElementById("paintingDetails").innerHTML =
+        lAriesienneArtDetails;
+    }
+
+  </script>
+</body>
+
+</html>

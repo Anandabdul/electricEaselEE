@@ -1,20 +1,4 @@
-// var paintings = [
-//   thePotatoEatersArtDetails,
-//   selfPortraitArtDetails,
-//   shoesArtDetails,
-//   cafeTeranceAtNightArtDetails,
-//   starryNightArtDetails,
-//   wheatfieldWithCypressesArtDetails,
-//   sunflowersArtDetails,
-//   irisesArtDetails,
-//   skeletonArtDetails,
-//   lAriesienneArtDetails,
-// ];
 
-function example(data) {
-  alert("working!");
-  console.log(data);
-}
 
 // function saveArtistDetails(data) {
 //   let artistsDetails = {
@@ -22,20 +6,21 @@ function example(data) {
 //     "artistPaintings": data
 //   };
 
-  function saveArtistDetails(data) {
-    let artistPaintings = [];
-    for (let data of paintings) {
-      artistPaintings.push(data);
-    }
-    // console.log(artistPaintings);
+  function saveArtistDetails(name, data) {
+    let artistPaintings = data;
+    // details = data;
+    // for (let data of paintings) {
+    //   artistPaintings.push(data);
+    // }
+    console.log(artistPaintings);
     let artistsDetails = {
-      "name": "Vincent Van Gogh",
-      "detail": artistPaintings
+      "artistName": name,
+      "artistDetails": artistPaintings
     };
 
   console.log(artistsDetails);
 
-  fetch("https://retoolapi.dev/mXBe4L/data",
+  fetch("https://retoolapi.dev/j3UFnr/vincentPaintings",
     {
       "method": "POST",
       "body": JSON.stringify(artistsDetails),
@@ -46,6 +31,7 @@ function example(data) {
 
       if (response && response.ok) {
         // console.log(response.json);
+        alert('sucess');
         return response.json();
 
       }
@@ -54,7 +40,7 @@ function example(data) {
 
 
 function getArtistDetails(idNum, index) {
-  let getLink = "https://retoolapi.dev/UwGSQv/artistsData/" + idNum;
+  let getLink = "https://retoolapi.dev/ZGkFby/artistDetails/" + idNum;
   fetch(getLink,
     {
       "method": "GET",
