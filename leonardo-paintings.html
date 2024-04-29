@@ -6,26 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paintings of leonardo-da-vinci</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Kalnia:wght@100..700&family=Pixelify+Sans:wght@400..700&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
 
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 
   <script defer src="./bootstrap/js/bootstrap.min.js"></script>
   <script src="./javascript/apiController.js"></script>
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/painter-pages.css">
+
+
 
 
   <style>
-    .outer-div {
-      width: 700px;
-      height: 540px;
-      background-color: black;
-      position: relative;
-      overflow: hidden;
-      margin-left: 50px;
-      border-radius: 6px;
-      display: inline-block;
-    }
-
     .last-supper-div {
       position: absolute;
       bottom: -59px;
@@ -122,67 +119,56 @@
       top: 120px;
     }
 
-    .buttons-div {
-      /* background-color: red; */
-      height: 540px;
-      width: 400px;
-      margin: 0px 10px 0px 10px;
-    }
 
-    .button-div-top {
-      display: flex;
-      flex-wrap: wrap;
-      flex: 1;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 7px;
-      padding: 5px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-    }
-
-    .paintings-button {
-      background-color: rgb(179, 122, 233);
-      display: inline-block;
-      padding: 1px 5px 1px 5px;
-      font-size: 13px;
-      border: none;
-      border-radius: 3px;
-      color: white;
-      margin: 3px 0px 3px 0px;
-    }
-
-    .paintings-button:hover {
-      background-color: rgb(166, 106, 223);
-    }
-
-    .paintings-button:active {
-      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
-      border: rgb(233, 233, 233) solid 1px;
-      padding: 0px 4px 0px 4px;
-    }
-
-    .button-div-bot {
-      display: flex;
-      flex-wrap: wrap;
-      height: 430px;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 7px;
-      padding: 5px 5px 5px 10px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-      overflow-y: scroll;
-    }
   </style>
 </head>
 <!-- https://retoolapi.dev/Ox7S97/artistDetails -->
 
-<body>
-  <div style="display: flex;">
-    <div class="outer-div">
+<body style="margin-top: 45px;">
+
+  <div class="header">
+    <div class="header-left">
+        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+        <!--<p class="home-text">electric easel</p>-->
+        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+    </div>
+    <div class="header-center">
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
+                    class="navBarButton">V-Exhibit</button></a></div>
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
+                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+                    class="navBarButton">Shop</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+                    class="navBarButton">Play</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+                    class="navBarButton">Have U Heard?</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+                    class="navBarButton">About Us</button></a></div>
+
+    </div>
+    <div class="header-right">
+        <img class="hamburger" src="./Assets/images/search.svg">
+        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+    </div>
+</div>
+
+  <div class="artist-overview">
+    <div class="artist-info m-0 p-0 pt-4 ps-4">
+      <div class="fs-1 m-0 p-0 ">Leonardo da Vinci</div>
+      <div class="fs-5 opacity-75"><em>15 April 1452 - 2 May 1519</em></div>
+      <div class="fs-5 w-50 ps-4">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Leonardo di ser Piero da Vinci (15 April 1452 - 2 May 1519) was an Italian polymath of the High Renaissance who was active as a painter, draughtsman, engineer, scientist, theorist, sculptor, and architect. While his fame initially rested on his achievements as a painter, he has also become known for his notebooks, in which he made drawings and notes on a variety of subjects, including anatomy, astronomy, botany, cartography, painting, and paleontology. Leonardo epitomized the Renaissance humanist ideal, and his collective works comprise a contribution to later generations of artists matched only by that of his younger contemporary Michelangelo.
+      </div>
+    </div>
+    <div><img style="height: 520px;" src="./Assets/images/leonardo-da-vinci.jpg"></div>
+    <!-- <div><a href=""></a></div> -->
+  </div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Leonardo's Paintings by hitting one of these buttons.</div>
+
+  <div class="m-0" style="display: flex; justify-content: center;">
+    <div class="outer-div" style="background-color: black;">
       <div class="filling-div"><img style="width: 100px;"
           src="./Assets/images/leonardo paintings/leonardo-transparent/mull-box.png" alt="mull-box"></div>
       <div class="lettering-div"><img style="width: 365px;"
@@ -235,13 +221,45 @@
         <button class="paintings-button" onclick="getArtistDetails(2, 5); GinevreDeBenci()">Ginevra de' Benci</button>
         <button class="paintings-button" onclick="getArtistDetails(2, 2); HeadOfAWoman()">Head of a Woman</button>
       </div>
-      <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button>
+      <!-- <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button> -->
 
       <div id="paintingDetails" class="button-div-bot">
         Click the buttons above to get to know more about the paintings.
       </div>
     </div>
   </div>
+
+  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Leonardo is identified as one of the greatest painters in the history of Western art and is often credited as the founder of the High Renaissance. Despite having many lost works and fewer than 25 attributed major works - including numerous unfinished works - he created some of the most influential paintings in the Western canon. His magnum opus, the Mona Lisa, is his best known work and often regarded as the world's most famous painting. The Last Supper is the most reproduced religious painting of all time and his Vitruvian Man drawing is also regarded as a cultural icon. In 2017, Salvator Mundi, attributed in whole or part to Leonardo, was sold at auction for US$450.3 million, setting a new record for the most expensive painting ever sold at public auction.</div>
+
+  <div class="text-center m-4 fs-5"><ul style="list-style: none;">
+  <li style="opacity: 1;">He wrote in reverse.</li>
+  <li style="opacity: 0.9;">He didn't go to school.</li>
+  <li style="opacity: 0.8;">He liked to dissect corpses.</li>
+  <li style="opacity: 0.7;">His masterpiece was destroyed.</li>
+  <li style="opacity: 0.6;">Bill Gates bought Leonardo da Vinci's notebook.</li></ul></div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
+
+  <div class="other-artists w-100 d-flex justify-content-around mt-4">
+    <a href="./picasso-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/pablo-picasso.jpg"> <div class="other-artists-name">Pablo Picasso</div></div>
+    </a>
+
+    <a href="./vincent-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg"> <div class="other-artists-name">Vincent van gogh</div></div>
+    </a>
+
+    <a href="./frida-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg"> <div class="other-artists-name">Frida Kahlo</div></div>
+    </a>
+
+    <a href="./michelAngelo-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/Michelangelo.webp"> <div class="other-artists-name">Michelangelo</div></div>
+    </a>
+    
+  </div>
+
+
 
   <script>
 

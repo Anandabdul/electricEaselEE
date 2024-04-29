@@ -1,0 +1,133 @@
+.outer-div {
+  width: 700px;
+  height: 540px;
+  /* background-color: rgb(228, 153, 153); */
+  position: relative;
+  overflow: hidden;
+  /* margin-left: 50px; */
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.buttons-div {
+  /* background-color: red; */
+  height: 540px;
+  width: 400px;
+  margin: 0px 10px 0px 10px;
+}
+
+.button-div-top {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex: 1; */
+  height: 25%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(230, 230, 230);
+  margin: 0px 7px 7px 7px;
+  padding: 5px;
+  border: rgb(187, 186, 186) solid 1px;
+  border-radius: 6px;
+}
+
+.paintings-button {
+  background-color: rgb(179, 122, 233);
+  display: inline-block;
+  padding: 1px 5px 1px 5px;
+  font-size: 13px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 3px 3px 3px 3px;
+}
+
+.paintings-button:hover {
+  background-color: rgb(166, 106, 223);
+}
+
+.paintings-button:active {
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+  border: rgb(233, 233, 233) solid 1px;
+  padding: 0px 4px 0px 4px;
+}
+
+.button-div-bot {
+  display: flex;
+  flex-wrap: wrap;
+  height: 74%;
+  justify-content: space-around;
+  align-items: start;
+  background-color: rgb(230, 230, 230);
+  margin: 7px;
+  padding: 5px 5px 5px 10px;
+  border: rgb(187, 186, 186) solid 1px;
+  border-radius: 6px;
+  overflow-y: scroll;
+}
+
+
+/* artist overview */
+
+.artist-overview {
+  width: 100%;
+  /* background-color: red; */
+  height: 520px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Franklin Gothic Medium';
+  /* font-style: italic; */
+  font-size: 30px;
+}
+
+.artist-overview img {
+  position: absolute;
+  right: -60px;
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0)0%); */
+}
+
+.artist-info {
+  width: 1050px;
+  background: linear-gradient(to right,rgb(172, 59, 194)-30% , rgb(179, 122, 233) 60%,  rgba(0, 0, 0, 0));
+  z-index: 2;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.other-artists {
+  padding-bottom: 100px;
+  background: linear-gradient(to top,rgb(172, 59, 194)-50% , rgb(179, 122, 233) 50%,  rgba(0, 0, 0, 0));
+}
+
+.other-artists .card {
+  width: 250px; 
+  height: 70px; 
+  overflow: hidden;
+}
+
+.other-artists img {
+  object-fit: cover; 
+  width: 70px; 
+  height: 70px;
+}
+
+.other-artists-name {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.other-artists .card:hover {
+  animation-name: otherArtists;
+  animation-duration: 3s;
+}
+
+@keyframes otherArtists {
+  5% {transform: scale(1.05);}
+}

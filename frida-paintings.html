@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paintings of Frida Kohla</title>
+  <title>Paintings of Frida Kahlo</title>
 
   <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png" />
 
@@ -13,37 +13,30 @@
   <script defer src="./bootstrap/js/bootstrap.min.js"></script>
 
   <script src="./javascript/apiController.js"></script>
+
+  <link rel="stylesheet" href="./css/navbar.css">
+
+  <link rel="stylesheet" href="./css/painter-pages.css">
   
   <style>
-    .outer-div {
-      width: 700px;
-      height: 540px;
-      background-color: rgb(228, 153, 153);
-      position: relative;
-      overflow: hidden;
-      margin-left: 50px;
-      border-radius: 6px;
-      display: inline-block;
-    }
-
     .thorn-necklace-div {
       position: absolute;
-      right: 0px;
-      bottom: 100px;
+      right: -40px;
+      bottom: 0px;
       transition: 0.2s;
     }
 
     .two-fridas-div {
       position: absolute;
-      right: 270px;
-      bottom: 0px;
+      right: 160px;
+      bottom: -40px;
       transition: 0.2s;
     }
 
     .cropped-hair-div {
       position: absolute;
-      bottom: -20px;
-      right: 10px;
+      bottom: -70px;
+      right: -70px;
       transition: 0.2s;
     }
 
@@ -56,8 +49,8 @@
 
     .borderline-div {
       position: absolute;
-      bottom: 150px;
-      right: 90px;
+      bottom: 20px;
+      right: -130px;
       transition: 0.2s;
     }
 
@@ -65,138 +58,157 @@
       height: 200px;
       position: absolute;
       top: 0px;
-      right: -100px;
+      right: -120px;
       transition: 0.2s;
     }
 
     .family-tree-div {
       position: absolute;
       top: 0px;
-      left: -180px;
+      left: -10px;
       transition: 0.2s;
     }
 
     .broken-column-div {
       position: absolute;
       bottom: -20px;
-      right: -40px;
+      right: 200px;
       transition: 0.2s;
     }
 
     .bus-div {
       position: absolute;
-      left: -100px;
-      bottom: -10px;
+      left: -140px;
+      bottom: 80px;
       transition: 0.2s;
     }
 
     .tehuana-div {
       position: absolute;
-      left: 130px;
+      left: 0px;
       bottom: 0px;
       transition: 0.2s;
     }
 
     .wonded-deer-div {
       position: absolute;
-      bottom: -10px;
-      right: 150px;
+      bottom: -90px;
+      right: 40px;
       transition: 0.2s;
     }
 
-    .buttons-div {
-      /* background-color: red; */
-      height: 540px;
-      width: 400px;
-      margin: 0px 10px 0px 10px;
-    }
-
-    .button-div-top {
-      display: flex;
-      flex-wrap: wrap;
-      flex: 1;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 0px 7px 7px 7px;
-      padding: 5px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-    }
-
-    .paintings-button {
-      background-color: rgb(179, 122, 233);
-      display: inline-block;
-      padding: 1px 5px 1px 5px;
-      font-size: 13px;
-      border: none;
-      border-radius: 3px;
-      color: white;
-      margin: 3px 0px 3px 0px;
-    }
-
-    .paintings-button:hover {
-      background-color: rgb(166, 106, 223);
-    }
-
-    .paintings-button:active {
-      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
-      border: rgb(233, 233, 233) solid 1px;
-      padding: 0px 4px 0px 4px;
-    }
-
-    .button-div-bot {
-      display: flex;
-      flex-wrap: wrap;
-      height: 439px;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 7px;
-      padding: 5px 5px 5px 10px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-      overflow-y: scroll;
-    }
     </style>
 </head>
 
-<body style="margin: 0px; margin-top: 20px">
-  <div style="display: flex">
-    <div class="outer-div">
-      <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div>
-      <div id="thornNeckace" class="thorn-necklace-div"><img style="width: 420px" src="./Assets/images/vincent-van-gogh-paintings/cafe-terrance-at-night.jpg" alt="cafe terrance at night" /></div>
-      <div id="twoFridas" class="two-fridas-div"><img style="width: 430px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/starrynights-transparent.png" alt="starry Night" /></div>
-      <div id="croppedHair" class="cropped-hair-div"><img style="width: 520px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/wheatfield-with-cypresses-transparent.png" alt="wheatfield With Cypresses" /></div>
-      <div id="borderline" class="borderline-div"> <img style="width: 350px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/the-potato-eaters-transparent.png" alt="the potato Eaters"/></div>
-      <div id="henryFord" class="henry-ford-div"><img style="width: 200px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/l-ariesienne-transparent.png" alt="l'Ariesienne" /></div>
-      <div id="familyTree" class="family-tree-div"><img style="width: 210px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/self_portrait-transparent.png" alt="self portait" /></div>
-      <div id="brokenColumn" class="broken-column-div"><img style="width: 400px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/irises-transparent.png" alt="irises" /></div>
-      <div id="bus" class="bus-div"><img style="width: 170px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/skeleton-transparent.png" alt="skeleton" /></div>
-      <div id="tehuana" class="tehuana-div"><img style="width: 200px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/sunflowers-transparent.png" alt="sunflowers" /></div>
-      <div id="woundedDeer" class="wonded-deer-div"><img style="width: 250px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/shoes-transparent.png" alt="shoes" /></div>
+<body style="margin: 0px; margin-top: 45px">
+  <div class="header">
+    <div class="header-left">
+        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+        <!--<p class="home-text">electric easel</p>-->
+        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+    </div>
+    <div class="header-center">
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
+                    class="navBarButton">V-Exhibit</button></a></div>
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
+                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+                    class="navBarButton">Shop</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+                    class="navBarButton">Play</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+                    class="navBarButton">Have U Heard?</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+                    class="navBarButton">About Us</button></a></div>
+
+    </div>
+    <div class="header-right">
+        <img class="hamburger" src="./Assets/images/search.svg">
+        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+    </div>
+</div>
+  <div class="artist-overview">
+    <div class="artist-info m-0 p-0 pt-4 ps-4">
+      <div class="fs-1 m-0 p-0 ">Frida Kahlo</div>
+      <div class="fs-5 opacity-75"><em>6 July 1907 - 13 July 1954</em></div>
+      <div class="fs-5 w-50 ps-4">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Magdalena Carmen Frida Kahlo y Calderón (6 July 1907 - 13 July 1954) was a Mexican painter known for her many portraits, self-portraits, and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class, and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist. She is also known for painting about her experience of chronic pain.
+      </div>
+    </div>
+    <div><img style="height: 600px; width: 600px; object-fit: cover; right: 0px;" src="./Assets/images/fridaKahlo.jpg"></div>
+    <!-- <div><a href=""></a></div> -->
+  </div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Frida's Paintings by hitting one of these buttons.</div>
+
+  <div style="display: flex; justify-content: center;">
+    <div class="outer-div" style="background-color: black;">
+      <!-- <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div> -->
+      <div id="henryFord" class="henry-ford-div"><img style="width: 500px" src="./Assets/images/fridakahlo-paintings/henry-ford-hospital.jpg" alt="l'Ariesienne" /></div>
+      <div id="familyTree" class="family-tree-div"><img style="width: 410px" src="./Assets/images/fridakahlo-paintings/frida-transparent/my-parents-and-me-transparent.png" alt="self portait" /></div>
+      <div id="bus" class="bus-div"><img style="width: 600px" src="./Assets/images/fridakahlo-paintings/frida-transparent/the-bus-transparent.png" alt="skeleton" /></div>
+      <div id="borderline" class="borderline-div"> <img style="width: 480px" src="./Assets/images/fridakahlo-paintings/frida-transparent/border-line-transparent.png" alt="the potato Eaters"/></div>
+      <div id="croppedHair" class="cropped-hair-div"><img style="width: 400px" src="./Assets/images/fridakahlo-paintings/frida-transparent/cropped-hair-transparent.png" alt="wheatfield With Cypresses" /></div>
+      <div id="thornNeckace" class="thorn-necklace-div"><img style="width: 200px" src="./Assets/images/fridakahlo-paintings/frida-transparent/self-portrait-with-necklace-of-thorns-transparent.png" alt="cafe terrance at night" /></div>
+      <div id="tehuana" class="tehuana-div"><img style="width: 200px" src="./Assets/images/fridakahlo-paintings/frida-transparent/self-portrait-as-a-tehuana-transparent.png" alt="sunflowers" /></div>
+      <div id="twoFridas" class="two-fridas-div"><img style="width: 400px" src="./Assets/images/fridakahlo-paintings/frida-transparent/the-two-fridas.png" alt="starry Night" /></div>
+      <div id="brokenColumn" class="broken-column-div"><img style="width: 300px" src="./Assets/images/fridakahlo-paintings/frida-transparent/the-broken-column-transparent.png" alt="irises" /></div>
+      <div id="woundedDeer" class="wonded-deer-div"><img style="width: 400px" src="./Assets/images/fridakahlo-paintings/frida-transparent/the-wounded-deer-transparent.png" alt="shoes" /></div>
     </div>
 
     <div class="buttons-div">
       <div class="button-div-top">
         <button class="paintings-button" onclick="getArtistDetails(4, 7); selfPortraitWithThornNecklace()">Self Portrait with Thorn Necklace</button>
         <button class="paintings-button" onclick="getArtistDetails(4, 3); theTwoFridas()">The Two Fridas</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 9); croppedHair()">Self Portrait with Cropped Hair</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 2); borderline()">Self Portrait on the borderline Between Mexico and The United States</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 4); henryFord()">Henry Ford Hospital</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 1); familyTree()">Family Tree</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 8); brokenColumn()">The Broken Column</button>
         <button class="paintings-button" onclick="getArtistDetails(4, 0); bus()">The Bus</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 5); tehuana()">Self Portrait as a Tehuana</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 2); borderline()">The borderline Between Mexico and The U.S.</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 1); familyTree()">Family Tree</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 9); croppedHair()">The Cropped Hair</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 4); henryFord()">Henry Ford Hospital</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 8); brokenColumn()">The Broken Column</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 5); tehuana()">As a Tehuana</button>
         <button class="paintings-button" onclick="getArtistDetails(4, 6); woundedDeer()">The Wounded Deer</button>
       </div>
-      <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button>
+      <!-- <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button> -->
 
       <div id="paintingDetails" class="button-div-bot">
         Click the buttons above to get to know more about the paintings.
       </div>
     </div>
   </div>
+
+    
+  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Kahlo's work as an artist remained relatively unknown until the late 1970s, when her work was rediscovered by art historians and political activists. By the early 1990s, not only had she become a recognized figure in art history, but she was also regarded as an icon for Chicanos, the feminism movement, and the LGBTQ+ community. Kahlo's work has been celebrated internationally as emblematic of Mexican national and indigenous traditions and by feminists for what is seen as its uncompromising depiction of the female experience and form.</div>
+
+  <div class="text-center m-4 fs-5"><ul style="list-style: none;">
+    <li style="opacity: 1;">She was a fashion icon.</li>
+    <li style="opacity: 0.9;">She had a turbulent marriage.</li>
+    <li style="opacity: 0.8;">She painted her own suffering.</li>
+    <li style="opacity: 0.7;">She suffered from many diseases.</li>
+    <li style="opacity: 0.6;">She painted 55 portraits of herself.</li></ul>
+  </div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
+  
+  <div class="other-artists w-100 d-flex justify-content-around mt-4">
+    <a href="./leonardo-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/leonardo-da-vinci.jpg"> <div class="other-artists-name">Leonardo da Vinci</div></div>
+    </a>
+
+    <a href="./picasso-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/pablo-picasso.jpg"> <div class="other-artists-name">Pablo Picasso</div></div>
+    </a>
+
+    <a href="./vincent-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg"> <div class="other-artists-name">Vincent van gogh</div></div>
+    </a>
+
+    <a href="./michelAngelo-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/Michelangelo.webp"> <div class="other-artists-name">Michelangelo</div></div>
+    </a>
+    
+  </div>
+
 
 
   <script>
@@ -280,215 +292,199 @@
       imageSelfPortraitWithThornNecklace.style.filter = shadow;
     }
 
-    function selfPortraitStyle(scale, shadow) {
-      imageSelfPortrait.style.transform = scale;
-      imageSelfPortrait.style.filter = shadow;
+    function twoFridasStyle(scale, shadow) {
+      imageTheTwoFridas.style.transform = scale;
+      imageTheTwoFridas.style.filter = shadow;
     }
 
-    function shoesStyle(scale, shadow) {
-      imageShoes.style.transform = scale;
-      imageShoes.style.filter = shadow;
+    function croppedHairStyle(scale, shadow) {
+      imageCroppedHair.style.transform = scale;
+      imageCroppedHair.style.filter = shadow;
     }
 
-    function cafeTerranceAtNightStyle(scale, shadow) {
-      imageCafeTerranceAtNight.style.transform = scale;
-      imageCafeTerranceAtNight.style.filter = shadow;
+    function borderlineStyle(scale, shadow) {
+      imageBorderline.style.transform = scale;
+      imageBorderline.style.filter = shadow;
     }
 
-    function starryNightStyle(scale, shadow) {
-      imageStarryNight.style.transform = scale;
-      imageStarryNight.style.filter = shadow;
+    function henryFordStyle(scale, shadow) {
+      imageHenryFord.style.transform = scale;
+      imageHenryFord.style.filter = shadow;
     }
 
-    function wheatfieldWithCypressesStyle(scale, shadow) {
-      imageWheatfieldWithCypresses.style.transform = scale;
-      imageWheatfieldWithCypresses.style.filter = shadow;
+    function familyTreeStyle(scale, shadow) {
+      imageFamilyTree.style.transform = scale;
+      imageFamilyTree.style.filter = shadow;
     }
 
-    function sunflowersStyle(scale, shadow) {
-      imageSunflower.style.transform = scale;
-      imageSunflower.style.filter = shadow;
+    function brokenColumnStyle(scale, shadow) {
+      imageBrokenColumn.style.transform = scale;
+      imageBrokenColumn.style.filter = shadow;
     }
 
-    function irisesStyle(scale, shadow) {
-      imageIrises.style.filter = shadow;
-      imageIrises.style.transform = scale;
+    function busStyle(scale, shadow) {
+      imageBus.style.filter = shadow;
+      imageBus.style.transform = scale;
     }
 
-    function skeletonStyle(scale, shadow) {
-      imageSkeleton.style.transform = scale;
-      imageSkeleton.style.filter = shadow;
+    function tehuanaStyle(scale, shadow) {
+      imageTehuana.style.transform = scale;
+      imageTehuana.style.filter = shadow;
     }
 
-    function lAriesienneStyle(scale, shadow) {
-      imageLAriesienne.style.transform = scale;
-      imageLAriesienne.style.filter = shadow;
+    function woundedDeerStyle(scale, shadow) {
+      imageWondedDeer.style.transform = scale;
+      imageWondedDeer.style.filter = shadow;
     }
 
-    var imageSelfPortraitWithThornNecklace = document.getElementById("potatoEaters");
+    var imageSelfPortraitWithThornNecklace = document.getElementById("thornNeckace");
     function selfPortraitWithThornNecklace() {
       selfPortraitWithThornNecklaceStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        selfPortraitWithThornNecklaceArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = selfPortraitWithThornNecklaceArtDetails;
     }
 
-    var imageTheTwoFridas = document.getElementById("selfPortrait");
+    var imageTheTwoFridas = document.getElementById("twoFridas");
     function theTwoFridas() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        theTwoFridasArtDetails;
+      twoFridasStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = theTwoFridasArtDetails;
     }
 
-    var imageShoes = document.getElementById("shoes");
-    function shoes() {
+    var imageCroppedHair = document.getElementById("croppedHair");
+    function croppedHair() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML = shoesArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = sPortraitCroppedHairArtDetails;
     }
 
-    var imageCafeTerranceAtNight =
-      document.getElementById("cafeTerranceNight");
-    function cafeTerranceAtNight() {
+    var imageBorderline = document.getElementById("borderline");
+    function borderline() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle(
-        "scale(1.2)",
-        "drop-shadow(0px 0px 8px yellow)"
-      );
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        cafeTeranceAtNightArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = borderlineMexicoUSArtDetails;
     }
 
-    var imageStarryNight = document.getElementById("starryNight");
-    function starryNight() {
+    var imageHenryFord = document.getElementById("henryFord");
+    function henryFord() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        starryNightArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = henryFordHospitalArtDetails;
     }
 
-    var imageWheatfieldWithCypresses =
-      document.getElementById("wheatfieldCypre");
-    function wheatfieldWithCypresses() {
+    var imageFamilyTree = document.getElementById("familyTree");
+    function familyTree() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle(
-        "scale(1.2)",
-        "drop-shadow(0px 0px 8px yellow)"
-      );
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        wheatfieldWithCypressesArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = familyTreeArtDetails;
     }
 
-    var imageSunflower = document.getElementById("sunflowers");
-    function sunflowers() {
+    var imageBrokenColumn = document.getElementById("brokenColumn");
+    function brokenColumn() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        sunflowersArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = theBrokenColumnArtDetails;
     }
 
-    var imageIrises = document.getElementById("irises");
-    function irises() {
+    var imageBus = document.getElementById("bus");
+    function bus() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML = irisesArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = busArtDetails;
     }
 
-    var imageSkeleton = document.getElementById("skeleton");
-    function skeleton() {
+    var imageTehuana = document.getElementById("tehuana");
+    function tehuana() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        skeletonArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      woundedDeerStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = tehuanaArtDetails;
     }
 
-    var imageLAriesienne = document.getElementById("lAriesienne");
-    function lAriesienne() {
+    var imageWondedDeer = document.getElementById("woundedDeer");
+    function woundedDeer() {
       selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      document.getElementById("paintingDetails").innerHTML =
-        lAriesienneArtDetails;
+      twoFridasStyle("scale(1)", "none");
+      croppedHairStyle("scale(1)", "none");
+      borderlineStyle("scale(1)", "none");
+      henryFordStyle("scale(1)", "none");
+      familyTreeStyle("scale(1)", "none");
+      brokenColumnStyle("scale(1)", "none");
+      busStyle("scale(1)", "none");
+      tehuanaStyle("scale(1)", "none");
+      woundedDeerStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      document.getElementById("paintingDetails").innerHTML = theWondedDeerArtDetails;
     }
 
   </script>

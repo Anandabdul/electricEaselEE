@@ -13,19 +13,12 @@
   <script defer src="./bootstrap/js/bootstrap.min.js"></script>
 
   <script src="./javascript/apiController.js"></script>
+
+  <link rel="stylesheet" href="./css/navbar.css">
+
+  <link rel="stylesheet" href="./css/painter-pages.css">
   
   <style>
-    .outer-div {
-      width: 700px;
-      height: 540px;
-      background-color: rgb(228, 153, 153);
-      position: relative;
-      overflow: hidden;
-      margin-left: 50px;
-      border-radius: 6px;
-      display: inline-block;
-    }
-
     .potato-eaters-div {
       position: absolute;
       right: 0px;
@@ -103,66 +96,51 @@
       right: 150px;
       transition: 0.2s;
     }
-
-    .buttons-div {
-      /* background-color: red; */
-      height: 540px;
-      width: 400px;
-      margin: 0px 10px 0px 10px;
-    }
-
-    .button-div-top {
-      display: flex;
-      flex-wrap: wrap;
-      flex: 1;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 0px 7px 7px 7px;
-      padding: 5px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-    }
-
-    .paintings-button {
-      background-color: rgb(179, 122, 233);
-      display: inline-block;
-      padding: 1px 5px 1px 5px;
-      font-size: 13px;
-      border: none;
-      border-radius: 3px;
-      color: white;
-      margin: 3px 0px 3px 0px;
-    }
-
-    .paintings-button:hover {
-      background-color: rgb(166, 106, 223);
-    }
-
-    .paintings-button:active {
-      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
-      border: rgb(233, 233, 233) solid 1px;
-      padding: 0px 4px 0px 4px;
-    }
-
-    .button-div-bot {
-      display: flex;
-      flex-wrap: wrap;
-      height: 439px;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 7px;
-      padding: 5px 5px 5px 10px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-      overflow-y: scroll;
-    }
     </style>
 </head>
 
-<body style="margin: 0px; margin-top: 20px">
-  <div style="display: flex">
+<body style="margin: 0px; margin-top: 45px">
+  <div class="header">
+    <div class="header-left">
+        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+        <!--<p class="home-text">electric easel</p>-->
+        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+    </div>
+    <div class="header-center">
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
+                    class="navBarButton">V-Exhibit</button></a></div>
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
+                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+                    class="navBarButton">Shop</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+                    class="navBarButton">Play</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+                    class="navBarButton">Have U Heard?</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+                    class="navBarButton">About Us</button></a></div>
+
+    </div>
+    <div class="header-right">
+        <img class="hamburger" src="./Assets/images/search.svg">
+        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+    </div>
+</div>
+  <div class="artist-overview">
+    <div class="artist-info m-0 p-0 pt-4 ps-4">
+      <div class="fs-1 m-0 p-0 ">Vincent Van Gogh</div>
+      <div class="fs-5 opacity-75"><em>30 March 1853 - 29 July 1890</em></div>
+      <div class="fs-5 w-50 ps-4">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Vincent Willem van Gogh (30 March 1853 - 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade, he created approximately 2100 artworks, including around 860 oil paintings, most of them in the last two years of his life. His oeuvre includes landscapes, still lifes, portraits, and self-portraits, most of which are characterized by bold colors and dramatic brushwork that contributed to the rise of expressionism in modern art. Van Gogh's work was beginning to gain critical attention before he died at age 37, by what was suspected at the time to be a suicide.
+      </div>
+    </div>
+    <div><img style="height: 600px; width: 600px; object-fit: cover; right: 0px;" src="./Assets/images/vincent-van-gogh.jpg"></div>
+    <!-- <div><a href=""></a></div> -->
+  </div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Vincent's Paintings by hitting one of these buttons.</div>
+
+  <div style="display: flex; justify-content: center;">
     <div class="outer-div">
       <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div>
       <div id="cafeTerranceNight" class="cafe-terrance-div">
@@ -237,12 +215,43 @@
         <button class="paintings-button" onclick="getArtistDetails(4, 5); skeleton()">Skeleton</button>
         <button class="paintings-button" onclick="getArtistDetails(4, 6); lAriesienne()">L'Ariesienne</button>
       </div>
-      <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button>
+      <!-- <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button> -->
 
       <div id="paintingDetails" class="button-div-bot">
         Click the buttons above to get to know more about the paintings.
       </div>
     </div>
+  </div>
+
+  
+  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Van Gogh's work began to attract critical artistic attention in the last year of his life. After his death, Van Gogh's art and life story captured public imagination as an emblem of misunderstood genius, due in large part to the efforts of his widowed sister-in-law Johanna van Gogh-Bonger. His bold use of color, expressive line and thick application of paint inspired avant-garde artistic groups like the Fauves and German Expressionists in the early 20th century. Van Gogh's work gained widespread critical and commercial success in the following decades, and he has become a lasting icon of the romantic ideal of the tortured artist. Today, Van Gogh's works are among the world's most expensive paintings ever sold. His legacy is honored and celebrated by the Van Gogh Museum in Amsterdam, which holds the world's largest collection of his paintings and drawings.</div>
+
+  <div class="text-center m-4 fs-5"><ul style="list-style: none;">
+    <li style="opacity: 1;">'Starry Night' was created in an 'asylum'.</li>
+  <li style="opacity: 0.9;">He painted almost 900 paintings in 10 years.</li>
+  <li style="opacity: 0.8;">The truth behind van Gogh's ear is still unknown.</li>
+  <li style="opacity: 0.7;">van Gogh's staples were coffee, cigarettes and bread.</li>
+  <li style="opacity: 0.6;">van Gogh was a pioneer of the post-impressionistic selfie.</li></ul></div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
+
+  <div class="other-artists w-100 d-flex justify-content-around mt-4">
+    <a href="./leonardo-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/leonardo-da-vinci.jpg"> <div class="other-artists-name">Leonardo Da Vinci</div></div>
+    </a>
+    
+    <a href="./picasso-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/pablo-picasso.jpg"> <div class="other-artists-name">Pablo Picasso</div></div>
+    </a>
+    
+    <a href="./frida-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg"> <div class="other-artists-name">Frida Kahlo</div></div>
+    </a>
+
+    <a href="./michelAngelo-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/Michelangelo.webp"> <div class="other-artists-name">Michelangelo</div></div>
+    </a>
+    
   </div>
 
   <script>

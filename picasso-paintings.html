@@ -14,18 +14,10 @@
 
   <script src="./javascript/apiController.js"></script>
 
-  <style>
-    .outer-div {
-      width: 700px;
-      height: 540px;
-      background-color: rgb(228, 153, 153);
-      position: relative;
-      overflow: hidden;
-      margin-left: 50px;
-      border-radius: 6px;
-      display: inline-block;
-    }
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/painter-pages.css">
 
+  <style>
     .ma-jolie-div {
       position: absolute;
       right: 0px;
@@ -103,67 +95,52 @@
       transition: 0.2s;
     }
 
-    .buttons-div {
-      /* background-color: red; */
-      height: 540px;
-      width: 400px;
-      margin: 0px 10px 0px 10px;
-    }
-
-    .button-div-top {
-      display: flex;
-      flex-wrap: wrap;
-      flex: 1;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 7px;
-      padding: 5px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-    }
-
-    .paintings-button {
-      background-color: rgb(179, 122, 233);
-      display: inline-block;
-      padding: 1px 5px 1px 5px;
-      font-size: 13px;
-      border: none;
-      border-radius: 3px;
-      color: white;
-      margin: 3px 0px 3px 0px;
-    }
-
-    .paintings-button:hover {
-      background-color: rgb(166, 106, 223);
-    }
-
-    .paintings-button:active {
-      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
-      border: rgb(233, 233, 233) solid 1px;
-      padding: 0px 4px 0px 4px;
-    }
-
-    .button-div-bot {
-      display: flex;
-      flex-wrap: wrap;
-      height: 430px;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 7px;
-      padding: 5px 5px 5px 10px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-      overflow-y: scroll;
-    }
-
   </style>
 </head>
 
-<body style="margin: 0px; margin-top: 20px;">
-  <div style="display: flex;">
-    <div class="outer-div">
+<body style="margin: 0px; margin-top: 45px;">
+  <div class="header">
+    <div class="header-left">
+        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+        <!--<p class="home-text">electric easel</p>-->
+        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+    </div>
+    <div class="header-center">
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
+                    class="navBarButton">V-Exhibit</button></a></div>
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
+                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+                    class="navBarButton">Shop</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+                    class="navBarButton">Play</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+                    class="navBarButton">Have U Heard?</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+                    class="navBarButton">About Us</button></a></div>
+
+    </div>
+    <div class="header-right">
+        <img class="hamburger" src="./Assets/images/search.svg">
+        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+    </div>
+</div>
+  <div class="artist-overview">
+    <div class="artist-info m-0 p-0 pt-4 ps-4">
+      <div class="fs-1 m-0 p-0 ">Pablo Picasso</div>
+      <div class="fs-5 opacity-75"><em>25 October 1881 - 8 April 1973</em></div>
+      <div class="fs-5 w-50 ps-4">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Pablo Ruiz Picasso (25 October 1881 - 8 April 1973) was a Spanish painter, sculptor, printmaker, ceramicist, and theatre designer who spent most of his adult life in France. One of the most influential artists of the 20th century, he is known for co-founding the Cubist movement, the invention of constructed sculpture, the co-invention of collage, and for the wide variety of styles that he helped develop and explore. Among his most famous works are the proto-Cubist Les Demoiselles d'Avignon (1907) and the anti-war painting Guernica (1937), a dramatic portrayal of the bombing of Guernica by German and Italian air forces during the Spanish Civil War.
+      </div>
+    </div>
+    <div><img style="height: 630px; width: 630px; object-fit: cover; right: 0px; transform: translateY(-50px);" src="./Assets/images/pablo-picasso.jpg"></div>
+    <!-- <div><a href=""></a></div> -->
+  </div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Picasso's Paintings by hitting one of these buttons.</div>
+
+  <div style="display: flex; justify-content: center;">
+    <div class="outer-div" style="background-color: rgb(228, 153, 153);">
       <div id="guernica" class="guernica-div"><img style="width: 1000px;" src="./Assets/images/pablo-picasso-paintings/guernica.jpg" alt="Guernica"></div>
       <div id="lesDemoisellas" class="les-demo-div"><img style="width: 350px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Les_Demoiselles_d'Avignon-transparent.png" alt="Les Demoiselles d Avignon"></div>
       <div id="laSoupeBig" class="la-soupe-big-div"><img style="width: 345px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/La_soupe-big-transparent.png" alt="la soupe"></div>
@@ -179,23 +156,54 @@
     </div>
     <div class="buttons-div">
       <div class="button-div-top">
-        <button class="paintings-button" onclick="getArtistDetails(3, 7); theOldGuitarist()">The Old Guitarist</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 7); theOldGuitarist()">Old Guitarist</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 3); maJolie()">Ma Jolie</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 4); guernica()">Guernica</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 9); theWeepingWoman()">The Weeping Woman</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 2); girlBeforeAMirror()">Girl Before A Mirror</button>
-        <button class="paintings-button" onclick="getArtistDetails(3, 4); guernica()">Guernica</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 1); doraMaarAuChat()">Dora Maar Au Chat</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 8); theSoup()">The Soup</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 0); boyWithAPipe()">Boy with a pipe</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 5); lesDemoisellasDAvignon()">Les Demoisellas D' Avignon</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 6); portraitOfDoraMaar()">Portrait of Dora Maar</button>
       </div>
-      <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button>
+      <!-- <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button> -->
 
       <div id="paintingDetails" class="button-div-bot">
         Click the buttons above to get to know more about the paintings.
       </div>
     </div>
+  </div>
+  
+  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Picasso's output, especially in his early career, is often periodized. While the names of many of his later periods are debated, the most commonly accepted periods in his work are the Blue Period (1901-1904), the Rose Period (1904-1906), the African-influenced Period (1907-1909), Analytic Cubism (1909-1912), and Synthetic Cubism (1912-1919), also referred to as the Crystal period. Much of Picasso's work of the late 1910s and early 1920s is in a neoclassical style, and his work in the mid-1920s often has characteristics of Surrealism. His later work often combines elements of his earlier styles. Exceptionally prolific throughout the course of his long life, Picasso achieved universal renown and immense fortune for his revolutionary artistic accomplishments, and became one of the best-known figures in 20th-century art.</div>
+
+  <div class="text-center m-4 fs-5"><ul style="list-style: none;">
+    <li style="opacity: 1;">He was a great animal lover.</li>
+    <li style="opacity: 0.9;">He was a fast-paced painter.</li>
+    <li style="opacity: 0.8;">He was more than just a painter.</li>
+    <li style="opacity: 0.7;">He curated his first ever retrospective.</li>
+    <li style="opacity: 0.6;">He became a celebrity in his own lifetime.</li></ul>
+  </div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
+
+  <div class="other-artists w-100 d-flex justify-content-around mt-4">
+    <a href="./leonardo-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/leonardo-da-vinci.jpg"> <div class="other-artists-name">Leonardo da Vinci</div></div>
+    </a>
+
+    <a href="./vincent-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg"> <div class="other-artists-name">Vincent van gogh</div></div>
+    </a>
+
+    <a href="./frida-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg"> <div class="other-artists-name">Frida Kahlo</div></div>
+    </a>
+
+    <a href="./michelAngelo-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/Michelangelo.webp"> <div class="other-artists-name">Michelangelo</div></div>
+    </a>
+    
   </div>
   
   <script>
@@ -327,7 +335,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = salvatorMundiArtDetails;
+      document.getElementById('paintingDetails').innerHTML = theOldGuitaristArtDetais;
     }
 
     var imageMaJolie = document.getElementById('maJolie');
@@ -343,7 +351,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = headOfAWomanArtDetails;
+      document.getElementById('paintingDetails').innerHTML = maJolieArtDetails;
     }
 
     var imageTheWeepingWoman = document.getElementById('weepingWoman');
@@ -359,7 +367,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = monalisaArtDetails;
+      document.getElementById('paintingDetails').innerHTML = theWeepingWomanArtDetails;
     }
 
     var imageGirlBeforeAMirror = document.getElementById('girlMirror');
@@ -375,7 +383,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = lastSupperArtDetails;
+      document.getElementById('paintingDetails').innerHTML = girlBeforeAMirrorArtDetails;
     }
 
     var imageGuernica = document.getElementById('guernica');
@@ -391,7 +399,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = ladyErmineArtDetails;
+      document.getElementById('paintingDetails').innerHTML = guernicaArtDetails;
     }
 
     var imageDoraMaarAuChat = document.getElementById('doraMaarChat');
@@ -407,7 +415,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = virginRocksArtDetails;
+      document.getElementById('paintingDetails').innerHTML = doraMaarAuChatArtDetails;
     }
 
     var imageTheSoup = document.getElementById('laSoupeBig');
@@ -423,7 +431,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = saintAnneArtDetails;
+      document.getElementById('paintingDetails').innerHTML = theSoupArtDetails;
     }
 
     var imageBoyWithAPipe = document.getElementById('boyPipe');
@@ -439,7 +447,7 @@
       boyWithAPipeStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = selfPortraitArtDetails;
+      document.getElementById('paintingDetails').innerHTML = boyWithApipeArtDetails;
     }
 
     var imageLesDemoisellasDAvignon= document.getElementById('lesDemoisellas');
@@ -455,7 +463,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
       portraitOfDoraMaarStyle("scale(1)", "none");
-      document.getElementById('paintingDetails').innerHTML = vitruveViatourArtDetails;
+      document.getElementById('paintingDetails').innerHTML = lesDemoisellasDAvignonArtDetails;
     }
 
     var imagePortraitOfDoraMaar = document.getElementById('porDoraMaar');
@@ -471,7 +479,7 @@
       boyWithAPipeStyle("scale(1)", "none");
       lesDemoisellasDAvignonStyle("scale(1)", "none");
       portraitOfDoraMaarStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      document.getElementById('paintingDetails').innerHTML = ginevraBenciArtDetails;
+      document.getElementById('paintingDetails').innerHTML = portraitOfDoraMaarArtDetails;
     }
   </script>
 </body>

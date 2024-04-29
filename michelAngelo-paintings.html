@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paintings of Frida Kohla</title>
+  <title>Paintings of Michelangelo</title>
 
   <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png" />
 
@@ -13,193 +13,192 @@
   <script defer src="./bootstrap/js/bootstrap.min.js"></script>
 
   <script src="./javascript/apiController.js"></script>
+
+  <link rel="stylesheet" href="./css/navbar.css">
+
+  <link rel="stylesheet" href="./css/painter-pages.css">
   
   <style>
-    .outer-div {
-      width: 700px;
-      height: 540px;
-      background-color: rgb(228, 153, 153);
-      position: relative;
-      overflow: hidden;
-      margin-left: 50px;
-      border-radius: 6px;
-      display: inline-block;
-    }
-
-    .thorn-necklace-div {
+    .san-spirit-div {
       position: absolute;
-      right: 0px;
-      bottom: 100px;
+      right: -160px;
+      bottom: 200px;
       transition: 0.2s;
     }
 
-    .two-fridas-div {
+    .madonna-bruges-div {
       position: absolute;
-      right: 270px;
-      bottom: 0px;
+      right: 160px;
+      bottom: -90px;
       transition: 0.2s;
     }
 
-    .cropped-hair-div {
+    .bacchus-div {
       position: absolute;
-      bottom: -20px;
-      right: 10px;
-      transition: 0.2s;
-    }
-
-    .background-div {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      transition: 0.2s;
-    }
-
-    .borderline-div {
-      position: absolute;
-      bottom: 150px;
+      bottom: -30px;
       right: 90px;
       transition: 0.2s;
     }
 
-    .henry-ford-div {
+    .dying-slave-div {
+      position: absolute;
+      bottom: 150px;
+      left: 0px;
+      transition: 0.2s;
+    }
+
+    .angel-div {
       height: 200px;
       position: absolute;
-      top: 0px;
-      right: -100px;
+      bottom: 0px;
+      left: -170px;
       transition: 0.2s;
     }
 
-    .family-tree-div {
+    .moses-div {
       position: absolute;
-      top: 0px;
-      left: -180px;
+      bottom: 0px;
+      left: 70px;
       transition: 0.2s;
     }
 
-    .broken-column-div {
+    .pieta-div {
       position: absolute;
       bottom: -20px;
-      right: -40px;
+      right: -20px;
       transition: 0.2s;
     }
 
-    .bus-div {
+    .last-judgement-div {
       position: absolute;
-      left: -100px;
+      left: 0px;
+      bottom: -100px;
+      transition: 0.2s;
+    }
+
+    .creation-adam-div {
+      position: absolute;
+      left: 150px;
+      bottom: -90px;
+      transition: 0.2s;
+    }
+
+    .david-div {
+      position: absolute;
       bottom: -10px;
+      right: 240px;
       transition: 0.2s;
-    }
-
-    .tehuana-div {
-      position: absolute;
-      left: 130px;
-      bottom: 0px;
-      transition: 0.2s;
-    }
-
-    .wonded-deer-div {
-      position: absolute;
-      bottom: -10px;
-      right: 150px;
-      transition: 0.2s;
-    }
-
-    .buttons-div {
-      /* background-color: red; */
-      height: 540px;
-      width: 400px;
-      margin: 0px 10px 0px 10px;
-    }
-
-    .button-div-top {
-      display: flex;
-      flex-wrap: wrap;
-      flex: 1;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 0px 7px 7px 7px;
-      padding: 5px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-    }
-
-    .paintings-button {
-      background-color: rgb(179, 122, 233);
-      display: inline-block;
-      padding: 1px 5px 1px 5px;
-      font-size: 13px;
-      border: none;
-      border-radius: 3px;
-      color: white;
-      margin: 3px 0px 3px 0px;
-    }
-
-    .paintings-button:hover {
-      background-color: rgb(166, 106, 223);
-    }
-
-    .paintings-button:active {
-      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
-      border: rgb(233, 233, 233) solid 1px;
-      padding: 0px 4px 0px 4px;
-    }
-
-    .button-div-bot {
-      display: flex;
-      flex-wrap: wrap;
-      height: 439px;
-      justify-content: space-around;
-      align-items: start;
-      background-color: rgb(230, 230, 230);
-      margin: 7px;
-      padding: 5px 5px 5px 10px;
-      border: rgb(187, 186, 186) solid 1px;
-      border-radius: 6px;
-      overflow-y: scroll;
     }
     </style>
 </head>
 
-<body style="margin: 0px; margin-top: 20px">
-  <div style="display: flex">
+<body style="margin: 0px; margin-top: 45px">
+  <div class="header">
+    <div class="header-left">
+        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+        <!--<p class="home-text">electric easel</p>-->
+        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+    </div>
+    <div class="header-center">
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
+                    class="navBarButton">V-Exhibit</button></a></div>
+        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
+                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+                    class="navBarButton">Shop</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+                    class="navBarButton">Play</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+                    class="navBarButton">Have U Heard?</button></a></div>
+        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+                    class="navBarButton">About Us</button></a></div>
+
+    </div>
+    <div class="header-right">
+        <img class="hamburger" src="./Assets/images/search.svg">
+        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+    </div>
+</div>
+
+  <div class="artist-overview">
+    <div class="artist-info m-0 p-0 pt-4 ps-4">
+      <div class="fs-1 m-0 p-0 ">Michelangelo</div>
+      <div class="fs-5 opacity-75"><em>6 March 1475 - 18 February 1564</em></div>
+      <div class="fs-5 w-50 ps-4">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Michelangelo di Lodovico Buonarroti Simoni (6 March 1475 - 18 February 1564), was an Italian sculptor, painter, architect, and poet of the High Renaissance. Born in the Republic of Florence, his work was inspired by models from classical antiquity and had a lasting influence on Western art. Michelangelo's creative abilities and mastery in a range of artistic arenas define him as an archetypal Renaissance man, along with his rival and elder contemporary, Leonardo da Vinci. Given the sheer volume of surviving correspondence, sketches, and reminiscences, Michelangelo is one of the best-documented artists of the 16th century.
+      </div>
+    </div>
+    <div><img style="height: 520px;" src="./Assets/images/Michelangelo.webp"></div>
+    <!-- <div><a href=""></a></div> -->
+  </div>
+  
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Michelangelo's Paintings by hitting one of these buttons.</div>
+
+  <div style="display: flex; justify-content: center;">
     <div class="outer-div">
-      <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div>
-      <div id="thornNeckace" class="thorn-necklace-div"><img style="width: 420px" src="./Assets/images/vincent-van-gogh-paintings/cafe-terrance-at-night.jpg" alt="cafe terrance at night" /></div>
-      <div id="twoFridas" class="two-fridas-div"><img style="width: 430px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/starrynights-transparent.png" alt="starry Night" /></div>
-      <div id="croppedHair" class="cropped-hair-div"><img style="width: 520px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/wheatfield-with-cypresses-transparent.png" alt="wheatfield With Cypresses" /></div>
-      <div id="borderline" class="borderline-div"> <img style="width: 350px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/the-potato-eaters-transparent.png" alt="the potato Eaters"/></div>
-      <div id="henryFord" class="henry-ford-div"><img style="width: 200px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/l-ariesienne-transparent.png" alt="l'Ariesienne" /></div>
-      <div id="familyTree" class="family-tree-div"><img style="width: 210px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/self_portrait-transparent.png" alt="self portait" /></div>
-      <div id="brokenColumn" class="broken-column-div"><img style="width: 400px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/irises-transparent.png" alt="irises" /></div>
-      <div id="bus" class="bus-div"><img style="width: 170px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/skeleton-transparent.png" alt="skeleton" /></div>
-      <div id="tehuana" class="tehuana-div"><img style="width: 200px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/sunflowers-transparent.png" alt="sunflowers" /></div>
-      <div id="woundedDeer" class="wonded-deer-div"><img style="width: 250px" src="./Assets/images/vincent-van-gogh-paintings/vincent-transparents/shoes-transparent.png" alt="shoes" /></div>
+      <!-- <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div> -->
+      <div id="lastJudgement" class="last-judgement-div"><img style="width: 700px" src="./Assets/images/michelangelo-paintings/last-judgement.jpg" alt="skeleton" /></div>
+      <div id="sanSpiritoCrucifix" class="san-spirit-div"><img style="width: 500px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/San-Spirito-Crucifix-transparent.png" alt="cafe terrance at night" /></div>
+      <div id="bacchus" class="bacchus-div"><img style="width: 290px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/bacchus-transparent.png" alt="wheatfield With Cypresses" /></div>
+      <div id="madonnaOfBruges" class="madonna-bruges-div"><img style="width: 390px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Madonna_michelangelo-transparent.png" alt="starry Night" /></div>
+      <div id="dyingSlave" class="dying-slave-div"> <img style="width: 210px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Dying-Slave-transparent.png" alt="the potato Eaters"/></div>
+      <div id="moses" class="moses-div"><img style="width: 250px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/michelangelo-moses-transparent.png" alt="self portait" /></div>
+      <div id="pieta" class="pieta-div"><img style="width: 400px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Michelangelos-Pieta-transparent.png" alt="irises" /></div>
+      <div id="david" class="david-div"><img style="width: 180px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/michelangelo-david-transparent.png" alt="shoes" /></div>
+      <div id="creationOfAdam" class="creation-adam-div"><img style="width: 700px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Creation_of_Adam-transparent.png" alt="sunflowers" /></div>
+      <div id="angel" class="angel-div"><img style="width: 350px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Angel_by_Michelangelo-transparent.png" alt="l'Ariesienne" /></div>
     </div>
 
     <div class="buttons-div">
       <div class="button-div-top">
-        <button class="paintings-button" onclick="getArtistDetails(4, 7); selfPortraitWithThornNecklace()">Self Portrait with Thorn Necklace</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 3); theTwoFridas()">The Two Fridas</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 9); croppedHair()">Self Portrait with Cropped Hair</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 2); borderline()">Self Portrait on the borderline Between Mexico and The United States</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 4); henryFord()">Henry Ford Hospital</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 1); familyTree()">Family Tree</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 8); brokenColumn()">The Broken Column</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 0); bus()">The Bus</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 5); tehuana()">Self Portrait as a Tehuana</button>
-        <button class="paintings-button" onclick="getArtistDetails(4, 6); woundedDeer()">The Wounded Deer</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 7); sanSpiritoCrucifix()">San Spirito Crucifix</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 3); madonnaOfBruges()">Madonna of Bruges</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 9); bacchus()">Bucchus</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 2); dyingSlave()">Dying Slave</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 4); angel()">Angel</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 1); moses()">Moses</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 8); pieta()">Pieta</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 0); lastJudgement()">The Last Judgement</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 5); creationOfAdam()">Creation of Adam</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 6); david()">David</button>
       </div>
-      <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button>
+      <!-- <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button> -->
 
       <div id="paintingDetails" class="button-div-bot">
         Click the buttons above to get to know more about the paintings.
       </div>
     </div>
   </div>
+  
+  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Michelangelo achieved fame early. Two of his best-known works, the Pietà and David, were sculpted before the age of 30. Although he did not consider himself a painter, Michelangelo created two of the most influential frescoes in the history of Western art: the scenes from Genesis on the ceiling of the Sistine Chapel in Rome, and The Last Judgment on its altar wall. His design of the Laurentian Library pioneered Mannerist architecture. At the age of 71, he succeeded Antonio da Sangallo the Younger as the architect of St. Peter's Basilica. Michelangelo transformed the plan so that the Western end was finished to his design, as was the dome, with some modification, after his death.</div>
 
+  <div class="text-center m-4 fs-5"><ul style="list-style: none;">
+  <li style="opacity: 1;">He was very funny.</li>
+  <li style="opacity: 0.9;">He was a skilled and savvy businessman.</li>
+  <li style="opacity: 0.8;">He lived twice as long as most people did in the Renaissance.</li>
+  <li style="opacity: 0.7;">He left a vast paper trail involving the most powerful people of his day.</li>
+  <li style="opacity: 0.6;">He was as busy and successful in his 70s and 80s as at any time of his life.</li></ul></div>
 
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
 
+  <div class="other-artists w-100 d-flex justify-content-around mt-4">
+    <a href="./leonardo-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/leonardo-da-vinci.jpg"> <div class="other-artists-name">Leonardo da Vinci</div></div>
+    </a>
+    
+    <a href="./picasso-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/pablo-picasso.jpg"> <div class="other-artists-name">Pablo Picasso</div></div>
+    </a>
+
+    <a href="./vincent-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg"> <div class="other-artists-name">Vincent van gogh</div></div>
+    </a>
+
+    <a href="./frida-paintings.html">
+      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg"> <div class="other-artists-name">Frida Kahlo</div></div>
+    </a>
+
+  </div>
 
   <script>
     var sanSpiritoCrucifixArtDetails = `
@@ -275,222 +274,208 @@
       davidArtDetails,
     ];
 
-    console.log(paintings);
+    // console.log(paintings);
 
-    function selfPortraitWithThornNecklaceStyle(scale, shadow) {
-      imageSelfPortraitWithThornNecklace.style.transform = scale;
-      imageSelfPortraitWithThornNecklace.style.filter = shadow;
+    function sanSpiritoCrucifixStyle(scale, shadow) {
+      imageSanSpiritoCrucifix.style.transform = scale;
+      imageSanSpiritoCrucifix.style.filter = shadow;
     }
 
-    function selfPortraitStyle(scale, shadow) {
-      imageSelfPortrait.style.transform = scale;
-      imageSelfPortrait.style.filter = shadow;
+    function madonnaOfBrugesStyle(scale, shadow) {
+      imageMadonnaOfBruges.style.transform = scale;
+      imageMadonnaOfBruges.style.filter = shadow;
     }
 
-    function shoesStyle(scale, shadow) {
-      imageShoes.style.transform = scale;
-      imageShoes.style.filter = shadow;
+    function bacchusStyle(scale, shadow) {
+      imageBacchus.style.transform = scale;
+      imageBacchus.style.filter = shadow;
     }
 
-    function cafeTerranceAtNightStyle(scale, shadow) {
-      imageCafeTerranceAtNight.style.transform = scale;
-      imageCafeTerranceAtNight.style.filter = shadow;
+    function dyingSlaveStyle(scale, shadow) {
+      imageDyingSlave.style.transform = scale;
+      imageDyingSlave.style.filter = shadow;
     }
 
-    function starryNightStyle(scale, shadow) {
-      imageStarryNight.style.transform = scale;
-      imageStarryNight.style.filter = shadow;
+    function angelStyle(scale, shadow) {
+      imageAngel.style.transform = scale;
+      imageAngel.style.filter = shadow;
     }
 
-    function wheatfieldWithCypressesStyle(scale, shadow) {
-      imageWheatfieldWithCypresses.style.transform = scale;
-      imageWheatfieldWithCypresses.style.filter = shadow;
+    function mosesStyle(scale, shadow) {
+      imageMoses.style.transform = scale;
+      imageMoses.style.filter = shadow;
     }
 
-    function sunflowersStyle(scale, shadow) {
-      imageSunflower.style.transform = scale;
-      imageSunflower.style.filter = shadow;
+    function pietaStyle(scale, shadow) {
+      imagePieta.style.transform = scale;
+      imagePieta.style.filter = shadow;
     }
 
-    function irisesStyle(scale, shadow) {
-      imageIrises.style.filter = shadow;
-      imageIrises.style.transform = scale;
+    function lastJudgementStyle(scale, shadow) {
+      imageLastJudgement.style.filter = shadow;
+      imageLastJudgement.style.transform = scale;
     }
 
-    function skeletonStyle(scale, shadow) {
-      imageSkeleton.style.transform = scale;
-      imageSkeleton.style.filter = shadow;
+    function creationOfAdamStyle(scale, shadow) {
+      imageCreationOfAdam.style.transform = scale;
+      imageCreationOfAdam.style.filter = shadow;
     }
 
-    function lAriesienneStyle(scale, shadow) {
-      imageLAriesienne.style.transform = scale;
-      imageLAriesienne.style.filter = shadow;
+    function davidStyle(scale, shadow) {
+      imageDavid.style.transform = scale;
+      imageDavid.style.filter = shadow;
     }
 
-    var imageSelfPortraitWithThornNecklace = document.getElementById("potatoEaters");
-    function selfPortraitWithThornNecklace() {
-      selfPortraitWithThornNecklaceStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        selfPortraitWithThornNecklaceArtDetails;
+    var imageSanSpiritoCrucifix = document.getElementById("sanSpiritoCrucifix");
+    function sanSpiritoCrucifix() {
+      sanSpiritoCrucifixStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = sanSpiritoCrucifixArtDetails;
     }
 
-    var imageTheTwoFridas = document.getElementById("selfPortrait");
-    function theTwoFridas() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        theTwoFridasArtDetails;
+    var imageMadonnaOfBruges = document.getElementById("madonnaOfBruges");
+    function madonnaOfBruges() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = madonnaOfBrugesArtDetails;
     }
 
-    var imageShoes = document.getElementById("shoes");
-    function shoes() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML = shoesArtDetails;
+    var imageBacchus = document.getElementById("bacchus");
+    function bacchus() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = bacchusArtDetails;
     }
 
-    var imageCafeTerranceAtNight =
-      document.getElementById("cafeTerranceNight");
-    function cafeTerranceAtNight() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle(
-        "scale(1.2)",
-        "drop-shadow(0px 0px 8px yellow)"
-      );
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        cafeTeranceAtNightArtDetails;
+    var imageDyingSlave =
+      document.getElementById("dyingSlave");
+    function dyingSlave() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = dyingSlaveArtDetails;
     }
 
-    var imageStarryNight = document.getElementById("starryNight");
-    function starryNight() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        starryNightArtDetails;
+    var imageAngel = document.getElementById("angel");
+    function angel() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = angelArtDetails;
     }
 
-    var imageWheatfieldWithCypresses =
-      document.getElementById("wheatfieldCypre");
-    function wheatfieldWithCypresses() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle(
-        "scale(1.2)",
-        "drop-shadow(0px 0px 8px yellow)"
-      );
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        wheatfieldWithCypressesArtDetails;
+    var imageMoses =
+      document.getElementById("moses");
+    function moses() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = mosesArtDetails;
     }
 
-    var imageSunflower = document.getElementById("sunflowers");
-    function sunflowers() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        sunflowersArtDetails;
+    var imagePieta = document.getElementById("pieta");
+    function pieta() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = pietaArtDetails;
     }
 
-    var imageIrises = document.getElementById("irises");
-    function irises() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML = irisesArtDetails;
+    var imageLastJudgement = document.getElementById("lastJudgement");
+    function lastJudgement() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = lastJudgementArtDetails;
     }
 
-    var imageSkeleton = document.getElementById("skeleton");
-    function skeleton() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      lAriesienneStyle("scale(1)", "none");
-      document.getElementById("paintingDetails").innerHTML =
-        skeletonArtDetails;
+    var imageCreationOfAdam = document.getElementById("creationOfAdam");
+    function creationOfAdam() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      davidStyle("scale(1)", "none");
+      document.getElementById("paintingDetails").innerHTML = creationOfAdamArtDetails;
     }
 
-    var imageLAriesienne = document.getElementById("lAriesienne");
-    function lAriesienne() {
-      selfPortraitWithThornNecklaceStyle("scale(1)", "none");
-      selfPortraitStyle("scale(1)", "none");
-      shoesStyle("scale(1)", "none");
-      cafeTerranceAtNightStyle("scale(1)", "none");
-      starryNightStyle("scale(1)", "none");
-      wheatfieldWithCypressesStyle("scale(1)", "none");
-      sunflowersStyle("scale(1)", "none");
-      irisesStyle("scale(1)", "none");
-      skeletonStyle("scale(1)", "none");
-      lAriesienneStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
-      document.getElementById("paintingDetails").innerHTML =
-        lAriesienneArtDetails;
+    var imageDavid = document.getElementById("david");
+    function david() {
+      sanSpiritoCrucifixStyle("scale(1)", "none");
+      madonnaOfBrugesStyle("scale(1)", "none");
+      bacchusStyle("scale(1)", "none");
+      dyingSlaveStyle("scale(1)", "none");
+      angelStyle("scale(1)", "none");
+      mosesStyle("scale(1)", "none");
+      pietaStyle("scale(1)", "none");
+      lastJudgementStyle("scale(1)", "none");
+      creationOfAdamStyle("scale(1)", "none");
+      davidStyle("scale(1.2)", "drop-shadow(0px 0px 8px yellow)");
+      document.getElementById("paintingDetails").innerHTML = davidArtDetails;
     }
 
   </script>
