@@ -1,7 +1,13 @@
 
-let usernameDB = JSON.parse(localStorage.getItem("usernameDB"));
-let emailDB = JSON.parse(localStorage.getItem("emailDB"));
-let passwordDB = JSON.parse(localStorage.getItem("passwordDB"));
+
+
+let usernameDB = [];
+let emailDB = [];
+let passwordDB = [];
+
+let getUsernameDB = JSON.parse(localStorage.getItem("usernameDB"));
+let getEmailDB = JSON.parse(localStorage.getItem("emailDB"));
+let getPasswordDB = JSON.parse(localStorage.getItem("passwordDB"));
 
 
 
@@ -19,7 +25,7 @@ function signup() {
   // console.log(getConfPassword);
 
 
-  if (getConfPassword == getPassword) {
+  if (getConfPassword === getPassword) {
     passwordDB.push(getPassword);
     usernameDB.push(getUsername);
     emailDB.push(getEmail);
@@ -47,19 +53,23 @@ function signin() {
 
   let getEmail = document.getElementById('email').value;
   let getPassword = document.getElementById('password').value;
-  console.log(getEmail);
-  console.log(getPassword);
+  // console.log(getEmail);
+  // console.log(getPassword);
 
-  let loginEmail = (emailDB.indexOf(getEmail));
-  let loginPassword = (passwordDB.indexOf(getPassword));
+  let loginEmail = (getEmailDB.indexOf(getEmail));
+  let loginPassword = (getPasswordDB.indexOf(getPassword));
 
-  console.log(loginEmail);
-  console.log(loginPassword);
+  // console.log(getEmailDB[loginEmail]);
+  // console.log(getPasswordDB[loginPassword]);
 
-  if (getEmail == emailDB[loginEmail] && getPassword == passwordDB[loginPassword]) {
+  if (getEmail === getEmailDB[loginEmail] && getPassword === getPasswordDB[loginPassword]) {
+    console.log('hi');
     window.location.href = "./electricEasel.html";
 
-  } else {
+  } else if (getEmail === "" && getPassword === "") {
+    alert('Enter your Details to login!')
+  }
+   else {
     alert('Your password is incorrect!\n Try one more time.')
   }
 }

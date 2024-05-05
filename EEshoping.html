@@ -24,6 +24,8 @@
 
   <script defer src="./bootstrap/js/bootstrap.min.js"></script>
   
+  <script defer src="./javascript/apiController.js"></script>
+  
   <script defer src="./javascript/shopCategory.js"></script>
   <style>
     body {
@@ -80,19 +82,29 @@
     }
 
     .button-addtocart {
-      width: 100px;
+      width: 100%;
       padding: 6px 3px 6px 3px;
       font-weight: 600;
       color: white;
       background-color: rgb(179, 122, 233);
       border-style: none;
-      border-top-right-radius: 4px;
+      border-radius: 20px;
+      /* border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
       border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
+      border-bottom-left-radius: 20px; */
       display: inline-block;
       margin-right: 5px;
       cursor: pointer;
+      transition:all 0.25s;
+    }
+
+    .button-addtocart:hover {
+      background-color: rgb(151, 103, 196);
+    }
+
+    .button-addtocart:active {
+      opacity: 0.7;
     }
 
     .button-buyNow {
@@ -120,6 +132,7 @@
 
     .addtocart-div {
       display: flex;
+      width: 100%;
     }
     
     .buynow-div {
@@ -321,8 +334,8 @@
     </div>
   </div>
 
-    <div class="col-left">
-      <div onclick="showCategories()">
+  <div class="col-left">
+    <div onclick="showCategories()">
         <!-- <img src="./Assets/images/category.svg" alt="categories"> -->
         <svg class="category-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"/></svg>
         <p>categories</p>
@@ -334,7 +347,7 @@
         <p>Cart</p>
       </div>
 
-      <div>
+      <div onclick="getFavorites()">
         <!-- <img src="./Assets/images/favorite.svg" alt="Favorties"> -->
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
         <p>Favorties</p>
@@ -342,7 +355,7 @@
 
       <div id="buttonNft" class="button-nft">
         <!-- <img src="./Assets/images/favorite.svg" alt="Favorties"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-40-83v-40q-35-5-67.5-19T312-256l-28 29q33 26 72.5 42.5T440-163Zm80 0q44-5 83.5-21.5T676-227l-28-29q-28 20-60.5 34T520-203v40Zm-40-117q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Zm253-4q26-33 42.5-72.5T797-440h-40q-5 35-19 67.5T704-312l29 28Zm-506 0 29-29q-20-28-34-60t-19-67h-40q5 44 21.5 83.5T227-284Zm253-36L360-480l120-160 120 160-120 160ZM163-520h40q5-35 19-67t34-60l-29-29q-26 33-42.5 72.5T163-520Zm594 0h40q-5-44-22-83.5T732-676l-28 28q20 28 34 60.5t19 67.5ZM313-704q28-20 60-34t67-19v-40q-44 5-83.5 21.5T284-733l29 29Zm335 0 28-28q-33-26-72.5-43T520-797v40q35 5 67.5 19t60.5 34Z"/></svg>
         <p style="font-size: 15px; font-weight: bold;">NFT</p>
       </div>
     </div>
@@ -350,169 +363,28 @@
     
     <div id="categoryBar" class="category-bar">
       <div class="d-flex flex-column">
-        <button onclick="stationeryCateAction()">Stationery</button>
-        <button onclick="posterCateAction()">Posters</button>
-        <button onclick="stickerCateAction()">Stickers</button>
-        <button onclick="ceramicCateAction()">Ceramic</button>
-        <button>Fancy</button>
-        <button onclick="allCateAction()">All</button>
+        <button onclick="categorizeStationery()">Stationery</button>
+        <button onclick="categorizePosters()">Posters</button>
+        <button onclick="categorizeStickers()">Stickers</button>
+        <button onclick="categorizeCeramic()">Ceramic</button>
+        <button onclick="categorizeFancy()">Fancy</button>
+        <button onclick="productsAll()">All</button>
       </div>
-
+      
       <div onclick="hideCategories()" class="d-flex flex-column">
         <div class="close-div"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></div>
       </div>
     </div>
-
-  <div style="display: flex; margin-right: 10px;">
-    <div class="col-center">
-      <div id="leoPosterSlot" class="product-slot-div">
-        <div class="proimage-div"><img src="./Assets/images/leoart poster one 4.jpg"
-            style="height: 250px; width: 226px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        </div>
-        <div class="product-details">
-          <div class="product-title">Leo Movie Poster</div>
-          <div id="leoPosterCategory" class="product-category">#posters</div>
-          <div class="product-price">
-            <div style="display: flex; flex: 1;">MRP: &#8377; 500.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
-                style="display: inline-block;"></div>
-          </div>
-          <div class="buttons-div">
-            <div class="addtocart-div">
-              <button class="button-addtocart">Add To Cart</button>
-            </div>
-            <div class="buynow-div">
-              <button class="button-buyNow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!-- <button onclick="showCategories()">hi</button> -->
+    
+    <div style="display: flex; margin-right: 10px;">
+      <div class="col-center js-products-grid"></div>
       
-      <div id="ceramicPlanterSlot" class="product-slot-div">
-        <div class="proimage-div"><img src="./Assets/images/diy-ceramic-planter.jpg"
-            style="height: 250px; width: 225px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        </div>
-        <div class="product-details">
-          <div class="product-title">Ceramic Planters (4)</div>
-          <div id="ceramicPlanterCategory" class="product-category">#ceramic</div>
-          <div class="product-price">
-            <div style="display: flex; flex: 1;">MRP: &#8377; 1200.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
-                style="display: inline-block;"></div>
-          </div>
-          <div class="buttons-div">
-            <div class="addtocart-div">
-              <button class="button-addtocart">Add To Cart</button>
-            </div>
-            <div class="buynow-div">
-              <button class="button-buyNow">Buy Now</button>
-            </div>
-          </div>
-        </div>
+      <div class="col-right insert-fav">
+        <img src="./Assets/images/leoart poster one 4.jpg" style="height: 300px;" alt="leo poster">
       </div>
-
-      <div id="christmasStickerSlot" class="product-slot-div">
-        <div class="proimage-div"><img src="./Assets/images/christmas-stickerpack.webp"
-            style="height: 250px; width: 225px; object-fit: contain; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        </div>
-        <div class="product-details">
-          <div class="product-title">Christmas Stickers</div>
-          <div id="christmasStickerCategory" class="product-category">#stickers</div>
-          <div class="product-price">
-            <div style="display: flex; flex: 1;">MRP: &#8377; 300.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
-                style="display: inline-block;"></div>
-          </div>
-          <div class="buttons-div">
-            <div class="addtocart-div">
-              <button class="button-addtocart">Add To Cart</button>
-            </div>
-            <div class="buynow-div">
-              <button class="button-buyNow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="colorPencilsOneSlot" class="product-slot-div">
-        <div class="proimage-div"><img src="./Assets/images/image-content-detail-polychromos-120.webp"
-            style="height: 250px; width: 226px; object-fit: contain; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        </div>
-        <div class="product-details">
-          <div class="product-title">Polychromos 120</div>
-          <div id="colorPencilsOneCategory" class="product-category">#stationery</div>
-          <div class="product-price">
-            <div style="display: flex; flex: 1;">MRP: &#8377; 25350.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
-                style="display: inline-block;"></div>
-          </div>
-          <div class="buttons-div">
-            <div class="addtocart-div">
-              <button class="button-addtocart">Add To Cart</button>
-            </div>
-            <div class="buynow-div">
-              <button class="button-buyNow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div id="sketchBookSlot" class="product-slot-div">
-        <div class="proimage-div"><img src="./Assets/images/Brustro-2.jpg"
-            style="height: 250px; width: 226px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        </div>
-        <div class="product-details">
-          <div class="product-title">Brustro A5 Note</div>
-          <div id="sketchBookCategory" class="product-category">#stationery</div>
-          <div class="product-price">
-            <div style="display: flex; flex: 1;">MRP: &#8377; 534.95</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
-                style="display: inline-block;"></div>
-          </div>
-          <div class="buttons-div">
-            <div class="addtocart-div">
-              <button class="button-addtocart">Add To Cart</button>
-            </div>
-            <div class="buynow-div">
-              <button class="button-buyNow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="faberPencilSlot" class="product-slot-div">
-        <div class="proimage-div"><img src="./Assets/images/image-content-detail-polychromos-120.webp"
-            style="height: 250px; width: 226px; object-fit: contain; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        </div>
-        <div class="product-details">
-          <div class="product-title">Polychromos 120</div>
-          <div id="faberPencilCategory" class="product-category">#stationery</div>
-          <div class="product-price">
-            <div style="display: flex; flex: 1;">MRP: &#8377; 25350.00</div>
-            <div style="margin-right: 5px;"><img src="./Assets/images/favorite.svg"
-                style="display: inline-block;"></div>
-          </div>
-          <div class="buttons-div">
-            <div class="addtocart-div">
-              <button class="button-addtocart">Add To Cart</button>
-            </div>
-            <div class="buynow-div">
-              <button class="button-buyNow">Buy Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
-
-    <div class="col-right">
-      <img src="./Assets/images/leoart poster one 4.jpg" style="height: 300px;" alt="leo poster">
-    </div>
-
-  </div>
-
+    
 </body>
 
 </html>

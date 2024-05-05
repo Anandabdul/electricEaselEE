@@ -318,9 +318,16 @@
 
     <div style="background-color: rgb(209, 209, 209);" class="card m-2 d-flex flex-column align-items-center p-2 w-50">
       <div style="background-color: rgb(86, 126, 70);" class="m-2 p-2 row-2 card w-75 h-50">
-        <div style="color: white; font-size: 50px;" id="liveClock"></div>
+        <div class="h-75" style="color: white; font-size: 17px; border-bottom: rgb(43, 65, 43) double;" id="wordInfo"></div>
+        <div class="h-25 d-flex flex-row">
+          <div class="w-25 text-center" style="color: white; font-size: 25px; border-right: rgb(43, 65, 43) double;" id="timer"></div>
+          <div class="w-75 text-center" style="color: white; font-size: 25px;" id="liveClock"></div>
+        </div>
       </div>
-      <button onclick="finishScoreAction()" class="btn btn-success">finish</button>
+      <div>
+        <button onclick="var timer = setInterval(gameTimer, 1000)"class="btn btn-success me-4">Start</button>
+        <button onclick="finishScoreAction(); clearInterval(timer)" class="btn btn-danger">Finish</button>
+      </div>
 
       <div style="background-color: rgb(124, 124, 124);" class="card m-2 p-2 h-50 d-flex flex-row align-items-center flex-wrap justify-content-around">
         <div id="easel" class="card w-25 text-center m-2">EASEL</div>
@@ -344,8 +351,6 @@
   
   <script>
     let score = 0;
-
-    console
 
     var oneEight = document.getElementById('1-8');
     var oneNine = document.getElementById('1-9');
@@ -456,7 +461,7 @@
         oneTen.style.backgroundColor = "rgb(198, 230, 198)";
         oneEleven.style.backgroundColor = "rgb(198, 230, 198)";
         oneTwelve.style.backgroundColor = "rgb(198, 230, 198)";
-        
+        document.getElementById('wordInfo').innerHTML = "An easel is a frame for holding up such things as an artist's painting or a chalkboard.";
       };
       
       if (oneOne.value.toUpperCase() == "A" && twoOne.value.toUpperCase() == "B" && threeOne.value.toUpperCase() == "S" && fourOne.value.toUpperCase() == "T" && fiveOne.value.toUpperCase() == "R" && sixOne.value.toUpperCase() == "A" && sevenOne.value.toUpperCase() == "C" && eightOne.value.toUpperCase() == "T") {
@@ -471,6 +476,7 @@
         sevenOne.style.pointerEvents = "none";
         eightOne.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "Abstract art is a non-representational art form that uses shapes, colors, lines, and forms to create a composition.";
         oneOne.style.backgroundColor = "rgb(198, 230, 198)";
         twoOne.style.backgroundColor = "rgb(198, 230, 198)";
         threeOne.style.backgroundColor = "rgb(198, 230, 198)";
@@ -491,6 +497,7 @@
         sevenFive.style.pointerEvents = "none";
         sevenSix.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "canvas is a strong, woven fabric that artists use as a surface for painting.";
         sevenOne.style.backgroundColor = "rgb(198, 230, 198)";
         sevenTwo.style.backgroundColor = "rgb(198, 230, 198)";
         sevenThree.style.backgroundColor = "rgb(198, 230, 198)";
@@ -511,6 +518,7 @@
         eightFive.style.pointerEvents = "none";
         nineFive.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "A portrait is an artistic representation of a person, such as a photograph, sculpture, or drawing.";
         twoFive.style.backgroundColor = "rgb(198, 230, 198)";
         threeFive.style.backgroundColor = "rgb(198, 230, 198)";
         fourFive.style.backgroundColor = "rgb(198, 230, 198)";
@@ -519,6 +527,7 @@
         sevenFive.style.backgroundColor = "rgb(198, 230, 198)";
         eightFive.style.backgroundColor = "rgb(198, 230, 198)";
         nineFive.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (nineTwo.value.toUpperCase() == "P" && nineThree.value.toUpperCase() == "A" && nineFour.value.toUpperCase() == "S" && nineFive.value.toUpperCase() == "T" && nineSix.value.toUpperCase() == "E" && nineSeven.value.toUpperCase() == "L") {
@@ -531,12 +540,14 @@
         nineSix.style.pointerEvents = "none";
         nineSeven.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "Pastel is an art medium made from finely ground pigments, a white filler, and a binder that are rolled into sticks.";
         nineTwo.style.backgroundColor = "rgb(198, 230, 198)";
         nineThree.style.backgroundColor = "rgb(198, 230, 198)";
         nineFour.style.backgroundColor = "rgb(198, 230, 198)";
         nineFive.style.backgroundColor = "rgb(198, 230, 198)";
         nineSix.style.backgroundColor = "rgb(198, 230, 198)";
         nineSeven.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (nineFour.value.toUpperCase() == "S" && tenFour.value.toUpperCase() == "K" && elevenFour.value.toUpperCase() == "E" && twelveFour.value.toUpperCase() == "T" && thirteenFour.value.toUpperCase() == "C" && fourteenFour.value.toUpperCase() == "H") {
@@ -549,12 +560,14 @@
         thirteenFour.style.pointerEvents = "none";
         fourteenFour.style.pointerEvents = "none";
 
+        document.getElementById('wordInfo').innerHTML = "a sketch is a quick, rough drawing or painting that artists use to capture the essence of a subject before creating a more detailed work.";
         nineFour.style.backgroundColor = "rgb(198, 230, 198)";
         tenFour.style.backgroundColor = "rgb(198, 230, 198)";
         elevenFour.style.backgroundColor = "rgb(198, 230, 198)";
         twelveFour.style.backgroundColor = "rgb(198, 230, 198)";
         thirteenFour.style.backgroundColor = "rgb(198, 230, 198)";
         fourteenFour.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (nineSeven.value.toUpperCase() == "L" && tenSeven.value.toUpperCase() == "I" && elevenSeven.value.toUpperCase() == "N" && twelveSeven.value.toUpperCase() == "E" && thirteenSeven.value.toUpperCase() == "S") {
@@ -566,11 +579,13 @@
         twelveSeven.style.pointerEvents = "none";
         thirteenSeven.style.pointerEvents = "none";
 
+        document.getElementById('wordInfo').innerHTML = "a line is a one-dimensional path created by a point moving in space.";
         nineSeven.style.backgroundColor = "rgb(198, 230, 198)";
         tenSeven.style.backgroundColor = "rgb(198, 230, 198)";
         elevenSeven.style.backgroundColor = "rgb(198, 230, 198)";
         twelveSeven.style.backgroundColor = "rgb(198, 230, 198)";
         thirteenSeven.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (thirteenSeven.value.toUpperCase() == "S" && thirteenEight.value.toUpperCase() == "C" && thirteenNine.value.toUpperCase() == "U" && thirteenTen.value.toUpperCase() == "L" && thirteenEleven.value.toUpperCase() == "P" && thirteenTwelve.value.toUpperCase() == "T" && thirteenThirteen.value.toUpperCase() == "U" && thirteenFourteen.value.toUpperCase() == "R" && thirteenFifteen.value.toUpperCase() == "E") {
@@ -586,6 +601,7 @@
         thirteenFourteen.style.pointerEvents = "none";
         thirteenFifteen.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "Sculpture is a visual art form that involves creating three-dimensional objects from hard or plastic materials.";
         thirteenSeven.style.backgroundColor = "rgb(198, 230, 198)";
         thirteenEight.style.backgroundColor = "rgb(198, 230, 198)";
         thirteenNine.style.backgroundColor = "rgb(198, 230, 198)";
@@ -595,6 +611,7 @@
         thirteenThirteen.style.backgroundColor = "rgb(198, 230, 198)";
         thirteenFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         thirteenFifteen.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (fourFour.value.toUpperCase() == "B" && fourFive.value.toUpperCase() == "R" && fourSix.value.toUpperCase() == "U" && fourSeven.value.toUpperCase() == "S" && fourEight.value.toUpperCase() == "H") {
@@ -606,11 +623,13 @@
         fourSeven.style.pointerEvents = "none";
         fourEight.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "A brush is a tool used for painting, grooming, cleaning, writing, and polishing.";
         fourFour.style.backgroundColor = "rgb(198, 230, 198)";
         fourFive.style.backgroundColor = "rgb(198, 230, 198)";
         fourSix.style.backgroundColor = "rgb(198, 230, 198)";
         fourSeven.style.backgroundColor = "rgb(198, 230, 198)";
         fourEight.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (oneEight.value.toUpperCase() == "E" && twoEight.value.toUpperCase() == "T" && threeEight.value.toUpperCase() == "C" && fourEight.value.toUpperCase() == "H" && fiveEight.value.toUpperCase() == "I" && sixEight.value.toUpperCase() == "N" && sevenEight.value.toUpperCase() == "G") {
@@ -624,6 +643,7 @@
         sixEight.style.pointerEvents = "none";
         sevenEight.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "Etching is a printmaking technique that uses acid to create lines or textures in a metal plate.";
         oneEight.style.backgroundColor = "rgb(198, 230, 198)";
         twoEight.style.backgroundColor = "rgb(198, 230, 198)";
         threeEight.style.backgroundColor = "rgb(198, 230, 198)";
@@ -631,6 +651,7 @@
         fiveEight.style.backgroundColor = "rgb(198, 230, 198)";
         sevenEight.style.backgroundColor = "rgb(198, 230, 198)";
         sixEight.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (sevenEight.value.toUpperCase() == "G" && sevenNine.value.toUpperCase() == "R" && sevenTen.value.toUpperCase() == "A" && sevenEleven.value.toUpperCase() == "F" && sevenTwelve.value.toUpperCase() == "F" && sevenThirteen.value.toUpperCase() == "I" && sevenFourteen.value.toUpperCase() == "T" && sevenFifteen.value.toUpperCase() == "I") {
@@ -645,6 +666,7 @@
         sevenFourteen.style.pointerEvents = "none";
         sevenFifteen.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "Graffiti is a form of artistic expression that involves writing, painting, or drawing on public surfaces, such as walls or buildings.";
         sevenEight.style.backgroundColor = "rgb(198, 230, 198)";
         sevenNine.style.backgroundColor = "rgb(198, 230, 198)";
         sevenTen.style.backgroundColor = "rgb(198, 230, 198)";
@@ -653,6 +675,7 @@
         sevenThirteen.style.backgroundColor = "rgb(198, 230, 198)";
         sevenFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         sevenFifteen.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (fiveTen.value.toUpperCase() == "C" && sixTen.value.toUpperCase() == "L" && sevenTen.value.toUpperCase() == "A" && eightTen.value.toUpperCase() == "Y") {
@@ -663,10 +686,12 @@
         sevenTen.style.pointerEvents = "none";
         eightTen.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "Clay is the result of granite rocks being eroded by nature, and is the most suitable material for making ceramics.";
         fiveTen.style.backgroundColor = "rgb(198, 230, 198)";
         sixTen.style.backgroundColor = "rgb(198, 230, 198)";
         sevenTen.style.backgroundColor = "rgb(198, 230, 198)";
         eightTen.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (fourFourteen.value.toUpperCase() == "P" && fiveFourteen.value.toUpperCase() == "O" && sixFourteen.value.toUpperCase() == "T" && sevenFourteen.value.toUpperCase() == "T" && eightFourteen.value.toUpperCase() == "E" && nineFourteen.value.toUpperCase() == "R" && tenFourteen.value.toUpperCase() == "Y") {
@@ -680,6 +705,7 @@
         nineFourteen.style.pointerEvents = "none";
         tenFourteen.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "Pottery is the art of shaping clay into objects and then firing them in a kiln at a high temperature to harden them.";
         fourFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         fiveFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         sixFourteen.style.backgroundColor = "rgb(198, 230, 198)";
@@ -687,6 +713,7 @@
         eightFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         nineFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         tenFourteen.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (fiveTen.value.toUpperCase() == "C" && fiveEleven.value.toUpperCase() == "I" && fiveTwelve.value.toUpperCase() == "A" && fiveThirteen.value.toUpperCase() == "S" && fiveFourteen.value.toUpperCase() == "O" && fiveFifteen.value.toUpperCase() == "M") {
@@ -699,12 +726,14 @@
         fiveFourteen.style.pointerEvents = "none";
         fiveFifteen.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "A mosaic is a two-dimensional art form that creates an image or pattern by arranging small pieces of material, called tesserae.";
         fiveTen.style.backgroundColor = "rgb(198, 230, 198)";
         fiveEleven.style.backgroundColor = "rgb(198, 230, 198)";
         fiveTwelve.style.backgroundColor = "rgb(198, 230, 198)";
         fiveThirteen.style.backgroundColor = "rgb(198, 230, 198)";
         fiveFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         fiveFifteen.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
       
       if (nineThirteen.value.toUpperCase() == "A" && nineFourteen.value.toUpperCase() == "R" && nineFifteen.value.toUpperCase() == "T") {
@@ -714,9 +743,11 @@
         nineFourteen.style.pointerEvents = "none";
         nineFifteen.style.pointerEvents = "none";
         
+        document.getElementById('wordInfo').innerHTML = "Art is something that is created with imagination and skill and that is beautiful or that expresses important ideas or feelings.";
         nineThirteen.style.backgroundColor = "rgb(198, 230, 198)";
         nineFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         nineFifteen.style.backgroundColor = "rgb(198, 230, 198)";
+
       };
 
       
@@ -799,7 +830,7 @@
       if (potteryColor == 'green') {
         score += 1;
       };
-      document.getElementById('liveClock').innerHTML = score;
+      document.getElementById('liveClock').innerHTML = `&nbsp; Your Score is: ${score}/15 `;
     }
 
     function tab(field1, field2) {
@@ -808,6 +839,22 @@
         document.getElementById(field2).focus();
       }
     } 
+    let countDownTime = 240;
+    function gameTimer() {
+      let minutes = Math.floor(countDownTime / 60);
+      let seconds = countDownTime % 60;
+        if(seconds < 10) {
+          seconds = "0" + seconds;
+        }
+        document.getElementById('timer').innerHTML = `${minutes}: ${seconds}`;
+
+        countDownTime--;
+
+      if(countDownTime < 0) {
+        clearInterval(timer);
+        document.getElementById('timer').innerHTML = `time is up!`;
+      }
+    }
   </script>
 </body>
 </html>

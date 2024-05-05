@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Electric Easel | Log in </title>
+  <title>Electric Easel | Sign in </title>
 
   <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
 
@@ -12,12 +12,17 @@
     href="https://fonts.googleapis.com/css2?family=Antonio&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Rubik+Marker+Hatch&family=Silkscreen&display=swap"
     rel="stylesheet">
 
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" href="./css/ringAnimation.css">
+
   <script src="./javascript/signUpEE.js"></script>
 
   <style>
     h3 {
-      font-family: silkscreen;
+      font-family: silkscreen, arial;
     }
 
     div {
@@ -53,7 +58,7 @@
       align-items: center;
     }
 
-    .button-google {
+    /* .button-google {
       width: 300px;
       padding-left: 7px;
       padding-right: 7px;
@@ -73,9 +78,9 @@
       display: flex;
       justify-content: center;
 
-    }
+    } */
 
-    .button-facebook {
+    /* .button-facebook {
       width: 300px;
       padding-left: 7px;
       padding-right: 7px;
@@ -89,7 +94,7 @@
       cursor: pointer;
       display: flex;
       justify-content: center;
-    }
+    } */
 
     .button-signin-button {
       width: 300px;
@@ -107,17 +112,31 @@
       font-weight: bold;
     }
 
+    .button-signin-button:hover {
+      background-color: rgb(163, 80, 211);
+    }
+
+    .button-signin-button:active {
+      opacity: 0.7;
+    }
+
     .input-box {
-      padding-top: 6px;
-      padding-bottom: 6px;
       border-radius: 5px;
       border-style: none;
       box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.27);
+      margin: 5px;
+    }
+
+    .div-align {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
   </style>
 </head>
 
-<body style="overflow: hidden;">
+<body style="overflow: hidden; margin-top: 50px;">
   <div style="display: flex; flex: 1; justify-content: center; align-items: center; flex-direction: column;">
     <div class="logo-div"><img src="./Assets/images/electriceasellogo.png"
         style="height: 30px; display: flex; flex: 1;"></div>
@@ -130,33 +149,29 @@
     <img class="drip3" src="./Assets/images/electriceaselRoundtwo.png" alt="drip3">
 
     <div class="login-div">
-      <div class="div-detail">
-        <p>Your email</p>
-        <input class="input-box" type="email" name="email" id="email" placeholder="e.g.pink@friday.com">
-      </div>
-      <div class="div-detail">
-        <p>Your password</p>
-        <input class="input-box" type="password" name="password" id="password" placeholder="e.g.ilovegagcity@351">
-      </div>
+      <form class="div-align mt-4">
+        <!-- <div> -->
+        <div class="div-detail">
+          <input required class="input-box py-1 w-100" type="text" name="Username" id="username" placeholder="Username">
+        </div>
+        <div class="div-detail">
+          <input value="" required class="input-box py-1 w-100" type="email" name="email" id="email" placeholder="E-Mail">
+        </div>
+        <div class="div-detail">
+          <input value="" required class="input-box py-1 w-100" type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <input class="button-signin-button" type="submit" id="signIn" onclick="signin()"/>
+        <!-- <button onclick="signin()">hi</button> -->
+      <!-- </div> -->
+      </form>
       <br>
       <div>
-        <button class="button-signin-button" id="signIn" onclick="signin()">Sign in</button><br>
-        <a href="./eesignup.html">Don't have an account?</a>
-        <a href="">Forgot password?</a>
-      </div>
-
-      <div>
-        <div style="text-align: center; font-family: roboto; font-size: 13px;
-                margin-top: 8px; margin-bottom: 8px;">-----------Or Log In With-----------</div>
-        <div style="display: flex; align-items: center; justify-content: center;"><button class="button-google"> <img
-              src="./Assets/images/download.png" style="height: 14px; margin-right: 5px;"> Continue with Google</button>
+        <div class="d-flex flex-row align-items-center justify-content-center">
+          <a style="font-size: 13px; margin-right: 10px;" href="./eesignup.html">Don't have an account?</a>
+          <a style="font-size: 13px;" href="">Forgot password?</a>
         </div>
-        <div style="display: flex; align-items: center; justify-content: center;"><button class="button-facebook"> <img
-              src="./Assets/images/facebook-app-round-white-icon.webp" style="height: 14px; margin-right: 5px;">
-            Continue with Facebook</button></div>
       </div>
     </div>
   </div>
 </body>
-
 </html>

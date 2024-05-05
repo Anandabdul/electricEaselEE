@@ -10,7 +10,7 @@
 
 .hamburger {
   height: 25px;
-  display: inline-block;
+  display: none;
   padding-right: 10px;
 }
 
@@ -26,6 +26,7 @@
   background-color: white;
   top: 0px;
   z-index: 20;
+  font-size: large;
 }
 
 .header-left {
