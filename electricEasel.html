@@ -2,369 +2,399 @@
 <html lang="en">
 
 <head>
-    <title>Electric Easel</title>
+  <title>Electric Easel</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
 
-    <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/navbar.css">
-
-    <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
 
 
-    <style>
-        /* .header {
-            height: 45px;
-            width: 100%;
-            border-bottom-width: 1.5px;
-            border-bottom-style: solid;
-            border-bottom-color: rgb(179, 122, 233);
-            display: flex;
-            align-items: center;
-            position: fixed;
-            background-color: white;
-            z-index: 20px;
-        }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-        .hamburger {
-            height: 25px;
-            display: inline-block;
-            padding-right: 10px;
-        }
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
-        .home-text {
-            font-family: roboto, arial;
-            margin-top: 0;
-            margin-bottom: 0;
-            padding-right: 7px;
-            padding-left: 7px;
-        }
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/navbar.css">
+  <script defer src="./javascript/signUpEE.js"></script>
 
-        .profile-pic {
-            height: 35px;
-            border-radius: 20px;
-        }
+  <script defer src="./javascript/checkSession.js"></script>
 
-        .header-left {
-            display: flex;
-            flex: 0;
-            align-items: center;
-            padding-left: 10px;
-        }
-
-        .header-center {
-            display: flex;
-            flex: 1;
-            justify-content: flex-end;
-            align-items: center;
-
-        }
-
-        .header-right {
-            display: flex;
-            flex: 0;
-            align-items: center;
-            justify-content: right;
-            padding-right: 10px;
-            padding-left: 15px;
-        }
-
-        .electric-easel-logo {
-            height: 30px;
-        }
-
-        .signup-button {
-            width: 80px;
-            padding-left: 7px;
-            padding-right: 7px;
-            padding-top: 4px;
-            padding-bottom: 5px;
-            margin-right: 5px;
-            color: white;
-            background-color: rgb(219, 190, 60);
-            border-style: none;
-            border-radius: 20px;
-        }
-
-        .login-button {
-            width: 80px;
-            padding-left: 7px;
-            padding-right: 7px;
-            margin-right: 10px;
-            padding-top: 4px;
-            padding-bottom: 5px;
-            margin-right: 5px;
-            color: white;
-            background-color: rgb(219, 190, 60);
-            border-style: none;
-            border-radius: 20px;
-        } */
-
-        .headline-div {
-            width: 850px;
-            height: 500px;
-            margin-top: 55px;
-            display: flex;
-            flex-direction: column;
-            border-radius: 8px;
-            box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            /* border-color: rgb(160, 145, 175); 
+  <style>
+    .headline-div {
+      width: 850px;
+      height: 500px;
+      margin-top: 55px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      /* border-color: rgb(160, 145, 175); 
             border-style: solid; 
             border-width: 2px; */
-        }
+    }
 
-        .headline-cover-img {
-            width: 850px;
-            height: 400px;
-            display: block;
-            object-fit: cover;
-            border-top-right-radius: 6px;
-            border-top-left-radius: 6px;
-        }
+    .headline-cover-img {
+      width: 850px;
+      height: 400px;
+      display: block;
+      object-fit: cover;
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+    }
 
-        .headline-pic-div {
-            height: 400px;
-            display: flex;
-            justify-content: start;
-            flex-direction: column;
-        }
+    .headline-pic-div {
+      height: 400px;
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+    }
 
-        .headline-text {
-            font-size: 30px;
-            display: block;
-            margin-top: 10px;
-            margin-left: 9px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
+    .headline-text {
+      font-size: 30px;
+      display: block;
+      margin-top: 10px;
+      margin-left: 9px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
 
-        }
+    }
 
-        .letsplay-div {
-            background-color: rgb(179, 122, 233);
-            color: white;
-            text-align: center;
-        }
+    .letsplay-div {
+      background-color: rgb(179, 122, 233);
+      color: white;
+      text-align: center;
+    }
 
-        .artist-img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 130px;
-            border-style: solid;
-            border-color: white;
-            border-width: 3px;
-            box-shadow: 0px 0px 20px 4px white;
+    .artist-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 130px;
+      border-style: solid;
+      border-color: white;
+      border-width: 3px;
+      box-shadow: 0px 0px 20px 4px white;
 
-        }
+    }
 
-        .leo-da-vinci .artist-img {
-            background-image: url(./Assets/images/leonardo-da-vinci.jpg);
-            background-size: 270px;
-            background-repeat: no-repeat;
-            background-position-x: -30px;
-            transition-duration: 0.26s;
-            cursor: pointer;
-        }
+    .leo-da-vinci .artist-img {
+      background-image: url(./Assets/images/leonardo-da-vinci.jpg);
+      background-size: 270px;
+      background-repeat: no-repeat;
+      background-position-x: -30px;
+      transition-duration: 0.26s;
+      cursor: pointer;
+    }
 
-        .leo-da-vinci .artist-img:hover {
-            background-image: url(./Assets/images/leonardo-da-vinci-smile.jpg);
-            box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
-        }
+    .leo-da-vinci .artist-img:hover {
+      background-image: url(./Assets/images/leonardo-da-vinci-smile.jpg);
+      box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
+    }
 
-        .pablo-picasso-div .artist-img {
-            background-image: url(./Assets/images/pablo-picasso.jpg);
-            background-repeat: no-repeat;
-            background-size: 230px;
-            background-position-y: -50px;
-            background-position-x: -13px;
-            transition-duration: 0.26s;
-            cursor: pointer;
-        }
+    .pablo-picasso-div .artist-img {
+      background-image: url(./Assets/images/pablo-picasso.jpg);
+      background-repeat: no-repeat;
+      background-size: 230px;
+      background-position-y: -50px;
+      background-position-x: -13px;
+      transition-duration: 0.26s;
+      cursor: pointer;
+    }
 
-        .pablo-picasso-div .artist-img:hover {
-            background-image: url(./Assets/images/pablo-picasso-smile.jpg);
-            box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
-        }
+    .pablo-picasso-div .artist-img:hover {
+      background-image: url(./Assets/images/pablo-picasso-smile.jpg);
+      box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
+    }
 
-        .vincent-van-gogh-div .artist-img {
-            background-image: url(./Assets/images/vincent-van-gogh.jpg);
-            background-repeat: no-repeat;
-            background-size: 230px;
-            background-position-y: -50px;
-            background-position-x: -13px;
-            transition-duration: 0.20s;
-            cursor: pointer;
-        }
+    .vincent-van-gogh-div .artist-img {
+      background-image: url(./Assets/images/vincent-van-gogh.jpg);
+      background-repeat: no-repeat;
+      background-size: 230px;
+      background-position-y: -50px;
+      background-position-x: -13px;
+      transition-duration: 0.20s;
+      cursor: pointer;
+    }
 
-        .vincent-van-gogh-div .artist-img:hover {
-            background-image: url(./Assets/images/vincent-van-gogh-smile.jpg);
-            box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
-        }
+    .vincent-van-gogh-div .artist-img:hover {
+      background-image: url(./Assets/images/vincent-van-gogh-smile.jpg);
+      box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
+    }
 
-        .bob-ross-div .artist-img {
-            background-image: url(./Assets/images/fridakahlo-paintings/frida.jpg);
-            background-repeat: no-repeat;
-            background-size: 230px;
-            background-position-y: -15px;
-            background-position-x: -15px;
-            transition-duration: 0.26s;
-            cursor: pointer;
-        }
+    .bob-ross-div .artist-img {
+      background-image: url(./Assets/images/fridakahlo-paintings/frida.jpg);
+      background-repeat: no-repeat;
+      background-size: 230px;
+      background-position-y: -15px;
+      background-position-x: -15px;
+      transition-duration: 0.26s;
+      cursor: pointer;
+    }
 
-        .bob-ross-div .artist-img:hover {
-            background-image: url(./Assets/images/fridakahlo-paintings/frida-kahlo-smile.jpg);
-            box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
-        }
+    .bob-ross-div .artist-img:hover {
+      background-image: url(./Assets/images/fridakahlo-paintings/frida-kahlo-smile.jpg);
+      box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
+    }
 
-        .michelangelo-div .artist-img {
-            background-image: url(./Assets/images/Michelangelo.webp);
-            background-repeat: no-repeat;
-            background-size: 270px;
-            background-position-y: 0px;
-            background-position-x: -40px;
-            transition-duration: 0.20s;
-            cursor: pointer;
-        }
+    .michelangelo-div .artist-img {
+      background-image: url(./Assets/images/Michelangelo.webp);
+      background-repeat: no-repeat;
+      background-size: 270px;
+      background-position-y: 0px;
+      background-position-x: -40px;
+      transition-duration: 0.20s;
+      cursor: pointer;
+    }
 
-        .michelangelo-div .artist-img:hover {
-            background-image: url(./Assets/images/michelangelo-smile.jpg);
-            box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
-        }
-        .navBarButton {
-            color: rgb(179, 122, 233);
-            font-weight: 600;
-            border-radius: 20px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            border: none;
-            background-color: white;
-            padding-left: 10px;
-            padding-right: 10px;
-            transition: 0.60s;
-            /* transition: background-color 0.70s; */
-        }
+    .michelangelo-div .artist-img:hover {
+      background-image: url(./Assets/images/michelangelo-smile.jpg);
+      box-shadow: 0px 0px 20px 4px rgba(179, 122, 233, 1);
+    }
 
-        .navBarButton:hover {
-            color: white;
-            background-color: rgb(179, 122, 233);
+    .navBarButton {
+      color: rgb(179, 122, 233);
+      font-weight: 600;
+      border-radius: 20px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      border: none;
+      background-color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+      transition: 0.60s;
+      /* transition: background-color 0.70s; */
+    }
 
-        }
+    .navBarButton:active {
+      opacity: 0.5;
+    }
 
-        .navBarButton:active {
-            opacity: 0.5;
-        }
+    .shop-bar {
+      background: linear-gradient(to right, rgb(179, 122, 233), rgb(247, 234, 248));
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      margin: 100px 0px 150px 0px;
+    }
 
-    </style>
+    .console-bar {
+      background: linear-gradient(to left, rgb(179, 122, 233), rgb(247, 234, 248));
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      margin: 150px 0px 150px 0px;
+    }
+
+    .shop-bar svg {
+      position: absolute;
+    }
+
+    .console-bar svg {
+      position: absolute;
+    }
+
+    .shop-bar button, .console-bar button {
+      background-color: #f5d835;
+      color: black;
+      border: white solid 1px;
+      padding: 10px;
+      font-size: 20px;
+      position: absolute;
+      box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.2);
+    }
+
+
+  </style>
 </head>
 
-<body style="margin-left: 0; margin-top: 0; margin-right: 0;">
-    <div class="header">
-        <div class="header-left">
-            <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
-            <!--<p class="home-text">electric easel</p>-->
-            <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
-        </div>
-        <div class="header-center">
-            <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
-                        class="navBarButton">V-Exhibit</button></a></div>
-            <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
-                    href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
-            <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
-                        class="navBarButton">Shop</button></a></div>
-            <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
-                        class="navBarButton">Play</button></a></div>
-            <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
-                        class="navBarButton">Have U Heard?</button></a></div>
-            <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
-                        class="navBarButton">About Us</button></a></div>
-
-        </div>
-        <div class="header-right">
-            <img class="hamburger" src="./Assets/images/search.svg">
-            <img class="profile-pic" src="./Assets/images/unnamed.jpg">
-        </div>
+<body onload="checkSession()" style="margin-left: 0; margin-top: 0; margin-right: 0;">
+  <div class="header">
+    <div class="header-left">
+      <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+      <!--<p class="home-text">electric easel</p>-->
+      <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
     </div>
-
-    <div style="display: flex; align-items: center; justify-content: center;">
-        <div class="headline-div">
-            <div class="headline-pic-div"><img
-                    src="./Assets/images/Galileo-Galilei-leaning-tower-of-pisa-anniversary.jpg"
-                    class="headline-cover-img"></div>
-            <div class="headline-text"><a style="color: black; text-decoration: none;" href="./headlinedetail.html"
-                    target="_blank">The Genius of Pisa: Kobras&rsquo; Mural Honouring Galileo Galilei and the Leaning
-                    Tower</a></div>
-        </div>
-    </div>
-
-    <br>
-    <div class="">
-        <div class="letsplay-div py-3 my-3">
-            <h3>FAMOUS ARTISTS OVER PERIOD</h3>
-        </div>
-    </div>
-    <div class="container-fluid d-flex">
-
-        <a href="./leonardo-paintings.html" style="text-decoration: none;">
-            <div class="card border border-0 mx-3 my-3 leo-da-vinci" style="width: 13rem;">
-                <div class="card-img-top artist-img"></div>
-                <div class="card-body text-center">
-                    <p class="card-text fs-5 fw-bold">Leonardo da Vinci</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="./picasso-paintings.html" style="text-decoration: none;">
-            <div class="card border border-0 mx-3 my-3 pablo-picasso-div" style="width: 13rem;">
-                <div class="card-img-top artist-img"></div>
-                <div class="card-body text-center">
-                    <p class="card-text fs-5 fw-bold">Pablo Picasso</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="./vincent-paintings.html" style="text-decoration: none;">
-            <div class="card border border-0 mx-3 my-3 vincent-van-gogh-div" style="width: 13rem;">
-                <div class="card-img-top artist-img"></div>
-                <div class="card-body text-center">
-                    <p class="card-text fs-5 fw-bold">Vincent van Gogh</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="./frida-paintings.html" style="text-decoration: none;">
-            <div class="card border border-0 mx-3 my-3 bob-ross-div" style="width: 13rem;">
-                <div class="card-img-top artist-img"></div>
-                <div class="card-body text-center">
-                    <p class="card-text fs-5 fw-bold">Frida Kahlo</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="./michelAngelo-paintings.html" style="text-decoration: none;">
-            <div class="card border border-0 mx-3 my-3 michelangelo-div" style="width: 13rem;">
-                <div class="card-img-top artist-img"></div>
-                <div class="card-body text-center">
-                    <p class="card-text fs-5 fw-bold">Michelangelo</p>
-                </div>
-            </div>
-        </a>
+    <div class="header-center">
+      <div class="home-text invicible"><a style="text-decoration: none;" href=""><button
+            class="navBarButton">V-Exhibit</button></a>
+        <div class="navTool-tip">Enjoy the Virtual exhibit</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electricEasel.html"><button
+            class="navBarButton">Home</button></a>
+        <div class="navTool-tip">Explore Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+            class="navBarButton">Shop</button></a>
+        <div class="navTool-tip">Shop Art Supplies</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+            class="navBarButton">Play</button></a>
+        <div class="navTool-tip">Learn While U Play</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+            class="navBarButton">Have U Heard?</button></a>
+        <div class="navTool-tip">fun Facts about Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+            class="navBarButton">About Us</button></a>
+        <div class="navTool-tip">Know More about our team</div>
+      </div>
 
     </div>
+    <div class="header-right">
+      <img class="hamburger" src="./Assets/images/search.svg">
+      <div class="home-text" onclick="signoutUser()">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30px"
+          height="30px" viewBox="0 0 256 256" xml:space="preserve">
+          <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+            <path
+              d="M 45 88 c -11.049 0 -21.18 -2.003 -29.021 -8.634 C 6.212 71.105 0 58.764 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 c 0 13.765 -6.212 26.105 -15.979 34.366 C 66.181 85.998 56.049 88 45 88 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(214,214,214); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 60.71 c -11.479 0 -20.818 -9.339 -20.818 -20.817 c 0 -11.479 9.339 -20.818 20.818 -20.818 c 11.479 0 20.817 9.339 20.817 20.818 C 65.817 51.371 56.479 60.71 45 60.71 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 90 c -10.613 0 -20.922 -3.773 -29.028 -10.625 c -0.648 -0.548 -0.88 -1.444 -0.579 -2.237 C 20.034 64.919 31.933 56.71 45 56.71 s 24.966 8.209 29.607 20.428 c 0.301 0.793 0.069 1.689 -0.579 2.237 C 65.922 86.227 55.613 90 45 90 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+          </g>
+        </svg>
+        <div class="navTool-tip">Sign Out?</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <a style="color: black; text-decoration: none;" href="./headlinedetail.html" target="_blank">
+      <div class="headline-div" style="position: relative;">
+        <div class="headline-pic-div"><img src="./Assets/images/Galileo-Galilei-leaning-tower-of-pisa-anniversary.jpg"
+            class="headline-cover-img"></div>
+        <div class="headline-text">The Genius of Pisa: Kobras&rsquo; Mural Honouring Galileo Galilei and the Leaning
+          Tower</div>
+          <div class="position-absolute ps-2 pe-4 py-1" style="border-top-right-radius: 3px; border-bottom-right-radius: 3px; color: white; font-weight: 500; top: 40px; background-color: rgb(179, 122, 233);">Today's Headline!</div>
+      </div>
+    </a>
+  </div>
+
+  <br>
+  <div class="">
+    <div class="letsplay-div py-3 my-3">
+      <h3>FAMOUS ARTISTS OVER PERIOD</h3>
+    </div>
+  </div>
+  <div class="container-fluid d-flex">
+
+    <a href="./leonardo-paintings.html" style="text-decoration: none;">
+      <div class="card border border-0 mx-3 my-3 leo-da-vinci" style="width: 13rem;">
+        <div class="card-img-top artist-img"></div>
+        <div class="card-body text-center">
+          <p class="card-text fs-5 fw-bold">Leonardo da Vinci</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="./picasso-paintings.html" style="text-decoration: none;">
+      <div class="card border border-0 mx-3 my-3 pablo-picasso-div" style="width: 13rem;">
+        <div class="card-img-top artist-img"></div>
+        <div class="card-body text-center">
+          <p class="card-text fs-5 fw-bold">Pablo Picasso</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="./vincent-paintings.html" style="text-decoration: none;">
+      <div class="card border border-0 mx-3 my-3 vincent-van-gogh-div" style="width: 13rem;">
+        <div class="card-img-top artist-img"></div>
+        <div class="card-body text-center">
+          <p class="card-text fs-5 fw-bold">Vincent van Gogh</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="./frida-paintings.html" style="text-decoration: none;">
+      <div class="card border border-0 mx-3 my-3 bob-ross-div" style="width: 13rem;">
+        <div class="card-img-top artist-img"></div>
+        <div class="card-body text-center">
+          <p class="card-text fs-5 fw-bold">Frida Kahlo</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="./michelAngelo-paintings.html" style="text-decoration: none;">
+      <div class="card border border-0 mx-3 my-3 michelangelo-div" style="width: 13rem;">
+        <div class="card-img-top artist-img"></div>
+        <div class="card-body text-center">
+          <p class="card-text fs-5 fw-bold">Michelangelo</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="shop-bar">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(245, 226, 58)" height="380px" width="380px" viewBox="0 0 24 24"><path d="M21.5,15a3,3,0,0,0-1.9-2.78l1.87-7a1,1,0,0,0-.18-.87A1,1,0,0,0,20.5,4H6.8L6.47,2.74A1,1,0,0,0,5.5,2h-2V4H4.73l2.48,9.26a1,1,0,0,0,1,.74H18.5a1,1,0,0,1,0,2H5.5a1,1,0,0,0,0,2H6.68a3,3,0,1,0,5.64,0h2.36a3,3,0,1,0,5.82,1,2.94,2.94,0,0,0-.4-1.47A3,3,0,0,0,21.5,15Zm-3.91-3H9L7.34,6H19.2ZM9.5,20a1,1,0,1,1,1-1A1,1,0,0,1,9.5,20Zm8,0a1,1,0,1,1,1-1A1,1,0,0,1,17.5,20Z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" style="opacity: 0.6; filter: drop-shadow(0px 0px 10px yellow); mix-blend-mode: color-burn;" fill="rgb(245, 226, 58)" height="380px" width="380px" viewBox="0 0 24 24"><path d="M21.5,15a3,3,0,0,0-1.9-2.78l1.87-7a1,1,0,0,0-.18-.87A1,1,0,0,0,20.5,4H6.8L6.47,2.74A1,1,0,0,0,5.5,2h-2V4H4.73l2.48,9.26a1,1,0,0,0,1,.74H18.5a1,1,0,0,1,0,2H5.5a1,1,0,0,0,0,2H6.68a3,3,0,1,0,5.64,0h2.36a3,3,0,1,0,5.82,1,2.94,2.94,0,0,0-.4-1.47A3,3,0,0,0,21.5,15Zm-3.91-3H9L7.34,6H19.2ZM9.5,20a1,1,0,1,1,1-1A1,1,0,0,1,9.5,20Zm8,0a1,1,0,1,1,1-1A1,1,0,0,1,17.5,20Z"/></svg>
+    <div style="font-size: 50px; font-weight: 500; color: white; position: absolute; right: 350px;">Shop Art Supplies,<br> Artworks and More...</div>
+    <button style="right: 100px;" class="btn"><a href="./EEshoping.html">Shop Now</a></button>
+  </div>
+  
+  <div class="console-bar">
+    <svg fill="none" height="370px" style="right: 0px;" viewBox="0 0 48 48" width="370px" xmlns="http://www.w3.org/2000/svg"><path d="m0 0h47.7778v47.7778h-47.7778z" fill="rgb(245, 226, 58)" fill-opacity=".01"/><g stroke="rgb(245, 226, 58)" stroke-width="4"><rect height="40" rx="2" width="28" x="10" y="4"/><path d="m16 34h8" stroke-linecap="round" stroke-linejoin="round"/><path d="m20 30v8" stroke-linecap="round" stroke-linejoin="round"/><path d="m16 10h16v9h-16z" fill="none" stroke-linejoin="round"/></g><circle cx="31" cy="30" fill="rgb(245, 226, 58)" r="2"/><circle cx="31" cy="38" fill="rgb(245, 226, 58)" r="2"/></svg>
+    <svg fill="none" height="370px" style="right: 0px; opacity: 0.6; filter: drop-shadow(0px 0px 10px yellow); mix-blend-mode: color-burn;" viewBox="0 0 48 48" width="370px" xmlns="http://www.w3.org/2000/svg"><path d="m0 0h47.7778v47.7778h-47.7778z" fill="rgb(245, 226, 58)" fill-opacity=".01"/><g stroke="rgb(245, 226, 58)" stroke-width="4"><rect height="40" rx="2" width="28" x="10" y="4"/><path d="m16 34h8" stroke-linecap="round" stroke-linejoin="round"/><path d="m20 30v8" stroke-linecap="round" stroke-linejoin="round"/><path d="m16 10h16v9h-16z" fill="none" stroke-linejoin="round"/></g><circle cx="31" cy="30" fill="rgb(245, 226, 58)" r="2"/><circle cx="31" cy="38" fill="rgb(245, 226, 58)" r="2"/></svg>
+    <div style="font-size: 50px; font-weight: 500; color: white; position: absolute; left: 300px;">Got Knowledge when its <br> comes to Art? Test Now!</div>
+    <button style="left: 100px;" class="btn"><a href="./artQuizBasic.html">Play Quiz</a></button>
+  </div>
+
+  <footer class="position-relative">
+    <div class="w-100 footer-div d-flex justify-content-center">
+      <div class="icons d-flex position-absolute">
+        <a href="https://www.instagram.com/" target="_blank">
+          <div class="bg-white px-1 rounded m-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              width="24px" height="24px">
+              <path
+                d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z" />
+            </svg></div>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank">
+          <div class="bg-white px-1 rounded m-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              width="24px" height="24px">
+              <path
+                d="M 5 3 C 3.895 3 3 3.895 3 5 L 3 19 C 3 20.105 3.895 21 5 21 L 19 21 C 20.105 21 21 20.105 21 19 L 21 5 C 21 3.895 20.105 3 19 3 L 5 3 z M 5 5 L 19 5 L 19 19 L 5 19 L 5 5 z M 7.7792969 6.3164062 C 6.9222969 6.3164062 6.4082031 6.8315781 6.4082031 7.5175781 C 6.4082031 8.2035781 6.9223594 8.7167969 7.6933594 8.7167969 C 8.5503594 8.7167969 9.0644531 8.2035781 9.0644531 7.5175781 C 9.0644531 6.8315781 8.5502969 6.3164062 7.7792969 6.3164062 z M 6.4765625 10 L 6.4765625 17 L 9 17 L 9 10 L 6.4765625 10 z M 11.082031 10 L 11.082031 17 L 13.605469 17 L 13.605469 13.173828 C 13.605469 12.034828 14.418109 11.871094 14.662109 11.871094 C 14.906109 11.871094 15.558594 12.115828 15.558594 13.173828 L 15.558594 17 L 18 17 L 18 13.173828 C 18 10.976828 17.023734 10 15.802734 10 C 14.581734 10 13.930469 10.406562 13.605469 10.976562 L 13.605469 10 L 11.082031 10 z" />
+            </svg></div>
+        </a>
+        <a href="https://www.gmail.com/" target="_blank">
+          <div class="bg-white px-1 rounded m-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+              width="24px" height="24px">
+              <path
+                d="M29,4H3A3,3,0,0,0,0,7V25a3,3,0,0,0,3,3H29a3,3,0,0,0,3-3V7A3,3,0,0,0,29,4Zm-.72,2L16,14.77,3.72,6ZM30,25a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1V7.23l13.42,9.58a1,1,0,0,0,1.16,0L30,7.23Z" />
+            </svg></div>
+        </a>
+      </div>
+      <div class="pt-2" style="color: white; opacity: 0.5; position: absolute; top: 0px;  z-index: 2;">
+        <div class="d-inline-block px-4"><a href="./electricEasel.html">Home</a></div>
+        <div class="d-inline-block px-4"><a href="./EEshoping.html">Shop</a></div>
+        <div class="d-inline-block px-4"><a href="./EEhaveuheard.html">Have You Heard?</a></div>
+        <div class="d-inline-block px-4"><a href="./EEplay.html">Play</a></div>
+        <div class="d-inline-block px-4"><a href="./electriceaselAboutus.html">About Us</a></div>
+      </div>
+      <div style="color: white; position: absolute; bottom: 0px;  z-index: 2;">Copyright &#169; 2024, Electric Easel.
+        All Rights Reserved.</div>
+      <div><img style="transform: translateY(60px); height: 170px;" src="./Assets/images/electriceasellogo.png">
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

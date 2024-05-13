@@ -7,8 +7,10 @@
   <title>Paintings of leonardo-da-vinci</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Kalnia:wght@100..700&family=Pixelify+Sans:wght@400..700&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Kalnia:wght@100..700&family=Pixelify+Sans:wght@400..700&family=Sedgwick+Ave+Display&display=swap"
+    rel="stylesheet">
 
   <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
 
@@ -19,8 +21,7 @@
   <link rel="stylesheet" href="./css/navbar.css">
   <link rel="stylesheet" href="./css/painter-pages.css">
 
-
-
+  <script defer src="./javascript/checkSession.js"></script>
 
   <style>
     .last-supper-div {
@@ -118,54 +119,92 @@
       right: 10px;
       top: 120px;
     }
-
-
   </style>
 </head>
 <!-- https://retoolapi.dev/Ox7S97/artistDetails -->
 
-<body style="margin-top: 45px;">
+<body onload="checkSession()" style="margin-top: 45px;">
 
   <div class="header">
     <div class="header-left">
-        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
-        <!--<p class="home-text">electric easel</p>-->
-        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+      <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+      <!--<p class="home-text">electric easel</p>-->
+      <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
     </div>
     <div class="header-center">
-        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
-                    class="navBarButton">V-Exhibit</button></a></div>
-        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
-                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
-                    class="navBarButton">Shop</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
-                    class="navBarButton">Play</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
-                    class="navBarButton">Have U Heard?</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
-                    class="navBarButton">About Us</button></a></div>
+      <div class="home-text invicible"><a style="text-decoration: none;" href=""><button
+            class="navBarButton">V-Exhibit</button></a>
+        <div class="navTool-tip">Enjoy the Virtual exhibit</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electricEasel.html"><button
+            class="navBarButton">Home</button></a>
+        <div class="navTool-tip">Explore Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+            class="navBarButton">Shop</button></a>
+        <div class="navTool-tip">Shop Art Supplies</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+            class="navBarButton">Play</button></a>
+        <div class="navTool-tip">Learn While U Play</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+            class="navBarButton">Have U Heard?</button></a>
+        <div class="navTool-tip">fun Facts about Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+            class="navBarButton">About Us</button></a>
+        <div class="navTool-tip">Know More about our team</div>
+      </div>
 
     </div>
     <div class="header-right">
-        <img class="hamburger" src="./Assets/images/search.svg">
-        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+      <img class="hamburger" src="./Assets/images/search.svg">
+      <div class="home-text" onclick="signoutUser()">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30px"
+          height="30px" viewBox="0 0 256 256" xml:space="preserve">
+          <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+            <path
+              d="M 45 88 c -11.049 0 -21.18 -2.003 -29.021 -8.634 C 6.212 71.105 0 58.764 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 c 0 13.765 -6.212 26.105 -15.979 34.366 C 66.181 85.998 56.049 88 45 88 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(214,214,214); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 60.71 c -11.479 0 -20.818 -9.339 -20.818 -20.817 c 0 -11.479 9.339 -20.818 20.818 -20.818 c 11.479 0 20.817 9.339 20.817 20.818 C 65.817 51.371 56.479 60.71 45 60.71 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 90 c -10.613 0 -20.922 -3.773 -29.028 -10.625 c -0.648 -0.548 -0.88 -1.444 -0.579 -2.237 C 20.034 64.919 31.933 56.71 45 56.71 s 24.966 8.209 29.607 20.428 c 0.301 0.793 0.069 1.689 -0.579 2.237 C 65.922 86.227 55.613 90 45 90 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+          </g>
+        </svg>
+        <div class="navTool-tip">Sign Out?</div>
+      </div>
     </div>
-</div>
+  </div>
 
   <div class="artist-overview">
     <div class="artist-info m-0 p-0 pt-4 ps-4">
       <div class="fs-1 m-0 p-0 ">Leonardo da Vinci</div>
       <div class="fs-5 opacity-75"><em>15 April 1452 - 2 May 1519</em></div>
       <div class="fs-5 w-50 ps-4">
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Leonardo di ser Piero da Vinci (15 April 1452 - 2 May 1519) was an Italian polymath of the High Renaissance who was active as a painter, draughtsman, engineer, scientist, theorist, sculptor, and architect. While his fame initially rested on his achievements as a painter, he has also become known for his notebooks, in which he made drawings and notes on a variety of subjects, including anatomy, astronomy, botany, cartography, painting, and paleontology. Leonardo epitomized the Renaissance humanist ideal, and his collective works comprise a contribution to later generations of artists matched only by that of his younger contemporary Michelangelo.
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Leonardo di ser Piero da Vinci (15 April 1452 - 2 May 1519) was an Italian
+        polymath of the High Renaissance who was active as a painter, draughtsman, engineer, scientist, theorist,
+        sculptor, and architect. While his fame initially rested on his achievements as a painter, he has also become
+        known for his notebooks, in which he made drawings and notes on a variety of subjects, including anatomy,
+        astronomy, botany, cartography, painting, and paleontology. Leonardo epitomized the Renaissance humanist ideal,
+        and his collective works comprise a contribution to later generations of artists matched only by that of his
+        younger contemporary Michelangelo.
       </div>
     </div>
     <div><img style="height: 520px;" src="./Assets/images/leonardo-da-vinci.jpg"></div>
     <!-- <div><a href=""></a></div> -->
   </div>
 
-  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Leonardo's Paintings by hitting one of these buttons.</div>
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center"
+    style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Leonardo's Paintings by hitting one of
+    these buttons.</div>
 
   <div class="m-0" style="display: flex; justify-content: center;">
     <div class="outer-div" style="background-color: black;">
@@ -213,11 +252,14 @@
         <button class="paintings-button" onclick="getArtistDetails(2, 1); salvatorMundi()">Salvator Mundi</button>
         <button class="paintings-button" onclick="getArtistDetails(2, 3); lastSupper()">Last Supper</button>
         <button class="paintings-button" onclick="getArtistDetails(2, 0); monaLisa()">Mona Lisa</button>
-        <button class="paintings-button" onclick="getArtistDetails(2, 4); LadyWithAnErmine()">Lady with an Ermine</button>
-        <button class="paintings-button" onclick="getArtistDetails(2, 9); VirginOfTheRocks()">Virgin of the Rocks</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 4); LadyWithAnErmine()">Lady with an
+          Ermine</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 9); VirginOfTheRocks()">Virgin of the
+          Rocks</button>
         <button class="paintings-button" onclick="getArtistDetails(2, 6); SainteAnne()">Sainte Anne</button>
         <button class="paintings-button" onclick="getArtistDetails(2, 8); SelfPortrait()">Self Portrait</button>
-        <button class="paintings-button" onclick="getArtistDetails(2, 7); VitruveLucViatour()">Vitruve Luc Viatour</button>
+        <button class="paintings-button" onclick="getArtistDetails(2, 7); VitruveLucViatour()">Vitruve Luc
+          Viatour</button>
         <button class="paintings-button" onclick="getArtistDetails(2, 5); GinevreDeBenci()">Ginevra de' Benci</button>
         <button class="paintings-button" onclick="getArtistDetails(2, 2); HeadOfAWoman()">Head of a Woman</button>
       </div>
@@ -229,35 +271,55 @@
     </div>
   </div>
 
-  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Leonardo is identified as one of the greatest painters in the history of Western art and is often credited as the founder of the High Renaissance. Despite having many lost works and fewer than 25 attributed major works - including numerous unfinished works - he created some of the most influential paintings in the Western canon. His magnum opus, the Mona Lisa, is his best known work and often regarded as the world's most famous painting. The Last Supper is the most reproduced religious painting of all time and his Vitruvian Man drawing is also regarded as a cultural icon. In 2017, Salvator Mundi, attributed in whole or part to Leonardo, was sold at auction for US$450.3 million, setting a new record for the most expensive painting ever sold at public auction.</div>
+  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Leonardo is identified as one of the greatest
+    painters in the history of Western art and is often credited as the founder of the High Renaissance. Despite having
+    many lost works and fewer than 25 attributed major works - including numerous unfinished works - he created some of
+    the most influential paintings in the Western canon. His magnum opus, the Mona Lisa, is his best known work and
+    often regarded as the world's most famous painting. The Last Supper is the most reproduced religious painting of all
+    time and his Vitruvian Man drawing is also regarded as a cultural icon. In 2017, Salvator Mundi, attributed in whole
+    or part to Leonardo, was sold at auction for US$450.3 million, setting a new record for the most expensive painting
+    ever sold at public auction.</div>
 
-  <div class="text-center m-4 fs-5"><ul style="list-style: none;">
-  <li style="opacity: 1;">He wrote in reverse.</li>
-  <li style="opacity: 0.9;">He didn't go to school.</li>
-  <li style="opacity: 0.8;">He liked to dissect corpses.</li>
-  <li style="opacity: 0.7;">His masterpiece was destroyed.</li>
-  <li style="opacity: 0.6;">Bill Gates bought Leonardo da Vinci's notebook.</li></ul></div>
+  <div class="text-center m-4 fs-5">
+    <ul style="list-style: none;">
+      <li style="opacity: 1;">He wrote in reverse.</li>
+      <li style="opacity: 0.9;">He didn't go to school.</li>
+      <li style="opacity: 0.8;">He liked to dissect corpses.</li>
+      <li style="opacity: 0.7;">His masterpiece was destroyed.</li>
+      <li style="opacity: 0.6;">Bill Gates bought Leonardo da Vinci's notebook.</li>
+    </ul>
+  </div>
 
-  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center"
+    style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
 
   <div class="other-artists w-100 d-flex justify-content-around mt-4">
     <a href="./picasso-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/pablo-picasso.jpg"> <div class="other-artists-name">Pablo Picasso</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/pablo-picasso.jpg">
+        <div class="other-artists-name">Pablo Picasso</div>
+      </div>
     </a>
 
     <a href="./vincent-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg"> <div class="other-artists-name">Vincent van gogh</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg">
+        <div class="other-artists-name">Vincent van gogh</div>
+      </div>
     </a>
 
     <a href="./frida-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg"> <div class="other-artists-name">Frida Kahlo</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg">
+        <div class="other-artists-name">Frida Kahlo</div>
+      </div>
     </a>
 
     <a href="./michelAngelo-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/Michelangelo.webp"> <div class="other-artists-name">Michelangelo</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/Michelangelo.webp">
+        <div class="other-artists-name">Michelangelo</div>
+      </div>
     </a>
-    
+
   </div>
+
 
 
 
@@ -403,7 +465,7 @@
       saintAnneArtDetails, vitruveViatourArtDetails, selfPortraitArtDetails,
       virginRocksArtDetails];
 
-        var artistName = "Leonardo Da Vinci";
+    var artistName = "Leonardo Da Vinci";
 
     function salvatorMundiStyle(scale, shadow) {
       imageSalvatorMundi.style.transform = scale;

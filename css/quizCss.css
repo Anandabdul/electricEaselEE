@@ -1,7 +1,7 @@
 .scoreboard-div {
   background-color: white;
   width: 410px;
-  height: 215px;
+  height: 120px;
   position: fixed;
   right: 10px;
   border-style: solid;
@@ -99,23 +99,26 @@
   margin-top: 65px;
 }
 
+.scoreboard-down {
+  background-color: white;
+  width: 410px;
+  height: 320px;
+  position: fixed;
+  right: 10px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  border-color: rgb(179, 122, 233);
+  bottom: 5px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.scoreboard-down button {
+  background-color: rgb(199, 160, 236);
+  font-weight: 500;
+  color: white;
+  height: 40px;
+  border: 0px;
+  border-radius: 4px;
+  padding: 10px 0px 10px 0px;
+  transition: 0.25s;
+}

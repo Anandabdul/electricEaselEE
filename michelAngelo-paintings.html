@@ -17,7 +17,9 @@
   <link rel="stylesheet" href="./css/navbar.css">
 
   <link rel="stylesheet" href="./css/painter-pages.css">
-  
+
+  <script defer src="./javascript/checkSession.js"></script>
+
   <style>
     .san-spirit-div {
       position: absolute;
@@ -89,69 +91,129 @@
       right: 240px;
       transition: 0.2s;
     }
-    </style>
+  </style>
 </head>
 
-<body style="margin: 0px; margin-top: 45px">
+<body onload="checkSession()" style="margin: 0px; margin-top: 45px">
   <div class="header">
     <div class="header-left">
-        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
-        <!--<p class="home-text">electric easel</p>-->
-        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+      <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+      <!--<p class="home-text">electric easel</p>-->
+      <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
     </div>
     <div class="header-center">
-        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
-                    class="navBarButton">V-Exhibit</button></a></div>
-        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
-                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
-                    class="navBarButton">Shop</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
-                    class="navBarButton">Play</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
-                    class="navBarButton">Have U Heard?</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
-                    class="navBarButton">About Us</button></a></div>
+      <div class="home-text invicible"><a style="text-decoration: none;" href=""><button
+            class="navBarButton">V-Exhibit</button></a>
+        <div class="navTool-tip">Enjoy the Virtual exhibit</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electricEasel.html"><button
+            class="navBarButton">Home</button></a>
+        <div class="navTool-tip">Explore Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+            class="navBarButton">Shop</button></a>
+        <div class="navTool-tip">Shop Art Supplies</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+            class="navBarButton">Play</button></a>
+        <div class="navTool-tip">Learn While U Play</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+            class="navBarButton">Have U Heard?</button></a>
+        <div class="navTool-tip">fun Facts about Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+            class="navBarButton">About Us</button></a>
+        <div class="navTool-tip">Know More about our team</div>
+      </div>
 
     </div>
     <div class="header-right">
-        <img class="hamburger" src="./Assets/images/search.svg">
-        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+      <img class="hamburger" src="./Assets/images/search.svg">
+      <div class="home-text" onclick="signoutUser()">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30px"
+          height="30px" viewBox="0 0 256 256" xml:space="preserve">
+          <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+            <path
+              d="M 45 88 c -11.049 0 -21.18 -2.003 -29.021 -8.634 C 6.212 71.105 0 58.764 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 c 0 13.765 -6.212 26.105 -15.979 34.366 C 66.181 85.998 56.049 88 45 88 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(214,214,214); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 60.71 c -11.479 0 -20.818 -9.339 -20.818 -20.817 c 0 -11.479 9.339 -20.818 20.818 -20.818 c 11.479 0 20.817 9.339 20.817 20.818 C 65.817 51.371 56.479 60.71 45 60.71 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 90 c -10.613 0 -20.922 -3.773 -29.028 -10.625 c -0.648 -0.548 -0.88 -1.444 -0.579 -2.237 C 20.034 64.919 31.933 56.71 45 56.71 s 24.966 8.209 29.607 20.428 c 0.301 0.793 0.069 1.689 -0.579 2.237 C 65.922 86.227 55.613 90 45 90 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+          </g>
+        </svg>
+        <div class="navTool-tip">Sign Out?</div>
+      </div>
     </div>
-</div>
+  </div>
 
   <div class="artist-overview">
     <div class="artist-info m-0 p-0 pt-4 ps-4">
       <div class="fs-1 m-0 p-0 ">Michelangelo</div>
       <div class="fs-5 opacity-75"><em>6 March 1475 - 18 February 1564</em></div>
       <div class="fs-5 w-50 ps-4">
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Michelangelo di Lodovico Buonarroti Simoni (6 March 1475 - 18 February 1564), was an Italian sculptor, painter, architect, and poet of the High Renaissance. Born in the Republic of Florence, his work was inspired by models from classical antiquity and had a lasting influence on Western art. Michelangelo's creative abilities and mastery in a range of artistic arenas define him as an archetypal Renaissance man, along with his rival and elder contemporary, Leonardo da Vinci. Given the sheer volume of surviving correspondence, sketches, and reminiscences, Michelangelo is one of the best-documented artists of the 16th century.
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Michelangelo di Lodovico Buonarroti Simoni (6 March 1475 - 18 February 1564),
+        was an Italian sculptor, painter, architect, and poet of the High Renaissance. Born in the Republic of Florence,
+        his work was inspired by models from classical antiquity and had a lasting influence on Western art.
+        Michelangelo's creative abilities and mastery in a range of artistic arenas define him as an archetypal
+        Renaissance man, along with his rival and elder contemporary, Leonardo da Vinci. Given the sheer volume of
+        surviving correspondence, sketches, and reminiscences, Michelangelo is one of the best-documented artists of the
+        16th century.
       </div>
     </div>
     <div><img style="height: 520px;" src="./Assets/images/Michelangelo.webp"></div>
     <!-- <div><a href=""></a></div> -->
   </div>
-  
-  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Michelangelo's Paintings by hitting one of these buttons.</div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center"
+    style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Michelangelo's Paintings by hitting one of
+    these buttons.</div>
 
   <div style="display: flex; justify-content: center;">
     <div class="outer-div">
       <!-- <div id="laSoupeSmall" class="background-div"><img style="width: 700px;" src="./Assets/images/vincent-van-gogh-paintings/Almond_blossom.jpg" alt="la soupe"></div> -->
-      <div id="lastJudgement" class="last-judgement-div"><img style="width: 700px" src="./Assets/images/michelangelo-paintings/last-judgement.jpg" alt="skeleton" /></div>
-      <div id="sanSpiritoCrucifix" class="san-spirit-div"><img style="width: 500px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/San-Spirito-Crucifix-transparent.png" alt="cafe terrance at night" /></div>
-      <div id="bacchus" class="bacchus-div"><img style="width: 290px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/bacchus-transparent.png" alt="wheatfield With Cypresses" /></div>
-      <div id="madonnaOfBruges" class="madonna-bruges-div"><img style="width: 390px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Madonna_michelangelo-transparent.png" alt="starry Night" /></div>
-      <div id="dyingSlave" class="dying-slave-div"> <img style="width: 210px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Dying-Slave-transparent.png" alt="the potato Eaters"/></div>
-      <div id="moses" class="moses-div"><img style="width: 250px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/michelangelo-moses-transparent.png" alt="self portait" /></div>
-      <div id="pieta" class="pieta-div"><img style="width: 400px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Michelangelos-Pieta-transparent.png" alt="irises" /></div>
-      <div id="david" class="david-div"><img style="width: 180px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/michelangelo-david-transparent.png" alt="shoes" /></div>
-      <div id="creationOfAdam" class="creation-adam-div"><img style="width: 700px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Creation_of_Adam-transparent.png" alt="sunflowers" /></div>
-      <div id="angel" class="angel-div"><img style="width: 350px" src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Angel_by_Michelangelo-transparent.png" alt="l'Ariesienne" /></div>
+      <div id="lastJudgement" class="last-judgement-div"><img style="width: 700px"
+          src="./Assets/images/michelangelo-paintings/last-judgement.jpg" alt="skeleton" /></div>
+      <div id="sanSpiritoCrucifix" class="san-spirit-div"><img style="width: 500px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/San-Spirito-Crucifix-transparent.png"
+          alt="cafe terrance at night" /></div>
+      <div id="bacchus" class="bacchus-div"><img style="width: 290px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/bacchus-transparent.png"
+          alt="wheatfield With Cypresses" /></div>
+      <div id="madonnaOfBruges" class="madonna-bruges-div"><img style="width: 390px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Madonna_michelangelo-transparent.png"
+          alt="starry Night" /></div>
+      <div id="dyingSlave" class="dying-slave-div"> <img style="width: 210px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Dying-Slave-transparent.png"
+          alt="the potato Eaters" /></div>
+      <div id="moses" class="moses-div"><img style="width: 250px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/michelangelo-moses-transparent.png"
+          alt="self portait" /></div>
+      <div id="pieta" class="pieta-div"><img style="width: 400px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Michelangelos-Pieta-transparent.png"
+          alt="irises" /></div>
+      <div id="david" class="david-div"><img style="width: 180px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/michelangelo-david-transparent.png"
+          alt="shoes" /></div>
+      <div id="creationOfAdam" class="creation-adam-div"><img style="width: 700px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Creation_of_Adam-transparent.png"
+          alt="sunflowers" /></div>
+      <div id="angel" class="angel-div"><img style="width: 350px"
+          src="./Assets/images/michelangelo-paintings/michelangelo-transparent/Angel_by_Michelangelo-transparent.png"
+          alt="l'Ariesienne" /></div>
     </div>
 
     <div class="buttons-div">
       <div class="button-div-top">
-        <button class="paintings-button" onclick="getArtistDetails(4, 7); sanSpiritoCrucifix()">San Spirito Crucifix</button>
+        <button class="paintings-button" onclick="getArtistDetails(4, 7); sanSpiritoCrucifix()">San Spirito
+          Crucifix</button>
         <button class="paintings-button" onclick="getArtistDetails(4, 3); madonnaOfBruges()">Madonna of Bruges</button>
         <button class="paintings-button" onclick="getArtistDetails(4, 9); bacchus()">Bucchus</button>
         <button class="paintings-button" onclick="getArtistDetails(4, 2); dyingSlave()">Dying Slave</button>
@@ -169,33 +231,51 @@
       </div>
     </div>
   </div>
-  
-  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Michelangelo achieved fame early. Two of his best-known works, the Pietà and David, were sculpted before the age of 30. Although he did not consider himself a painter, Michelangelo created two of the most influential frescoes in the history of Western art: the scenes from Genesis on the ceiling of the Sistine Chapel in Rome, and The Last Judgment on its altar wall. His design of the Laurentian Library pioneered Mannerist architecture. At the age of 71, he succeeded Antonio da Sangallo the Younger as the architect of St. Peter's Basilica. Michelangelo transformed the plan so that the Western end was finished to his design, as was the dome, with some modification, after his death.</div>
 
-  <div class="text-center m-4 fs-5"><ul style="list-style: none;">
-  <li style="opacity: 1;">He was very funny.</li>
-  <li style="opacity: 0.9;">He was a skilled and savvy businessman.</li>
-  <li style="opacity: 0.8;">He lived twice as long as most people did in the Renaissance.</li>
-  <li style="opacity: 0.7;">He left a vast paper trail involving the most powerful people of his day.</li>
-  <li style="opacity: 0.6;">He was as busy and successful in his 70s and 80s as at any time of his life.</li></ul></div>
+  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Michelangelo achieved fame early. Two of his
+    best-known works, the Pietà and David, were sculpted before the age of 30. Although he did not consider himself a
+    painter, Michelangelo created two of the most influential frescoes in the history of Western art: the scenes from
+    Genesis on the ceiling of the Sistine Chapel in Rome, and The Last Judgment on its altar wall. His design of the
+    Laurentian Library pioneered Mannerist architecture. At the age of 71, he succeeded Antonio da Sangallo the Younger
+    as the architect of St. Peter's Basilica. Michelangelo transformed the plan so that the Western end was finished to
+    his design, as was the dome, with some modification, after his death.</div>
 
-  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
+  <div class="text-center m-4 fs-5">
+    <ul style="list-style: none;">
+      <li style="opacity: 1;">He was very funny.</li>
+      <li style="opacity: 0.9;">He was a skilled and savvy businessman.</li>
+      <li style="opacity: 0.8;">He lived twice as long as most people did in the Renaissance.</li>
+      <li style="opacity: 0.7;">He left a vast paper trail involving the most powerful people of his day.</li>
+      <li style="opacity: 0.6;">He was as busy and successful in his 70s and 80s as at any time of his life.</li>
+    </ul>
+  </div>
+
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center"
+    style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
 
   <div class="other-artists w-100 d-flex justify-content-around mt-4">
     <a href="./leonardo-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/leonardo-da-vinci.jpg"> <div class="other-artists-name">Leonardo da Vinci</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/leonardo-da-vinci.jpg">
+        <div class="other-artists-name">Leonardo da Vinci</div>
+      </div>
     </a>
-    
+
     <a href="./picasso-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/pablo-picasso.jpg"> <div class="other-artists-name">Pablo Picasso</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/pablo-picasso.jpg">
+        <div class="other-artists-name">Pablo Picasso</div>
+      </div>
     </a>
 
     <a href="./vincent-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg"> <div class="other-artists-name">Vincent van gogh</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg">
+        <div class="other-artists-name">Vincent van gogh</div>
+      </div>
     </a>
 
     <a href="./frida-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg"> <div class="other-artists-name">Frida Kahlo</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg">
+        <div class="other-artists-name">Frida Kahlo</div>
+      </div>
     </a>
 
   </div>
@@ -211,7 +291,7 @@
         <div style="display: inline-block;"><h4> Madonna of Bruges 1504 </h4>Art historian Erwin Panofsky, when writing about Michelangelo's Madonna of Bruges, credited the artist with saying that a perfect sculpture is one that can be rolled downhill without suffering damage. By those standards, this sculpture would come close to perfect: The sturdy, seated composition of Mary and the Christ Child recalls the size and compact mass of the original stone block from which the figures were carved. This was the look Michelangelo was going for and, at the time, it was quite innovative. Few sculptors had attempted a project of such complexity at this scale, with the image hewn from a single slab of marble and standing at six-and-a-half feet tall.
         </div>`;
 
-    var bacchusArtDetails= `
+    var bacchusArtDetails = `
     <img src="./Assets/images/michelangelo-paintings/bacchus.jpeg" style="height: 160px; display: inline-block;">
         <div style="display: inline-block;">
           <h4>Bacchus 1497</h4> Bacchus was Michelangelo's first foray into large-scale sculpture and is one of the few works he would ever do that was not on a Christian theme. By tilting the figure ever so slightly off balance, subverting the inherent look of stability of the Classical contrapposto stance, the artist makes Bacchus—the Roman god of wine—appear appropriately tipsy. This level of realism was unprecedented in depictions of party-loving Bacchus up until this time, revealing Michelangelo as the virtuosic perfectionist he would become known as.
@@ -241,7 +321,7 @@
           <h4>Pieta 1498-99</h4> During the 15th century, the theme of Mary cradling Jesus once he was taken down from the cross—other wise known as a pietà—was commonly depicted in Northern European art but less so in Italy. So when a French cardinal approached 23-year-old Michelangelo to sculpt one for his funeral monument, the artist gladly accepted the challenge, knowing he could make his mark. It's the Pietà that made people make note of Michelangelo's name—quite literally, as Vasari.
         </div>`;
 
-    var lastJudgementArtDetails= `
+    var lastJudgementArtDetails = `
     <img src="./Assets/images/michelangelo-paintings/last-judgement.jpg" style="height: 160px; display: inline-block;">
         <div style="display: inline-block;">
           <h4>The Last Judgement 1536-41</h4> The Last Judgment, which arcs above the Sistine Chapel's altar, dramatically depicts the second coming of Christ and the final judgment of all humanity. Michelangelo squished 300 muscular figures into the sprawling scene, some representing prominent saints, others were mere mortals ascending to heaven or descending to hell. A scene of intense action, fear, awe, and copious nudity, the Last Judgment has been subject to much judgment itself, often criticized for its busyness and sometimes covered up by Papal censors.
@@ -253,7 +333,7 @@
           <h4>The Creation of Adam 1508-12</h4> Pope Julius II paused Michelangelo's long labor on the papal tomb to paint the ceiling of the Sistine Chapel. The artist wasn't interested in accepting the commission—he was a sculptor, not a painter, after all—but he was pressured into it. So it was that Michelangelo, the supreme sculptor, created what is probably one of the most sacred images of Western art history. At the heart of the epic work is the Creation: God extends his finger toward the hand a newly minted man, Adam, about to imbue him with life (Eve watches from the crook of God's arm). Few artists had ever depicted the scene as dramatically as Michelangelo, and even in our secular age, it has made it virtually metonymic for the entire story of Genesis in contemporary culture. It is so often invoked, cited, or riffed on for its religious meaning that it may actually be possible to forget just what a terrific act of artistic theater it is.
           </div>`;
 
-    var davidArtDetails= `
+    var davidArtDetails = `
     <img src="./Assets/images/michelangelo-paintings/michelangelo-david.jpg" style="height: 160px; display: inline-block;">
           <div style="display: inline-block;">
             <h4>David  1501-04</h4> The artist was just 26 when he sculpted David. Even at the time it brought him to the heights of artistic fame for its sheer bravura. Standing at more than 13 feet tall, the work was sculpted from a piece of marble that another artist had started carving into for another project but then abandoned because the stone was structurally compromised. This didn't deter Michelangelo, though, who knew he had the skills to make the marble work for him. The David is different than any sculpture that came before. It is drawn from the well-known Biblical story of a young boy fighting the giant Goliath. But while others chose to emphasize his smallness, Michelangelo's David is a giant himself: A muscular, confident man prepared for battle. The amazing thing, then and now, about Michelangelo's David is that the work is both literally a depiction of a larger-than-life hero, and the quintessential depiction of the plucky little guy.

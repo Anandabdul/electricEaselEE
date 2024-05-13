@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,13 @@
 
   <link rel="stylesheet" href="./css/navbar.css">
 
+  <script defer src="./javascript/checkSession.js"></script>
+
   <style>
+    .outer-div {
+      min-width: 500px;
+    }
+
     .outer-div .row input {
       /* background-color: red; */
       margin: 0.5px;
@@ -31,38 +38,71 @@
   </style>
 
 </head>
-<body style="margin-top: 65px;">
+
+<body onload="checkSession()" style="margin-top: 65px;">
 
   <div class="header">
     <div class="header-left">
-        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
-        <!--<p class="home-text">electric easel</p>-->
-        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+      <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+      <!--<p class="home-text">electric easel</p>-->
+      <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
     </div>
     <div class="header-center">
-        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
-                    class="navBarButton">V-Exhibit</button></a></div>
-        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
-                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
-                    class="navBarButton">Shop</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
-                    class="navBarButton">Play</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
-                    class="navBarButton">Have U Heard?</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
-                    class="navBarButton">About Us</button></a></div>
+      <div class="home-text invicible"><a style="text-decoration: none;" href=""><button
+            class="navBarButton">V-Exhibit</button></a>
+        <div class="navTool-tip">Enjoy the Virtual exhibit</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electricEasel.html"><button
+            class="navBarButton">Home</button></a>
+        <div class="navTool-tip">Explore Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+            class="navBarButton">Shop</button></a>
+        <div class="navTool-tip">Shop Art Supplies</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+            class="navBarButton">Play</button></a>
+        <div class="navTool-tip">Learn While U Play</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+            class="navBarButton">Have U Heard?</button></a>
+        <div class="navTool-tip">fun Facts about Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+            class="navBarButton">About Us</button></a>
+        <div class="navTool-tip">Know More about our team</div>
+      </div>
 
     </div>
     <div class="header-right">
-        <img class="hamburger" src="./Assets/images/search.svg">
-        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+      <img class="hamburger" src="./Assets/images/search.svg">
+      <div class="home-text" onclick="signoutUser()">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30px"
+          height="30px" viewBox="0 0 256 256" xml:space="preserve">
+          <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+            <path
+              d="M 45 88 c -11.049 0 -21.18 -2.003 -29.021 -8.634 C 6.212 71.105 0 58.764 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 c 0 13.765 -6.212 26.105 -15.979 34.366 C 66.181 85.998 56.049 88 45 88 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(214,214,214); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 60.71 c -11.479 0 -20.818 -9.339 -20.818 -20.817 c 0 -11.479 9.339 -20.818 20.818 -20.818 c 11.479 0 20.817 9.339 20.817 20.818 C 65.817 51.371 56.479 60.71 45 60.71 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 90 c -10.613 0 -20.922 -3.773 -29.028 -10.625 c -0.648 -0.548 -0.88 -1.444 -0.579 -2.237 C 20.034 64.919 31.933 56.71 45 56.71 s 24.966 8.209 29.607 20.428 c 0.301 0.793 0.069 1.689 -0.579 2.237 C 65.922 86.227 55.613 90 45 90 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+          </g>
+        </svg>
+        <div class="navTool-tip">Sign Out?</div>
+      </div>
     </div>
-</div>
+  </div>
 
   <div class="container d-flex flex-row">
 
-    <div class="card outer-div m-2 py-2 px-4 d-inline-block">
+    <div class="card outer-div m-2 py-2 px-4 d-flex flex-column align-items-center">
       <div id="col1" class="row">
         <input maxlength="1" onkeyup="gameAction(); tab('1-1', '2-1')" value="" id="1-1">
         <input class="pe-none empty-style" value="" id="1-2">
@@ -80,7 +120,7 @@
         <input class="pe-none empty-style" value="" id="1-14">
         <input class="pe-none empty-style" value="" id="1-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input maxlength="1" onkeyup="gameAction(); tab('2-1', '3-1')" value="" id="2-1">
         <input class="pe-none empty-style" value="" id="2-2">
@@ -98,7 +138,7 @@
         <input class="pe-none empty-style" value="" id="2-14">
         <input class="pe-none empty-style" value="" id="2-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input maxlength="1" onkeyup="gameAction(); tab('3-1', '4-1')" value="" id="3-1">
         <input class="pe-none empty-style" value="" id="3-2">
@@ -116,7 +156,7 @@
         <input class="pe-none empty-style" value="" id="3-14">
         <input class="pe-none empty-style" value="" id="3-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input maxlength="1" onkeyup="gameAction(); tab('4-1', '5-1')" value="" id="4-1">
         <input class="pe-none empty-style" value="" id="4-2">
@@ -134,9 +174,9 @@
         <input maxlength="1" onkeyup="gameAction(); tab('4-14', '5-14')" value="" id="4-14">
         <input class="pe-none empty-style" value="" id="4-15">
       </div>
-  
+
       <div id="col1" class="row">
-        <input maxlength="1" onkeyup="gameAction(); tab('5-1', '6-1')" value=""id="5-1">
+        <input maxlength="1" onkeyup="gameAction(); tab('5-1', '6-1')" value="" id="5-1">
         <input class="pe-none empty-style" value="" id="5-2">
         <input class="pe-none empty-style" value="" id="5-3">
         <input class="pe-none empty-style" value="" id="5-4">
@@ -152,7 +192,7 @@
         <input maxlength="1" onkeyup="gameAction(); tab('5-14', '6-14')" value="" id="5-14">
         <input maxlength="1" onkeyup="gameAction(); tab('5-15', '5-14')" value="" id="5-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input maxlength="1" onkeyup="gameAction(); tab('6-1', '7-1')" value="" id="6-1">
         <input class="pe-none empty-style" value="" id="6-2">
@@ -170,7 +210,7 @@
         <input maxlength="1" onkeyup="gameAction(); tab('6-14', '7-14')" value="" id="6-14">
         <input class="pe-none empty-style" value="" id="6-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input maxlength="1" onkeyup="gameAction(); tab('7-1', '8-1')" value="" id="7-1">
         <input maxlength="1" onkeyup="gameAction(); tab('7-2', '7-3')" value="" id="7-2">
@@ -188,7 +228,7 @@
         <input maxlength="1" onkeyup="gameAction(); tab('7-14', '7-15')" value="" id="7-14">
         <input maxlength="1" onkeyup="gameAction(); tab('7-15', '5-10')" value="" id="7-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input maxlength="1" onkeyup="gameAction(); tab('8-1', '1-1')" value="" id="8-1">
         <input class="pe-none empty-style" value="" id="8-2">
@@ -206,7 +246,7 @@
         <input maxlength="1" onkeyup="gameAction(); tab('8-14', '9-14')" value="" id="8-14">
         <input class="pe-none empty-style" value="" id="8-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input maxlength="1" class="pe-none empty-style" value="" id="9-1">
         <input maxlength="1" onkeyup="gameAction(); tab('9-2', '9-3')" value="" id="9-2">
@@ -224,7 +264,7 @@
         <input maxlength="1" onkeyup="gameAction(); tab('9-14', '9-15')" value="" id="9-14">
         <input maxlength="1" onkeyup="gameAction(); tab('9-15', '9-13')" value="" id="9-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input class="pe-none empty-style" value="" id="10-1">
         <input class="pe-none empty-style" value="" id="10-2">
@@ -242,7 +282,7 @@
         <input maxlength="1" onkeyup="gameAction(); tab('10-14', '5-15')" value="" id="10-14">
         <input class="pe-none empty-style" value="" id="10-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input class="pe-none empty-style" value="" id="11-1">
         <input class="pe-none empty-style" value="" id="11-2">
@@ -260,7 +300,7 @@
         <input class="pe-none empty-style" value="" id="11-14">
         <input class="pe-none empty-style" value="" id="11-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input class="pe-none empty-style" value="" id="12-1">
         <input class="pe-none empty-style" value="" id="12-2">
@@ -278,7 +318,7 @@
         <input class="pe-none empty-style" value="" id="12-14">
         <input class="pe-none empty-style" value="" id="12-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input class="pe-none empty-style" value="" id="13-1">
         <input class="pe-none empty-style" value="" id="13-2">
@@ -296,7 +336,7 @@
         <input maxlength="1" onkeyup="gameAction(); tab('13-14', '13-15')" value="" id="13-14">
         <input maxlength="1" onkeyup="gameAction(); tab('13-15', '13-7')" value="" id="13-15">
       </div>
-  
+
       <div id="col1" class="row">
         <input class="pe-none empty-style" value="" id="14-1">
         <input class="pe-none empty-style" value="" id="14-2">
@@ -318,18 +358,21 @@
 
     <div style="background-color: rgb(209, 209, 209);" class="card m-2 d-flex flex-column align-items-center p-2 w-50">
       <div style="background-color: rgb(86, 126, 70);" class="m-2 p-2 row-2 card w-75 h-50">
-        <div class="h-75" style="color: white; font-size: 17px; border-bottom: rgb(43, 65, 43) double;" id="wordInfo"></div>
+        <div class="h-75" style="color: white; font-size: 17px; border-bottom: rgb(43, 65, 43) double;" id="wordInfo">
+        </div>
         <div class="h-25 d-flex flex-row">
-          <div class="w-25 text-center" style="color: white; font-size: 25px; border-right: rgb(43, 65, 43) double;" id="timer"></div>
+          <div class="w-25 text-center" style="color: white; font-size: 25px; border-right: rgb(43, 65, 43) double;"
+            id="timer"></div>
           <div class="w-75 text-center" style="color: white; font-size: 25px;" id="liveClock"></div>
         </div>
       </div>
       <div>
-        <button onclick="var timer = setInterval(gameTimer, 1000)"class="btn btn-success me-4">Start</button>
-        <button onclick="finishScoreAction(); clearInterval(timer)" class="btn btn-danger">Finish</button>
+        <button onclick="var timer = setInterval(gameTimer, 1000);" class="btn btn-success me-4">Start</button>
+        <button onclick="finishScoreAction()" class="btn btn-danger">Finish</button>
       </div>
 
-      <div style="background-color: rgb(124, 124, 124);" class="card m-2 p-2 h-50 d-flex flex-row align-items-center flex-wrap justify-content-around">
+      <div style="background-color: rgb(124, 124, 124);"
+        class="card m-2 p-2 h-50 d-flex flex-row align-items-center flex-wrap justify-content-around">
         <div id="easel" class="card w-25 text-center m-2">EASEL</div>
         <div id="abstract" class="card w-25 text-center m-2">ABSTRACT</div>
         <div id="pottery" class="card w-25 text-center m-2">POTTERY</div>
@@ -346,9 +389,9 @@
         <div id="pastel" class="card w-25 text-center m-2">PASTEL</div>
         <div id="sketch" class="card w-25 text-center m-2">SKETCH</div>
       </div>
-    </div>    
+    </div>
   </div>
-  
+
   <script>
     let score = 0;
 
@@ -357,7 +400,7 @@
     var oneTen = document.getElementById('1-10');
     var oneEleven = document.getElementById('1-11');
     var oneTwelve = document.getElementById('1-12');
-    
+
     var oneOne = document.getElementById('1-1');
     var twoOne = document.getElementById('2-1');
     var threeOne = document.getElementById('3-1');
@@ -371,15 +414,15 @@
     var sevenThree = document.getElementById('7-3');
     var sevenFour = document.getElementById('7-4');
     var sevenFive = document.getElementById('7-5');
-    var sevenSix= document.getElementById('7-6');
+    var sevenSix = document.getElementById('7-6');
 
-    var eightFive = document.getElementById('8-5');      
-    var nineFive = document.getElementById('9-5');      
-    var sixFive = document.getElementById('6-5');      
-    var fiveFive = document.getElementById('5-5');      
-    var fourFive = document.getElementById('4-5');      
-    var threeFive = document.getElementById('3-5');      
-    var twoFive = document.getElementById('2-5');      
+    var eightFive = document.getElementById('8-5');
+    var nineFive = document.getElementById('9-5');
+    var sixFive = document.getElementById('6-5');
+    var fiveFive = document.getElementById('5-5');
+    var fourFive = document.getElementById('4-5');
+    var threeFive = document.getElementById('3-5');
+    var twoFive = document.getElementById('2-5');
 
     var nineTwo = document.getElementById('9-2');
     var nineThree = document.getElementById('9-3');
@@ -436,7 +479,7 @@
     var eightFourteen = document.getElementById('8-14');
     var nineFourteen = document.getElementById('9-14');
     var tenFourteen = document.getElementById('10-14');
-    
+
     var fiveEleven = document.getElementById('5-11');
     var fiveTwelve = document.getElementById('5-12');
     var fiveThirteen = document.getElementById('5-13');
@@ -448,14 +491,14 @@
     function gameAction() {
 
       if (oneEight.value.toUpperCase() == "E" && oneNine.value.toUpperCase() == "A" && oneTen.value.toUpperCase() == "S" && oneEleven.value.toUpperCase() == "E" && oneTwelve.value.toUpperCase() == "L") {
-        document.getElementById('easel').style.backgroundColor="green";
-        document.getElementById('easel').style.color="white";
+        document.getElementById('easel').style.backgroundColor = "green";
+        document.getElementById('easel').style.color = "white";
         oneEight.style.pointerEvents = "none";
         oneNine.style.pointerEvents = "none";
         oneTen.style.pointerEvents = "none";
         oneEleven.style.pointerEvents = "none";
         oneTwelve.style.pointerEvents = "none";
-        
+
         oneEight.style.backgroundColor = "rgb(198, 230, 198)";
         oneNine.style.backgroundColor = "rgb(198, 230, 198)";
         oneTen.style.backgroundColor = "rgb(198, 230, 198)";
@@ -463,7 +506,7 @@
         oneTwelve.style.backgroundColor = "rgb(198, 230, 198)";
         document.getElementById('wordInfo').innerHTML = "An easel is a frame for holding up such things as an artist's painting or a chalkboard.";
       };
-      
+
       if (oneOne.value.toUpperCase() == "A" && twoOne.value.toUpperCase() == "B" && threeOne.value.toUpperCase() == "S" && fourOne.value.toUpperCase() == "T" && fiveOne.value.toUpperCase() == "R" && sixOne.value.toUpperCase() == "A" && sevenOne.value.toUpperCase() == "C" && eightOne.value.toUpperCase() == "T") {
         document.getElementById('abstract').style.backgroundColor = "green";
         document.getElementById('abstract').style.color = "white";
@@ -475,7 +518,7 @@
         sixOne.style.pointerEvents = "none";
         sevenOne.style.pointerEvents = "none";
         eightOne.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "Abstract art is a non-representational art form that uses shapes, colors, lines, and forms to create a composition.";
         oneOne.style.backgroundColor = "rgb(198, 230, 198)";
         twoOne.style.backgroundColor = "rgb(198, 230, 198)";
@@ -486,7 +529,7 @@
         sevenOne.style.backgroundColor = "rgb(198, 230, 198)";
         eightOne.style.backgroundColor = "rgb(198, 230, 198)";
       };
-      
+
       if (sevenOne.value.toUpperCase() == "C" && sevenTwo.value.toUpperCase() == "A" && sevenThree.value.toUpperCase() == "N" && sevenFour.value.toUpperCase() == "V" && sevenFive.value.toUpperCase() == "A" && sevenSix.value.toUpperCase() == "S") {
         document.getElementById('canvas').style.backgroundColor = "green";
         document.getElementById('canvas').style.color = "white";
@@ -496,7 +539,7 @@
         sevenFour.style.pointerEvents = "none";
         sevenFive.style.pointerEvents = "none";
         sevenSix.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "canvas is a strong, woven fabric that artists use as a surface for painting.";
         sevenOne.style.backgroundColor = "rgb(198, 230, 198)";
         sevenTwo.style.backgroundColor = "rgb(198, 230, 198)";
@@ -505,7 +548,7 @@
         sevenFive.style.backgroundColor = "rgb(198, 230, 198)";
         sevenSix.style.backgroundColor = "rgb(198, 230, 198)";
       };
-      
+
       if (twoFive.value.toUpperCase() == "P" && threeFive.value.toUpperCase() == "O" && fourFive.value.toUpperCase() == "R" && fiveFive.value.toUpperCase() == "T" && sixFive.value.toUpperCase() == "R" && sevenFive.value.toUpperCase() == "A" && eightFive.value.toUpperCase() == "I" && nineFive.value.toUpperCase() == "T") {
         document.getElementById('portrait').style.backgroundColor = "green";
         document.getElementById('portrait').style.color = "white";
@@ -517,7 +560,7 @@
         sevenFive.style.pointerEvents = "none";
         eightFive.style.pointerEvents = "none";
         nineFive.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "A portrait is an artistic representation of a person, such as a photograph, sculpture, or drawing.";
         twoFive.style.backgroundColor = "rgb(198, 230, 198)";
         threeFive.style.backgroundColor = "rgb(198, 230, 198)";
@@ -529,7 +572,7 @@
         nineFive.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (nineTwo.value.toUpperCase() == "P" && nineThree.value.toUpperCase() == "A" && nineFour.value.toUpperCase() == "S" && nineFive.value.toUpperCase() == "T" && nineSix.value.toUpperCase() == "E" && nineSeven.value.toUpperCase() == "L") {
         document.getElementById('pastel').style.backgroundColor = "green"
         document.getElementById('pastel').style.color = "white";
@@ -539,7 +582,7 @@
         nineFive.style.pointerEvents = "none";
         nineSix.style.pointerEvents = "none";
         nineSeven.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "Pastel is an art medium made from finely ground pigments, a white filler, and a binder that are rolled into sticks.";
         nineTwo.style.backgroundColor = "rgb(198, 230, 198)";
         nineThree.style.backgroundColor = "rgb(198, 230, 198)";
@@ -549,7 +592,7 @@
         nineSeven.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (nineFour.value.toUpperCase() == "S" && tenFour.value.toUpperCase() == "K" && elevenFour.value.toUpperCase() == "E" && twelveFour.value.toUpperCase() == "T" && thirteenFour.value.toUpperCase() == "C" && fourteenFour.value.toUpperCase() == "H") {
         document.getElementById('sketch').style.backgroundColor = "Green";
         document.getElementById('sketch').style.color = "white";
@@ -569,7 +612,7 @@
         fourteenFour.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (nineSeven.value.toUpperCase() == "L" && tenSeven.value.toUpperCase() == "I" && elevenSeven.value.toUpperCase() == "N" && twelveSeven.value.toUpperCase() == "E" && thirteenSeven.value.toUpperCase() == "S") {
         document.getElementById('lines').style.backgroundColor = "green";
         document.getElementById('lines').style.color = "white";
@@ -587,7 +630,7 @@
         thirteenSeven.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (thirteenSeven.value.toUpperCase() == "S" && thirteenEight.value.toUpperCase() == "C" && thirteenNine.value.toUpperCase() == "U" && thirteenTen.value.toUpperCase() == "L" && thirteenEleven.value.toUpperCase() == "P" && thirteenTwelve.value.toUpperCase() == "T" && thirteenThirteen.value.toUpperCase() == "U" && thirteenFourteen.value.toUpperCase() == "R" && thirteenFifteen.value.toUpperCase() == "E") {
         document.getElementById('sculpture').style.backgroundColor = "green";
         document.getElementById('sculpture').style.color = "white";
@@ -600,7 +643,7 @@
         thirteenThirteen.style.pointerEvents = "none";
         thirteenFourteen.style.pointerEvents = "none";
         thirteenFifteen.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "Sculpture is a visual art form that involves creating three-dimensional objects from hard or plastic materials.";
         thirteenSeven.style.backgroundColor = "rgb(198, 230, 198)";
         thirteenEight.style.backgroundColor = "rgb(198, 230, 198)";
@@ -613,7 +656,7 @@
         thirteenFifteen.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (fourFour.value.toUpperCase() == "B" && fourFive.value.toUpperCase() == "R" && fourSix.value.toUpperCase() == "U" && fourSeven.value.toUpperCase() == "S" && fourEight.value.toUpperCase() == "H") {
         document.getElementById('brush').style.backgroundColor = "green";
         document.getElementById('brush').style.color = "white";
@@ -622,7 +665,7 @@
         fourSix.style.pointerEvents = "none";
         fourSeven.style.pointerEvents = "none";
         fourEight.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "A brush is a tool used for painting, grooming, cleaning, writing, and polishing.";
         fourFour.style.backgroundColor = "rgb(198, 230, 198)";
         fourFive.style.backgroundColor = "rgb(198, 230, 198)";
@@ -631,7 +674,7 @@
         fourEight.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (oneEight.value.toUpperCase() == "E" && twoEight.value.toUpperCase() == "T" && threeEight.value.toUpperCase() == "C" && fourEight.value.toUpperCase() == "H" && fiveEight.value.toUpperCase() == "I" && sixEight.value.toUpperCase() == "N" && sevenEight.value.toUpperCase() == "G") {
         document.getElementById('etching').style.backgroundColor = "green";
         document.getElementById('etching').style.color = "white";
@@ -642,7 +685,7 @@
         fiveEight.style.pointerEvents = "none";
         sixEight.style.pointerEvents = "none";
         sevenEight.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "Etching is a printmaking technique that uses acid to create lines or textures in a metal plate.";
         oneEight.style.backgroundColor = "rgb(198, 230, 198)";
         twoEight.style.backgroundColor = "rgb(198, 230, 198)";
@@ -653,7 +696,7 @@
         sixEight.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (sevenEight.value.toUpperCase() == "G" && sevenNine.value.toUpperCase() == "R" && sevenTen.value.toUpperCase() == "A" && sevenEleven.value.toUpperCase() == "F" && sevenTwelve.value.toUpperCase() == "F" && sevenThirteen.value.toUpperCase() == "I" && sevenFourteen.value.toUpperCase() == "T" && sevenFifteen.value.toUpperCase() == "I") {
         document.getElementById('graffiti').style.backgroundColor = "green";
         document.getElementById('graffiti').style.color = "white";
@@ -665,7 +708,7 @@
         sevenThirteen.style.pointerEvents = "none";
         sevenFourteen.style.pointerEvents = "none";
         sevenFifteen.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "Graffiti is a form of artistic expression that involves writing, painting, or drawing on public surfaces, such as walls or buildings.";
         sevenEight.style.backgroundColor = "rgb(198, 230, 198)";
         sevenNine.style.backgroundColor = "rgb(198, 230, 198)";
@@ -677,7 +720,7 @@
         sevenFifteen.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (fiveTen.value.toUpperCase() == "C" && sixTen.value.toUpperCase() == "L" && sevenTen.value.toUpperCase() == "A" && eightTen.value.toUpperCase() == "Y") {
         document.getElementById('clay').style.backgroundColor = "green";
         document.getElementById('clay').style.color = "white";
@@ -685,7 +728,7 @@
         sixTen.style.pointerEvents = "none";
         sevenTen.style.pointerEvents = "none";
         eightTen.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "Clay is the result of granite rocks being eroded by nature, and is the most suitable material for making ceramics.";
         fiveTen.style.backgroundColor = "rgb(198, 230, 198)";
         sixTen.style.backgroundColor = "rgb(198, 230, 198)";
@@ -693,7 +736,7 @@
         eightTen.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (fourFourteen.value.toUpperCase() == "P" && fiveFourteen.value.toUpperCase() == "O" && sixFourteen.value.toUpperCase() == "T" && sevenFourteen.value.toUpperCase() == "T" && eightFourteen.value.toUpperCase() == "E" && nineFourteen.value.toUpperCase() == "R" && tenFourteen.value.toUpperCase() == "Y") {
         document.getElementById('pottery').style.backgroundColor = "green";
         document.getElementById('pottery').style.color = "white";
@@ -704,7 +747,7 @@
         eightFourteen.style.pointerEvents = "none";
         nineFourteen.style.pointerEvents = "none";
         tenFourteen.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "Pottery is the art of shaping clay into objects and then firing them in a kiln at a high temperature to harden them.";
         fourFourteen.style.backgroundColor = "rgb(198, 230, 198)";
         fiveFourteen.style.backgroundColor = "rgb(198, 230, 198)";
@@ -715,7 +758,7 @@
         tenFourteen.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (fiveTen.value.toUpperCase() == "C" && fiveEleven.value.toUpperCase() == "I" && fiveTwelve.value.toUpperCase() == "A" && fiveThirteen.value.toUpperCase() == "S" && fiveFourteen.value.toUpperCase() == "O" && fiveFifteen.value.toUpperCase() == "M") {
         document.getElementById('mosaic').style.backgroundColor = "green";
         document.getElementById('mosaic').style.color = "white";
@@ -725,7 +768,7 @@
         fiveThirteen.style.pointerEvents = "none";
         fiveFourteen.style.pointerEvents = "none";
         fiveFifteen.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "A mosaic is a two-dimensional art form that creates an image or pattern by arranging small pieces of material, called tesserae.";
         fiveTen.style.backgroundColor = "rgb(198, 230, 198)";
         fiveEleven.style.backgroundColor = "rgb(198, 230, 198)";
@@ -735,14 +778,14 @@
         fiveFifteen.style.backgroundColor = "rgb(198, 230, 198)";
 
       };
-      
+
       if (nineThirteen.value.toUpperCase() == "A" && nineFourteen.value.toUpperCase() == "R" && nineFifteen.value.toUpperCase() == "T") {
         document.getElementById('art').style.backgroundColor = "green";
         document.getElementById('art').style.color = "white";
         nineThirteen.style.pointerEvents = "none";
         nineFourteen.style.pointerEvents = "none";
         nineFifteen.style.pointerEvents = "none";
-        
+
         document.getElementById('wordInfo').innerHTML = "Art is something that is created with imagination and skill and that is beautiful or that expresses important ideas or feelings.";
         nineThirteen.style.backgroundColor = "rgb(198, 230, 198)";
         nineFourteen.style.backgroundColor = "rgb(198, 230, 198)";
@@ -750,10 +793,10 @@
 
       };
 
-      
+
     }
 
-    
+
     function finishScoreAction() {
       let easelColor = document.getElementById('easel').style.backgroundColor;
       let abstractColor = document.getElementById('abstract').style.backgroundColor;
@@ -826,35 +869,37 @@
       if (canvasColor == 'green') {
         score += 1;
       };
-      
+
       if (potteryColor == 'green') {
         score += 1;
       };
       document.getElementById('liveClock').innerHTML = `&nbsp; Your Score is: ${score}/15 `;
+      clearInterval(timer);
     }
 
     function tab(field1, field2) {
       let f1 = document.getElementById(field1);
-      if (f1.value.length == 1){
+      if (f1.value.length == 1) {
         document.getElementById(field2).focus();
       }
-    } 
+    }
     let countDownTime = 240;
     function gameTimer() {
       let minutes = Math.floor(countDownTime / 60);
       let seconds = countDownTime % 60;
-        if(seconds < 10) {
-          seconds = "0" + seconds;
-        }
-        document.getElementById('timer').innerHTML = `${minutes}: ${seconds}`;
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      document.getElementById('timer').innerHTML = `${minutes}: ${seconds}`;
 
-        countDownTime--;
+      countDownTime--;
 
-      if(countDownTime < 0) {
+      if (countDownTime < 0) {
         clearInterval(timer);
         document.getElementById('timer').innerHTML = `time is up!`;
       }
     }
   </script>
 </body>
+
 </html>

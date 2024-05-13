@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Antonio&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Rubik+Marker+Hatch&family=Silkscreen&display=swap"
@@ -23,10 +23,12 @@
   <link rel="stylesheet" href="./css/navbar.css">
 
   <script defer src="./bootstrap/js/bootstrap.min.js"></script>
-  
+
   <script defer src="./javascript/apiController.js"></script>
-  
+
   <script defer src="./javascript/shopCategory.js"></script>
+
+  <script defer src="./javascript/checkSession.js"></script>
   <style>
     body {
       margin-left: 0;
@@ -96,7 +98,7 @@
       display: inline-block;
       margin-right: 5px;
       cursor: pointer;
-      transition:all 0.25s;
+      transition: all 0.25s;
     }
 
     .button-addtocart:hover {
@@ -134,11 +136,11 @@
       display: flex;
       width: 100%;
     }
-    
+
     .buynow-div {
       display: flex;
     }
-    
+
     .side-div {
       background-color: red;
     }
@@ -147,13 +149,13 @@
       background-color: white;
       /* display: flex; */
       width: 70px;
+      max-height: 515px;
       flex-wrap: nowrap;
       align-items: center;
       justify-content: center;
       margin-top: 45px;
-      position: fixed;
-      top: 0px;
-      bottom: 0px;
+      position: sticky;
+      top: 45px;
       padding-top: 4px;
       padding-left: 4px;
       padding-right: 4px;
@@ -162,9 +164,9 @@
 
     .col-left div {
       font-size: 12px;
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: column;
       padding: 10px 0px 10px 0px;
       border-radius: 6px;
@@ -176,7 +178,7 @@
       color: white;
     }
 
-    
+
     .col-left div:hover svg {
       fill: white;
     }
@@ -194,17 +196,18 @@
       /* background-color: blue; */
       /* max-width: 800px; */
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       justify-content: center;
       flex: 1;
       margin-top: 55px;
-      margin-left: 80px;
-      margin-right: 600px;
+      /* margin-left: 80px; */
+      /* margin-right: 600px; */
     }
-    
+
     .col-right {
       display: flex;
       min-width: 360px;
+      max-height: 505px;
       border-radius: 7px;
       margin-left: 20px;
       justify-content: center;
@@ -212,10 +215,9 @@
       margin-top: 50px;
       border: rgb(187, 186, 186) solid 1px;
       background-color: rgb(230, 230, 230);
-      position: fixed;
+      position: sticky;
       right: 5px;
-      top: 0px;
-      bottom: 5px;
+      top: 50px;
     }
 
     .category-bar {
@@ -252,7 +254,7 @@
       background-color: rgb(212, 190, 233);
       color: white;
     }
-    
+
     .category-bar button:active {
       background-color: rgb(153, 111, 192);
       color: white;
@@ -271,7 +273,7 @@
     }
 
     .button-nft {
-      background:  linear-gradient(60deg, rgb(230, 183, 223) -10%, rgb(198, 132, 211) 30%, rgba(252,176,69,1) 120%); 
+      background: linear-gradient(60deg, rgb(230, 183, 223) -10%, rgb(198, 132, 211) 30%, rgba(252, 176, 69, 1) 120%);
       /* font-size: 30px; */
       color: white;
       transition: 1s ease-in-out;
@@ -283,30 +285,55 @@
     }
 
     @keyframes nftShake {
-      0% {transform: rotatez(0deg) translateY(0px);}
-      1% {transform:  translateY(-5px);}
-      3% {transform: rotatez(10deg);}
-      6% {transform: rotatez(-10deg);}
-      11% {transform: rotatez(10deg);}
-      19% {transform: rotatez(0deg) translateY(0px);}
+      0% {
+        transform: rotatez(0deg) translateY(0px);
+      }
+
+      1% {
+        transform: translateY(-5px);
+      }
+
+      3% {
+        transform: rotatez(10deg);
+      }
+
+      6% {
+        transform: rotatez(-10deg);
+      }
+
+      11% {
+        transform: rotatez(10deg);
+      }
+
+      19% {
+        transform: rotatez(0deg) translateY(0px);
+      }
+    }
+
+    svg {
+      cursor: pointer;
     }
 
     .button-nft svg {
       fill: white;
     }
-    
+
     .button-nft:hover {
-      background: linear-gradient(30deg, rgb(230, 183, 223) -10%, rgb(198, 132, 211) 30%, rgba(252,176,69,1) 150%);
+      background: linear-gradient(30deg, rgb(230, 183, 223) -10%, rgb(198, 132, 211) 30%, rgba(252, 176, 69, 1) 150%);
     }
 
     .button-nft:active {
       opacity: 0.7;
     }
-    
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
   </style>
 </head>
 
-<body>
+<body onload="checkSession()">
   <div class="header">
     <div class="header-left">
       <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
@@ -314,77 +341,164 @@
       <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
     </div>
     <div class="header-center">
-      <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
-            class="navBarButton">V-Exhibit</button></a></div>
-      <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
-          href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
+      <div class="home-text invicible"><a style="text-decoration: none;" href=""><button
+            class="navBarButton">V-Exhibit</button></a>
+        <div class="navTool-tip">Enjoy the Virtual exhibit</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electricEasel.html"><button
+            class="navBarButton">Home</button></a>
+        <div class="navTool-tip">Explore Art</div>
+      </div>
       <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
-            class="navBarButton">Shop</button></a></div>
+            class="navBarButton">Shop</button></a>
+        <div class="navTool-tip">Shop Art Supplies</div>
+      </div>
       <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
-            class="navBarButton">Play</button></a></div>
+            class="navBarButton">Play</button></a>
+        <div class="navTool-tip">Learn While U Play</div>
+      </div>
       <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
-            class="navBarButton">Have U Heard?</button></a></div>
+            class="navBarButton">Have U Heard?</button></a>
+        <div class="navTool-tip">fun Facts about Art</div>
+      </div>
       <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
-            class="navBarButton">About Us</button></a></div>
+            class="navBarButton">About Us</button></a>
+        <div class="navTool-tip">Know More about our team</div>
+      </div>
 
     </div>
     <div class="header-right">
       <img class="hamburger" src="./Assets/images/search.svg">
-      <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+      <div class="home-text" onclick="signoutUser()">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30px"
+          height="30px" viewBox="0 0 256 256" xml:space="preserve">
+          <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+            <path
+              d="M 45 88 c -11.049 0 -21.18 -2.003 -29.021 -8.634 C 6.212 71.105 0 58.764 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 c 0 13.765 -6.212 26.105 -15.979 34.366 C 66.181 85.998 56.049 88 45 88 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(214,214,214); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 60.71 c -11.479 0 -20.818 -9.339 -20.818 -20.817 c 0 -11.479 9.339 -20.818 20.818 -20.818 c 11.479 0 20.817 9.339 20.817 20.818 C 65.817 51.371 56.479 60.71 45 60.71 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 90 c -10.613 0 -20.922 -3.773 -29.028 -10.625 c -0.648 -0.548 -0.88 -1.444 -0.579 -2.237 C 20.034 64.919 31.933 56.71 45 56.71 s 24.966 8.209 29.607 20.428 c 0.301 0.793 0.069 1.689 -0.579 2.237 C 65.922 86.227 55.613 90 45 90 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+          </g>
+        </svg>
+        <div class="navTool-tip">Sign Out?</div>
+      </div>
     </div>
   </div>
 
-  <div class="col-left">
-    <div onclick="showCategories()">
+  <div style="display: flex; margin-right: 10px;">
+    <div class="col-left">
+      <div onclick="showCategories()">
         <!-- <img src="./Assets/images/category.svg" alt="categories"> -->
-        <svg class="category-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"/></svg>
+        <svg class="category-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+          <path
+            d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z" />
+        </svg>
         <p>categories</p>
       </div>
 
       <div>
         <!-- <img src="./Assets/images/shopping_cart.svg" alt="cart"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+          <path
+            d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
+        </svg>
         <p>Cart</p>
       </div>
 
-      <div onclick="getFavorites()">
+      <div onclick="getProducts()">
         <!-- <img src="./Assets/images/favorite.svg" alt="Favorties"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+          <path
+            d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />
+        </svg>
         <p>Favorties</p>
       </div>
 
-      <div id="buttonNft" class="button-nft">
-        <!-- <img src="./Assets/images/favorite.svg" alt="Favorties"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-40-83v-40q-35-5-67.5-19T312-256l-28 29q33 26 72.5 42.5T440-163Zm80 0q44-5 83.5-21.5T676-227l-28-29q-28 20-60.5 34T520-203v40Zm-40-117q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Zm253-4q26-33 42.5-72.5T797-440h-40q-5 35-19 67.5T704-312l29 28Zm-506 0 29-29q-20-28-34-60t-19-67h-40q5 44 21.5 83.5T227-284Zm253-36L360-480l120-160 120 160-120 160ZM163-520h40q5-35 19-67t34-60l-29-29q-26 33-42.5 72.5T163-520Zm594 0h40q-5-44-22-83.5T732-676l-28 28q20 28 34 60.5t19 67.5ZM313-704q28-20 60-34t67-19v-40q-44 5-83.5 21.5T284-733l29 29Zm335 0 28-28q-33-26-72.5-43T520-797v40q35 5 67.5 19t60.5 34Z"/></svg>
-        <p style="font-size: 15px; font-weight: bold;">NFT</p>
+      <a href="https://opensea.io/" target="_blank">
+        <div id="buttonNft" class="button-nft">
+          <!-- <img src="./Assets/images/favorite.svg" alt="Favorties"> -->
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+            <path
+              d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-40-83v-40q-35-5-67.5-19T312-256l-28 29q33 26 72.5 42.5T440-163Zm80 0q44-5 83.5-21.5T676-227l-28-29q-28 20-60.5 34T520-203v40Zm-40-117q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Zm253-4q26-33 42.5-72.5T797-440h-40q-5 35-19 67.5T704-312l29 28Zm-506 0 29-29q-20-28-34-60t-19-67h-40q5 44 21.5 83.5T227-284Zm253-36L360-480l120-160 120 160-120 160ZM163-520h40q5-35 19-67t34-60l-29-29q-26 33-42.5 72.5T163-520Zm594 0h40q-5-44-22-83.5T732-676l-28 28q20 28 34 60.5t19 67.5ZM313-704q28-20 60-34t67-19v-40q-44 5-83.5 21.5T284-733l29 29Zm335 0 28-28q-33-26-72.5-43T520-797v40q35 5 67.5 19t60.5 34Z" />
+          </svg>
+          <p style="font-size: 15px; font-weight: bold;">NFT</p>
+        </div>
+      </a>
+    </div>
+
+
+    <div id="categoryBar" class="category-bar">
+      <div class="d-flex flex-column">
+        <button onclick="getProductsStationery()">Stationery</button>
+        <button onclick="getProductsPosters()">Posters</button>
+        <button onclick="getProductsStickers()">Stickers</button>
+        <button onclick="getProductsCeramic()">Ceramic</button>
+        <button onclick="getProductsFancy()">Fancy</button>
+        <button onclick="getProductsMain()">All</button>
+      </div>
+
+      <div onclick="hideCategories()" class="d-flex flex-column">
+        <div class="close-div"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+          </svg></div>
       </div>
     </div>
 
-    
-    <div id="categoryBar" class="category-bar">
-      <div class="d-flex flex-column">
-        <button onclick="categorizeStationery()">Stationery</button>
-        <button onclick="categorizePosters()">Posters</button>
-        <button onclick="categorizeStickers()">Stickers</button>
-        <button onclick="categorizeCeramic()">Ceramic</button>
-        <button onclick="categorizeFancy()">Fancy</button>
-        <button onclick="productsAll()">All</button>
+    <div class="col-center js-products-grid"></div>
+
+    <!-- <div class="col-right insert-fav">
+      <img src="./Assets/images/leoart poster one 4.jpg" style="height: 300px;" alt="leo poster">
+    </div> -->
+  </div>
+
+  <footer class="position-relative">
+    <div class="w-100 footer-div d-flex justify-content-center">
+      <div class="icons d-flex position-absolute">
+        <a href="https://www.instagram.com/" target="_blank">
+          <div class="bg-white px-1 rounded m-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              width="24px" height="24px">
+              <path
+                d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z" />
+            </svg></div>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank">
+          <div class="bg-white px-1 rounded m-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              width="24px" height="24px">
+              <path
+                d="M 5 3 C 3.895 3 3 3.895 3 5 L 3 19 C 3 20.105 3.895 21 5 21 L 19 21 C 20.105 21 21 20.105 21 19 L 21 5 C 21 3.895 20.105 3 19 3 L 5 3 z M 5 5 L 19 5 L 19 19 L 5 19 L 5 5 z M 7.7792969 6.3164062 C 6.9222969 6.3164062 6.4082031 6.8315781 6.4082031 7.5175781 C 6.4082031 8.2035781 6.9223594 8.7167969 7.6933594 8.7167969 C 8.5503594 8.7167969 9.0644531 8.2035781 9.0644531 7.5175781 C 9.0644531 6.8315781 8.5502969 6.3164062 7.7792969 6.3164062 z M 6.4765625 10 L 6.4765625 17 L 9 17 L 9 10 L 6.4765625 10 z M 11.082031 10 L 11.082031 17 L 13.605469 17 L 13.605469 13.173828 C 13.605469 12.034828 14.418109 11.871094 14.662109 11.871094 C 14.906109 11.871094 15.558594 12.115828 15.558594 13.173828 L 15.558594 17 L 18 17 L 18 13.173828 C 18 10.976828 17.023734 10 15.802734 10 C 14.581734 10 13.930469 10.406562 13.605469 10.976562 L 13.605469 10 L 11.082031 10 z" />
+            </svg></div>
+        </a>
+        <a href="https://www.gmail.com/" target="_blank">
+          <div class="bg-white px-1 rounded m-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+              width="24px" height="24px">
+              <path
+                d="M29,4H3A3,3,0,0,0,0,7V25a3,3,0,0,0,3,3H29a3,3,0,0,0,3-3V7A3,3,0,0,0,29,4Zm-.72,2L16,14.77,3.72,6ZM30,25a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1V7.23l13.42,9.58a1,1,0,0,0,1.16,0L30,7.23Z" />
+            </svg></div>
+        </a>
       </div>
-      
-      <div onclick="hideCategories()" class="d-flex flex-column">
-        <div class="close-div"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></div>
+      <div class="pt-2" style="color: white; opacity: 0.5; position: absolute; top: 0px;  z-index: 2;">
+        <div class="d-inline-block px-4"><a href="./electricEasel.html">Home</a></div>
+        <div class="d-inline-block px-4"><a href="./EEshoping.html">Shop</a></div>
+        <div class="d-inline-block px-4"><a href="./EEhaveuheard.html">Have You Heard?</a></div>
+        <div class="d-inline-block px-4"><a href="./EEplay.html">Play</a></div>
+        <div class="d-inline-block px-4"><a href="./electriceaselAboutus.html">About Us</a></div>
+      </div>
+      <div style="color: white; position: absolute; bottom: 0px;  z-index: 2;">Copyright &#169; 2024, Electric Easel.
+        All Rights Reserved.</div>
+      <div><img style="transform: translateY(60px); height: 170px;" src="./Assets/images/electriceasellogo.png" alt="">
       </div>
     </div>
-    
-    <div style="display: flex; margin-right: 10px;">
-      <div class="col-center js-products-grid"></div>
-      
-      <div class="col-right insert-fav">
-        <img src="./Assets/images/leoart poster one 4.jpg" style="height: 300px;" alt="leo poster">
-      </div>
-      
-    </div>
-    
+  </footer>
+
 </body>
 
 </html>

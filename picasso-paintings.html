@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" href="./css/navbar.css">
   <link rel="stylesheet" href="./css/painter-pages.css">
+  <script defer src="./javascript/checkSession.js"></script>
 
   <style>
     .ma-jolie-div {
@@ -94,64 +95,125 @@
       left: -100px;
       transition: 0.2s;
     }
-
   </style>
 </head>
 
-<body style="margin: 0px; margin-top: 45px;">
+<body onload="checkSession()" style="margin: 0px; margin-top: 45px;">
   <div class="header">
     <div class="header-left">
-        <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
-        <!--<p class="home-text">electric easel</p>-->
-        <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
+      <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
+      <!--<p class="home-text">electric easel</p>-->
+      <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
     </div>
     <div class="header-center">
-        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);" href=""><button
-                    class="navBarButton">V-Exhibit</button></a></div>
-        <div class="home-text"><a style="text-decoration: none; color: rgb(179, 122, 233);"
-                href="./electricEasel.html"><button class="navBarButton">Home</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
-                    class="navBarButton">Shop</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
-                    class="navBarButton">Play</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
-                    class="navBarButton">Have U Heard?</button></a></div>
-        <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
-                    class="navBarButton">About Us</button></a></div>
+      <div class="home-text invicible"><a style="text-decoration: none;" href=""><button
+            class="navBarButton">V-Exhibit</button></a>
+        <div class="navTool-tip">Enjoy the Virtual exhibit</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electricEasel.html"><button
+            class="navBarButton">Home</button></a>
+        <div class="navTool-tip">Explore Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEshoping.html"><button
+            class="navBarButton">Shop</button></a>
+        <div class="navTool-tip">Shop Art Supplies</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEplay.html"><button
+            class="navBarButton">Play</button></a>
+        <div class="navTool-tip">Learn While U Play</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./EEhaveuheard.html"><button
+            class="navBarButton">Have U Heard?</button></a>
+        <div class="navTool-tip">fun Facts about Art</div>
+      </div>
+      <div class="home-text"><a style="text-decoration: none;" href="./electriceaselAboutus.html"><button
+            class="navBarButton">About Us</button></a>
+        <div class="navTool-tip">Know More about our team</div>
+      </div>
 
     </div>
     <div class="header-right">
-        <img class="hamburger" src="./Assets/images/search.svg">
-        <img class="profile-pic" src="./Assets/images/unnamed.jpg">
+      <img class="hamburger" src="./Assets/images/search.svg">
+      <div class="home-text" onclick="signoutUser()">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30px"
+          height="30px" viewBox="0 0 256 256" xml:space="preserve">
+          <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+            <path
+              d="M 45 88 c -11.049 0 -21.18 -2.003 -29.021 -8.634 C 6.212 71.105 0 58.764 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 c 0 13.765 -6.212 26.105 -15.979 34.366 C 66.181 85.998 56.049 88 45 88 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(214,214,214); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 60.71 c -11.479 0 -20.818 -9.339 -20.818 -20.817 c 0 -11.479 9.339 -20.818 20.818 -20.818 c 11.479 0 20.817 9.339 20.817 20.818 C 65.817 51.371 56.479 60.71 45 60.71 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path
+              d="M 45 90 c -10.613 0 -20.922 -3.773 -29.028 -10.625 c -0.648 -0.548 -0.88 -1.444 -0.579 -2.237 C 20.034 64.919 31.933 56.71 45 56.71 s 24.966 8.209 29.607 20.428 c 0.301 0.793 0.069 1.689 -0.579 2.237 C 65.922 86.227 55.613 90 45 90 z"
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(165,164,164); fill-rule: nonzero; opacity: 1;"
+              transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+          </g>
+        </svg>
+        <div class="navTool-tip">Sign Out?</div>
+      </div>
     </div>
-</div>
+  </div>
+  
   <div class="artist-overview">
     <div class="artist-info m-0 p-0 pt-4 ps-4">
       <div class="fs-1 m-0 p-0 ">Pablo Picasso</div>
       <div class="fs-5 opacity-75"><em>25 October 1881 - 8 April 1973</em></div>
       <div class="fs-5 w-50 ps-4">
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Pablo Ruiz Picasso (25 October 1881 - 8 April 1973) was a Spanish painter, sculptor, printmaker, ceramicist, and theatre designer who spent most of his adult life in France. One of the most influential artists of the 20th century, he is known for co-founding the Cubist movement, the invention of constructed sculpture, the co-invention of collage, and for the wide variety of styles that he helped develop and explore. Among his most famous works are the proto-Cubist Les Demoiselles d'Avignon (1907) and the anti-war painting Guernica (1937), a dramatic portrayal of the bombing of Guernica by German and Italian air forces during the Spanish Civil War.
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Pablo Ruiz Picasso (25 October 1881 - 8 April 1973) was a Spanish painter,
+        sculptor, printmaker, ceramicist, and theatre designer who spent most of his adult life in France. One of the
+        most influential artists of the 20th century, he is known for co-founding the Cubist movement, the invention of
+        constructed sculpture, the co-invention of collage, and for the wide variety of styles that he helped develop
+        and explore. Among his most famous works are the proto-Cubist Les Demoiselles d'Avignon (1907) and the anti-war
+        painting Guernica (1937), a dramatic portrayal of the bombing of Guernica by German and Italian air forces
+        during the Spanish Civil War.
       </div>
     </div>
-    <div><img style="height: 630px; width: 630px; object-fit: cover; right: 0px; transform: translateY(-50px);" src="./Assets/images/pablo-picasso.jpg"></div>
+    <div><img style="height: 630px; width: 630px; object-fit: cover; right: 0px; transform: translateY(-50px);"
+        src="./Assets/images/pablo-picasso.jpg"></div>
     <!-- <div><a href=""></a></div> -->
   </div>
 
-  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Picasso's Paintings by hitting one of these buttons.</div>
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center"
+    style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Seek Picasso's Paintings by hitting one of these
+    buttons.</div>
 
   <div style="display: flex; justify-content: center;">
     <div class="outer-div" style="background-color: rgb(228, 153, 153);">
-      <div id="guernica" class="guernica-div"><img style="width: 1000px;" src="./Assets/images/pablo-picasso-paintings/guernica.jpg" alt="Guernica"></div>
-      <div id="lesDemoisellas" class="les-demo-div"><img style="width: 350px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Les_Demoiselles_d'Avignon-transparent.png" alt="Les Demoiselles d Avignon"></div>
-      <div id="laSoupeBig" class="la-soupe-big-div"><img style="width: 345px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/La_soupe-big-transparent.png" alt="la soupe"></div>
-      <div id="laSoupeSmall" class="la-soupe-small-div"><img style="width: 345px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/La_soupe-small-transparent.png" alt="la soupe"></div>
-      <div id="girlMirror" class="girl-mirror-div"><img style="width: 400px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Girl-Before-A-Mirror-transparent.png" alt="girl before a mirror"></div>
-      <div id="maJolie" class="ma-jolie-div"><img style="width: 208px;" src="./Assets/images/pablo-picasso-paintings/ma-jolie.jpg" alt="ma jolie"></div>
-      <div id="boyPipe" class="boy-pipe-div"><img style="width: 430px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Boy-with-a-Pipe-transparent.png" alt="boy with a pipe"></div>
-      <div id="doraMaarChat" class="dora-maar-chat-div"><img style="width: 400px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Dora-Maar-au-Chat-transparent.png" alt="dora maar au chat"></div>
-      <div id="oldGuitarist" class="old-guitarist-div"><img style="width: 200px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Old_guitarist_chicago-transparent.png" alt="old guitarist"></div>
-      <div id="porDoraMaar" class="por-dora-maar-div"><img style="width: 185px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Portrait_of_Dora_Maar-transparent.png" alt="Portrait of Dora Maar"></div>
-      <div id="weepingWoman" class="weeping-woman-div"><img style="width: 190px;" src="./Assets/images/pablo-picasso-paintings/picasso-transparents/The_Weeping_Woman_transparent.png" alt="The Weeping Woman">
+      <div id="guernica" class="guernica-div"><img style="width: 1000px;"
+          src="./Assets/images/pablo-picasso-paintings/guernica.jpg" alt="Guernica"></div>
+      <div id="lesDemoisellas" class="les-demo-div"><img style="width: 350px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Les_Demoiselles_d'Avignon-transparent.png"
+          alt="Les Demoiselles d Avignon"></div>
+      <div id="laSoupeBig" class="la-soupe-big-div"><img style="width: 345px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/La_soupe-big-transparent.png"
+          alt="la soupe"></div>
+      <div id="laSoupeSmall" class="la-soupe-small-div"><img style="width: 345px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/La_soupe-small-transparent.png"
+          alt="la soupe"></div>
+      <div id="girlMirror" class="girl-mirror-div"><img style="width: 400px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Girl-Before-A-Mirror-transparent.png"
+          alt="girl before a mirror"></div>
+      <div id="maJolie" class="ma-jolie-div"><img style="width: 208px;"
+          src="./Assets/images/pablo-picasso-paintings/ma-jolie.jpg" alt="ma jolie"></div>
+      <div id="boyPipe" class="boy-pipe-div"><img style="width: 430px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Boy-with-a-Pipe-transparent.png"
+          alt="boy with a pipe"></div>
+      <div id="doraMaarChat" class="dora-maar-chat-div"><img style="width: 400px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Dora-Maar-au-Chat-transparent.png"
+          alt="dora maar au chat"></div>
+      <div id="oldGuitarist" class="old-guitarist-div"><img style="width: 200px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Old_guitarist_chicago-transparent.png"
+          alt="old guitarist"></div>
+      <div id="porDoraMaar" class="por-dora-maar-div"><img style="width: 185px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/Portrait_of_Dora_Maar-transparent.png"
+          alt="Portrait of Dora Maar"></div>
+      <div id="weepingWoman" class="weeping-woman-div"><img style="width: 190px;"
+          src="./Assets/images/pablo-picasso-paintings/picasso-transparents/The_Weeping_Woman_transparent.png"
+          alt="The Weeping Woman">
       </div>
     </div>
     <div class="buttons-div">
@@ -160,12 +222,15 @@
         <button class="paintings-button" onclick="getArtistDetails(3, 3); maJolie()">Ma Jolie</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 4); guernica()">Guernica</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 9); theWeepingWoman()">The Weeping Woman</button>
-        <button class="paintings-button" onclick="getArtistDetails(3, 2); girlBeforeAMirror()">Girl Before A Mirror</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 2); girlBeforeAMirror()">Girl Before A
+          Mirror</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 1); doraMaarAuChat()">Dora Maar Au Chat</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 8); theSoup()">The Soup</button>
         <button class="paintings-button" onclick="getArtistDetails(3, 0); boyWithAPipe()">Boy with a pipe</button>
-        <button class="paintings-button" onclick="getArtistDetails(3, 5); lesDemoisellasDAvignon()">Les Demoisellas D' Avignon</button>
-        <button class="paintings-button" onclick="getArtistDetails(3, 6); portraitOfDoraMaar()">Portrait of Dora Maar</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 5); lesDemoisellasDAvignon()">Les Demoisellas D'
+          Avignon</button>
+        <button class="paintings-button" onclick="getArtistDetails(3, 6); portraitOfDoraMaar()">Portrait of Dora
+          Maar</button>
       </div>
       <!-- <button class="btn btn-success" onclick="saveArtistDetails(artistName, paintings)">insert</button> -->
 
@@ -174,38 +239,56 @@
       </div>
     </div>
   </div>
-  
-  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Picasso's output, especially in his early career, is often periodized. While the names of many of his later periods are debated, the most commonly accepted periods in his work are the Blue Period (1901-1904), the Rose Period (1904-1906), the African-influenced Period (1907-1909), Analytic Cubism (1909-1912), and Synthetic Cubism (1912-1919), also referred to as the Crystal period. Much of Picasso's work of the late 1910s and early 1920s is in a neoclassical style, and his work in the mid-1920s often has characteristics of Surrealism. His later work often combines elements of his earlier styles. Exceptionally prolific throughout the course of his long life, Picasso achieved universal renown and immense fortune for his revolutionary artistic accomplishments, and became one of the best-known figures in 20th-century art.</div>
 
-  <div class="text-center m-4 fs-5"><ul style="list-style: none;">
-    <li style="opacity: 1;">He was a great animal lover.</li>
-    <li style="opacity: 0.9;">He was a fast-paced painter.</li>
-    <li style="opacity: 0.8;">He was more than just a painter.</li>
-    <li style="opacity: 0.7;">He curated his first ever retrospective.</li>
-    <li style="opacity: 0.6;">He became a celebrity in his own lifetime.</li></ul>
+  <div class="text-center m-4 fs-5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Picasso's output, especially in his early career,
+    is often periodized. While the names of many of his later periods are debated, the most commonly accepted periods in
+    his work are the Blue Period (1901-1904), the Rose Period (1904-1906), the African-influenced Period (1907-1909),
+    Analytic Cubism (1909-1912), and Synthetic Cubism (1912-1919), also referred to as the Crystal period. Much of
+    Picasso's work of the late 1910s and early 1920s is in a neoclassical style, and his work in the mid-1920s often has
+    characteristics of Surrealism. His later work often combines elements of his earlier styles. Exceptionally prolific
+    throughout the course of his long life, Picasso achieved universal renown and immense fortune for his revolutionary
+    artistic accomplishments, and became one of the best-known figures in 20th-century art.</div>
+
+  <div class="text-center m-4 fs-5">
+    <ul style="list-style: none;">
+      <li style="opacity: 1;">He was a great animal lover.</li>
+      <li style="opacity: 0.9;">He was a fast-paced painter.</li>
+      <li style="opacity: 0.8;">He was more than just a painter.</li>
+      <li style="opacity: 0.7;">He curated his first ever retrospective.</li>
+      <li style="opacity: 0.6;">He became a celebrity in his own lifetime.</li>
+    </ul>
   </div>
 
-  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center" style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
+  <div class="w-100 fs-1 d-flex flex-row align-items-center justify-content-center"
+    style="height: 100px; color: rgb(179, 122, 233); font-weight: 600;">Find Other Artists</div>
 
   <div class="other-artists w-100 d-flex justify-content-around mt-4">
     <a href="./leonardo-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/leonardo-da-vinci.jpg"> <div class="other-artists-name">Leonardo da Vinci</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/leonardo-da-vinci.jpg">
+        <div class="other-artists-name">Leonardo da Vinci</div>
+      </div>
     </a>
 
     <a href="./vincent-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg"> <div class="other-artists-name">Vincent van gogh</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/vincent-van-gogh.jpg">
+        <div class="other-artists-name">Vincent van gogh</div>
+      </div>
     </a>
 
     <a href="./frida-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg"> <div class="other-artists-name">Frida Kahlo</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/fridaKahlo.jpg">
+        <div class="other-artists-name">Frida Kahlo</div>
+      </div>
     </a>
 
     <a href="./michelAngelo-paintings.html">
-      <div class="card d-flex flex-row"><img src="./Assets/images/Michelangelo.webp"> <div class="other-artists-name">Michelangelo</div></div>
+      <div class="card d-flex flex-row"><img src="./Assets/images/Michelangelo.webp">
+        <div class="other-artists-name">Michelangelo</div>
+      </div>
     </a>
-    
+
   </div>
-  
+
   <script>
 
     var theOldGuitaristArtDetais = `
@@ -258,26 +341,26 @@
           <h4>Dora Maar Au Chat 1941</h4>
           Dora Maar au Chat presents the artist's most mysterious and challenging mistress regally posed three-quarter length in a large wooden chair with a small black cat perched behind her in both an amusing and menacing attitude. The faceted planes of her body and the richly layered surface of brushstrokes impart a monumental and sculptural quality to this portrait. The painting is also remarkable for its brilliance of color and the complex and dense patterning of the model's dress. The powerful figure is set in a dramatic, yet simple setting composed of a vertiginously inclined plane of wooden floorboards and shallow interior space that is arranged in a manner reminiscent of Picasso's earliest manipulations of space in a cubist manner.
           </div>`;
-          
-          var boyWithApipeArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/Boy-with-a-Pipe-1905-Image-via-wikimediaorg.jpg" style="height: 160px; display: inline-block;" alt="boy with a pipe">
+
+    var boyWithApipeArtDetails = `<img src="./Assets/images/pablo-picasso-paintings/Boy-with-a-Pipe-1905-Image-via-wikimediaorg.jpg" style="height: 160px; display: inline-block;" alt="boy with a pipe">
           <div style="display: inline-block;">
             <h4>Boy with a Pipe 1905</h4>
             Garçon à la pipe was painted in 1905 when Picasso was 24 years old, during his Rose Period, soon after he settled in the Montmartre section of Paris, France. The oil on canvas painting depicts a Parisian boy holding a pipe in his left hand and wearing a garland or wreath of flowers. Early preparations of this work involved positioning the boy in all types of poses that involved standing, sitting or leaning against the wall. After much repositioning of the model, Picasso decided to go with the boy sitting down. Next was how to position the arm, where much time was also spent on the height and angle.
             </div>`;
 
-            var artistName = "Pablo Picasso";
-            
-            var paintings = [
-              boyWithApipeArtDetails, doraMaarAuChatArtDetails, girlBeforeAMirrorArtDetails, maJolieArtDetails,
-              guernicaArtDetails, lesDemoisellasDAvignonArtDetails, portraitOfDoraMaarArtDetails, theOldGuitaristArtDetais,
-              theSoupArtDetails, theWeepingWomanArtDetails
-            ]
-          
-          function theOldGuitaristStyle(scale, shadow) {
-            imageTheOldGuitarist.style.transform = scale;
-            imageTheOldGuitarist.style.filter = shadow;
-          }
-          
+    var artistName = "Pablo Picasso";
+
+    var paintings = [
+      boyWithApipeArtDetails, doraMaarAuChatArtDetails, girlBeforeAMirrorArtDetails, maJolieArtDetails,
+      guernicaArtDetails, lesDemoisellasDAvignonArtDetails, portraitOfDoraMaarArtDetails, theOldGuitaristArtDetais,
+      theSoupArtDetails, theWeepingWomanArtDetails
+    ]
+
+    function theOldGuitaristStyle(scale, shadow) {
+      imageTheOldGuitarist.style.transform = scale;
+      imageTheOldGuitarist.style.filter = shadow;
+    }
+
     function maJolieStyle(scale, shadow) {
       imageMaJolie.style.transform = scale;
       imageMaJolie.style.filter = shadow;
@@ -450,7 +533,7 @@
       document.getElementById('paintingDetails').innerHTML = boyWithApipeArtDetails;
     }
 
-    var imageLesDemoisellasDAvignon= document.getElementById('lesDemoisellas');
+    var imageLesDemoisellasDAvignon = document.getElementById('lesDemoisellas');
     function lesDemoisellasDAvignon() {
 
       theOldGuitaristStyle("scale(1)", "none");
