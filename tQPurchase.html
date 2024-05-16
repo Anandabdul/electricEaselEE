@@ -1,110 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electric Easel | Cart</title>
-  <link rel="icon" type="image/x-icon" href="./Assets/images/eelogo.png">
+  <title>Thank You for Purchasing</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Antonio&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Rubik+Marker+Hatch&family=Silkscreen&display=swap"
-    rel="stylesheet">
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-
+  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="./css/navbar.css">
 
-  <script defer src="./bootstrap/js/bootstrap.min.js"></script>
-
-  <script defer src="./javascript/apiController.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-
-  <script defer src="./javascript/shopCategory.js"></script>
-
   <script defer src="./javascript/checkSession.js"></script>
-
-  <script defer src="./javascript/cartAction.js"></script>
-
-  <script defer src="./javascript/orderSymmary.js"></script>
-  
-  <style>
-    .page-title {
-      color: rgb(179, 122, 233);
-      font-size: 30px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .product-name {
-      color: rgb(179, 122, 233);
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .product-price {
-      font-weight: 500;
-    }
-
-    .delivery-options-title {
-      font-weight: 700;
-    }
-
-    .delivery-option-date {
-      color: green;
-    }
-
-    .delivery-option-input {
-      margin-right: 15px;
-    }
-
-    .col-right {
-      display: flex;
-      flex-direction: column;
-      border-radius: 7px;
-      margin-left: 20px;
-      justify-content: space-between;
-      align-items: center;
-      border: rgb(187, 186, 186) solid 1px;
-      background-color: rgb(230, 230, 230);
-      position: sticky;
-      right: 5px;
-      top: 55px;
-      flex: 1;
-      height: 495px;
-      font-size: 20px;
-    }
-
-    .payment-summary-title {
-      font-weight: bold;
-      font-size: 30px;
-      color: rgb(179, 122, 233);
-      display: flex;
-      justify-content: start;
-    }
-
-    .total-row {
-      font-weight: bold;
-      font-size: 25px;
-      color: rgb(179, 122, 233);
-      display: flex;
-      justify-content: start;
-    }
-  </style>
 </head>
+<body onload="checkSession()">
 
-<body onload="checkSession(); getCartItems(); getCartForOrderSummary()" style="margin-top: 55px;">
   <div class="header">
     <div class="header-left">
       <div><img class="hamburger" src="./Assets/images/youtube-logo.svg"></div>
-      <img class="electric-easel-logo" src="Assets/images/eelogo.png">
+      <!--<p class="home-text">electric easel</p>-->
       <img class="electric-easel-logo" src="./Assets/images/electriceasellogo.png">
     </div>
     <div class="header-center">
@@ -159,54 +78,9 @@
       </div>
     </div>
   </div>
-  
 
-  <div class="container d-flex">
-    <div style="flex: 2;">
-      <div class="page-title">Review your order</div>
-
-      <div class="checkout-div">
-        <div class="order-summary">
-
-        </div>
-      </div>
-    </div>
-
-    <div class="col-right">
-      <div class="payment-summary-title">
-        Order Summary
-      </div>
-
-      <div class="payment-summary-row d-flex w-100">
-        <div class="ps-3" style="display: flex; flex: 2;" id="itemCount">Items (0):</div>
-        <div class="pe-3" style="display: flex; flex: 1; justify-content: end;" id="jsItemsTotal">&#8377;00.00</div>
-      </div>
-
-      <div class="payment-summary-row d-flex w-100">
-        <div class="ps-3" style="display: flex; flex: 2;">Shipping &amp; handling:</div>
-        <div class="pe-3" style="display: flex; flex: 1; justify-content: end;" id="jsShippingPrice" class="total-shipping-price">&#8377;00.00</div>
-      </div>
-
-      <div class="payment-summary-row subtotal-row d-flex w-100">
-        <div class="ps-3" style="display: flex; flex: 2;">Total before tax:</div>
-        <div class="pe-3" style="display: flex; flex: 1; justify-content: end;" id="jsTotalBeforeTax" class="">&#8377;00.00</div>
-      </div>
-
-      <div class="payment-summary-row d-flex w-100">
-        <div class="ps-3" style="display: flex; flex: 2;">Estimated tax (10%):</div>
-        <div class="pe-3" style="display: flex; flex: 1; justify-content: end;" id="jsTaxPrice" class="">&#8377;00.00</div>
-      </div>
-
-      <div class="payment-summary-row total-row d-flex w-100">
-        <div class="ps-3" style="display: flex; flex: 2;">Order total:</div>
-        <div class="pe-3" style="display: flex; flex: 1; justify-content: end;" id="jsGrandTotal" class="">&#8377;00.00</div>
-      </div>
-
-      <button onclick="deleteAllFromCart(cartURL)" class="place-order-button btn btn-warning m-3 w-75">
-        Place your order
-      </button>
-    </div>
+  <div class="d-flex align-items-center justify-content-center w-100 h-100" style="flex-direction: column; margin-top: 200px; font-weight: bold; font-size: 25px; color: rgb(179, 122, 233);">
+    <p>Thank you for Purchasing!</p><p>Your Order Will be shipped Soon!</p>
   </div>
 </body>
-
 </html>

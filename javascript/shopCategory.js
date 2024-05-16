@@ -181,7 +181,7 @@ function productsAll(products) {
     </div>
     <div class="buttons-div">
       <div class="addtocart-div">
-        <button class="button-addtocart">Add To Cart</button>
+        <button class="button-addtocart js-add-cart" data-product-image="${product.image}" data-product-name="${product.name}" data-product-price="${product.pricePaise}">Add To Cart</button>
       </div>
     </div>
     </div>
@@ -189,6 +189,7 @@ function productsAll(products) {
   });
   document.querySelector(".js-products-grid").innerHTML = productsHTML;
   favoriteAction();
+  cartAction();
 };
 
 let categorizeStationeryHTML = "";
@@ -216,9 +217,9 @@ function categorizeStationery(products) {
         }" stroke="black" stroke-width="2px" width="24px" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20a1 1 0 0 1-.437-.1C11.214 19.73 3 15.671 3 9a5 5 0 0 1 8.535-3.536l.465.465.465-.465A5 5 0 0 1 21 9c0 6.646-8.212 10.728-8.562 10.9A1 1 0 0 1 12 20z"/></svg></div>
         </div>
         <div class="buttons-div">
-          <div class="addtocart-div">
-            <button class="button-addtocart">Add To Cart</button>
-          </div>
+        <div class="addtocart-div">
+        <button class="button-addtocart js-add-cart" data-product-image="${product.image}" data-product-name="${product.name}" data-product-price="${product.pricePaise}">Add To Cart</button>
+      </div>
         </div>
         </div>
       </div>`;
@@ -227,6 +228,7 @@ function categorizeStationery(products) {
   document.querySelector(".js-products-grid").innerHTML =
     categorizeStationeryHTML;
   favoriteAction();
+  cartAction();
 }
 
 let categorizePostersHTML = "";
@@ -254,9 +256,9 @@ function categorizePosters(products) {
         }" stroke="black" stroke-width="2px" width="24px" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20a1 1 0 0 1-.437-.1C11.214 19.73 3 15.671 3 9a5 5 0 0 1 8.535-3.536l.465.465.465-.465A5 5 0 0 1 21 9c0 6.646-8.212 10.728-8.562 10.9A1 1 0 0 1 12 20z"/></svg></div>
         </div>
         <div class="buttons-div">
-          <div class="addtocart-div">
-            <button class="button-addtocart">Add To Cart</button>
-          </div>
+        <div class="addtocart-div">
+        <button class="button-addtocart js-add-cart" data-product-image="${product.image}" data-product-name="${product.name}" data-product-price="${product.pricePaise}">Add To Cart</button>
+      </div>
         </div>
         </div>
       </div>`
@@ -264,6 +266,7 @@ function categorizePosters(products) {
   });
   document.querySelector(".js-products-grid").innerHTML = categorizePostersHTML;
   favoriteAction();
+  cartAction();
 }
 
 let categorizeStickersHTML = "";
@@ -291,9 +294,9 @@ function categorizeStickers(products) {
         }" stroke="black" stroke-width="2px" width="24px" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20a1 1 0 0 1-.437-.1C11.214 19.73 3 15.671 3 9a5 5 0 0 1 8.535-3.536l.465.465.465-.465A5 5 0 0 1 21 9c0 6.646-8.212 10.728-8.562 10.9A1 1 0 0 1 12 20z"/></svg></div>
         </div>
         <div class="buttons-div">
-          <div class="addtocart-div">
-            <button class="button-addtocart">Add To Cart</button>
-          </div>
+        <div class="addtocart-div">
+        <button class="button-addtocart js-add-cart" data-product-image="${product.image}" data-product-name="${product.name}" data-product-price="${product.pricePaise}">Add To Cart</button>
+      </div>
         </div>
         </div>
       </div>`
@@ -302,6 +305,7 @@ function categorizeStickers(products) {
   document.querySelector(".js-products-grid").innerHTML =
     categorizeStickersHTML;
   favoriteAction();
+  cartAction();
 }
 
 let categorizeCeramicHTML = "";
@@ -329,9 +333,9 @@ function categorizeCeramic(products) {
         }" stroke="black" stroke-width="2px" width="24px" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20a1 1 0 0 1-.437-.1C11.214 19.73 3 15.671 3 9a5 5 0 0 1 8.535-3.536l.465.465.465-.465A5 5 0 0 1 21 9c0 6.646-8.212 10.728-8.562 10.9A1 1 0 0 1 12 20z"/></svg></div>
         </div>
         <div class="buttons-div">
-          <div class="addtocart-div">
-            <button class="button-addtocart">Add To Cart</button>
-          </div>
+        <div class="addtocart-div">
+        <button class="button-addtocart js-add-cart" data-product-image="${product.image}" data-product-name="${product.name}" data-product-price="${product.pricePaise}">Add To Cart</button>
+      </div>
         </div>
         </div>
       </div>`
@@ -339,6 +343,7 @@ function categorizeCeramic(products) {
   });
   document.querySelector(".js-products-grid").innerHTML = categorizeCeramicHTML;
   favoriteAction();
+  cartAction();
 }
 
 let categorizeFancyHTML = "";
@@ -366,9 +371,9 @@ function categorizeFancy(products) {
         }" stroke="black" stroke-width="2px" width="24px" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20a1 1 0 0 1-.437-.1C11.214 19.73 3 15.671 3 9a5 5 0 0 1 8.535-3.536l.465.465.465-.465A5 5 0 0 1 21 9c0 6.646-8.212 10.728-8.562 10.9A1 1 0 0 1 12 20z"/></svg></div>
         </div>
         <div class="buttons-div">
-          <div class="addtocart-div">
-            <button class="button-addtocart">Add To Cart</button>
-          </div>
+        <div class="addtocart-div">
+        <button class="button-addtocart js-add-cart" data-product-image="${product.image}" data-product-name="${product.name}" data-product-price="${product.pricePaise}">Add To Cart</button>
+      </div>
         </div>
         </div>
       </div>`
@@ -376,6 +381,7 @@ function categorizeFancy(products) {
   });
   document.querySelector(".js-products-grid").innerHTML = categorizeFancyHTML;
   favoriteAction();
+  cartAction();
 }
 
 let displayFavoritesHTML = "";
@@ -403,9 +409,9 @@ function displayFavorites(products) {
     }" stroke="black" stroke-width="2px" width="24px" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20a1 1 0 0 1-.437-.1C11.214 19.73 3 15.671 3 9a5 5 0 0 1 8.535-3.536l.465.465.465-.465A5 5 0 0 1 21 9c0 6.646-8.212 10.728-8.562 10.9A1 1 0 0 1 12 20z"/></svg></div>
     </div>
     <div class="buttons-div">
-      <div class="addtocart-div">
-        <button class="button-addtocart">Add To Cart</button>
-      </div>
+    <div class="addtocart-div">
+    <button class="button-addtocart js-add-cart" data-product-image="${product.image}" data-product-name="${product.name}" data-product-price="${product.pricePaise}">Add To Cart</button>
+  </div>
     </div>
     </div>
   </div>`;
@@ -414,6 +420,7 @@ function displayFavorites(products) {
   console.log(displayFavoritesHTML);
   document.querySelector(".js-products-grid").innerHTML = displayFavoritesHTML;
   favoriteAction();
+  cartAction();
 }
 
 function favoriteAction() {
@@ -428,29 +435,38 @@ function favoriteAction() {
       const isfav = item.dataset.productIsfav;
 
       if (isfav === "white") {
-        // send it through API
-        // addToFavorites(
-        //   productImage,
-        //   productName,
-        //   productCategory,
-        //   productPrice,
-        //   productID,
-        //   "red"
-        // );
         item.style.fill = "red";
-        // item.style.stroke = "none";
-        // products[index].redRWhite = "red";
         updateProducts("red", productID, productPrice, productCategory, productName, productImage);
         alert("Item Added to Cart!");
       } else if (isfav === "red") {
-        // removeFavorite(15);
         item.style.fill = "white";
         item.style.stroke = "black";
-        // products[index].redRWhite = "white";
         updateProducts("white", productID, productPrice, productCategory, productName, productImage);
         alert("Item Removed from Cart!");
       }
-      // console.log(isfav);
     });
   });
 };
+
+function cartAction() {
+ document.querySelectorAll('.js-add-cart').forEach((item) => {
+  item.addEventListener("click", () => {
+    const productImage = item.dataset.productImage;
+    const productName = item.dataset.productName;
+    const productPrice = item.dataset.productPrice;
+    // console.log(productImage);
+    // console.log(productName);
+    // console.log(productPrice);
+    saveToCart(productImage, productName, productPrice);
+    itemCountNotify++;
+  })
+}) 
+}
+
+let itemCountNotify = 0;
+function cartNotify(items) {
+  items.forEach(() => {
+    itemCountNotify ++;
+  })
+  document.getElementById('cartNotify').innerHTML = itemCountNotify;
+}
