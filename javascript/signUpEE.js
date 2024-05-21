@@ -20,6 +20,7 @@ function signup() {
 
     localStorage.setItem("emailDB", JSON.stringify(emailDB));
     localStorage.setItem("passwordDB", JSON.stringify(passwordDB));
+    localStorage.setItem("usernameDB", JSON.stringify(usernameDB));
     
     alert('You have Created a Account sucessfully');
     window.location.href = "./login.html";
@@ -31,14 +32,14 @@ function signup() {
 
 function signin() {
 
-  let getEmail = document.getElementById('email').value;
+  // let getEmail = document.getElementById('email').value;
   let getPassword = document.getElementById('password').value;
   let getUsername = document.getElementById('username').value;
   
-  let loginEmail = (getEmailDB.indexOf(getEmail));
+  let loginUsername = (getUsernameDB.indexOf(getUsername));
   let loginPassword = (getPasswordDB.indexOf(getPassword));
   
-  if (getEmail === getEmailDB[loginEmail] && getPassword === getPasswordDB[loginPassword]) {
+  if (getUsername === getUsernameDB[loginUsername] && getPassword === getPasswordDB[loginPassword]) {
     sessionStorage.setItem("getusername", JSON.stringify(getUsername));
     window.location.href = "./electricEasel.html";
     

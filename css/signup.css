@@ -1,3 +1,13 @@
+
+p,
+label {
+  font-family: roboto, arial;
+}
+
+h3 {
+  font-family: silkscreen, arial;
+}
+
 .upper-div {
   border-style: none;
   width: 450px;
@@ -11,6 +21,12 @@
   backdrop-filter: blur(10px);
   background-size: 150px;
   background-blend-mode: darken;
+}
+
+@media (max-width: 576px) {
+  .upper-div {
+    width: 300px;
+  }
 }
 
 .username-div {
@@ -43,53 +59,37 @@
   justify-content: center;
 }
 
-h3 {
-  font-family: silkscreen, arial;
-}
-
-div {
-  font-family: roboto, arial;
-}
-
-.login-div {
-  display: inline-block;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 30px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
-  background-color: rgba(235, 167, 223, 0.25);
-  backdrop-filter: blur(10px);
-  background-size: 150px;
-  background-blend-mode: darken;
-  background-position-x: -60px;
-}
-
-.logodiv {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-div {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .button-google {
+.button-signin-button {
   width: 300px;
   padding-left: 7px;
   padding-right: 7px;
   margin-right: 10px;
-  padding-top: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 5px;
+  color: white;
+  background-color: rgb(191, 93, 248);
+  border-style: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button-signin-button:hover {
+  background-color: rgb(163, 80, 211);
+}
+
+.button-signin-button:active {
+  opacity: 0.7;
+}
+
+.button-google {
+  width: 300px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 7px;
-  margin-right: 5px;
   color: black;
   border-width: 1px;
   border-color: rgb(168, 168, 168);
@@ -100,9 +100,9 @@ div {
   display: flex;
   justify-content: center;
 
-} */
+}
 
-/* .button-facebook {
+.button-facebook {
   width: 300px;
   padding-left: 7px;
   padding-right: 7px;
@@ -116,34 +116,13 @@ div {
   cursor: pointer;
   display: flex;
   justify-content: center;
-} */
-
-.button-signin-button {
-  width: 300px;
-  padding-left: 7px;
-  padding-right: 7px;
-  margin-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-  color: white;
-  background-color: rgb(191, 93, 248);
-  border-style: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
 }
 
 .input-box {
-  border-radius: 5px;
+  padding: 0.2rem 0rem 0.2rem 0rem;
+  border-radius: 0.3rem;
   border-style: none;
   box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.27);
-  margin: 5px;
-}
-
-.div-align {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  width: 11rem;
+  height: 2rem;
 }

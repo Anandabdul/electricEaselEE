@@ -41,7 +41,6 @@
   flex: 1;
   justify-content: flex-end;
   align-items: center;
-
 }
 
 .header-right {
@@ -57,8 +56,7 @@
   font-family: roboto, arial;
   margin-top: 0;
   margin-bottom: 0;
-  padding-right: 7px;
-  padding-left: 7px;
+  padding: 0px 7px 0px 7px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -75,7 +73,7 @@
   background-color: white;
   padding-left: 10px;
   padding-right: 10px;
-  transition: 0.30s;
+  transition: 0.3s;
 }
 
 .navBarButton:active {
@@ -84,6 +82,12 @@
 
 .electric-easel-logo {
   height: 30px;
+  display: inline-block;
+}
+
+.electric-ee-logo {
+  height: 30px;
+  display: none;
 }
 
 .header-right svg:hover {
@@ -119,8 +123,35 @@ a {
   justify-content: center;
 }
 
-/* tooltip */
+.footer-img {
+  transform: translateY(60px);
+  height: 170px;
+}
 
+.copyright-text {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.footer-nav {
+  color: white; 
+  opacity: 0.5; 
+  position: absolute; 
+  top: 10px;  
+  z-index: 2;
+  display: flex;
+  white-space: nowrap;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* tooltip */
 
 .navTool-tip {
   position: absolute;
@@ -145,4 +176,40 @@ a {
 
 .invicible {
   display: none;
+}
+
+@media (max-width: 576px) {
+  .electric-easel-logo {
+    display: none;
+  }
+
+  .electric-ee-logo {
+    display: inline-block;
+  }
+
+  .home-text {
+    font-size: 10px;
+    padding: 0px 4px 0px 4px;
+  }
+  .navTool-tip {
+    font-size: 10px;
+  }
+
+  .footer-img {
+    height: 90px;
+    transform: translateY(70px);
+  }
+
+  .copyright-text, .footer-nav{
+    font-size: 0.7rem;
+  }
+
+  .footer-div {
+    height: 120px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
